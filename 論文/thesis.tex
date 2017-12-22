@@ -1036,7 +1036,7 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
   \item $T_{\mathcal{M}(x)}$ の各葉 $u$ に対して，$|S_u| \le 1$．つまり，葉が$\mathcal{M}(x)$ の実行可能解に対応している．
 \end{itemize}
 
-バックトラッキングは，ラベルの付いた根付き木 $T_{\mathcal{M}(x)}$ に対する深さ優先探索，あるいは幅優先探索とみなすことができる，ここで葉は $\mathcal{M}(x)$ からの実行可能解でラベル付けされており，$T_{\mathcal{M}(x)}$ の全ての内部頂点 $v$ には，$v$ を根とする部分木 $T_v$ の葉のラベルが付いた全ての実行可能解を含む $S_v \subseteq \mathcal{M}(x)$ でラベル付けされている．分枝限定法は，アルゴリズムが $v$ を訪れた時点で，$T_v$ が最適解を持たないこと決定できるときに，$T_{\mathcal{X(x)}}$ から $T_v$ を切り取ることに他ならない．このアプローチの効率はアルゴリズムの実行中に切断され得る $T_{\mathcal{M}(x)}$ の部分木の量とサイズに依存する．
+バックトラッキングは，ラベルの付いた根付き木 $T_{\mathcal{M}(x)}$ に対する深さ優先探索，あるいは幅優先探索とみなすことができる，ここで葉は $\mathcal{M}(x)$ からの実行可能解でラベル付けされており，$T_{\mathcal{M}(x)}$ の全ての内部頂点 $v$ には，$v$ を根とする部分木 $T_v$ の葉のラベルが付いた全ての実行可能解を含む $S_v \subseteq \mathcal{M}(x)$ でラベル付けされている．分枝限定法は，アルゴリズムが $v$ を訪れた時点で，$T_v$ が最適解を持たないこと決定できるときに，$T_{\mathcal{M}(x)}$ から $T_v$ を切り取ることに他ならない．このアプローチの効率はアルゴリズムの実行中に切断され得る $T_{\mathcal{M}(x)}$ の部分木の量とサイズに依存する．
 
 分枝限定法は多くの NP 困難な組合わせ最適化問題に対して，その最適解を求めるための最も良い
 枠組みとして知られており，Land and Doig [1960] \cite{BandB} によって
@@ -1060,9 +1060,7 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 分割の生成方法については Kreher. Donald L.(1998) \cite{Partition} に
 よって，紹介されている．
 
-ここで，表記の導入を行う．双方リスト $list$，ジョブの配列を $js$，ジョブ数を $n$，機械数 $m$，
-$n$ の長さを持つ整数の配列 $f$，整数 $i$，$f_{\max}$，$W$，ただし，
-初期値は $i = 0$，$f_{\max} = 0$ とする．
+ここで，表記の導入を行う．ジョブの配列を $js$，ジョブ数を $n$，機械数を $m$，整数 $W$（初期解）と表記する．
 
 \begin{quote}
   \begin{description}
@@ -1112,15 +1110,15 @@ $n$ の長さを持つ整数の配列 $f$，整数 $i$，$f_{\max}$，$W$，た�
       \item[]  $i < n$ のとき，以下の処理を行う．
       \begin{description}
         \item[Step 1 ] 以下の処理を 整数 $i$ が 0 から $f_{\max}$ まで繰
-        り返す．
+        り返す．ここで，$numOfJobs$ を定義し，初期値を 0 とする．
         \begin{description}
           \item[Step 1.1 ] 以下の処理を 整数 $j$ が 0 から $n$ まで
           繰り返す．
           \begin{description}
             \item[ 1.1.1 ] $j = i$ のとき，$list$ に $js$ の $j$ 番目のジョブを
-            加える．
+            加える．ここで，$numOfJobs$ をプラス 1 していく．
           \end{description}
-          \item[Step 1.2 ]  $(list,permutation,numOfJobs,i,0,0,0)$ を入力と
+          \item[Step 1.2 ]  $(list,numOfJobs,i,0,0,0)$ を入力と
           して {\sc allPermutation} を実行する．
         \end{description}
       \end{description}
@@ -1134,39 +1132,38 @@ $n$ の長さを持つ整数の配列 $f$，整数 $i$，$f_{\max}$，$W$，た�
 \begin{quote}
   \begin{description}
     \item[{\sc Algorithm : }] {\sc allPermutation}
-    \item[入力：]  双方リスト $list$，ジョブの配列 $permutation$，\\整数 $numOfJobs$，$machineNumber$，$i$，$completionTime$，$waitingTime$ の 5 項組 $(list,permutation,numOfJobs,machineNumber,\\completionTime,waitingTime)$
+    \item[入力：]  双方リスト $list$，整数 $numOfJobs$，$machineNumber$，$i$，$completionTime$，$waitingTime$ の 6 項組 $(list,numOfJobs,machineNumber,\\completionTime,waitingTime)$
     \item[出力：] $waitingTime$ が最も小さいスケジュールとなるジョブの配列\\ $permutation$
     \begin{description}
       \item[] $i = numOfJobs$ のとき，
+      \begin{description}
+        \item[Step 1 ] $solution[machineNumber] : = permutation$ とする．
+      \end{description}
       \item[] $i \neq numOfJobs$ のとき，
       \begin{description}
-        \item[Step 1 ] 最初に参照するジョブを $list$ の $head$ と
+        \item[Step 2 ] 最初に参照するジョブを $list$ の $head$ と
         する．また，以下の処理を参照しているジョブの前方リ
         ンクに対応するジョブが $head$ になるまで繰り返す．
         \begin{description}
-          \item[Step 1.1] 参照するジョブを現在参照しているジョ
+          \item[Step 2.1] 参照するジョブを現在参照しているジョ
           ブの前方リンクに対応するジョブとし，$job$ と表記す
           る．
-          \item[Step 1.2 ] $permutation$ のコピーとなるジョブの配列 $p$ を作
-          る．
-          \item[Step 1.3 ] $p$ に $job$ を
-          加え．整数 $s$，$c$，$w$ を次のように定義する．また
-          参照しているジョブの処理開始可能時刻を $r$，処理時
+          \item[Step 2.2 ] $permutation[i] := job$ とする．整数 $s$，$c$，$w$ を次のように定義する．また，参照しているジョブの処理開始可能時刻を $r$，処理時
           間を $p$ と表記する．
           $s = \max\{completionTime, r\}$，$c = s + p$，$w =
           \max\{waitingTime,s - r\}$
-          \item[Step 1.4 ] $W \le w$ のとき，処理を中断する．
-          \item[Step 1.5 ] $list$ から $job$ を取り
+          \item[Step 2.3 ] $W \le w$ のとき，処理を中断する．
+          \item[Step 2.4 ] $list$ から $job$ を取り
           除く．
-          \item[Step 1.6 ] $list$ に対して，$(list,c)$ を入力
+          \item[Step 2.5 ] $list$ に対して，$(list,c)$ を入力
           として，{\sc evaluation} を適用する．
           \begin{description}
-            \item[Step 1.6.1 ] {\sc evaluation} の出力が $true$ のと
+            \item[Step 2.5.1 ] {\sc evaluation} の出力が $true$ のと
             き，\\$(list,p,numOfJobs,machineNumber,i +
             1,c,w)$ を入力として {\sc allPermutation} を実
             行する．
           \end{description}
-          \item[Step 1.7 ] $job$ を $list$ の取り除いた場所に
+          \item[Step 2.6 ] $job$ を $list$ の取り除いた場所に
           戻す．
         \end{description}
       \end{description}

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  21 DEC 2017 17:39
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  22 DEC 2017 14:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -267,13 +267,18 @@ Overfull \hbox (16.09468pt too wide) detected at line 826
 ]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 1069.
+(Font)              using `JT1/mc/m/n' instead on input line 1067.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 1069.
+(Font)              using `JY1/mc/m/n' instead on input line 1067.
 
-[31] [32] [33] [34]
+[31]
+Overfull \hbox (22.73016pt too wide) in paragraph at lines 1135--1136
+[]\JY1/mc/m/sc/12 双方リスト $\OML/cmm/m/it/12 list$\JY1/mc/m/sc/12 ， 整数 $\OML/cmm/m/it/12 numOfJobs$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 machineNumber$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 i$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 completionTime$\JY1/mc/m/sc/12 ，
+ []
+
+[32] [33] [34]
 第 6 章
 (./thesis.bbl [35
 
@@ -298,4 +303,69 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  27i,19n,24p,720b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (39 pages, 136008 bytes).
+Output written on thesis.dvi (39 pages, 135952 bytes).
+erence `c_3' on page 28 undefined on input line 1021.
+
+[28] [29]
+第 5 章
+[30
+
+]
+
+LaTeX Warning: Citation `BandB' on page 31 undefined on input line 1042.
+
+
+LaTeX Warning: Citation `BandB2' on page 31 undefined on input line 1043.
+
+
+LaTeX Warning: Citation `Partition' on page 31 undefined on input line 1060.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 1067.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 1067.
+
+[31]
+Overfull \hbox (22.73016pt too wide) in paragraph at lines 1135--1136
+[]\JY1/mc/m/sc/12 双方リスト $\OML/cmm/m/it/12 list$\JY1/mc/m/sc/12 ， 整数 $\OML/cmm/m/it/12 numOfJobs$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 machineNumber$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 i$\JY1/mc/m/sc/12 ， $\OML/cmm/m/it/12 completionTime$\JY1/mc/m/sc/12 ，
+ []
+
+[32] [33]
+
+LaTeX Warning: Reference `c_3' on page 34 undefined on input line 1203.
+
+[34]
+第 6 章
+(./thesis.bbl [35
+
+]) [36
+
+] [37
+
+]
+Overfull \vbox (49.31288pt too high) has occurred while \output is active []
+
+ [38] (./thesis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1979 strings out of 493653
+ 22906 string characters out of 6150337
+ 93964 words of memory out of 5000000
+ 5548 multiletter control sequences out of 15000+600000
+ 25121 words of font info for 101 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 27i,19n,24p,720b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on thesis.dvi (39 pages, 136064 bytes).
