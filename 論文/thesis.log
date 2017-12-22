@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  19 DEC 2017 13:45
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  21 DEC 2017 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -196,26 +196,34 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 
 ] [4]
 第 2 章
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 75.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
 (/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 75.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
  [5
 
 ] [6]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 179.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 167.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 179.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 167.
  [7] [8]
 第 3 章
 [9
 
-] [10] [11] [12]
+] [10] [11]
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 306.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 306.
+
 File: SJIT1.png Graphic file (type bmp)
- <SJIT1.png>
+<SJIT1.png> [12]
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
@@ -230,56 +238,64 @@ Missing character: There is no ^^99 in font cmr12!
 Missing character: There is no ^^e2 in font cmr12!
 Missing character: There is no ^^89 in font cmr12!
 Missing character: There is no ^^a4 in font cmr12!
- [15] [16]
+ [15]
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
- [17]
+ [16]
 File: Lmax1.png Graphic file (type bmp)
- <Lmax1.png> [18] [19]
+ <Lmax1.png> [17] [18]
 File: EDDrule.png Graphic file (type bmp)
- <EDDrule.png> [20] [21]
+ <EDDrule.png> [19] [20]
 第 4 章
-[22
+[21
 
-] [23]
-Overfull \hbox (37.56958pt too wide) detected at line 826
+] [22]
+Overfull \hbox (8.29094pt too wide) detected at line 779
 \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; A\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 J[]\OT1/cmr/m/n/10 )) = []
  []
 
-
-Overfull \hbox (47.55931pt too wide) detected at line 838
-\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; A\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 J[]\OT1/cmr/m/n/10 )) = []
- []
-
-[24]
-Overfull \hbox (16.09468pt too wide) detected at line 885
+[23]
+Overfull \hbox (16.09468pt too wide) detected at line 826
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
-[25] [26] [27] [28] [29] [30]
+[24] [25] [26] [27] [28] [29]
 第 5 章
-[31
+[30
 
-] [32] [33]
+]
+
+LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 1069.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 1069.
+
+[31] [32] [33] [34]
 第 6 章
-(./thesis.bbl [34
+(./thesis.bbl [35
 
-]) [35
+]) [36
 
-] [36
+] [37
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [37] (./thesis.aux) ) 
-Here is how much of TeX's memory you used:
- 1957 strings out of 493653
- 22702 string characters out of 6150337
- 93964 words of memory out of 5000000
- 5528 multiletter control sequences out of 15000+600000
- 24473 words of font info for 99 fonts, out of 8000000 for 9000
- 929 hyphenation exceptions out of 8191
- 27i,15n,24p,666b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ [38] (./thesis.aux)
 
-Output written on thesis.dvi (38 pages, 126888 bytes).
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1979 strings out of 493653
+ 22906 string characters out of 6150337
+ 93964 words of memory out of 5000000
+ 5548 multiletter control sequences out of 15000+600000
+ 25121 words of font info for 101 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 27i,19n,24p,720b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on thesis.dvi (39 pages, 136008 bytes).

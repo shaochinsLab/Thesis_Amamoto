@@ -113,6 +113,7 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin6.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmti12.tfm
 INPUT SJIT1.png
 INPUT extractbb -O SJIT1.png
 INPUT Lmax1.png
@@ -130,6 +131,7 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmex10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT thesis.aux

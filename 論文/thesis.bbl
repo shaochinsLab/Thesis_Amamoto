@@ -2,6 +2,10 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{Partition}
+L., K.D.: Combinatorial algorithms : generation, enumeration, and search. CRC
+  Press Boca Raton London New York Washington, D.C. (1998)
+
 \bibitem{BandB}
 Land, A.H., Doig, A.G.: An automatic method of solving discrete programming
   problems. The Econometric Society  28,  497--520 (1960)
@@ -18,5 +22,10 @@ Pinedo, M.L.: Scheduling Theory, Algorithms, and Systems. Springer
 \bibitem{JIT}
 Sung, S.C., Vlach: Maximizing weighted number of just-in-time jobs on unrelated
   parallel machines. Jurnal of Scheduling  8,  453--460 (2005)
+
+\bibitem{kawamata}
+川俣友佳: 納期ズレ幅の導入による JIT
+  スケジューリング問題の緩和とその解法. 修士論文,
+  青山学院大学 (2012)
 
 \end{thebibliography}
