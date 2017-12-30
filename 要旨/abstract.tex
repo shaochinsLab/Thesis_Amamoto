@@ -1,0 +1,99 @@
+\documentclass[oneside, 10pt, twocolumn]{jarticle}
+
+\title{\bf{\rm
+並列機械モデルにおける\\最大実行開始待ち時間最小化問題の計算論的評価}}
+
+\author{宋研究室
+\hspace{15pt}
+天本　祐希　(15713004)}
+\date{}
+%%%%%% DEFINICE ZAHLAVI
+\newfont{\m}{cmr8}
+\newfont{\ms}{cmsl8}
+%%%%%% KONEC DEFINICE ZAHLAVI
+\usepackage{amsfonts}
+\usepackage{setspace} % setspaceパッケージのインクルード
+\setstretch{1.18} % ページ全体の行間を設定
+\pagestyle{empty}
+\oddsidemargin -5mm
+\textwidth 170mm
+\topmargin -28mm
+\textheight 270mm
+\columnsep 5mm
+
+% sectionの大きさ
+\makeatletter
+\def\section{\@startsection {section}{1}{\z@}{-3.5ex plus -1ex minus
+-.2ex}{2.3 ex plus .2ex}{\large\bf}}
+% sectionの行間
+\renewcommand{\section}{
+\@startsection{section}{1}{\z@}
+{.1\Cvs \@plus.0\Cdp \@minus.1\Cdp}%  上の空き
+{.1\Cvs \@plus.1\Cdp \@minus.0\Cdp}%  下の空き
+{\reset@font\large\bfseries}}      %  字の大きさ
+\makeatother
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{研究背景}
+一般に，Webアプリケーションサービスを運用している会社では，運用しているWebアプ
+リケーションの応答が遅いと，顧客離れやクレームの被害を受けることがある．
+そのため，計算サーバーの応答の早さは重要である．応答の早い計算サーバー
+を作るためには，与えられたタスクをどのように割り当て，処理するかを考える必要がある．
+計算サーバーのタスクの処理開始は，Webサービスの利用者が，ネットワーク
+を介して，そのサービスを運用している会社の計算サーバーにタスクの処理の
+要求を行い，そのタスクが計算サーバーに到着した後である．そのため，タス
+クの到着時刻とは，タスク処理の処理開始可能時刻である．最大実行開始待ち時間
+最小化問題とは，処理開始可能時刻を制約とし，タスクが到着してから，タス
+ク処理が開始されるまでの時間の最小化を目的とするスケジューリング問題である．また，割り当てるタスクの情報があらかじめわからない点から，計算サーバーへのはタスク割り当てはオンライ
+ン環境で行われると言える．したがって，計算サーバーへのタスク割り当ては，
+最大実行開始待ち時間最小化を目的とするオンラインスケジューリング問題と
+して捉えることができる．この問題は，どの機械モデルにおいても，問題の難しさは明らかになっていない．
+
+実行開始待ち時間を軸にとって従来研究を調査したところ，問題の多くは未だ研究されていないことが明らかとなった．
+
+\section{研究目的}
+最大実行開始待ち時間最小化問題はどの機械モデルにおいても計算複雑さが
+明らかでなく，問題の難しさに与える影響の本質は現れていない．
+\begin{description}
+  \item[目的 1 : ]
+  最大実行開始待ち時間最小化問題を定式化し，問題の計算複雑さを明らかにする．
+  \item[目的 2 : ]
+  貪欲解法で求めた解の質を最適解と比較し，実験的評価を行う．
+\end{description}
+
+\section{研究成果}
+本研究では，最大実行開始待ち時間最小化問題に関して，以下の成果を得た．
+\begin{description}
+  \item[成果 1 : ]
+  最大実行開始待ち時間最小化問題を決定問題として捉えたとき，
+  無関連並列機械モデル，機械数が入力の一部の場合において，NP完全であることを示した．
+  \item[成果 2 : ]\label{a2}
+  同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対して，貪欲解法と分枝限定法を適用し，競合比と計算時間の分析を行い・・・・．
+  \item[成果 3 : ]
+  成果~\ref{a2} で利用した分枝限定法は，最も単純な版に以下の改良を加えた．
+  改良により，？？？倍の計算時間で解を出すことができた．
+  \begin{description}
+    \item[1 : ] 分割の要素数が機械数のときのみ，分割を生成する．
+    %各工夫でどの程度削減できたのか
+    %もしくは，これらの工夫で全体として，どの程度早くできたのか
+    \item[2 : ] 各機械におけるコストの下限がそれまでの最良の解より悪いとき，機械への割り当てを中断する．
+    \item[3 : ] 各機械におけるコストの下限の降順で，機会への割り当てを行う．
+    \item[4 : ] 各機械において，割り当てられていない残りのジョブに対して，コストの下限を求め，探索を続行するか中断するかの判定を加えた．
+  \end{description}
+\end{description}
+
+\begin{thebibliography}{9} %参考文献{載せる参考文献の数の上限}
+\bibitem{SJIT}
+Sung, Vlach.
+Maximizing Weighted Number of Just-In-Time Jobs on Unrelated Parallel Machines. J SCHED 8, pp. 453-460, 2005.
+ %\vspace{-2mm}
+\bibitem{BandB}
+Land, Doig.
+An automatic method of solving discrete programming problems.
+The Econometric Society, 28, pp. 497-520, 1960.
+\end{thebibliography}
+
+\end{document}
