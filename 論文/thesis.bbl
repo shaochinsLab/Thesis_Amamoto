@@ -2,6 +2,11 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{greedy}
+Hromkovic, J.: Algorithmics for Hard Problems Introduction to Combinatorial
+  Optimization, Randomization, Approximation, and Heuristics. Springer-Verlag
+  Berlin Heidelberg (2004)
+
 \bibitem{Partition}
 L., K.D.: Combinatorial algorithms : generation, enumeration, and search. CRC
   Press Boca Raton London New York Washington, D.C. (1998)

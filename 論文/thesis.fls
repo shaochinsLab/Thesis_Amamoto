@@ -131,6 +131,8 @@ INPUT extractbb -O EDDrule.png
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT 3SAT1.jpg
+INPUT extractbb -O 3SAT1.jpg
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT thesis.bbl
 INPUT thesis.bbl
