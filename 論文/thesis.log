@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  30 DEC 2017 15:05
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  3 JAN 2018 18:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -250,44 +250,51 @@ File: EDDrule.png Graphic file (type bmp)
 [21
 
 ] [22]
-Overfull \hbox (8.29094pt too wide) detected at line 789
+Overfull \hbox (8.29094pt too wide) detected at line 784
 \OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 J[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; `\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; A\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 J[]\OT1/cmr/m/n/10 )) = []
  []
 
 [23]
-Overfull \hbox (16.09468pt too wide) detected at line 836
+Overfull \hbox (16.09468pt too wide) detected at line 831
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
-[24] [25] [26] [27] [28] [29]
+[24] [25] [26] [27] [28]
 第 5 章
-[30
+[29
 
 ]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 1067.
+(Font)              using `JT1/mc/m/n' instead on input line 1043.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 1067.
+(Font)              using `JY1/mc/m/n' instead on input line 1043.
 
-[31] [32] [33] [34] [35] [36] [37] [38]
+[30] [31] [32] [33] [34]
+./thesis.tex:1240: Text line contains an invalid character.
+l.1240         \item[Step 1.1.] $S \cup J_i$ ^^H
+                                                とする．
+A funny symbol that I can't read has just been input.
+Continue, and I'll forget that it ever happened.
+
+[35] [36]
 第 6 章
-[39
+[37
 
-] [40]
+] [38]
 第 7 章
-(./thesis.bbl [41
+(./thesis.bbl [39
 
-]) [42
+]) [40
 
-] [43
+] [41
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [44] (./thesis.aux)
+ [42] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -301,4 +308,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  27i,19n,24p,746b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (45 pages, 157952 bytes).
+Output written on thesis.dvi (43 pages, 155860 bytes).

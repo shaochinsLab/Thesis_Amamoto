@@ -64,7 +64,7 @@
 
   最大実行開始待ち時間最小化問題はどの機械モデルにおいても，計算複雑さが明らかではなかった．本研究では，3 SAT からの還元により，無関連並列機械モデルにおいて，機械数が入力の場合，NP 完全であることを証明した．
   \item[成果 2 : ]
-  提案解法により求まる解が最適なスケジュールにおける解に近いという結果を得た．
+  提案した解法が，対象とする環境における有効性を示した．
 
   提案解法により求まる解を $S_g$，最適解を $S_{opt}$ とすると，異なるインスタンスに対して，$S_g/S_{opt}$ を求めることで，提案解法の評価を行った．$S_g/S_{opt}$ の値が 1 に近いほど，解法の質は良いと言える．本研究の実験によると，平均 $S_g/S_{opt} = ?$ の結果を得た．
 
@@ -636,26 +636,21 @@ $$\forall i, j \in \{1,\ldots,n\}\big[r_i \le r_j \Rightarrow C(i) \le C(j)\big]
 
 
 \begin{proof}
-  スケジュール $S$ をある 2 つの連続するジョブについて納期順に並んでいな
-  いジョブが存在するスケジュールとし，$S'$ をスケジュール $S$ において，
+  スケジュール $S$ をある 2 つの連続するジョブ $J_i$, $J_k$ について納期順に並んでいないジョブが存在するスケジュールとし，$S'$ をスケジュール $S$ において，
   2 つの連続するジョブについて納期順に並んでいな
   いジョブの位置を入れ替えたスケジュールとする．
   ただし，全てのジョブの処理時間は 0 以上とする．
+  つまり，スケジュール $S$ におけるジョブ $J_i$，$J_k$ の納期は，$d_k > d_i$ であり，スケジュール $S'$ におけるジョブ $J_i$，$J_k$ の納期は，$d_k < d_i$ である．
   上記の条件をまとめた図は以下の通りである．
   \begin{center}
     \includegraphics[width = 12cm]{EDDrule.png}
   \end{center}
-  前提より，$d_i \ge d_k$ である．また，すべてのジョブの処理開始可能時
-  刻が等しいことから，スケジュール $S$ における，ジョブ $J_i$ の処理開
-  始時刻とスケジュール $S'$ におけるジョブ $J_k$ の処理開始時刻は等し
-  い．つまり，$C_i - p_i = C'_k - p_k$ である．同様に，スケジュール
-  $S$ における，ジョブ $J_k$ の完了時刻とスケジュール $S'$ におけるジョ
-  ブ $J_i$ の完了時刻は等しい．つまり，$C_k = C'_i$ である．
+  前提より，すべてのジョブの処理開始可能時刻が等しいことから，スケジュール $S$ における，ジョブ $J_i$ の処理開始時刻とスケジュール $S'$ におけるジョブ $J_k$ の処理開始時刻は等しい．つまり，$C_i - p_i = C'_k - p_k$ である．
+  同様に，スケジュール $S$ における，ジョブ $J_k$ の完了時刻とスケジュール $S'$ におけるジョブ $J_i$ の完了時刻は等しい．つまり，$C_k = C'_i$ である．
   以上より，
-  スケジュール $S$ のとき，$L_i(S) = C_i - d_i$，$L_k(S) = C_k - d_k$ ，
-  スケジュール $S'$ のとき，$L_i(S') = C'_i - d_i = C_k - d_i \le C_k -
-  d_k = L_k(S)$，$L_k(S') = C'_k - d_k \le C_k - d_k = L_k(S)$ と表すこ
-  とができる．
+  スケジュール $S$ におけるジョブ $J_i$ の遅れ時間 $L_i(S)$ は，$L_i(S) = C_i - d_i$，ジョブ $J_k$ の遅れ時間 $L_k(S)$ は $L_k(S) = C_k - d_k$ となる．
+  同様に，スケジュール $S'$ におけるジョブ $J_i$ の遅れ時間 $L_i(S')$ は，$L_i(S') = C'_i - d_i = C_k - d_i \le C_k -
+  d_k = L_k(S)$，ジョブ $J_k$ の遅れ時間 $L_k(S')$ は，$L_k(S') = C'_k - d_k \le C_k - d_k = L_k(S)$ と表すことができる．
   ここで，ジョブ $J_i,\ J_k$ を除いたジョブにおける最大遅れ時間を $L(S)$
   とする．つまり，$L(S) = \displaystyle \max_{j \in \{1,\ldots,n\}
   \setminus \{i,k\}}L_j(S)$．よって，スケジュール $S$，スケジュール
@@ -676,7 +671,7 @@ $$\forall i, j \in \{1,\ldots,n\}\big[r_i \le r_j \Rightarrow C(i) \le C(j)\big]
   つまり，全てのスケジュールは EDD ルールを適用することで，一つのスケジュー
   ルに収束し，そのスケジュールにおける解は他のどのスケジュールの解よりも
   悪くはならない．
-  よって，EDD ルール $1\mid \mid L_{\max}$ 問題に対して，最適解を求める
+  よって，EDD ルールは $1\mid \mid L_{\max}$ 問題に対して，最適解を求める
   正しい解法である．
 \end{proof}
 
@@ -979,33 +974,14 @@ J' \in \mathcal{F}(h_{k - n}) \wedge \big(r(J') > r(J) \big) \big\} - r(J)
 最小化問題は NP 完全である．
 
 \section{機械モデルの違いが計算複雑さに与える影響}
-最大実行開始待ち時間最小化問題（決定問題）に対して，以下のことが明らかになった．
-\begin{itemize}
-  \item 単一機械モデル
-  \begin{itemize}
-    \item $w = 0$ のとき，多項式で判定可能．
-    \item $w \neq 0$ のとき，明らかでない．
-  \end{itemize}
-  \item 同一並列機械モデル
-  \begin{itemize}
-    \item $w = 0$ のとき，多項式で判定可能．
-    \item $w \neq 0$ のとき，明らかでない．
-  \end{itemize}
-  \item 一様並列機械モデル
-  \begin{itemize}
-    \item 明らかでない．
-  \end{itemize}
-  \item 無関連並列機械モデル
-  \begin{itemize}
-    \item 機械数が入力の一部の場合，NP 完全．
-    \item 機械数が定数の場合，明らかでない．
-  \end{itemize}
-\end{itemize}
+本研究で，無関連並列機械モデルにおいて，機械数が入力の一部の場合，最大実行開始待ち時間最小化問題は，NP 完全であることが明らかになった．しかし，他の機械モデルにおける計算複雑さは明らかになっていない．
 
-単一機械モデルにおける最大実行開始待ち時間最小化問題（決定問題）について，$w = 0$ のとき，多項式で判定可能であることを示す．
+しかし，$w = 0$ のとき，この問題は JIT スケジューリング問題に対応し，単一機械モデルと同一機械モデルにおいて，多項式時間で判定できることが明らかになっている．
+
+以下で，単一機械モデルにおける最大実行開始待ち時間最小化問題（決定問題）について，$w = 0$ のとき，多項式で判定可能であることを示す．
 
 以下の条件を満たすとき，決定問題の解は Yes，満たさないとき No であることは明らかである．
-$$\forall J,J' \in \mathcal{J}\big[[r(J),r(J) + p(J)) \cap [r(J'),r(J') + p(J')) = \emptyset\big]$$
+$$\forall J,J' \in \mathcal{J}\bigg[\big[r(J),r(J) + p(J)\big) \cap \big[r(J'),r(J') + p(J')\big) = \emptyset\bigg]$$
 $w = 0$ となるスケジュールとは，すべてのジョブが処理開始可能時刻と 処理開始可能時刻 + 処理時間 の間で処理されなければならない．つまり，すべてのジョブに関して各ジョブの [処理開始可能時刻，処理開始可能時刻 + 処理時間] で表される範囲が被ってはいけない．この判定にかかる時間は高々 $\mathcal{O}(n^2)$ であることから，多項式時間で判定が可能である．
 
 
@@ -1034,7 +1010,7 @@ $w = 0$ となるスケジュールとは，すべてのジョブが処理開始
 また，分枝限定法を計算効率を向上させるために改良した点についても紹介する．
 
 \chapter{実験的評価}\label{c_5}
-この章では，提案する解法の紹介と，その解法の評価をするために用いる分枝限定法について紹介する．また，提案解法を用いて求めた解と分枝限定法を用いて求めた最適解を比較し，提案解法の質の分析を行った．
+この章では，提案する解法の紹介と，その解法の評価をするために用いる分枝限定法について紹介する．また，提案解法により出力された解から得られた目的関数の値と分枝限定法により出力された解から得られた最適解を比較し，提案解法により出力される解の質の分析を行った．
 
 \section{本研究の提案解法}
 本研究では，同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対して，貪欲アルゴリズムを用いた解法を提案する．
@@ -1165,71 +1141,44 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 \end{description}
 
 以下では，上記改良を加えた分割生成アルゴリズムと，分枝限定法アルゴリズムの紹介を行う．
-議論に先立ち表記の導入を行う．ジョブの集合を $\mathcal{J}$，ジョブ数を $n(=|\mathcal{J}|)$，機械数を $m(=|\mathcal{M}|)$，初期解を $W$（整数）と表記する．
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\sc Algorithm RestrictedGrowthFunction}
+
+インスタンス $I = (n, m)$
+\begin{itemize}
+  \item ジョブ数 $n$
+  \item 機械数 $m$
+\end{itemize}
+
 \begin{quote}
   \begin{description}
-    \item[{\sc Algorithm : }]  {\sc setPartition}
-    \item[入力：]  要素数 $n$ の整数の配列 $f$，整数 $i$，$f_{\max}$
-    の 3 項組 $(f, i, f_{\max})$
-    \item[出力：] 要素数 $n$ の整数の配列 $f$
+    \item[{\sc Algorithm : }]  {\sc RestrictedGrowthFunction}
+    \item[入力：] $I = (n, m)$
+    \item[出力：] 分割 $p$
     \begin{description}
-      \item[]  $i < n$ のとき，以下の処理を行う．
+      \item[Step 1.] 各 $i \in \{1,\ldots,n\}$ について，以下の処理を繰り返す．
       \begin{description}
-        \item[Step 1 ] 整数 $j$ が 0 から $f_{\max}$ まで以下の処理を繰り
-        返す．
-
-        \begin{description}
-          \item[Step 1.1 ] $f[i] := j$ とする．
-          \item[Step 1.2 ] $(f, i + 1, f_{\max})$ を入力として， {\sc
-          setPartition} を実行する．
-        \end{description}
-
-        \item[Step 2]  $f[i] := f_{\max} + 1$ とする．
-
-        \begin{description}
-          \item[Step 2.1 ] $(f,i + 1,f_{\max} + 1)$ を入力として，
-          {\sc setPartition} を実行する．
-        \end{description}
-
-      \end{description}
-      \item[]  $i \ge n$ かつ $f_{\max} + 1 = m$ のとき，以下の処理を
-      行う．
-      \begin{description}
-        \item[Step 3 ] $(js,f,f_{\max})$ を入力として， {\sc makeList} を実行する．
+        \item[Step 1.1.] $p_{\max}[n - i] \ge m + 1 - i$ のとき，処理を終了する．
+        \item[Step 1.2.] $p[n - i] := m + 1 - i$，$p_{\max} := m - i$
       \end{description}
     \end{description}
   \end{description}
 \end{quote}
 
 % setPartition の説明
-{\sc setPartition} では，分割を生成している．入力である整数の配列 $f$ の中身は空であり，{\sc setPartition} の操作によって，$f$ に整数を入れていく．配列 $f$ の $i$ 番目の要素 $f[i]$ というのは，ジョブ $J_i$ が機械 $f[i]$ に割り当てられることを意味する．$f$ の要素数が $n$ であることから，全てのジョブに関してどの機械を割り当てたかを表しているのが配列 $f$ である．以下のアルゴリズム {\sc makeList} では同じ機械に割り当てられたジョブの集合，つまり，$f[i]$ が等しいジョブの集合を双方向リストとして定義している．ここで，定義される双方リストの数は異なる $f[i]$ の数，つまり，$f_{\max}$ に対応する．
-
-\begin{quote}
-  \begin{description}
-    \item[{\sc Algorithm : }] {\sc makeList}
-    \item[入力：] ジョブの集合 $js$
-    \item[出力：] 双方向リスト $list$
-    \begin{description}
-      \item[Step 1 ] 以下の処理を $i = 0$ から $i = js.length - 1$ になるまで以下の処理を繰り返す．
-      \item[Step 1.1 ] $list$ に $js[i]$ を加える．ここで，$numOfJobs = numOfJobs + 1$ とする．
-    \end{description}
-    \item[Step 1.2 ]  $(list, numOfJobs, 0, 0, 0)$ を入力と
-    して\\ {\sc BranchAndBound} を実行する．
-  \end{description}
-\end{quote}
-
-同じ機械に割り当てられたジョブの集合，つまり，$f[i]$ が等しいジョブの集合を処理開始可能時刻順に双方向リスト $list$ に追加している．以下のアルゴリズム {\sc BranchAndBound} では，それぞれ定義した $list$ に対して，順列の生成を行なっている．
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\sc Algorithm BranchAndBound}
 
-インスタンス $I = (\mathcal{J}, r, p, C, w, i)$
+インスタンス $I = (\mathcal{J}, s, r, p, C, w, i)$
 \begin{itemize}
   \item ジョブの集合 $\mathcal{J} = \{J_1,\ldots,J_n\}$
+  \item ジョブの処理開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$
   \item ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$
   \item ジョブの処理時間を返す関数 $p : \mathcal{J} \to \mathbb{N}$
-  \item スケジュールにおける完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$
+  \item スケジュールにおけるジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$
+  \item それまでのスケジュールにおける最良の解 $W$
   \item スケジュールにおける最大実行開始待ち時間を返す関数 $w : S \to \mathbb{N}$
   \item 現在，何個のジョブを機械に割り当てたかを表す整数 $i$
 \end{itemize}
@@ -1237,30 +1186,30 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 \begin{quote}
   \begin{description}
     \item[{\sc Algorithm : }] {\sc BranchAndBound}
-    \item[入力 :] $I = (\mathcal{J}, r, p, C, w, i)$
+    \item[入力 :] $I = (\mathcal{J}, r, p, C, w, W, i)$
     \item[出力 :] スケジュール $S$
     \begin{description}
       \item[] $i = |\mathcal{J}|$ のとき，
       \begin{description}
-        \item[Step 1.] $permutation$ と $waitingTime$ を出力する．
+        \item[Step 1.] $W = w(S)$ とする．
+        \item[Step 2.] スケジュール $S$ を出力する．
       \end{description}
-      \item[] $i \neq numOfJobs$ のとき，
+      \item[] $i \neq |\mathcal{J}|$ のとき，
       \begin{description}
-        \item[Step 2.] 最初に参照するジョブ $job$ を $list.head$ とし
-        以下の処理を $job \neq list.head$ のとき繰り返す．
+        \item[Step 3.] $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
+        \item[Step 4.] 各 $j \in \{1,\ldots,n\}$ における $J_i$ について，$j = 1$ から順に以下の処理を繰り返す．
         \begin{description}
-          \item[Step 2.1] $job = job.next$ とする．
-          \item[Step 2.2] $permutation[i] := job$ とする．整数 $s$，$c$，$w$ を次のように定義する．また，$job$ の処理開始可能時刻を $r$，処理時間を $p$ と表記する．$s = \max\{completionTime, r\}$，$c = s + p$，$w =\max\{waitingTime,s - r\}$
-          \item[Step 2.3] $list$ から $job$ を取り
+          \item[Step 4.1] $S := S \cup J_i$ とする．
+          \item[Step 4.2] $\mathcal{J}$ から $J_i$ を取り
           除く．
-          \item[Step 2.4] $list$ に対して，$(list,c, w)$ を入力
+          \item[Step 4.4] $\mathcal{J}$ に対して，$(\mathcal{J},S, W)$ を入力
           として，{\sc evaluation} を適用する．
           \begin{description}
-            \item[Step 2.4.1] {\sc evaluation} の出力が $true$ のと
-            き，\\$(list, numOfJobs, i + 1, c, w)$ を入力として\\{\sc BranchAndBound} を実
+            \item[Step 4.4.1] {\sc evaluation} の出力が $true$ のと
+            き，\\$(\mathcal{J},r,p,C,w,i + 1)$ を入力として\\{\sc BranchAndBound} を実
             行する．
           \end{description}
-          \item[Step 2.5] $job$ を $list$ の取り除いた場所に
+          \item[Step 4.5] $J_i$ を $\mathcal{J}$ の取り除いた場所に
           戻す．
         \end{description}
       \end{description}
@@ -1269,26 +1218,28 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 \end{quote}
 
 % BranchAndBound の説明
-{\sc BranchAndBound} では，再帰的に順列の生成を行っている．Step 2.4 では部分木に対して，探索を続行するか，中断するかの判定を行っている．
-以上の判定に対して $true$ となったスケジュールは，与えられた解より良い解であるので，すべてのジョブをスケジュールし終わったとき，つまり Step 1 で，解の更新を行っている．それ以降の探索は更新した解を用いて判定を行う．
+{\sc BranchAndBound} では，再帰的に順列の生成を行っている．Step 4.4 では，機械に割り当てられていないジョブの集合 $\mathcal{J}$ に対して，探索を続行するか，中断するかの判定を行っている．
+以上の判定に対して $true$ となったスケジュールは，与えられた解より良い解であるので，すべてのジョブをスケジュールし終わったとき，つまり Step 1. で解の更新を行っている．それ以降の探索は更新した解を用いて判定を行う．
 
+{\sc Algorithm evaluation}
+
+インスタンス $I = (\mathcal{J}, S, W)$
+\begin{itemize}
+  \item 機械に割り当てられていないジョブの集合 $\mathcal{J}$
+  \item その時点までに割り当てられたジョブにおけるスケジュール $S$
+  \item それまでのスケジュールのおける最良の解 $W$
+\end{itemize}
 \begin{quote}
   \begin{description}
     \item[{\sc Algorithm : }] {\sc evaluation}
-    \item[入力：] $(list,completionTime, waitingTime)$
+    \item[入力：] $(\mathcal{J}, S, W)$
     \item[出力：] $true$ か $false$
     \begin{description}
-      \item[Step 1 ] 最初に参照するジョブ $job$ を $list.head$ とし
-      以下の処理を $job \neq list.head$ のとき繰り返す．
+      \item[Step 1.] 各 $j \in \{1,\ldots,|\mathcal{J}|\}$ における $J_i$ について，$j = 1$ から順に以下の処理を繰り返す．
       \begin{description}
-        \item[Step 1.1] $job = job.next$ とする．
-        \item[Step 1.2 ] 整数 $s$，$c$，$w$ を次のように定義する．また $job$ の処理開始可能時刻を $r$，処理時間を $p$ と表記する．また $p$ を $list$ の中で最小の処理時
-        間に設定する.\\
-        $s = \max\{completionTime, r\}$，$c = s + p$，\\$w =
-        \max\{waitingTime,s - r\}$
+        \item[Step 1.1.] $S \cup J_i$ とする．
+        \item[Step 1.2.] $W < w(S)$ のとき，$false$を，$w(S) < W$ のとき，$true$ を出力する．
       \end{description}
-      \item[Step 2 ] $W < w$ のとき $false$ を出力する．$w \le W$
-      のとき $true$ を出力する．
     \end{description}
   \end{description}
 \end{quote}
@@ -1302,7 +1253,7 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 ここで，残りのすべてのジョブの中で最大の処理時間を $p_{\max}$ としたとき，すべてのジョブの処理時間 $p$は $p_{\min} \le p \le p_{\max}$ である．ここで，，設定する処理時間が $p_{\min}$ より大きいとき，設定した処理時間より小さい値を持つジョブが少なくとも 1 つ存在する．このとき，$w' < W_{opt}$ とならない可能性がある．$W_{opt} < w'$ のとき，最低でも $w'$ 以上のコストがかかることを表しているので，最適なスケジュールを含む部分木を切り取ってしまう可能性がある．そのため，残りのジョブの処理時間を $p_{\min}$ として設定することで，最適なスケジュールを含む部分木を切り取ることなく探索できる．
 
 \section{提案解法の評価と分析}
-
+同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対して，本研究で提案したヒューリスティックの実験的評価を行った．評価方法は，各インスタンスに対して，本研究で提案するアルゴリズムにより出力された解から得られた最大実行開始待ち時間と，分枝限定法により出力された解から得られた最適解を比較するものである．
 
 
 \chapter{結論}\label{c_6}
@@ -1312,9 +1263,9 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 \begin{description}
   \item[計算複雑さ ] 3 SAT からの還元により，無関連並列機械モデルにおいて，機械数が入力の一部の場合，NP 完全であることを明らかにした．
 
-  \item[解法 ] 貪欲アルゴリズムをもとに同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対するヒューリスティックを開発した．
+  \item[解法 ] 貪欲アルゴリズムをもとに同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対するヒューリスティックを開発し，実験的評価を行った．
 
-  本研究で開発した解法により求まる解と分枝限定法により求めた最適解を比較，分析し，？？？ 程度の解を得ることが可能である．
+  このヒューリスティックの実験的評価を行い，対象とする環境における有効性を示した．
 
   \item[分析対象の拡張 ] 同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対する分枝限定法において，分割生成部分，探索の続行，中断の判定部分の改良により，分析対象を拡張することが可能になった．
 
