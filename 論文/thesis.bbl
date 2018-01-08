@@ -2,12 +2,16 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{3SAT}
+Garey, M.R., Johnson, D.S.: Computers and Intractability; A Guide to the Theory
+  of NP-Completeness. W. H. Freeman And Co, New York, NY, USA (1990)
+
 \bibitem{greedy}
 Hromkovic, J.: Algorithmics for Hard Problems Introduction to Combinatorial
   Optimization, Randomization, Approximation, and Heuristics. Springer-Verlag
   Berlin Heidelberg (2004)
 
-\bibitem{Partition}
+\bibitem{rgf}
 L., K.D.: Combinatorial algorithms : generation, enumeration, and search. CRC
   Press Boca Raton London New York Washington, D.C. (1998)
 
@@ -20,17 +24,11 @@ Little, Murty, S., Karel: An algorithm for the traveling salesman problem.
   Operations Research  11,  972--989 (1963)
 
 \bibitem{Lmax}
-Pinedo, M.L.: Scheduling Theory, Algorithms, and Systems. Springer
-  International Publishing AG Switzerland is part of Springer Science+Business
-  Media (2016)
+Pinedo, M.L.: Scheduling Theory, Algorithms, and Systems. Springer-Verlag New
+  York (2012)
 
 \bibitem{JIT}
 Sung, S.C., Vlach: Maximizing weighted number of just-in-time jobs on unrelated
   parallel machines. Jurnal of Scheduling  8,  453--460 (2005)
-
-\bibitem{kawamata}
-川俣友佳: 納期ズレ幅の導入による JIT
-  スケジューリング問題の緩和とその解法. 修士論文,
-  青山学院大学 (2012)
 
 \end{thebibliography}
