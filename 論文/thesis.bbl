@@ -15,17 +15,21 @@ Hromkovic, J.: Algorithmics for Hard Problems Introduction to Combinatorial
 L., K.D.: Combinatorial algorithms : generation, enumeration, and search. CRC
   Press Boca Raton London New York Washington, D.C. (1998)
 
+\bibitem{EDD2}
+Lageweg, B., Lenstra, J., Kan, A.: Minimizing maximum lateness on one machine:
+  Computational experience and some applications (1976)
+
 \bibitem{BandB}
 Land, A.H., Doig, A.G.: An automatic method of solving discrete programming
   problems. The Econometric Society  28,  497--520 (1960)
 
+\bibitem{EDD1}
+Lawler, E.L.: Optimal sequencing of a single machine subject to precedence
+  constraints. Journal Management Science  19,  544--546 (1973)
+
 \bibitem{BandB2}
 Little, Murty, S., Karel: An algorithm for the traveling salesman problem.
   Operations Research  11,  972--989 (1963)
-
-\bibitem{Lmax}
-Pinedo, M.L.: Scheduling Theory, Algorithms, and Systems. Springer-Verlag New
-  York (2012)
 
 \bibitem{JIT}
 Sung, S.C., Vlach: Maximizing weighted number of just-in-time jobs on unrelated
