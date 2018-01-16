@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1515551792 "slide.dvi" "slide.pdf" "slide" 1515551794
-  "slide.dvi" 1515551792 117880 45d5da79ab05d2d3e7b2b2ee46ee3acc "latex"
+["dvipdf"] 1515999599 "slide.dvi" "slide.pdf" "slide" 1515999600
+  "slide.dvi" 1515999599 131512 7ed5f63223b29eee0a95be3302be58f3 "latex"
   (generated)
   "slide.pdf"
-["latex"] 1515551790 "slide.tex" "slide.dvi" "slide" 1515551794
+["latex"] 1515999596 "slide.tex" "slide.dvi" "slide" 1515999600
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -183,16 +183,16 @@
   "/opt/local/share/texmf/tex/latex/pgf/utilities/xxcolor.sty" 1438958880 2267 e82edfd18fbf4047c6f20ed9467f27db ""
   "/opt/local/var/db/texmf/web2c/eptex/platex.fmt" 1507880415 4343701 b1e22c26f75794f9c14618ee614e0ec6 ""
   "figure/reduction.pdf" 1515491377 49162 adcdb3ee82a11991b89bd193a1bd17b7 ""
-  "slide.aux" 1515551792 5397 ab88fb53ebcdd42a8aae1eed78522ad1 ""
-  "slide.nav" 1515551792 2867 7b3bd3f189535cb70674ddd4d59ccb83 ""
-  "slide.out" 1515551792 525 c62c90d1a6bf8f50d478fdf1f6e4feb7 ""
-  "slide.tex" 1515551789 11619 d505edff6ab643d1b350530982a26532 ""
-  "slide.toc" 1515551792 531 a575d8cffe1e75a6e1c19ad511a90d8c ""
+  "slide.aux" 1515999599 5112 bfbc25927bb92e4b7ae62feff32b4efd ""
+  "slide.nav" 1515999599 2705 62019154de584e3850d3b352b5f5818c ""
+  "slide.out" 1515999599 475 8ed0804bf98dc15e69923525527c8be9 ""
+  "slide.tex" 1515999594 12749 256257b39211b56e079498d8e928eb4d ""
+  "slide.toc" 1515999599 480 79ebb6728f3b9f30bac5caaa34cc744c ""
   (generated)
   "slide.toc"
   "slide.out"
   "slide.snm"
-  "slide.log"
-  "slide.aux"
   "slide.nav"
+  "slide.log"
   "slide.dvi"
+  "slide.aux"

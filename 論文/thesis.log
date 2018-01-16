@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  11 JAN 2018 11:25
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  16 JAN 2018 17:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -197,49 +197,45 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 ]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 61.
+(Font)              using `JT1/mc/m/n' instead on input line 62.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 61.
+(Font)              using `JY1/mc/m/n' instead on input line 62.
 
 [4] [5]
 第 2 章
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 124.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
 (/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
  [6
 
-] [7]
+]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 179.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 184.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 179.
- [8]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 184.
+ [7] [8]
 File: figure/reduction.pdf Graphic file (type pdf)
- <figure/reduction.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9] [10] [11]
+ <figure/reduction.pdf> [9] [10] [11]
 第 3 章
 [12
 
 ] [13]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 379.
+(Font)              using `JT1/mc/m/n' instead on input line 385.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 379.
+(Font)              using `JY1/mc/m/n' instead on input line 385.
 
 [14]
-File: figure/SJIT1.png Graphic file (type bmp)
- <figure/SJIT1.png>
+File: figure/SJIT.pdf Graphic file (type pdf)
+ <figure/SJIT.pdf>
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
@@ -258,80 +254,77 @@ Missing character: There is no ^^a4 in font cmr12!
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
-File: figure/Lmax1.png Graphic file (type bmp)
- <figure/Lmax1.png>
+ [19]
+File: figure/Lmax.pdf Graphic file (type pdf)
+ <figure/Lmax.pdf> [20] [21]
+File: figure/EDDrule.pdf Graphic file (type pdf)
+ <figure/EDDrule.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] [20]
-File: figure/EDDrule.png Graphic file (type bmp)
- <figure/EDDrule.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[21] [22]
+[22] [23]
 第 4 章
-[23
+[24
 
-] [24]
-Overfull \hbox (4.28331pt too wide) detected at line 822
+] [25]
+Overfull \hbox (4.28331pt too wide) detected at line 830
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; `\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; A\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 J[]\OT1/cmr/m/n/10.95 )) = []
  []
 
 
-Overfull \hbox (13.54997pt too wide) detected at line 831
+Overfull \hbox (13.54997pt too wide) detected at line 839
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; `\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; A\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 J[]\OT1/cmr/m/n/10.95 )) = []
  []
 
 
-Overfull \hbox (16.09468pt too wide) detected at line 881
+Overfull \hbox (16.09468pt too wide) detected at line 889
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
-[25]
+[26]
 File: figure/3SAT1.pdf Graphic file (type pdf)
- <figure/3SAT1.pdf> [26] [27]
+ <figure/3SAT1.pdf> [27] [28]
 File: figure/3SAT2.pdf Graphic file (type pdf)
  <figure/3SAT2.pdf>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[28] [29] [30]
+[29] [30] [31]
 第 5 章
-[31
+[32
 
-] [32]
-Overfull \hbox (30.32587pt too wide) in paragraph at lines 1109--1111
+] [33]
+Overfull \hbox (20.3258pt too wide) in paragraph at lines 1118--1120
 []\JY1/mc/m/it/12 最小完了時刻を持つ機械集合の要素 $\OML/cmm/m/it/12 M[] \OMS/cmsy/m/n/12 2 []$
  []
 
-[33] [34] [35] [36] [37] [38] [39] [40]
+[34] [35] [36] [37] [38] [39] [40] [41] [42]
 第 6 章
-[41
+[43
 
-] [42]
+] [44]
 第 7 章
-(./thesis.bbl [43
+(./thesis.bbl [45
 
-]) [44
+]) [46
 
-] [45
+] [47
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [46] (./thesis.aux)
+ [48] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1990 strings out of 493653
- 23100 string characters out of 6150337
+ 2000 strings out of 493653
+ 23180 string characters out of 6150337
  95964 words of memory out of 5000000
- 5556 multiletter control sequences out of 15000+600000
- 24475 words of font info for 98 fonts, out of 8000000 for 9000
+ 5567 multiletter control sequences out of 15000+600000
+ 25121 words of font info for 101 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,746b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,690b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (47 pages, 165288 bytes).
+Output written on thesis.dvi (49 pages, 175212 bytes).

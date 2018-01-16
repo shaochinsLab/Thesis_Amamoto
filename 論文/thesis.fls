@@ -109,9 +109,11 @@ OUTPUT thesis.toc
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 INPUT /opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
@@ -123,14 +125,15 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmex10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin6.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmti12.tfm
-INPUT figure/SJIT1.png
-INPUT extractbb -O figure/SJIT1.png
-INPUT figure/Lmax1.png
-INPUT extractbb -O figure/Lmax1.png
-INPUT figure/EDDrule.png
-INPUT extractbb -O figure/EDDrule.png
+INPUT figure/SJIT.pdf
+INPUT extractbb -O figure/SJIT.pdf
+INPUT figure/Lmax.pdf
+INPUT extractbb -O figure/Lmax.pdf
+INPUT figure/EDDrule.pdf
+INPUT extractbb -O figure/EDDrule.pdf
 INPUT figure/3SAT1.pdf
 INPUT extractbb -O figure/3SAT1.pdf
 INPUT figure/3SAT2.pdf

@@ -1,9 +1,8 @@
 \beamer@sectionintoc {1}{研究背景}{3}{0}{1}
-\beamer@sectionintoc {2}{研究目的}{5}{0}{2}
-\beamer@sectionintoc {3}{定式化}{6}{0}{3}
-\beamer@subsectionintoc {3}{1}{最大実行開始待ち時間最小化問題の定式化}{6}{0}{3}
-\beamer@subsectionintoc {3}{2}{\textsc { 3 - Satisfiability} の導入}{8}{0}{3}
-\beamer@sectionintoc {4}{多項式還元とは}{9}{0}{4}
-\beamer@sectionintoc {5}{問題の分析}{10}{0}{5}
-\beamer@sectionintoc {6}{研究成果}{11}{0}{6}
-\beamer@sectionintoc {7}{今後の課題}{12}{0}{7}
+\beamer@sectionintoc {2}{定式化}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{最大実行開始待ち時間最小化問題の定式化}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{\textsc {3-SATISFIABILITY} の導入}{8}{0}{2}
+\beamer@sectionintoc {3}{多項式還元とは}{9}{0}{3}
+\beamer@sectionintoc {4}{問題の分析}{10}{0}{4}
+\beamer@sectionintoc {5}{研究成果}{11}{0}{5}
+\beamer@sectionintoc {6}{今後の課題}{12}{0}{6}

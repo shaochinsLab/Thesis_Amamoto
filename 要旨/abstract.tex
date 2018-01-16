@@ -49,68 +49,67 @@
 また，実行開始待ち時間とは，タスクが到着してから，タスクの処理が開始されるまでの時間である．
 {\bf 最大実行開始待ち時間最小化問題（SPWT）}は，処理開始可能時刻を制約とし，最大の実行開始待ち時間（\mbox{\boldmath $W_{\max}$}）の最小化を目的とするスケジューリング問題である．
 $W_{\max}$ を目的関数としたスケジューリング問題は，どの機械モデルにおいても未解決問題である．
+
 % SPWT の部分問題に JITスケジューリング問題がある．
 % SPWT は，処理開始可能時刻付き最大遅れ時間最小化問題の部分問題として捉えることができる．
 % しかし，$W_{\max}$ を目的関数としたスケジューリング問題は未だ研究されていない．
 
 \section{研究目的}
-% 本研究では，SPWT に対して，以下を目的とする．
-
+SPWT は JIT ジョブ荷重和最大化問題（SJIT）の拡張問題，処理開始可能時刻付き最大遅れ時間最小化問題（SL）の部分問題として捉えることができる．SJIT は無関連並列機械モデルにおいて機械数が入力の一部の場合，SL は単一機械モデルにおいて，それぞれ強 NP 困難であることが証明されている\cite{SJIT}\cite{SL}．
+%本研究では，SPWT に対して，以下を目的とする．
 \begin{description}
-  % \setlength{\itemsep}{-0.3mm} % 項目間
   \item[目的 1 :]
   \underline{SPWT の計算複雑さを明らかにする．}
 \end{description}
-SPWT は JIT ジョブ荷重和最大化問題（SJIT）の拡張問題，処理開始可能時刻付き最大遅れ時間最小化問題（SL）の部分問題として捉えることができる．SJIT は無関連並列機械モデルにおいて，SL は単一機械モデルにおいて強 NP 困難であると証明されている．SPWTとこれらの問題の対応を取り，SPWT の NP 完全性の証明を行う．
-また，機械モデルおよび機械数に着目し，問題の難しさに影響を与える特徴を明らかにする．
+SPWT を決定問題として定義し，機械モデルおよび機械数に着目し，問題の難しさに影響を与える特徴を明らかにする．
 
 \begin{description}
   \item[目的 2 :]
   \underline{SPWT に対する効率的解法の提案．}
 \end{description}
-各機械モデルにおける SPWT の計算複雑さに基づいて，解法の提案を行う．
+SPWT の計算複雑さに基づいて，解法の提案を行う．また，計算サーバーにおける解法の実験的評価を行う．
 
 \section{研究成果}
-% 本研究では，SPWT に関して，以下の成果を得た．
+本研究では，SPWT に関して，以下の成果を得た．
 \begin{description}
   \item[成果 1 : ]
-  SPWT を決定問題として定義したとき，
-  無関連並列機械モデルにおいて機械数が入力の一部の場合，SPWT が {\bf NP 完全}であることを示した．
+  無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SPWT の NP 完全性}を示した．
 \end{description}
-SPWT の部分問題である SJIT との対応を取り，\textsc{3-SAT} からの還元により SPWT の NP 完全性を証明した．
+SJIT における\textsc{3-SAT} からの還元手法に基づき SPWT の NP 完全性を証明した．
 
 \begin{description}
   \item[成果 2 : ]
-  同一並列機械モデルにおける SPWT に対して，ヒューリスティックを開発し，有効性を示した．
+  同一並列機械モデルにおける SPWT に対して，\underline{ヒューリスティックを開発}し，有効性を示した．
 \end{description}
-貪欲アルゴリズムに基づいたヒューリスティックを開発した．ヒューリスティックにより出力された解から得られた最大実行開始待ち時間を $W_h$，最適解から得られた最大実行開始待ち時間を $W_{opt}$ としたとき，$\max\big\{W_h/W_{opt}\big\} = ???$ の結果が得られた．
+貪欲アルゴリズムに基づいたヒューリスティックを開発した．ヒューリスティックにより出力された解から得られた最大実行開始待ち時間を $W_h$，最適解から得られた最大実行開始待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = ???$} の結果が得られた．
 
 \begin{description}
   \item[成果 3 : ]
-  分枝限定法を改良し，分析規模を拡大した．
+  同一並列機械モデルにおける SPWT に対する\underline{厳密解法を開発}し，解法に対する計算時間の評価を行い，実用性を示した．
+  \begin{itemize}
+    \setlength{\leftskip}{-10mm}
+    \item {\bf 分割の要素数 = 機械数}となる分割のみを生成するアルゴリズムに改良した．
+    % \vspace{-1mm}
+    \item 分枝限定法に対して，SL の部分問題に対する多項式アルゴリズムの概念を導入した．
+  \end{itemize}
 \end{description}
-
-ジョブの機械への割り当てに対応する分割生成アルゴリズムの計算効率を向上させるため，{\bf 分割の要素数 = 機械数}となる分割のみを生成するアルゴリズムに改良した．
-また，SL の部分問題に対する多項式アルゴリズムの概念を取り入れることで，列挙する順列を減らし，分析規模の拡大を可能にした．
-その結果，同じ計算時間に対して，??? から ??? に分析規模の拡大を可能にした．
-
-% \begin{itemize}
-%   % \setlength{\itemsep}{-0.3mm} % 項目間
-%   \item 分割の要素数 = 機械数 となるように，分割生成アルゴリズムを改良．
-%   \item 分割の各要素におけるコストの下限の評価．
-%   \item 分割の各要素におけるコストの下限の降順での，分割の要素に対応する機械への割り当て．
-%   \item 機械に割り当てられていないジョブにおけるコストの下限の評価．
-% \end{itemize}
+分割生成アルゴリズムの改良により，考慮する分割の数を減らすことで計算効率を向上させた．また，部分問題に対する多項式アルゴリズムの概念を取り入れることで，列挙する実行可能解を減らし，計算効率を向上させた．
+その結果，同じインスタンスに対して，計算時間を約 {\bf ??? 倍}にすることに成功した．
 
 \begin{thebibliography}{9} %参考文献{載せる参考文献の数の上限}
-  \bibitem{SJIT}
+  \bibitem{SJIT} % SJITの計算複雑さの証明
   Sung, Vlach.
   Maximizing Weighted Number of Just-In-Time Jobs on Unrelated Parallel Machines. J SCHED 8, pp. 453-460, 2005.
-  % \vspace{-2mm}
-  \bibitem{NP}
+  \vspace{-2mm}
+  \bibitem{SL} % SLの計算複雑さの証明
   Garey, Johnson.
-  Computers and Intractability; A Guide to the Theory of NP-Completeness
-  W. H. Freeman And Co, pp. 18-44,1990.
+  Computers and Intractability A Guide to the Theory of NP-Completeness.
+  W. H. Freeman And Co, pp. 13-244, 1990.
+  % \vspace{-2mm}
+  % \bibitem{BandB}
+  % Land, Doig.
+  % An automatic method of solving discrete programming problems.
+  % The Econometric Society, 28, pp. 497-520, 1960.
 \end{thebibliography}
 
 \end{document}

@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex thesis"] 1515637503 "thesis.aux" "thesis.bbl" "thesis" 1515637507
+["bibtex thesis"] 1516092603 "thesis.aux" "thesis.bbl" "thesis" 1516092920
   "./splncs03.bst" 1244960222 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "thesis.aux" 1515637505 5009 0ecdd182741e571355d96a129f240e30 ""
+  "thesis.aux" 1516092748 5191 4f5f5a9e29ca6dc31ff06ebdc6904a8c ""
   "thesis.bib" 1515489564 2288 e73ef621b409389eb43608880ccf0fd4 ""
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["dvipdf"] 1515637506 "thesis.dvi" "thesis.pdf" "thesis" 1515637507
-  "thesis.dvi" 1515637505 165288 fd4f57d8c94f404a26ea2962c20fc355 "latex"
+["dvipdf"] 1516092748 "thesis.dvi" "thesis.pdf" "thesis" 1516092920
+  "thesis.dvi" 1516092748 175212 f5ff9ae92f0a307bb0589dc33943e808 "latex"
   (generated)
   "thesis.pdf"
-["latex"] 1515637504 "thesis.tex" "thesis.dvi" "thesis" 1515637507
+["latex"] 1516092744 "thesis.tex" "thesis.dvi" "thesis" 1516092920
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -69,23 +69,23 @@
   "algorithmic.sty" 1513324775 9318 1b70c8aa6da8405ab266dfdbc9817999 ""
   "extractbb -O figure/3SAT1.pdf" 0 -1 0 ""
   "extractbb -O figure/3SAT2.pdf" 0 -1 0 ""
-  "extractbb -O figure/EDDrule.png" 0 -1 0 ""
-  "extractbb -O figure/Lmax1.png" 0 -1 0 ""
-  "extractbb -O figure/SJIT1.png" 0 -1 0 ""
+  "extractbb -O figure/EDDrule.pdf" 0 -1 0 ""
+  "extractbb -O figure/Lmax.pdf" 0 -1 0 ""
+  "extractbb -O figure/SJIT.pdf" 0 -1 0 ""
   "extractbb -O figure/reduction.pdf" 0 -1 0 ""
   "figure/3SAT1.pdf" 1515395382 96261 5056704bcf4c579a1e11ff30c73aafc5 ""
   "figure/3SAT2.pdf" 1515394706 66468 ffdbd473550831a853a02a436222ff09 ""
-  "figure/EDDrule.png" 1513239275 23764 d493b51c5f4c9751b5970d34469bcaad ""
-  "figure/Lmax1.png" 1511945269 16056 16ea0dd589f6422adc0610059f8f058d ""
-  "figure/SJIT1.png" 1515389486 43360 dc507f899f01808f454b5df6a662b4a7 ""
-  "figure/reduction.pdf" 1515491147 49165 24766de5af61d3f757b7e3c2de28866e ""
+  "figure/EDDrule.pdf" 1516006181 26481 683699b8d30a3f6652b70ad38dea663d ""
+  "figure/Lmax.pdf" 1516004736 27857 81957aa9c0c4333101b029f9fb72cf46 ""
+  "figure/SJIT.pdf" 1516010062 88078 c93c34db20e5b43b3e14ccdd8553768a ""
+  "figure/reduction.pdf" 1515650370 49161 296c6eb4a51b58870eda2f5fa926987a ""
   "optlab-bachelor.cls" 1485728812 30240 c611650afaaf655e9026af53565b623c ""
-  "thesis.aux" 1515637505 5009 0ecdd182741e571355d96a129f240e30 ""
-  "thesis.bbl" 1515637503 1390 2458452b9ea3c44be935a9e3234efcff "bibtex thesis"
-  "thesis.tex" 1515637498 107786 bd6f6c48a38159b9f8a89e166ea7136a ""
-  "thesis.toc" 1515637505 2167 34cfc8b8a3629e52e2e8407d85de5f34 ""
+  "thesis.aux" 1516092748 5191 4f5f5a9e29ca6dc31ff06ebdc6904a8c ""
+  "thesis.bbl" 1516092604 1390 2458452b9ea3c44be935a9e3234efcff "bibtex thesis"
+  "thesis.tex" 1516092919 115306 670b7ef4a7bc30d2a557d738526ad9f9 ""
+  "thesis.toc" 1516092748 2236 ab0eeb1090d7c6bc48285b573ec0ba9c ""
   (generated)
-  "thesis.dvi"
   "thesis.log"
-  "thesis.toc"
+  "thesis.dvi"
   "thesis.aux"
+  "thesis.toc"

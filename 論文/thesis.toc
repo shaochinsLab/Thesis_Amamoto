@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {2.1}最大実行開始待ち時間最小化問題}{6}
 \contentsline {section}{\numberline {2.2}最大実行開始待ち時間最小化問題（決定問題）}{7}
 \contentsline {subsection}{\numberline {2.2.1}複雑性クラス}{8}
-\contentsline {subsection}{\numberline {2.2.2}既存のスケジューリング問題との対応}{9}
+\contentsline {subsection}{\numberline {2.2.2}既存のスケジューリング問題との対応}{10}
 \contentsline {chapter}{\numberline {第3章}従来研究}{12}
 \contentsline {section}{\numberline {3.1}JITジョブ荷重和最大化問題}{12}
 \contentsline {subsection}{\numberline {3.1.1}定式化}{12}
@@ -16,15 +16,15 @@
 \contentsline {subsection}{\numberline {3.2.1}定式化}{18}
 \contentsline {subsection}{\numberline {3.2.2}計算複雑さの証明}{19}
 \contentsline {subsection}{\numberline {3.2.3}解法のまとめ}{21}
-\contentsline {chapter}{\numberline {第4章}最大実行開始待ち時間最小化問題の計算複雑さ}{23}
-\contentsline {section}{\numberline {4.1}NP完全性の証明}{23}
-\contentsline {section}{\numberline {4.2}計算複雑さまとめ}{29}
-\contentsline {chapter}{\numberline {第5章}実験的評価}{31}
-\contentsline {section}{\numberline {5.1}本研究の提案解法}{31}
-\contentsline {section}{\numberline {5.2}分枝限定法による評価}{33}
-\contentsline {section}{\numberline {5.3}提案解法の評価と分析}{40}
-\contentsline {chapter}{\numberline {第6章}結論}{41}
-\contentsline {section}{\numberline {6.1}研究成果}{41}
-\contentsline {section}{\numberline {6.2}今後の課題}{41}
-\contentsline {chapter}{\numberline {第7章}付録}{43}
-\contentsline {section}{\numberline {7.1}実験結果}{43}
+\contentsline {chapter}{\numberline {第4章}最大実行開始待ち時間最小化問題の計算複雑さ}{24}
+\contentsline {section}{\numberline {4.1}無関連並列機械モデルにおける NP 完全性の証明}{24}
+\contentsline {section}{\numberline {4.2}計算複雑さのまとめ}{30}
+\contentsline {chapter}{\numberline {第5章}解法の提案と実験的評価}{32}
+\contentsline {section}{\numberline {5.1}ヒューリスティックの提案}{32}
+\contentsline {section}{\numberline {5.2}厳密解法の提案}{34}
+\contentsline {section}{\numberline {5.3}提案解法の評価と分析}{41}
+\contentsline {chapter}{\numberline {第6章}結論}{43}
+\contentsline {section}{\numberline {6.1}研究成果}{43}
+\contentsline {section}{\numberline {6.2}今後の課題}{44}
+\contentsline {chapter}{\numberline {第7章}付録}{45}
+\contentsline {section}{\numberline {7.1}実験結果}{45}
