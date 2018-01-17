@@ -4,45 +4,45 @@ The top-level auxiliary file: thesis.aux
 The style file: splncs03.bst
 Database file #1: thesis.bib
 Warning--missing publisher in EDD2
-You've used 8 entries,
+You've used 9 entries,
             2785 wiz_defined-function locations,
-            640 strings with 5566 characters,
-and the built_in function-call counts, 3724 in all, are:
-= -- 300
-> -- 86
-< -- 8
-+ -- 38
-- -- 28
-* -- 211
-:= -- 483
-add.period$ -- 7
-call.type$ -- 8
-change.case$ -- 34
+            646 strings with 5672 characters,
+and the built_in function-call counts, 4299 in all, are:
+= -- 351
+> -- 98
+< -- 10
++ -- 43
+- -- 32
+* -- 245
+:= -- 553
+add.period$ -- 8
+call.type$ -- 9
+change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 342
-empty$ -- 361
-format.name$ -- 33
-if$ -- 830
+cite$ -- 10
+duplicate$ -- 394
+empty$ -- 411
+format.name$ -- 38
+if$ -- 961
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 71
-newline$ -- 29
-num.names$ -- 16
-pop$ -- 122
+int.to.str$ -- 9
+missing$ -- 81
+newline$ -- 32
+num.names$ -- 18
+pop$ -- 137
 preamble$ -- 1
-purify$ -- 30
+purify$ -- 34
 quote$ -- 0
-skip$ -- 120
+skip$ -- 141
 stack$ -- 0
-substring$ -- 218
-swap$ -- 179
-text.length$ -- 8
+substring$ -- 259
+swap$ -- 211
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 28
 warning$ -- 1
-while$ -- 32
-width$ -- 9
-write$ -- 78
+while$ -- 37
+width$ -- 10
+write$ -- 88
 (There was 1 warning)

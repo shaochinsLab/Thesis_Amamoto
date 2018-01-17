@@ -288,7 +288,7 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
 第 \ref{3_s_2} 節では，処理開始可能時刻付き最大遅れ時間最小化問題について，計算複雑さと解法の観点から紹介する．
 
 \section{JITジョブ荷重和最大化問題}\label{3_s_1}
-この問題は　\textsc{3-SAT} からの還元により，強 NP 困難であることが Sung and Vlach [2005] \cite{JIT} によって証明されている．以下では，JIT ジョブ荷重和最大化問題を定式化し，問題が NP 困難であることの証明を示す．
+この問題は　\textsc{3-SAT} からの還元により，強 NP 困難であることが Sung and Vlach [2005] \cite{SJIT} によって証明されている．以下では，JIT ジョブ荷重和最大化問題を定式化し，問題が NP 困難であることの証明を示す．
 \subsection{定式化}
 \begin{description}
   \item[入力：] $n$ 個のジョブ $J_1,\ldots,J_n$ を $m$ 台の同一機械 $M_1,\ldots,M_m$
@@ -1033,15 +1033,11 @@ $$p(J^f(i,\ell),A(\mathcal{J}^f)) = \left\{ \begin{array}{lllll}
 \section{計算複雑さのまとめ}\label{4_s_2}
 本研究で，無関連並列機械モデルにおいて，機械数が入力の一部の場合，最大実行開始待ち時間最小化問題は，NP 完全であることが明らかになった．しかし，他の機械モデルにおける計算複雑さは明らかになっていない．
 
-しかし，$w = 0$ のとき，この問題は JIT スケジューリング問題に対応し，単一機械モデルと同一機械モデルにおいて，多項式時間で判定できることが明らかになっている．
+しかし，$w = 0$ のとき，この問題は JIT スケジューリング問題に対応し，単一機械モデルと同一機械モデルにおいて，多項式時間で判定できることが明らかになっている Cepek and Sung [2004] \cite{JIT}．
 
-以下で，単一機械モデルにおける最大実行開始待ち時間最小化問題（決定問題）について，$w = 0$ のとき，多項式で判定可能であることを示す．
-
-以下の条件を満たすとき，決定問題の解は Yes，満たさないとき No であることは明らかである．
+以下で，単一機械モデルにおける最大実行開始待ち時間最小化問題（決定問題）について，$w = 0$ のとき，以下の条件を満たすとき，決定問題の解は Yes，満たさないとき No であることは明らかである．
 $$\forall J,J' \in \mathcal{J}\bigg[\big[r(J),r(J) + p(J)\big) \cap \big[r(J'),r(J') + p(J')\big) = \emptyset\bigg]$$
 $w = 0$ となるスケジュールとは，すべてのジョブが処理開始可能時刻と 処理開始可能時刻 + 処理時間 の間で処理されなければならない．つまり，すべてのジョブに関して各ジョブの [処理開始可能時刻，処理開始可能時刻 + 処理時間] で表される範囲が被ってはいけない．この判定にかかる時間は高々 $\mathcal{O}(n^2)$ であることから，多項式時間で判定が可能である．
-
-
 同様に，同一並列機械モデルにおける最大実行開始待ち時間最小化問題（決定問題）についても多項式で判定可能である．
 
 $|\mathcal{J}'| \le |\mathcal{M}|$ を満たすとき，決定問題の解は Yes，満たさないとき No であることは明らかである．ただし $\mathcal{J}'$ は以下の通り．
@@ -1084,10 +1080,12 @@ $$\mathcal{M}(x) \supseteq S(p_1) \supseteq S(p_1,p_2) \supseteq
 \ldots, \supseteq S(p_1,p_2,\ldots,p_n)$$
 を得る．ここで，$|S(p_1,p_2,\ldots,p_n)| = 1$ である．\\
 
-\noindent 以下の {\sc Heuristic} が本研究の提案解法である．
-議論に先立ち表記を導入する．
+\noindent 以下の {\sc Heuristic} は，同一並列機械モデルにおける最大実行開始待ち時間最小化問題に対する提案解法である．議論に先立ち表記を導入する．
+
 \begin{itemize}
   \item ジョブの集合 $\mathcal{J} = \{J_1,\ldots,J_n\}$．
+  \item 処理開始可能時刻と処理開始可能時刻 + 処理時間 で表される区間が重なっているジョブの集合 $\mathcal{J}'$．つまり，$\mathcal{J}'$ は以下を満たす．
+  $$\mathcal{J}' \subseteq \mathcal{J} \text{ s.t. }\forall J,J' \in \mathcal{J}'\big[[s(J),s(J) + p(J)) \cap [s(J'),s(J') + p(J')) \neq \emptyset\big]$$
   \item 機械の集合 $\mathcal{M} = \{M_1,\ldots,M_m\}$．
   \item ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$．
   \item ジョブの処理時間を返す関数 $p : \mathcal{J} \to \mathbb{N}$．
@@ -1096,37 +1094,51 @@ $$\mathcal{M}(x) \supseteq S(p_1) \supseteq S(p_1,p_2) \supseteq
   \item スケジュールにおける最大実行開始待ち時間を返す関数 $w : S \to \mathbb{N}$．
   \item スケジュールにおけるジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$．
   \item スケジュール $S$ はジョブの順列を表す．
+  \item ．各 $M \in \mathcal{M}$ におけるスケジュール $S_M$ の集合 $\mathcal{S}$．
+  つまり，$\mathcal{S} = \{S_M \mid M \in \mathcal{M}\}$．
 \end{itemize}
 
 \begin{quote}
   \begin{description}
     \item[{\sc Heuristic}]
     \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,w,C)$
-    \item[出力 :] スケジュールの集合 $\mathcal{S}$，$\mathcal{S}$ における最大実行開始待ち時間 $W$．ただし $|\mathcal{S}| = |\mathcal{M}| = m$
+    \item[出力 :] スケジュールの集合 $\mathcal{S}$．
     \begin{description}
-      \item[Step 1.]
-      $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
-      \item[Step 2.]
-      各機械 $M \in \mathcal{M}$ のスケジュール $S_M \in \mathcal{S}$ におけるジョブの集合を $\mathcal{J}_{S_M}$ と表記する．
-      ただし，
-      $$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow \mathcal{J}_{S_M} \cap \mathcal{J}_{S_{M'}} = \emptyset \big]$$
-      $$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow S_M \cap S_M' = \emptyset \big]$$
-      を満たす．つまり，$\mathcal{J}_{S_M}$ は $\mathcal{J}$ の分割，$S_M$ は $\mathcal{S}$ の分割である．
-      \item[Step 3.]
-      各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
+      \item[Step 1.] $|\mathcal{J}'| \le |\mathcal{M}|$ を満たすとき，
       \begin{description}
-        \item[Step 3.1.] 最小完了時刻を持つ機械集合の要素 $M_a \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(\mathcal{J}_{S_M})\right\}$ を 1 つ求める．
-        ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
+        \item[Step 1.1.] 各 $J \in \mathcal{J} \setminus \mathcal{J}'$ を任意の機械 $M \in \mathcal{M}$ に割り当てる．また，各 $J' \in \mathcal{J}'$ を $M \in \mathcal{M}$ に割り当てる．ただし，$\forall M,M' \in \mathcal{M}\big[S_M \cap S_{M'} = \emptyset\big]$ を満たす．
       \end{description}
-      \item[Step 4.]
-      ここで，$\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$，$W = w(\mathcal{S})$ として，$\mathcal{S},W$ を出力する．
+      \item[Step 2.] $|\mathcal{J}'| \le |\mathcal{M}|$ を満たさないとき，
+      \begin{description}
+        \item[Step 2.1.]
+        $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
+        \item[Step 2.2.]
+        各機械 $M \in \mathcal{M}$ のスケジュール $S_M \in \mathcal{S}$ におけるジョブの集合を $\mathcal{J}_{S_M}$ と表記する．
+        ただし，
+        $$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow \mathcal{J}_{S_M} \cap \mathcal{J}_{S_{M'}} = \emptyset \big]$$
+        $$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow S_M \cap S_M' = \emptyset \big]$$
+        を満たす．つまり，$\mathcal{J}_{S_M}$ は $\mathcal{J}$ の分割，$S_M$ は $\mathcal{S}$ の分割である．
+        \item[Step 2.3.]
+        各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
+        \begin{description}
+          \item[Step 2.3.1.] 最小完了時刻を持つ機械集合の要素 $M_a \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(\mathcal{J}_{S_M})\right\}$ を 1 つ求める．
+          ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
+        \end{description}
+        \item[Step 2.4.]
+        ここで，$\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$，$W = w(\mathcal{S})$ として，$\mathcal{S},W$ を出力する．
+      \end{description}
     \end{description}
   \end{description}
 \end{quote}
 
-上記 {\sc Heuristic} は，処理開始可能時刻が最も早いジョブから順に，処理をしていない機械，または処理が一番早く終わった機械に割り当てる．
+上記 {\sc Heuristic} は，すべてのジョブが JIT ジョブのとき，JIT スケジューリングに適用するアルゴリズムを適用する．それ以外のとき，処理開始可能時刻が最も早いジョブから順に，処理をしていない機械，または処理が一番早く終わった機械に割り当てる．
 
+Step 1. では，各ジョブにおける処理開始可能時刻と処理開始可能時刻 + 処理時間 の区間が重なっているジョブの集合の要素数が機械数より少ない時，$\mathcal{J}'$ の各ジョブを別の機械に割り当てることで，実行開始待ち時間が 0 のスケジュールを作ることができる．
+それ以外のとき，処理開始可能時刻が最も早いジョブから順に，処理をしていない機械，または処理が一番早く終わった機械に割り当てる．
 Step 3. で，処理をしていない機械，または処理が一番早く終わった機械 を取得し $M_a$ と定義している．その後，機械 $M_a$におけるスケジュール $S_{M_a}$ にジョブ $J_i$ を追加する．
+
+この判定を追加したことで，インスタンスにおける最適解から得られる最大実行開始待ち時間が 0
+の場合，上記 {\sc Heuristic} でも，最大実行開始待ち時間が 0 となるスケジュールを作ることができる．
 
 \section{厳密解法の提案}\label{5_s_2}
 同一並列機械モデル，無関連並列機械モデルにおける最大実行開始待ち時間最小化問題に対する厳密解法を開発した．
@@ -1215,9 +1227,9 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
   \begin{description}
     \item[{\sc StrictSolutionMethod}]
     \item[入力：] $I = (\mathcal{J},\mathcal{M},s,r,p,w,C,W)$
-    \item[出力：] スケジュール $\mathcal{S}$
+    \item[出力：] スケジュールの集合 $\mathcal{S}$
     \begin{description}
-      \item[Step 1.] $I$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．
+      \item[Step 1.] $I$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．$W = 0$ のとき，スケジュール $\mathcal{S}$ を出力して処理を終了する．
       \item[Step 2.] 組 $(b,b_{\max},n,m)$ を入力として，{\sc increment} を実行し，出力が {\sc false} となるまで，以下の処理を繰り返す．
       \begin{description}
         \item[Step 2.1.] $(b)$ を入力として，{\sc sort} を実行する．
@@ -1229,6 +1241,7 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
             \item[Step 2.2.2.1.] ${\mbox order}[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
           \end{description}
           \item[Step 2.2.3.] 組 $(\mathcal{J}',s,r,p,w,C,0)$ を入力として，{\sc BranchAndBound} を実行する．
+          \item[Step 2.2.4.] {\sc BranchAndBound} の出力を $S$ とする．このとき，$\mathcal{S} := \mathcal{S} \cup S$ とする．
         \end{description}
       \end{description}
       \item[Step 3.] スケジュール $\mathcal{S}$ を出力する．
@@ -1369,14 +1382,15 @@ Step 3.2. では，機械に割り当てられていないジョブの集合 $\m
 全てのジョブをスケジュールしたとき，Step 1. で解の更新を行っている．それ以降の探索は更新した解を用いて判定を行う．
 
 \section{提案解法の評価と分析}\label{5_s_3}
-同一並列機械モデル，無関連並列機械モデルにおける最大実行開始待ち時間最小化問題に対して，本研究で提案したヒューリスティックの実験的評価を行った．評価方法は，各インスタンスに対して，本研究で提案するアルゴリズムにより出力された解から得られた最大実行開始待ち時間 $W_h$ と，厳密解法により出力された最適解から得られた最大実行開始待ち時間 $W_{opt}$ を比較するものである．また，$W_h/W_{opt}$ を competitive ratio と表記する．
+同一並列機械モデル，無関連並列機械モデルにおける最大実行開始待ち時間最小化問題に対して，本研究で提案したヒューリスティックの実験的評価を行った．評価方法は，各インスタンスに対して，本研究で提案するアルゴリズムにより出力された解から得られた最大実行開始待ち時間 $W_h$ と，厳密解法により出力された最適解から得られた最大実行開始待ち時間 $W_{opt}$ を比較するものである．また，$W_h/W_{opt}$ を {\sc competitive ratio} と表記する．
 本研究では，ヒューリスティックと厳密解法に対して以下を評価の軸として実験を行った．
+
 \begin{description}
   \item[ヒューリスティックの評価] ~
   \begin{description}
-    \item[軸 1 :] 各インスタンスにおけるジョブの処理時間の幅と competitive ratio の関係
+    \item[軸 1 :] 各インスタンスにおけるジョブの処理時間の幅と {\sc competitive ratio} の関係
     \item[軸 2 :] 各インスタンスにおけるジョブの処理時間の幅と計算時間の関係
-    \item[軸 3 :] 同一並列機械モデルと無関連並列機械モデルの competitive ratio の比較
+    \item[軸 3 :] 同一並列機械モデルと無関連並列機械モデルの {\sc competitive ratio} の比較
     \item[軸 4 :] 同一並列機械モデルと無関連並列機械モデルの計算時間の比較
   \end{description}
   \item[厳密解法の評価] ~
@@ -1385,6 +1399,31 @@ Step 3.2. では，機械に割り当てられていないジョブの集合 $\m
     \item[軸 6 :] 分枝限定法アルゴリズムの改良前と，改良後の計算時間の比較
   \end{description}
 \end{description}
+
+実験結果の紹介に先立ち，得られた {\sc competitive ratio} の値がどの程度であれば，アルゴリズムの質が良いと言えるかという点について紹介する．
+\begin{table}[htb]
+  \begin{center}
+    \begin{tabular}{|l|c|r|} \hline
+      $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
+      $J_1$ & 2 & 8 \\ \hline
+      $J_2$ & 3 & 7 \\ \hline
+      $J_3$ & 11 & 11 \\ \hline
+      $J_4$ & 16 & 10 \\ \hline
+      $J_5$ & 23 & 10 \\ \hline
+      $J_6$ & 26 & 11 \\ \hline
+    \end{tabular}
+    \caption{各ジョブにおける処理開始可能時刻と処理時間}
+  \end{center}
+\end{table}
+
+表 5.1 と同一並列機械の集合 $\mathcal{M} (|\mathcal{M}| = 2)$ がインスタンスとして与えられたとき，最適なスケジュールとそうでないスケジュールは以下の通り．
+\begin{description}
+  \item[最適なスケジュール ] $S_1 : (J_1, J_3, J_5)$，$S_2 : (J_2, J_4, J_6)$．このとき，$w(\mathcal{S}) = 0$ となる．ただし，$\mathcal{S} = S_1 \cup S_2$．
+  \item[最適でないスケジュール] $S_1 : (J_1, J_3, J_6)$，$S_2 : (J_2, J_4, J_5)$．このとき，$w(\mathcal{S}) = 3$ となる．ただし，$\mathcal{S} = S_1 \cup S_2$．
+\end{description}
+
+上記のとき，{\sc competitive ratio} = {\sc infinity} となり，最適でないスケジュールを生成したアルゴリズムの質は無限大となる．
+以下の実験結果は，{\sc competitive ratio} = {\sc infinity} となりうる状況下で得られたものである．つまり，{\sc competitive ratio} = 定数 のとき，アルゴリズムの質は悪くないと言える．
 
 \chapter{結論}\label{c_6}
 \section{研究成果}

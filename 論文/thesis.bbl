@@ -2,6 +2,10 @@
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
+\bibitem{JIT}
+Cepek, O., Sung, S.C.: Just-in-time scheduling with periodic time slots.
+  Scientiae Mathematicae Japonicae Online  10,  431--437 (2004)
+
 \bibitem{3SAT}
 Garey, M.R., Johnson, D.S.: Computers and Intractability; A Guide to the Theory
   of NP-Completeness. W. H. Freeman And Co, New York, NY, USA (1990)
@@ -31,7 +35,7 @@ Lawler, E.L.: Optimal sequencing of a single machine subject to precedence
 Little, Murty, S., Karel: An algorithm for the traveling salesman problem.
   Operations Research  11,  972--989 (1963)
 
-\bibitem{JIT}
+\bibitem{SJIT}
 Sung, S.C., Vlach: Maximizing weighted number of just-in-time jobs on unrelated
   parallel machines. Jurnal of Scheduling  8,  453--460 (2005)
 

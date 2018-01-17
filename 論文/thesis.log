@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  16 JAN 2018 17:52
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  17 JAN 2018 17:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -294,37 +294,37 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [32
 
 ] [33]
-Overfull \hbox (20.3258pt too wide) in paragraph at lines 1118--1120
+Overfull \hbox (50.80055pt too wide) in paragraph at lines 1124--1126
 []\JY1/mc/m/it/12 最小完了時刻を持つ機械集合の要素 $\OML/cmm/m/it/12 M[] \OMS/cmsy/m/n/12 2 []$
  []
 
-[34] [35] [36] [37] [38] [39] [40] [41] [42]
+[34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
 第 6 章
-[43
+[44
 
-] [44]
+] [45]
 第 7 章
-(./thesis.bbl [45
+(./thesis.bbl [46
 
-]) [46
+]) [47
 
-] [47
+] [48
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [48] (./thesis.aux)
+ [49] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2000 strings out of 493653
- 23180 string characters out of 6150337
+ 2002 strings out of 493653
+ 23200 string characters out of 6150337
  95964 words of memory out of 5000000
- 5567 multiletter control sequences out of 15000+600000
+ 5569 multiletter control sequences out of 15000+600000
  25121 words of font info for 101 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,19n,24p,690b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (49 pages, 175212 bytes).
+Output written on thesis.dvi (50 pages, 181488 bytes).
