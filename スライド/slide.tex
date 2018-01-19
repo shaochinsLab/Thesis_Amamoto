@@ -18,7 +18,7 @@
 \definecolor{mathFormula}{RGB}{53,121,53} %数式
 \setbeamercolor{math text}{fg=mathFormula}
 
-\definecolor{alertColor}{RGB}{255,75,75} %alert
+\definecolor{alertColor}{RGB}{255,70,70} %alert
 \setbeamercolor{alerted text}{fg=alertColor}
 
 \definecolor{blockAlertColor}{RGB}{0,0,0} %alertblock内の文字
@@ -27,6 +27,10 @@
 \definecolor{headColor}{RGB}{52,38,89} %見出しカラー
 \setbeamercolor{structure}{fg=headColor}
 \setbeamercolor{subsection in toc}{fg=headColor}
+
+\usepackage[absolute,overlay]{textpos}
+\setbeamercovered{dynamic}
+% \usepackage[colorgrid,gridunit=pt,texcoord]{eso-pic}
 
 
 % \mathversion{bold}
@@ -38,6 +42,7 @@
 \setbeamertemplate{items}[default] % itemize 変更
 \renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語をゴシック体に
 \renewcommand{\familydefault}{\sfdefault} %英字をサンセリフに
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
 %\renewcommand{\familydefault}{\rmdefault} %英字をローマンに
 %\setbeamertemplate{section in toc}[square] %目次を球体から四角へ
 % \newtheorem{remark}[theorem]{Remark}
@@ -60,40 +65,32 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{研究背景}
-\begin{frame}{研究背景：Web サービスにおける処理の流れ}
-  \begin{block}{1.利用者がサーバーにタスク処理の要求を送る．}
-    サービスの利用者が，その サービス で処理を行いたいとき，利用者の処理要求が，運用している企業の計算サーバーに送られる．
-  \end{block}
+\begin{frame}{研究背景：Web サービスにおける処理の流れと問題}
+  \begin{figure}[h]
+    \centering
+    \includegraphics<1>[width=12cm]{figure/server1.pdf}
+    \includegraphics<2>[width=12cm]{figure/server2.pdf}
+    \includegraphics<3>[width=12cm]{figure/server3.pdf}
+    \includegraphics<4>[width=12cm]{figure/server4.pdf}
+  \end{figure}
 
-  \begin{alertblock}{2.タスクを計算サーバーに割当てる．}
-    利用者から届いたタスクは，一旦，大元のサーバーに送られる．そのサーバーは，タスクの処理を行う計算サーバーにタスクを割当てる．
-  \end{alertblock}
-
-  \begin{alertblock}{3.計算サーバーがタスクの処理を行う．}
-    サーバーによって，振り分けられたタスクの処理を行う．
-  \end{alertblock}
-
-  \begin{block}{4.タスクの処理結果を利用者に送る．}
-    タスクの処理が終わった時点で，処理結果を利用者に送る．
-  \end{block}
-\end{frame}
-
-\begin{frame}{研究背景：Web サービスにおける問題}
   \begin{block}{問題}
+    \uncover<4->{
     Web サービスを運用している会社では，運用しているサービスの応答が遅いと，顧客離れやクレームの被害を受けることがある．そのため，計算サーバーの応答の早さは重要である．
+    }
   \end{block}
-\end{frame}
 
+\end{frame}
 %図を入れる
 
 \begin{frame}{研究背景：スケジューリング問題との対応}
-  \begin{block}{研究背景：計算サーバーへのタスク割当てとスケジューリング問題}
-    Web サービスの問題を解決する方法の 1 つとして，\alert{タスクが到着してから，処理されるまでの時間を短くする}方法が挙げられる．計算サーバーにおける各時間は以下に対応する．つまり，計算サーバーへのタスク割当ては，スケジューリング問題として捉えることができる．
+  \begin{block}{研究背景：スケジューリング問題との対応}
+    Web サービスの問題を解決する方法の 1 つとして，\alert{タスクが到着してから，処理されるまでの時間を短くする}方法が挙げられる．計算サーバーにおける各時間は以下に対応する．つまり，計算サーバーへのタスク割り当ては，スケジューリング問題として捉えることができる．
     \begin{itemize}
       \item タスクの到着時刻とは，\alert{処理開始可能時刻}に対応する．
       \item タスクが到着してから，タスクの処理が開始されるまでの時間とは，\alert{実行開始待ち時間}に対応する．
     \end{itemize}
-    最大実行開始待ち時間最小化問題（以下，SPWT）は，処理開始可能時刻を制約とし，最大の実行開始待ち時間の最小化を目的とするスケジューリング問題として捉えることができる．
+    \alert{最大実行開始待ち時間最小化問題（SPWT）}は，処理開始可能時刻を制約とし，最大の実行開始待ち時間の最小化を目的とするスケジューリング問題として捉えることができる．
   \end{block}
 
   \begin{block}{研究目的}
@@ -127,7 +124,7 @@
   \begin{block}{入力}
     \begin{itemize}
       \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
-      \item {機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
+      \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
       \item {ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$}
       \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
       \item {実行開始待ち時間 $w$}
@@ -158,7 +155,7 @@
 
 \subsection{\textsc{3-SATISFIABILITY} の導入}
 \begin{frame}{定式化：${\textcolor{white}{\mbox {\sc 3-SATISFIABILITY}}}$}
-  \textsc{3 - Satisfiability (3-SAT) } は決定問題の 1 つで，この問題の計算複雑さは NP  完全であることが知られている．
+  \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題の計算複雑さは NP  完全であることが知られている．
   \begin{tabular}{cc}
     \begin{minipage}[]{0.7\hsize}
       \begin{block}{\textsc{3-SATISFIABILITY}}
@@ -199,11 +196,10 @@
       \end{block}
     \end{minipage}
     \begin{minipage}[c]{0.5\hsize}
-      \begin{figure}[c]
+      \begin{textblock*}{0.4\linewidth}(210pt, 20pt)
         \centering
-        \includegraphics[width=5cm,bb=0 0 360 260
-        ]{figure/reduction.pdf}
-      \end{figure}
+        \includegraphics[width=6cm,bb=0 0 350 260]{figure/reduction.pdf}
+      \end{textblock*}
     \end{minipage}
   \end{tabular}
   \begin{block}{}
@@ -221,7 +217,7 @@
     \begin{itemize}
       \item {$w = 0$ のとき，処理開始可能時刻ちょうどで処理を開始しなければならない．}
       \begin{itemize}
-        \item {\alert{SJIT ジョブスケジューリング問題（SJIT）}と対応する．}
+        \item {\alert{JIT ジョブスケジューリング問題（SJIT）}と対応する．}
       \end{itemize}
       \item {SPWT において，納期 = (処理開始可能時刻 + 処理時間 + $w$ ）と定義できる．}
       \begin{itemize}
@@ -241,16 +237,49 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{研究成果}
-\begin{frame}{研究成果}
-  \begin{block}{成果 1}
+\begin{frame}{研究成果：問題の計算複雑さ}
+  \begin{alertblock}{成果 1}
     無関連並列機械モデルにおいて，機械数が入力の一部の場合，SPWT が NP 完全であることを明らかにした．
-  \end{block}
-  \begin{block}{成果 2}
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{研究成果：ヒューリスティックの提案}
+  \begin{alertblock}{成果 2}
     同一並列機械モデルにおける SPWT に対して，ヒューリスティックの開発と解法に対する実験的評価を行った．
+  \end{alertblock}
+  \begin{block}{貪欲アルゴリズムに基づいた解法}
+    \begin{description}
+      \setlength{\leftskip}{-10mm}
+      \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,C)$
+      \item[出力 :] スケジュールの集合 $\mathcal{S}$．
+      \begin{description}
+        \setlength{\leftskip}{-25mm}
+        \item[Step 1.]
+        $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
+        \item[Step 2.]
+        各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
+        \begin{description}
+          \item[Step 2.1.]
+          \setlength{\leftskip}{-40mm}
+          最小完了時刻を持つ機械集合の要素 $M_a \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(\mathcal{J}_{S_M})\right\}$ を 1 つ求める．
+          ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．ただし，$S_{M_a}$ は機械 $M_a \in \mathcal{M}$ におけるスケジュール．
+        \end{description}
+        \item[Step 3.]
+        $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
+      \end{description}
+    \end{description}
   \end{block}
-  \begin{block}{成果 3}
+\end{frame}
+
+\begin{frame}{研究成果：ヒューリスティックの実験的評価}
+
+\end{frame}
+
+\begin{frame}{研究成果：厳密解法の提案}
+  \begin{alertblock}{成果 3}
     同一並列機械モデルにおける SPWT に対して，厳密解法の開発と計算時間の分析を行った．
-  \end{block}
+  \end{alertblock}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{今後の課題}

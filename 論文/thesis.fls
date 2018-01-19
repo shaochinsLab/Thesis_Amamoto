@@ -118,6 +118,8 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
+INPUT figure/3-PARTITION.pdf
+INPUT extractbb -O figure/3-PARTITION.pdf
 INPUT figure/reduction.pdf
 INPUT extractbb -O figure/reduction.pdf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi10.tfm
