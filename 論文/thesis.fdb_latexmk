@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex thesis"] 1516335784 "thesis.aux" "thesis.bbl" "thesis" 1516336781
+["bibtex thesis"] 1516433017 "thesis.aux" "thesis.bbl" "thesis" 1516586154
   "./splncs03.bst" 1244960222 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "thesis.aux" 1516336778 5495 e68c8f568f2ffe9208e58eb2412eb496 ""
+  "thesis.aux" 1516586153 5495 639b7584657890409a82c120db93d415 ""
   "thesis.bib" 1516176098 2466 fa01dc413c9f5176c391441e8fdd3fad ""
   (generated)
-  "thesis.bbl"
   "thesis.blg"
-["dvipdf"] 1516336778 "thesis.dvi" "thesis.pdf" "thesis" 1516336781
-  "thesis.dvi" 1516336778 183932 d0a0b9f064ddaa98fc47ce32f20f7ef2 "latex"
+  "thesis.bbl"
+["dvipdf"] 1516586153 "thesis.dvi" "thesis.pdf" "thesis" 1516586154
+  "thesis.dvi" 1516586153 183544 b742663b682448118a7f4f5f01087dad "latex"
   (generated)
   "thesis.pdf"
-["latex"] 1516336774 "thesis.tex" "thesis.dvi" "thesis" 1516336781
+["latex"] 1516586152 "thesis.tex" "thesis.dvi" "thesis" 1516586154
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -75,19 +75,19 @@
   "extractbb -O figure/SJIT.pdf" 0 -1 0 ""
   "extractbb -O figure/reduction.pdf" 0 -1 0 ""
   "figure/3-PARTITION.pdf" 1516258656 32878 c2ace6cddfd467657609ef8ff071fd2a ""
-  "figure/3SAT1.pdf" 1515395382 96261 5056704bcf4c579a1e11ff30c73aafc5 ""
+  "figure/3SAT1.pdf" 1516431965 97626 d177501216bf088fe985012e2c45a2d8 ""
   "figure/3SAT2.pdf" 1515394706 66468 ffdbd473550831a853a02a436222ff09 ""
   "figure/EDDrule.pdf" 1516006181 26481 683699b8d30a3f6652b70ad38dea663d ""
   "figure/Lmax.pdf" 1516004736 27857 81957aa9c0c4333101b029f9fb72cf46 ""
   "figure/SJIT.pdf" 1516010062 88078 c93c34db20e5b43b3e14ccdd8553768a ""
   "figure/reduction.pdf" 1516328579 55763 f6daa6f4191a2e9ecf4ff9aead38942e ""
   "optlab-bachelor.cls" 1485728812 30240 c611650afaaf655e9026af53565b623c ""
-  "thesis.aux" 1516336778 5495 e68c8f568f2ffe9208e58eb2412eb496 ""
-  "thesis.bbl" 1516335784 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
-  "thesis.tex" 1516336772 120757 6adc80dfe6360908a3f834f06f6eb624 ""
-  "thesis.toc" 1516336778 2236 ef12fdf9e95dc0e098cb10992f31da7d ""
+  "thesis.aux" 1516586153 5495 639b7584657890409a82c120db93d415 ""
+  "thesis.bbl" 1516433018 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
+  "thesis.tex" 1516586151 120262 360891cdc6eb9253c3cffae41749ef14 ""
+  "thesis.toc" 1516586153 2236 e13187b58e65271334efefa0e9280d60 ""
   (generated)
-  "thesis.log"
   "thesis.toc"
   "thesis.aux"
+  "thesis.log"
   "thesis.dvi"

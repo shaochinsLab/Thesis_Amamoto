@@ -9,7 +9,7 @@
 \date{}
 %%%%%% DEFINICE ZAHLAVI
 \newfont{\m}{cmr8}
-\newfont{\ms}{cmsl8}
+\newfont{\ms}{cmSRTD8}
 %%%%%% KONEC DEFINICE ZAHLAVI
 \usepackage{amsfonts}
 \usepackage{setspace} % setspaceパッケージのインクルード
@@ -46,51 +46,51 @@
 要求を行い，そのタスクが計算サーバーに到着した後である．
 
 タスクの到着時刻とは，スケジューリング問題における{\bf 処理開始可能時刻}である．
-また，実行開始待ち時間とは，タスクが到着してから，タスクの処理が開始されるまでの時間である．
-{\bf 最大実行開始待ち時間最小化問題（SPWT）}は，処理開始可能時刻を制約とし，最大の実行開始待ち時間（\mbox{\boldmath $W_{\max}$}）の最小化を目的とするスケジューリング問題である．
+また，{\bf 実行開始待ち時間}とは，タスクが到着してから，タスクの処理が開始されるまでの時間である．
+{\bf 最大実行開始待ち時間最小化問題（SWT）}は，処理開始可能時刻を制約とし，最大の実行開始待ち時間（\mbox{\boldmath $W_{\max}$}）の最小化を目的とするスケジューリング問題である．
 $W_{\max}$ を目的関数としたスケジューリング問題は，どの機械モデルにおいても未解決問題である．
 
-% SPWT の部分問題に JITスケジューリング問題がある．
-% SPWT は，処理開始可能時刻付き最大遅れ時間最小化問題の部分問題として捉えることができる．
+% SWT の部分問題に JITスケジューリング問題がある．
+% SWT は，処理開始可能時刻付き最大遅れ時間最小化問題の部分問題として捉えることができる．
 % しかし，$W_{\max}$ を目的関数としたスケジューリング問題は未だ研究されていない．
 
 \section{研究目的}
-SPWT は JIT ジョブ荷重和最大化問題（SJIT）の拡張問題，処理開始可能時刻付き最大遅れ時間最小化問題（SL）の部分問題として捉えることができる．SJIT は無関連並列機械モデルにおいて機械数が入力の一部の場合，SL は単一機械モデルにおいて，それぞれ強 NP 困難であることが証明されている\cite{SJIT}\cite{SL}．
-%本研究では，SPWT に対して，以下を目的とする．
+SWT は JIT ジョブ荷重和最大化問題（SJIT）の拡張問題，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）の部分問題として捉えることができる．SJIT は無関連並列機械モデルにおいて機械数が入力の一部の場合，SRTD は単一機械モデルにおいて，それぞれ強 NP 困難であることが証明されている\cite{SJIT}\cite{SRTD}．
+%本研究では，SWT に対して，以下を目的とする．
 \begin{description}
   \item[目的 1 :]
-  \underline{SPWT の計算複雑さを明らかにする．}
+  \underline{SWT の計算複雑さを明らかにする．}
 \end{description}
-SPWT を決定問題として定義し，機械モデルおよび機械数に着目し，問題の難しさに影響を与える特徴を明らかにする．
+SWT を決定問題として定義し，機械モデルおよび機械数に着目し，問題の難しさに影響を与える特徴を明らかにする．
 
 \begin{description}
   \item[目的 2 :]
-  \underline{SPWT に対する効率的解法の提案．}
+  \underline{SWT に対する効率的解法の提案．}
 \end{description}
-SPWT の計算複雑さに基づいて，解法の提案を行う．また，計算サーバーにおける解法の実験的評価を行う．
+SWT の計算複雑さに基づいて，解法の提案を行う．また，計算サーバーにおける解法の実験的評価を行う．
 
 \section{研究成果}
-本研究では，SPWT に関して，以下の成果を得た．
+本研究では，SWT に関して，以下の成果を得た．
 \begin{description}
   \item[成果 1 : ]
-  無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SPWT の NP 完全性}を示した．
+  無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SWT の NP 完全性}を示した．
 \end{description}
-SJIT における\textsc{3-SAT} からの還元手法に基づき SPWT の NP 完全性を証明した．
+SJIT における\textsc{3-SAT} からの還元手法に基づき SWT の NP 完全性を証明した．
 
 \begin{description}
   \item[成果 2 : ]
-  同一並列機械モデルにおける SPWT に対して，\underline{ヒューリスティックを開発}し，有効性を示した．
+  同一並列機械モデルにおける SWT に対して，\underline{ヒューリスティックを開発}し，有効性を示した．
 \end{description}
 貪欲アルゴリズムに基づいたヒューリスティックを開発した．ヒューリスティックにより出力された解から得られた最大実行開始待ち時間を $W_h$，最適解から得られた最大実行開始待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = ???$} の結果が得られた．
 
 \begin{description}
   \item[成果 3 : ]
-  同一並列機械モデルにおける SPWT に対する\underline{厳密解法を開発}し，解法に対する計算時間の評価を行い，実用性を示した．
+  同一並列機械モデルにおける SWT に対する\underline{厳密解法を開発}し，解法に対する計算時間の評価を行い，実用性を示した．
   \begin{itemize}
     \setlength{\leftskip}{-10mm}
     \item {\bf 分割の要素数 = 機械数}となる分割のみを生成するアルゴリズムに改良した．
     % \vspace{-1mm}
-    \item 分枝限定法に対して，SL の部分問題に対する多項式アルゴリズムの概念を導入した．
+    \item 分枝限定法に対して，SRTD の部分問題に対する多項式アルゴリズムの概念を導入した．
   \end{itemize}
 \end{description}
 分割生成アルゴリズムの改良により，考慮する分割の数を減らすことで計算効率を向上させた．また，部分問題に対する多項式アルゴリズムの概念を取り入れることで，列挙する実行可能解を減らし，計算効率を向上させた．
@@ -101,7 +101,7 @@ SJIT における\textsc{3-SAT} からの還元手法に基づき SPWT の NP �
   Sung, Vlach.
   Maximizing Weighted Number of Just-In-Time Jobs on Unrelated Parallel Machines. J SCHED 8, pp. 453-460, 2005.
   \vspace{-2mm}
-  \bibitem{SL} % SLの計算複雑さの証明
+  \bibitem{SRTD} % SRTDの計算複雑さの証明
   Garey, Johnson.
   Computers and Intractability A Guide to the Theory of NP-Completeness.
   W. H. Freeman And Co, pp. 13-244, 1990.

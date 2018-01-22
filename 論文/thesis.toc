@@ -18,13 +18,13 @@
 \contentsline {subsection}{\numberline {3.2.3}解法のまとめ}{21}
 \contentsline {chapter}{\numberline {第4章}最大実行開始待ち時間最小化問題の計算複雑さ}{24}
 \contentsline {section}{\numberline {4.1}無関連並列機械モデルにおける NP 完全性の証明}{24}
-\contentsline {section}{\numberline {4.2}計算複雑さのまとめ}{30}
-\contentsline {chapter}{\numberline {第5章}解法の提案と実験的評価}{32}
-\contentsline {section}{\numberline {5.1}ヒューリスティックの提案}{32}
-\contentsline {section}{\numberline {5.2}厳密解法の提案}{35}
-\contentsline {section}{\numberline {5.3}提案解法の評価と分析}{42}
-\contentsline {chapter}{\numberline {第6章}結論}{44}
-\contentsline {section}{\numberline {6.1}研究成果}{44}
-\contentsline {section}{\numberline {6.2}今後の課題}{45}
-\contentsline {chapter}{\numberline {第7章}付録}{46}
-\contentsline {section}{\numberline {7.1}実験結果}{46}
+\contentsline {section}{\numberline {4.2}計算複雑さのまとめ}{31}
+\contentsline {chapter}{\numberline {第5章}解法の提案と実験的評価}{33}
+\contentsline {section}{\numberline {5.1}ヒューリスティックの提案}{33}
+\contentsline {section}{\numberline {5.2}厳密解法の提案}{36}
+\contentsline {section}{\numberline {5.3}提案解法の評価と分析}{43}
+\contentsline {chapter}{\numberline {第6章}結論}{45}
+\contentsline {section}{\numberline {6.1}研究成果}{45}
+\contentsline {section}{\numberline {6.2}今後の課題}{46}
+\contentsline {chapter}{\numberline {第7章}付録}{47}
+\contentsline {section}{\numberline {7.1}実験結果}{47}
