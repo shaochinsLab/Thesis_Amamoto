@@ -7,7 +7,6 @@
 \setbeamerfont{frametitle}{size=\large,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
-\setbeamertemplate{items}[circle]
 \setbeamertemplate{section in toc}[circle]
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
@@ -74,7 +73,7 @@
     \section{計算論的分析とは}
     \begin{frame}{計算論的分析とは}
       \begin{block}{}
-        
+
       \end{block}
     \end{frame}
 
@@ -113,28 +112,74 @@
 
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{定式化}
-    \subsection{最大待ち時間最小化問題の定式化}
+    % \section{定式化}
+    % \subsection{最大待ち時間最小化問題の定式化}
+    % \begin{frame}{定式化：最大待ち時間最小化問題}
+    %   \begin{itemize}
+    %     \item {無関連並列機械モデルにおいて，SWT を\alert{決定問題}として定義する．}
+    %     \item {決定問題は，インスタンスと問題によって定義され，決定問題は判定とし
+    %     て Yes または No のいずれかを持つ．}
+    %   \end{itemize}
+    %   \begin{block}{入力}
+    %     \begin{itemize}
+    %       \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
+    %       \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
+    %       \item {ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$}
+    %       \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
+    %       \item {待ち時間 $w$}
+    %     \end{itemize}
+    %   \end{block}
+    % \end{frame}
+    %
+    % \begin{frame}{定式化：最大待ち時間最小化問題}
+    %   \begin{block}{問題}
+    %     以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の対 $(A,s)$ が存在するか？
+    %     \begin{itemize}
+    %       \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
+    %       \begin{itemize}
+    %         \item {各ジョブは処理開始可能時刻以降に処理を開始する．}
+    %       \end{itemize}
+    %       \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow [s(J), s(J)+p(J,A(J))) \cap[s(J'), s(J')+p(J', A(J'))) = \emptyset \Big]$}
+    %       \begin{itemize}
+    %         \item {各機械は同時に複数のジョブを処理しない．}
+    %         \item {各ジョブの処理を開始すると，完了するまで中断しない．}
+    %       \end{itemize}
+    %       \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
+    %       \begin{itemize}
+    %         \item {ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．}
+    %       \end{itemize}
+    %     \end{itemize}
+    %   \end{block}
+    % \end{frame}
+
     \begin{frame}{定式化：最大待ち時間最小化問題}
-      \begin{itemize}
-        \item {無関連並列機械モデルにおいて，SWT を\alert{決定問題}として定義する．}
-        \item {決定問題は，インスタンスと問題によって定義され，決定問題は判定とし
-        て Yes または No のいずれかを持つ．}
-      \end{itemize}
+      \begin{block}{機械モデル}
+        ジョブを処理する機械の台数について
+        \begin{itemize}
+          \item 1 つの機械で処理を行う\alert{単一機械モデル}，
+          \item 複数の機械で処理を行う\alert{並列機械モデル}，
+        \end{itemize}
+        に分類される．
+        本研究では，並列機械モデルの中で，すべての機械の性能が等しい\alert{同一並列機械モデル}とジョブと機械の組み合わせによって処理時間が異なる\alert{無関連並列機械モデル}を扱う．
+      \end{block}
+
+      以下，無関連並列機械モデルにおける SWT を定式化する．
+      SWT のインスタンスを 4 項組 $(\mathcal{J}, \mathcal{M}, r, p)$ で表す．
       \begin{block}{入力}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
           \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
           \item {ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$}
           \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
-          \item {待ち時間 $w$}
         \end{itemize}
       \end{block}
     \end{frame}
 
+    \setbeamercolor{math text}{fg=white}
     \begin{frame}{定式化：最大待ち時間最小化問題}
-      \begin{block}{問題}
-        以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の対 $(A,s)$ が存在するか？
+      \begin{block}{解：スケジュール $(A,s)$}
+        \setbeamercolor{math text}{fg=mathFormula}
+        以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の 2 項組 $(A,s)$．
         \begin{itemize}
           \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
           \begin{itemize}
@@ -145,6 +190,40 @@
             \item {各機械は同時に複数のジョブを処理しない．}
             \item {各ジョブの処理を開始すると，完了するまで中断しない．}
           \end{itemize}
+        \end{itemize}
+      \end{block}
+
+      \setbeamercolor{math text}{fg=white}
+      \begin{block}{目的関数：最大待ち時間 $W_{\max}$}
+        \setbeamercolor{math text}{fg=mathFormula}
+        \begin{itemize}
+          \item $\varphi(A,s) = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
+          \begin{itemize}
+            \item すべてのジョブの中で，ジョブの処理開始可能時刻と処理開始時刻の差が最大のもの．
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+      \setbeamercolor{math text}{fg=mathFormula}
+      \setbeamertemplate{items}[default]
+      \begin{itemize}
+        \item 最大待ち時間 $W_{\max}$ の最小化を目的とするスケジューリング問題
+      \end{itemize}
+    \end{frame}
+
+    \setbeamertemplate{items}[ball]
+    \setbeamercolor{math text}{fg=mathFormula}
+    \begin{frame}{定式化：最大待ち時間最小化問題（決定問題）}
+      SWT を\alert{決定問題}として定義する．
+      決定問題は，インスタンスと問題によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
+      \begin{block}{入力}
+        \begin{itemize}
+          \item SWT のインスタンス $(\mathcal{J}, \mathcal{M}, r, p)$
+          \item {待ち時間 $w$}
+        \end{itemize}
+      \end{block}
+
+      \begin{block}{問題}
+        \begin{itemize}
           \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
           \begin{itemize}
             \item {ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．}
@@ -281,8 +360,9 @@
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 完全であることを明らかにした．
       \end{alertblock}
-      \begin{block}{表記の導入と問題}
-        $X = \{x_1,\ldots,x_n\}$ と $H = \{h_1,\ldots,h_{\lambda}\}$ の 2 項組 $(X,H)$ を任意の {\sc 3-SAT} のインスタンスとする．ここで，表記を導入する．
+      \begin{block}{インスタンスの変換}
+        {\sc 3-SAT} のインスタンス を $X = \{x_1,\ldots,x_n\}$ と $H = \{h_1,\ldots,h_{\lambda}\}$ からなる 2 項組 $(X,H)$ とする．
+        $(X,H)$ に基づき表記を導入する．
         \begin{itemize}
           \item $\forall i \in \{1,\ldots,n\},~\alpha_i = |\{h \in H \mid x_i \in h\}|$
           \begin{itemize}
@@ -294,10 +374,9 @@
           \end{itemize}
           \item $\mathcal{A} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\alpha_i}$，$\mathcal{B} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\beta_i}$
         \end{itemize}
-
-        $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
-        ただし，$\mathcal{J} = \{\mathcal{J}^t,\mathcal{J}^f,\mathcal{J}^d\}$ s.t. $|\mathcal{J}^t| = |\mathcal{J}^f| = \mathcal{A} + \mathcal{B}$，$|\mathcal{J}^d| = \lambda$ とする．
       \end{block}
+      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
+      ただし，$\mathcal{J} = \{\mathcal{J}^t,\mathcal{J}^f,\mathcal{J}^d\}$ s.t. $|\mathcal{J}^t| = |\mathcal{J}^f| = \mathcal{A} + \mathcal{B}$，$|\mathcal{J}^d| = \lambda$ とする．
     \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
@@ -326,6 +405,8 @@
       \end{itemize}
     \end{frame}
 
+
+
     \begin{frame}{研究成果：問題の計算複雑さ}
 
       {\sc 3-SAT} の判定結果と，SWT における最大待ち時間が \alert{2 以下}となるスケジュールの存在判定結果が一致することを示した．
@@ -336,7 +417,7 @@
           \item {\sc 3-SAT} の判定結果が \alert{No} のとき，SWT における最大待ち時間は \alert{3 以上}になる ．
         \end{itemize}
       \end{block}
-      つまり，無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，$1.5$ 未満の定数近似アルゴリズムは存在しない．
+      無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，$1.5$ 未満の定数近似アルゴリズムは存在しない．
     \end{frame}
 
     \begin{frame}{研究成果：ヒューリスティックの提案}

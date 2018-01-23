@@ -1,9 +1,7 @@
 \beamer@sectionintoc {1}{計算論的分析とは}{3}{0}{1}
 \beamer@sectionintoc {2}{研究背景}{5}{0}{2}
-\beamer@sectionintoc {3}{定式化}{11}{0}{3}
-\beamer@subsectionintoc {3}{1}{最大待ち時間最小化問題の定式化}{12}{0}{3}
-\beamer@subsectionintoc {3}{2}{\textsc {3-SATISFIABILITY} の導入}{14}{0}{3}
-\beamer@sectionintoc {4}{多項式還元とは}{15}{0}{4}
-\beamer@sectionintoc {5}{問題の分析}{17}{0}{5}
-\beamer@sectionintoc {6}{研究成果}{20}{0}{6}
-\beamer@sectionintoc {7}{まとめと今後の課題}{37}{0}{7}
+\beamer@subsectionintoc {2}{1}{\textsc {3-SATISFIABILITY} の導入}{14}{0}{2}
+\beamer@sectionintoc {3}{多項式還元とは}{15}{0}{3}
+\beamer@sectionintoc {4}{問題の分析}{17}{0}{4}
+\beamer@sectionintoc {5}{研究成果}{20}{0}{5}
+\beamer@sectionintoc {6}{まとめと今後の課題}{37}{0}{6}
