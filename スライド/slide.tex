@@ -49,7 +49,7 @@
 % \newtheorem{observation}[theorem]{Observation}
 
 
-\title{並列機械モデルにおける\\最大実行開始待ち時間最小化問題の計算論的評価}
+\title{並列機械モデルにおける\\最大待ち時間最小化問題の計算論的分析}
 \author{天本 祐希}
 \institute{宋研究室}
 \date{\today}
@@ -71,6 +71,13 @@
   \begin{frame}{目次}
     \tableofcontents
     \end{frame} %目次スライド
+    \section{計算論的分析とは}
+    \begin{frame}{計算論的分析とは}
+      \begin{block}{}
+        
+      \end{block}
+    \end{frame}
+
     \section{研究背景}
     \begin{frame}{研究背景：Web サービスにおける処理の流れと問題}
       \begin{figure}[h]
@@ -94,9 +101,9 @@
         Web サービスの問題を解決する方法の 1 つとして，\alert{タスクが到着してから，処理されるまでの時間を短くする}方法が挙げられる．計算サーバーにおける各時間は以下に対応する．つまり，計算サーバーへのタスク割り当ては，スケジューリング問題として捉えることができる．
         \begin{itemize}
           \item タスクの到着時刻とは，\alert{処理開始可能時刻}に対応する．
-          \item タスクが到着してから，タスクの処理が開始されるまでの時間とは，\alert{実行開始待ち時間}に対応する．
+          \item タスクが到着してから，タスクの処理が開始されるまでの時間とは，\alert{待ち時間}に対応する．
         \end{itemize}
-        \alert{最大実行開始待ち時間最小化問題（SWT）}は，処理開始可能時刻を制約とし，最大の実行開始待ち時間の最小化を目的とするスケジューリング問題として捉えることができる．
+        \alert{最大待ち時間最小化問題（SWT）}は，処理開始可能時刻を制約とし，最大の待ち時間の最小化を目的とするスケジューリング問題として捉えることができる．
       \end{block}
 
       \begin{block}{研究目的}
@@ -107,8 +114,8 @@
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{定式化}
-    \subsection{最大実行開始待ち時間最小化問題の定式化}
-    \begin{frame}{定式化：最大実行開始待ち時間最小化問題}
+    \subsection{最大待ち時間最小化問題の定式化}
+    \begin{frame}{定式化：最大待ち時間最小化問題}
       \begin{itemize}
         \item {無関連並列機械モデルにおいて，SWT を\alert{決定問題}として定義する．}
         \item {決定問題は，インスタンスと問題によって定義され，決定問題は判定とし
@@ -120,12 +127,12 @@
           \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
           \item {ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$}
           \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
-          \item {実行開始待ち時間 $w$}
+          \item {待ち時間 $w$}
         \end{itemize}
       \end{block}
     \end{frame}
 
-    \begin{frame}{定式化：最大実行開始待ち時間最小化問題}
+    \begin{frame}{定式化：最大待ち時間最小化問題}
       \begin{block}{問題}
         以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の対 $(A,s)$ が存在するか？
         \begin{itemize}
@@ -200,7 +207,7 @@
       \begin{block}{}
         本研究では以下が成立することを示す．
         \begin{enumerate}
-          \item スケジュールにおける最大実行開始待ち時間が $w$ 以下であるかの判定が\alert{多項式時間}で可能である．
+          \item スケジュールにおける最大待ち時間が $w$ 以下であるかの判定が\alert{多項式時間}で可能である．
           \item \textsc{3-SAT} のインスタンスから SWT のインスタンスが\alert{多項式時間}で構成可能であり，\textsc{3-SAT} の判定結果と構成したインスタンスに対する $w$ 以下となるスケジュールの存在判定結果が\alert{一致}する．
         \end{enumerate}
       \end{block}
@@ -308,15 +315,28 @@
     \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{機械に対するジョブを割り当てたときのスケジュール}
+      \begin{block}{機械に対応するジョブを割り当てたときのスケジュール}
         \begin{figure}[h]
           \centering
           \includegraphics[width = 11cm]{figure/3SAT4.pdf}
         \end{figure}
       \end{block}
       \begin{itemize}
-        \item 対応する機械が同じ，$x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定している．
+        \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定している．
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+
+      {\sc 3-SAT} の判定結果と，SWT における最大待ち時間が \alert{2 以下}となるスケジュールの存在判定結果が一致することを示した．
+
+      \begin{block}{還元のポイント}
+        \begin{itemize}
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，SWT における最大待ち時間は \alert{2 以下}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，SWT における最大待ち時間は \alert{3 以上}になる ．
+        \end{itemize}
+      \end{block}
+      つまり，無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，$1.5$ 未満の定数近似アルゴリズムは存在しない．
     \end{frame}
 
     \begin{frame}{研究成果：ヒューリスティックの提案}
@@ -348,19 +368,19 @@
     \end{frame}
 
     \begin{frame}{研究成果：ヒューリスティックの精度について}
-      ヒューリスティックから得られた解の最大実行開始待ち時間と厳密解法から得られた解の最大実行開始待ち時間の比に着目して比較を行った．
+      ヒューリスティックから得られた解の最大待ち時間と厳密解法から得られた解の最大待ち時間の比に着目して比較を行った．
       \begin{exampleblock}{例：2 台の同一機械と以下のインスタンスにおけるスケジュール}
         \begin{tabular}{cc}
           \begin{minipage}[]{0.6\hsize}
             最適なスケジュール $S_1, S_2 \in \mathcal{S}$ は，
             \begin{itemize}
               \item $S_1:(J_1,J_3,J_5)$，$S_2:(J_2,J_4,J_6)$．
-              \item $\mathcal{S}$ における最大実行開始待ち時間は $0$．
+              \item $\mathcal{S}$ における最大待ち時間は $0$．
             \end{itemize}
             最適でないスケジュール $S'_1, S'_2 \in \mathcal{S'}$ は，
             \begin{itemize}
               \item $S'_1:(J_1,J_3,J_6)$，$S'_2:(J_2,J_4,J_5)$．
-              \item $\mathcal{S'}$ における最大実行開始待ち時間は $3$．
+              \item $\mathcal{S'}$ における最大待ち時間は $3$．
             \end{itemize}
           \end{minipage}
           \begin{minipage}[c]{0.4\hsize}
@@ -377,7 +397,7 @@
             \end{table}
           \end{minipage}
         \end{tabular}
-        ${\displaystyle \frac{\text{ヒューリスティックから得られた解の最大実行開始待ち時間}}{\text{厳密解法から得られた解の最大実行開始待ち時間}} = \infty}$
+        ${\displaystyle \frac{\text{ヒューリスティックから得られた解の最大待ち時間}}{\text{厳密解法から得られた解の最大待ち時間}} = \infty}$
       \end{exampleblock}
       本研究で提案したヒューリスティックは，上記の比が定数となることが保証されている．
     \end{frame}
@@ -385,7 +405,7 @@
     \begin{frame}{研究成果：ヒューリスティックの実験的評価}
       \begin{itemize}
         \item 実験回数：約 $300$ 万回
-        \item 縦軸：$\frac{\text{ヒューリスティックから得られた解の最大実行開始待ち時間}}{\text{厳密解法から得られた解の最大実行開始待ち時間}}$
+        \item 縦軸：$\frac{\text{ヒューリスティックから得られた解の最大待ち時間}}{\text{厳密解法から得られた解の最大待ち時間}}$
         \item 横軸：
       \end{itemize}
       % \begin{figure}[h]
@@ -482,10 +502,10 @@
       \end{exampleblock}
       \begin{itemize}
         \uncover<1>{
-        \item それまでに割り当てたジョブのスケジュールにおける最大実行開始待ち時間がそれまでの最良の解 $W$ より良い値か？
+        \item それまでに割り当てたジョブのスケジュールにおける最大待ち時間がそれまでの最良の解 $W$ より良い値か？
         }
         \uncover<2>{
-        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大実行開始待ち時間がそれまでの最良の解 $W$ より良い値か？
+        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大待ち時間がそれまでの最良の解 $W$ より良い値か？
         \begin{itemize}
           \item SWT は，処理時間が一定のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
         \end{itemize}
@@ -522,7 +542,7 @@
       \begin{alertblock}{今後の課題}
         \begin{itemize}
           \item 無関連並列機械モデル以外の機械モデルにおける SWT の計算複雑さを明らかにし，問題の難しさに影響を与える特徴を明らかにする．
-          \item {\sc 3-SAT} からの還元手法を工夫して，{\sc 3-SAT} の存在判定が Yes のとき，No のときの SWT の最大実行開始待ち時間の比を調整する．
+          \item {\sc 3-SAT} からの還元手法を工夫して，{\sc 3-SAT} の存在判定が Yes のとき，No のときの SWT の最大待ち時間の比を調整する．
           \begin{itemize}
             \item 上記の比を大きくすることができれば，その比未満の定数近似アルゴリズムが存在しないことを保証できる．
           \end{itemize}
@@ -531,12 +551,98 @@
       \end{alertblock}
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
+    \begin{frame}
 
+    \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
+      \begin{exampleblock}{例：各変数に対応する機械におけるスケジュール}
+        $X = \{x_1,x_2,x_3\}$，$H = \big\{
+        \{x_1,x_2,\bar x_3\},
+        \{x_1,x_2,x_3\},
+        \{x_1,\bar x_2,\bar x_3\},$
+        \\
+        $\{\bar x_1,x_2,x_3\},
+        \{\bar x_1,\bar x_2,x_3\},
+        \{\bar x_1,\bar x_2,\bar x_3\}
+        \big\}$ の 2 項組 $(X,H)$ が {\sc 3-SAT} のインスタンスとして与えられたとき，前のスライドで説明した方法により，SWT のインスタンス $I_{(X,H)}$ を作る．
+        \begin{itemize}
+          \item $(X,H)$ において，$H$ を充足する真理値割り当ての 1 つ $f(x_1) = 1$，$f(x_2) = 0$，$f(x_3) = 1$ が存在する．
+        \end{itemize}
+        各 $i \in \{0,1,2\}$ における機械 $i$ 上のスケジュールは以下の通り．
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 12cm]{figure/reductionExample1.pdf}
+        \end{figure}
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
+      \begin{exampleblock}{例：各節に対応する機械におけるスケジュール}
+        $H$ を充足する真理値割り当てが存在することから，各節におけるリテラルのなかで，少なくとも 1 つ 1 (true) に割り当てられたジョブが存在する．
+
+        したがって，各 $k \in \{3,\ldots,8\}$ における機械 $k$ に割り当てられた最後のジョブの待ち時間は高々 $2$ である．以下の通り．
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 12cm]{figure/reductionExample2.pdf}
+        \end{figure}
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
+      \begin{exampleblock}{例：すべての機械におけるスケジュール}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 12cm]{figure/reductionExample3.pdf}
+        \end{figure}
+      \end{exampleblock}
     \end{frame}
 
     \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
+      \begin{exampleblock}{例：各変数に対応する機械におけるスケジュール}
+        $X = \{x_1,x_2,x_3\}$，$H = \big\{
+        \{x_1,x_2,x_3\},
+        \{\bar x_1,\bar x_2,\bar x_3\},
+        \{x_1,\bar x_2,\bar x_3\},$
+        \\
+        $\{\bar x_1,x_2,\bar x_3\},
+        \{\bar x_1,\bar x_2,x_3\},
+        \{\bar x_1,x_2,x_3\},
+        \{x_1,\bar x_2,x_3\},
+        \{x_1,x_2,\bar x_3\}
+        \big\}$ の 2 項組 $(X,H)$ が {\sc 3-SAT} のインスタンスとして与えられたとき，前のスライドで説明した方法により，SWT のインスタンス $I_{(X,H)}$ を作る．
+        \begin{itemize}
+          \item $(X,H)$ において，$H$ を充足する真理値割り当ては存在しない．
+          \item ここで，$f(x_1) = 1$，$f(x_2) = 1$，$f(x_3) = 1$ としたとき，
+        \end{itemize}
+        各 $i \in \{0,1,2\}$ における機械 $i$ 上のスケジュールは以下の通り．
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 12cm]{figure/reductionExample4.pdf}
+        \end{figure}
+      \end{exampleblock}
+    \end{frame}
 
+    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
+      \begin{exampleblock}{例：各節に対応する機械におけるスケジュール}
+        $H$ を充足する真理値割り当てが存在しないことから，各節におけるリテラルのなかで，すベて 0 (false) に割り当てられたジョブが割り当てられた機械が少なくとも 1 つ存在する．
+
+        したがって，各 $k \in \{3,\ldots,10\}$ における機械 $k$ に割り当てられた最後のジョブの待ち時間が $3$ 以上となる機械が存在する．以下の通り．
+        \vspace{-4mm}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 11cm]{figure/reductionExample5.pdf}
+        \end{figure}
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
+      \begin{exampleblock}{例：すべての機械におけるスケジュール}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 11cm]{figure/reductionExample6.pdf}
+        \end{figure}
+      \end{exampleblock}
     \end{frame}
 
     \begin{frame}{付録：多項式還元の例（特殊なケース）}
@@ -601,7 +707,7 @@
       \begin{itemize}
         \item Step 1. で $\mathcal{J'}$ におけるすべてのジョブの処理時間を $\mathcal{J'}$ の中の最小の処理時間に設定している．
         \item 上記の操作により，$\mathcal{J'}$ におけるジョブの本来の処理時間は，設定した処理時間以上である．
-        \item このとき，処理開始可能時刻順で処理して得られるスケジュールにおける最大実行開始待ち時間は，$\mathcal{J'}$ におけるコストの下限である．
+        \item このとき，処理開始可能時刻順で処理して得られるスケジュールにおける最大待ち時間は，$\mathcal{J'}$ におけるコストの下限である．
       \end{itemize}
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

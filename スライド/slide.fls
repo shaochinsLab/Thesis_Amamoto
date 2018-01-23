@@ -285,6 +285,8 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT slide.toc
 INPUT slide.toc
+INPUT slide.toc
+INPUT slide.toc
 INPUT figure/server1.pdf
 INPUT extractbb -O figure/server1.pdf
 INPUT figure/server2.pdf
@@ -366,6 +368,18 @@ INPUT figure/BandB2.pdf
 INPUT extractbb -O figure/BandB2.pdf
 INPUT slide.toc
 INPUT slide.toc
+INPUT figure/reductionExample1.pdf
+INPUT extractbb -O figure/reductionExample1.pdf
+INPUT figure/reductionExample2.pdf
+INPUT extractbb -O figure/reductionExample2.pdf
+INPUT figure/reductionExample3.pdf
+INPUT extractbb -O figure/reductionExample3.pdf
+INPUT figure/reductionExample4.pdf
+INPUT extractbb -O figure/reductionExample4.pdf
+INPUT figure/reductionExample5.pdf
+INPUT extractbb -O figure/reductionExample5.pdf
+INPUT figure/reductionExample6.pdf
+INPUT extractbb -O figure/reductionExample6.pdf
 OUTPUT slide.nav
 OUTPUT slide.toc
 OUTPUT slide.snm

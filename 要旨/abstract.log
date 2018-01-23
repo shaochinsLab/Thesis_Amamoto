@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  20 JAN 2018 14:23
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  23 JAN 2018 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -30,19 +30,7 @@ LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
 \@lnumwidth=\dimen119
 \bibindent=\dimen120
 \heisei=\count91
-)
-./abstract.tex:12: Font \ms=cmSRTD8 not loadable: Metric (TFM) file not found.
-<to be read again> 
-                   \relax 
-l.12 \newfont{\ms}{cmSRTD8}
-                           
-I wasn't able to read the size data for this font,
-so I will ignore the font specification.
-[Wizards can fix TFM files using TFtoPL/PLtoTF.]
-You might try inserting a different font spec;
-e.g., type `I\font<same font id>=<substitute font name>'.
-
-(/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+) (/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks15
 \symAMSa=\mathgroup5
@@ -114,12 +102,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 468 strings out of 493653
- 5569 string characters out of 6150337
- 65173 words of memory out of 5000000
- 4092 multiletter control sequences out of 15000+600000
+ 466 strings out of 493653
+ 5560 string characters out of 6150337
+ 65169 words of memory out of 5000000
+ 4091 multiletter control sequences out of 15000+600000
  19300 words of font info for 76 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  22i,7n,24p,321b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abstract.dvi (1 page, 7476 bytes).
+Output written on abstract.dvi (1 page, 7364 bytes).
