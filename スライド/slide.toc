@@ -1,7 +1,10 @@
-\beamer@sectionintoc {1}{計算論的分析とは}{3}{0}{1}
-\beamer@sectionintoc {2}{研究背景}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{\textsc {3-SATISFIABILITY} の導入}{14}{0}{2}
-\beamer@sectionintoc {3}{多項式還元とは}{15}{0}{3}
-\beamer@sectionintoc {4}{問題の分析}{17}{0}{4}
-\beamer@sectionintoc {5}{研究成果}{20}{0}{5}
-\beamer@sectionintoc {6}{まとめと今後の課題}{37}{0}{6}
+\beamer@sectionintoc {1}{研究背景}{3}{0}{1}
+\beamer@sectionintoc {2}{定式化}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{決定問題の導入}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{\textsc {3-SATISFIABILITY} の導入}{14}{0}{2}
+\beamer@sectionintoc {3}{多項式還元とは}{16}{0}{3}
+\beamer@sectionintoc {4}{問題の分析}{18}{0}{4}
+\beamer@sectionintoc {5}{研究成果}{21}{0}{5}
+\beamer@subsectionintoc {5}{1}{計算理論的観点}{22}{0}{5}
+\beamer@subsectionintoc {5}{2}{計算機観点}{27}{0}{5}
+\beamer@sectionintoc {6}{まとめと今後の課題}{41}{0}{6}

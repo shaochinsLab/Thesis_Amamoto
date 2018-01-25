@@ -1,4 +1,3 @@
-
 \documentclass[dvipdfmx]{beamer}
 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
 
@@ -56,12 +55,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AtBeginSection[]{
 \begin{frame}{目次}
-  % \tableofcontents
-  \tableofcontents[currentsection,currentsubsection,
-  hideothersubsections,
-  sectionstyle=show/shaded,
-  ]
+  \tableofcontents[currentsection,currentsubsection,sectionstyle=show/shaded]
   \end{frame} %目次スライド
+  }
+  \AtBeginSubsection[]{
+  \begin{frame}{目次}
+    \tableofcontents[currentsection,currentsubsection,sectionstyle=show/shaded]
+  \end{frame}
   }
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{document}
@@ -70,13 +70,6 @@
   \begin{frame}{目次}
     \tableofcontents
     \end{frame} %目次スライド
-    \section{計算論的分析とは}
-    \begin{frame}{計算論的分析とは}
-      \begin{block}{}
-
-      \end{block}
-    \end{frame}
-
     \section{研究背景}
     \begin{frame}{研究背景：Web サービスにおける処理の流れと問題}
       \begin{figure}[h]
@@ -92,7 +85,6 @@
         Web サービスを運用している会社では，運用しているサービスの応答が遅いと，顧客離れやクレームの被害を受けることがある．そのため，計算サーバーの応答の早さは重要である．
         }
       \end{block}
-
     \end{frame}
 
     \begin{frame}{研究背景：スケジューリング問題との対応}
@@ -152,6 +144,7 @@
     %   \end{block}
     % \end{frame}
 
+    \section{定式化}
     \begin{frame}{定式化：最大待ち時間最小化問題}
       \begin{block}{機械モデル}
         ジョブを処理する機械の台数について
@@ -164,8 +157,7 @@
       \end{block}
 
       以下，無関連並列機械モデルにおける SWT を定式化する．
-      SWT のインスタンスを 4 項組 $(\mathcal{J}, \mathcal{M}, r, p)$ で表す．
-      \begin{block}{入力}
+      \begin{block}{入力：$\color{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
           \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
@@ -175,10 +167,8 @@
       \end{block}
     \end{frame}
 
-    \setbeamercolor{math text}{fg=white}
     \begin{frame}{定式化：最大待ち時間最小化問題}
-      \begin{block}{解：スケジュール $(A,s)$}
-        \setbeamercolor{math text}{fg=mathFormula}
+      \begin{block}{解：スケジュール $\color{white}{(A,s)}$}
         以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の 2 項組 $(A,s)$．
         \begin{itemize}
           \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
@@ -193,9 +183,7 @@
         \end{itemize}
       \end{block}
 
-      \setbeamercolor{math text}{fg=white}
-      \begin{block}{目的関数：最大待ち時間 $W_{\max}$}
-        \setbeamercolor{math text}{fg=mathFormula}
+      \begin{block}{目的関数：最大待ち時間 $\color{white}{W_{\max}}$}
         \begin{itemize}
           \item $\varphi(A,s) = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \begin{itemize}
@@ -203,30 +191,34 @@
           \end{itemize}
         \end{itemize}
       \end{block}
-      \setbeamercolor{math text}{fg=mathFormula}
+
       \setbeamertemplate{items}[default]
       \begin{itemize}
         \item 最大待ち時間 $W_{\max}$ の最小化を目的とするスケジューリング問題
       \end{itemize}
     \end{frame}
 
+    \subsection{決定問題の導入}
     \setbeamertemplate{items}[ball]
-    \setbeamercolor{math text}{fg=mathFormula}
     \begin{frame}{定式化：最大待ち時間最小化問題（決定問題）}
-      SWT を\alert{決定問題}として定義する．
-      決定問題は，インスタンスと問題によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
-      \begin{block}{入力}
-        \begin{itemize}
-          \item SWT のインスタンス $(\mathcal{J}, \mathcal{M}, r, p)$
-          \item {待ち時間 $w$}
-        \end{itemize}
+      ここで，SWT を\alert{決定問題}として定義する．
+      \begin{block}{決定問題}
+        決定問題は，インスタンスと問題によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
       \end{block}
 
-      \begin{block}{問題}
+      \begin{block}{SWT の決定問題}
+        \begin{description}
+          \item[インスタンス：] SWT のインスタンス $\mathcal{I}$ と待ち時間 $w$ の 2項組 $(\mathcal{I}, w)$
+        \end{description}
+        \begin{description}
+          \setlength{\leftskip}{-8mm}
+          \item[問題：] SWT の実行可能なスケジュール $(A,s)$ のうち以下の条件を満たすスケジュール $(A,s)$ が存在するか？
+          \vspace{-2mm}
+        \end{description}
         \begin{itemize}
           \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
           \begin{itemize}
-            \item {ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．}
+            \item ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．
           \end{itemize}
         \end{itemize}
       \end{block}
@@ -356,6 +348,7 @@
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{研究成果}
+    \subsection{計算理論的観点}
     \begin{frame}{研究成果：問題の計算複雑さ}
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 完全であることを明らかにした．
@@ -418,8 +411,16 @@
         \end{itemize}
       \end{block}
       無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，$1.5$ 未満の定数近似アルゴリズムは存在しない．
+      \begin{alertblock}{計算理論的成果のまとめ}
+        SWT が NP 困難であることを明らかにした．
+        \begin{itemize}
+          \item NP 困難な問題に対する効率的な解法は発見されていない．
+        \end{itemize}
+      \end{alertblock}
+      上記の成果に基づき，SWT に対する解法の提案とその分析を行う．
     \end{frame}
 
+    \subsection{計算機観点}
     \begin{frame}{研究成果：ヒューリスティックの提案}
       \begin{alertblock}{成果 2}
         同一並列機械モデルにおける SWT に対して，ヒューリスティックの開発と解法に対する実験的評価を行った．
@@ -544,8 +545,23 @@
           \includegraphics<4>[width = 12cm]{figure/rgf4.pdf}
         \end{figure}
       \end{exampleblock}
-
     \end{frame}
+
+    \begin{frame}{研究成果：その他の改良}
+      分割生成アルゴリズムと分枝限定法アルゴリズムの改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
+      \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
+        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
+        \begin{description}
+          \setlength{\leftskip}{-8mm}
+          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
+          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$0 \to 2 \to 1$．
+        \end{description}
+      \end{exampleblock}
+      \begin{block}{上記改良の正当性}
+        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
+      \end{block}
+    \end{frame}
+
     \begin{frame}{分割生成アルゴリズムの改良による計算時間の評価}
       分割生成アルゴリズムの改良前と，改良後の計算時間の比較を行った．
       \begin{itemize}
@@ -728,7 +744,7 @@
 
     \begin{frame}{付録：多項式還元の例（特殊なケース）}
       \begin{block}{特殊なケースにおけるインスタンスの作り方}
-        例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{{\color{red}\{x_1,x_2,\bar x_3\}},{\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}}\big\}$ のとき，
+        例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{{\color{red}\{x_1,x_2,x_3\}},{\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}}\big\}$ のとき，
         \begin{itemize}
           \item
           各 $i \in \{1,2,3\}$ に対して，$\alpha_i$，$\beta_i$ は 3 以下である．
@@ -738,9 +754,9 @@
         \begin{equation}
           \begin{split}
             H &= \big\{
-            {\color{red}\{x_1,x_2,\bar x_3\}},
-            {\color{red}\{x_1,x_2,\bar x_3\}},
-            {\color{red}\{x_1,x_2,\bar x_3\}},
+            {\color{red}\{x_1,x_2,x_3\}},
+            {\color{red}\{x_1,x_2,x_3\}},
+            {\color{red}\{x_1,x_2,x_3\}},
             \\ & \qquad\qquad\qquad\qquad\qquad
             {\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}},
             {\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}},
@@ -755,12 +771,75 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{付録：ヒューリスティックの精度の保証の証明}
+    \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ のインスタンスにおける注意点}
+      \begin{block}{{\sc 3-SAT} のインスタンスにおいて除くケース}
+        $H$ に現れるリテラルが各変数，もしくは変数の論理否定をとったもののいずれかしか現れないかつ，そのリテラルがすべての節に現れる場合，$H$ を充足する真理値割り当ては常に存在するためこの場合を除く．
+      \end{block}
 
+      \begin{exampleblock}{例：{\sc 3-SAT} のインスタンスにおいて除くケース}
+        $X = \{x_1,x_2,x_3\}$，
+        $H = \big\{\{x_1,x_2,\bar x_3\}, \{\bar x_1, \bar x_2, \bar x_3\}\big\}$ のとき，変数 $x_3$ に対応するリテラルは，$\bar x_3$ しか $H$ に現れない．さらに，すべての節に $\bar x_3$ が現れる．
+        このとき，$f(x_3) = 0$ とすることで，$H$ を充足する真理値割り当てが常に存在する．
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{付録：ヒューリスティックの精度の保証の証明}
+      \begin{block}{精度の保証の証明}
+        あるインスタンスに対する，最適解から得られた最大待ち時間が $0$ のとき，各機械 $M \in \mathcal{M}$ におけるジョブは以下を満たす．
+        $$\forall J, J' \in \mathcal{J}_M  \Big[ J \ne J' \Rightarrow \big[r(J), r(J)+p(J) \big) \cap \big [r(J'), r(J')+p(J')\big) = \emptyset \Big]$$
+        つまり，各機械 $M \in \mathcal{M}$ におけるジョブは処理開始可能時刻の昇順でスケジュールされているかつ，各ジョブの処理時間の区間は重ならない．
+
+        したがって，最適解から得られる最大待ち時間が $0$ となるインスタンスに対して，処理開始可能時刻の昇順で，すぐに処理開始可能な機械に割り当てることで最適なスケジュールを作ることができる．
+
+      \end{block}
     \end{frame}
 
     \begin{frame}{付録：分割生成アルゴリズムの改良部分}
+      \begin{block}{表記の導入}
+        \begin{itemize}
+          \item ジョブ数 $n$，機械数 $m$
+          \item 要素数 $n$ の配列 $b$ は分割を表す．
+          \item 要素数 $n$ の配列 $b_{\max}$ は 各 $1 \le i \le n$ に対して，$i$ 番目の要素は，それまでのジョブが割り当てられた機械の最大数を格納している．つまり，$b_{\max}[i] = \displaystyle \max_{1\le j \le i - 1}b[j]$
+        \end{itemize}
+      \end{block}
 
+      \begin{block}{分割生成アルゴリズムの改良部分}
+        \begin{description}
+          \setlength{\leftskip}{-10mm}
+          \item[入力 :] $I = (b, b_{\max}, m)$
+          \item[出力 :] 分割 $b$
+          \begin{description}
+            \setlength{\leftskip}{-25mm}
+            \item[Step 1.]
+            各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
+            \begin{description}
+              \setlength{\leftskip}{-40mm}
+              \item[Step 1.1.]
+              $b_{\max}[n - i] \ge m - i$ のとき，処理を終了する．
+              \item[Step 1.2.]
+              $b[n - i] := m - i$，$b_{\max}[n - i] := m - i$ とする．
+            \end{description}
+            \item[Step 2.]
+            $b$ を出力する．
+          \end{description}
+        \end{description}
+      \end{block}
+    \end{frame}
+
+    \begin{frame}{付録：分割生成アルゴリズムの改良部分}
+      \begin{exampleblock}{例：$\color{white}{b = (0,1,0,1)}$，$\color{white}{b_{\max} = (0,1,1,1)}$，$\color{white}{m = 3}$ のとき}
+        \begin{description}
+          \item[Step 1.]
+          $b_{\max}(0,1,1,\color{red}{1})$ より，$1 < m - 1$．
+          \item[Step 2.]
+          したがって，$b = (0,1,0,2)$，$b_{\max} = (0,1,1,2)$ とする．
+          \item[Step 3.]
+          $b_{\max}(0,1,\color{red}{1},2)$ より，$1 \ge m - 2$．
+          \item[Step 4.]
+          $b$ を出力する．
+        \end{description}
+
+      \end{exampleblock}
     \end{frame}
 
     \begin{frame}{付録：分枝限定法アルゴリズムの改良部分}
