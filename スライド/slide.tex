@@ -157,7 +157,7 @@
       \end{block}
 
       以下，無関連並列機械モデルにおける SWT を定式化する．
-      \begin{block}{入力：$\color{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
+      \begin{block}{入力：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
           \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
@@ -168,7 +168,7 @@
     \end{frame}
 
     \begin{frame}{定式化：最大待ち時間最小化問題}
-      \begin{block}{解：スケジュール $\color{white}{(A,s)}$}
+      \begin{block}{解：スケジュール $\textcolor{white}{(A,s)}$}
         以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の 2 項組 $(A,s)$．
         \begin{itemize}
           \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
@@ -183,7 +183,7 @@
         \end{itemize}
       \end{block}
 
-      \begin{block}{目的関数：最大待ち時間 $\color{white}{W_{\max}}$}
+      \begin{block}{目的関数：最大待ち時間 $\textcolor{white}{W_{\max}}$}
         \begin{itemize}
           \item $\varphi(A,s) = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \begin{itemize}
@@ -312,27 +312,25 @@
     % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{問題の分析}
     \begin{frame}{問題の分析：既存のスケジューリング問題との対応}
-      \begin{block}{既存のスケジューリング問題との共通部分}
+      単一機械モデルにおける SWT のインスタンスを $\mathcal{I} = (\mathcal{J},r,p)$，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）のインスタンスを $\mathcal{I}' = (\mathcal{J},r,p,d)$ とする．また，ジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$ を導入する．このとき各 $J \in \mathcal{J}$ に対して，$C(J) = s(J) + p(J)$ である．
+      \begin{block}{SWT と SRTD の関係}
+        SWT のインスタンスにおける各 $J \in \mathcal{J}$ に対して，$d(J) = r(J) + p(J)$ と設定したとき，
         \begin{itemize}
-          \item {$w = 0$ のとき，処理開始可能時刻ちょうどで処理を開始しなければならない．}
+          \item $\mathcal{I} \subseteq \mathcal{I}'$
           \begin{itemize}
-            \item {\alert{JIT ジョブスケジューリング問題}と対応する．}
+            \item $\mathcal{I}$ は，$\mathcal{I}'$ における関数 $d$ により制限を加えたインスタンスである．
           \end{itemize}
-          \item {SWT において，納期 = (処理開始可能時刻 + 処理時間 + $w$ ）と定義できる．}
+          \item   $\textcolor{red}{C(J)} - \textcolor{blue}{d(J)}  =
+          \{\textcolor{red}{s(J) + p(J)}\} - \{\textcolor{blue}{r(J) + p(J)}\}
+          = s(J) - r(J)$
           \begin{itemize}
-            \item {\alert{処理開始可能時刻と納期付きスケジューリング問題}と対応する．}
+            \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J - r(J))$ として捉えることができる．
           \end{itemize}
         \end{itemize}
       \end{block}
-      \begin{block}{既存のスケジューリング問題との差分}
-        \begin{itemize}
-          \item {SWT は，JIT ジョブスケジューリング問題の\alert{拡張問題}として捉えることができる．}
-          \item {SWT は，処理開始可能時刻と納期付きスケジューリング問題の\alert{部分問題}として捉えることができる．}
-        \end{itemize}
-      \end{block}
+      以上より，$\text{SWT } \subseteq \text{ SRTD}$ と表すことができる．
       \begin{itemize}
-        \item ${\mbox {JIT ジョブスケジューリング問題}} \subseteq {\mbox {SWT}}$
-        \item ${\mbox {SWT}} \subseteq {\mbox {処理開始可能時刻と納期付きスケジューリング問題}}$
+        \item SWT は SRTD の\alert{部分問題}である．
       \end{itemize}
     \end{frame}
 
@@ -744,7 +742,7 @@
 
     \begin{frame}{付録：多項式還元の例（特殊なケース）}
       \begin{block}{特殊なケースにおけるインスタンスの作り方}
-        例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{{\color{red}\{x_1,x_2,x_3\}},{\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}}\big\}$ のとき，
+        例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{{\textcolor{red}{\{x_1,x_2,x_3\}}},{\textcolor{blue}{\{\bar x_1, \bar x_2, \bar x_3\}}}\big\}$ のとき，
         \begin{itemize}
           \item
           各 $i \in \{1,2,3\}$ に対して，$\alpha_i$，$\beta_i$ は 3 以下である．
@@ -754,13 +752,13 @@
         \begin{equation}
           \begin{split}
             H &= \big\{
-            {\color{red}\{x_1,x_2,x_3\}},
-            {\color{red}\{x_1,x_2,x_3\}},
-            {\color{red}\{x_1,x_2,x_3\}},
+            {\textcolor{red}{\{x_1,x_2,x_3\}}},
+            {\textcolor{red}{\{x_1,x_2,x_3\}}},
+            {\textcolor{red}{\{x_1,x_2,x_3\}}},
             \\ & \qquad\qquad\qquad\qquad\qquad
-            {\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}},
-            {\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}},
-            {\color{blue}\{\bar x_1, \bar x_2, \bar x_3\}}
+            {\textcolor{blue}{\{\bar x_1, \bar x_2, \bar x_3\}}},
+            {\textcolor{blue}{\{\bar x_1, \bar x_2, \bar x_3\}}},
+            {\textcolor{blue}{\{\bar x_1, \bar x_2, \bar x_3\}}}
             \big\} \notag
           \end{split}
         \end{equation}
@@ -827,14 +825,14 @@
     \end{frame}
 
     \begin{frame}{付録：分割生成アルゴリズムの改良部分}
-      \begin{exampleblock}{例：$\color{white}{b = (0,1,0,1)}$，$\color{white}{b_{\max} = (0,1,1,1)}$，$\color{white}{m = 3}$ のとき}
+      \begin{exampleblock}{例：$\textcolor{white}{b = (0,1,0,1)}$，$\textcolor{white}{b_{\max} = (0,1,1,1)}$，$\textcolor{white}{m = 3}$ のとき}
         \begin{description}
           \item[Step 1.]
-          $b_{\max}(0,1,1,\color{red}{1})$ より，$1 < m - 1$．
+          $b_{\max}(0,1,1,\textcolor{red}{1} )$ より，$1 < 3 - 1$．
           \item[Step 2.]
           したがって，$b = (0,1,0,2)$，$b_{\max} = (0,1,1,2)$ とする．
           \item[Step 3.]
-          $b_{\max}(0,1,\color{red}{1},2)$ より，$1 \ge m - 2$．
+          $b_{\max}(0,1,\textcolor{red}{1} ,2)$ より，$1 \ge 3 - 2$．
           \item[Step 4.]
           $b$ を出力する．
         \end{description}

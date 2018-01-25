@@ -38,25 +38,15 @@
 \thispagestyle{empty}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{研究背景}
-一般に，Web サービスを運用している会社では，運用しているサービスの応答が遅いと，顧客離れやクレームの被害を受けることがある．
-そのため，計算サーバーの応答の早さは重要である．応答の早い計算サーバー
-を作るためには，与えられたタスクをどのように割り当て，処理するかを考える必要がある．
-計算サーバーにおけるタスク処理の開始時刻は，サービスの利用者が，ネットワーク
-を介して，そのサービスを運用している会社の計算サーバーにタスク処理の
-要求を行い，そのタスクが計算サーバーに到着した後である．
+多くの高級自動車メーカーは，完全受注生産方式を取っている．
+完全受注生産方式とは，顧客の注文に基づき，生産工場を決定し，その工場で製造を開始する，という流れの生産方式である．高級自動車メーカーにおける生産拠点の数は限られているため，製造を開始するまでの待ち時間が長いというクレームが多い．また，長い待ち時間により，注文をキャンセルする人が多いことも問題となっている．このような不利益を最小化するためには，注文された車をどの工場で，いつ製造を開始するかを考える必要がある．
 
-タスクの到着時刻とは，スケジューリング問題における{\bf 処理開始可能時刻}である．
-また，{\bf 待ち時間}とは，タスクが到着してから，タスクの処理が開始されるまでの時間である．
-{\bf 最大待ち時間最小化問題（SWT）}は，処理開始可能時刻を制約とし，最大の待ち時間（\mbox{\boldmath $W_{\max}$}）の最小化を目的とするスケジューリング問題である．
+上記の問題を解決することは，{\bf タスク}をどの{\bf 資源}で，{\bf いつ}処理を開始するかの決定を意味する．注文を受けた日を{\bf 処理開始可能時刻}，注文を受けてから車の製造が開始されるまでの時間を{\bf 待ち時間}としたとき，上記の問題は，{\bf 最大待ち時間最小化問題（SWT）}として捉えることができる．SWT は，処理開始可能時刻を制約とし，最大待ち時間（\mbox{\boldmath $W_{\max}$}）の最小化を目的とするスケジューリング問題である．
 $W_{\max}$ を目的関数としたスケジューリング問題は，どの機械モデルにおいても未解決問題である．
 
-% SWT の部分問題に JITスケジューリング問題がある．
-% SWT は，処理開始可能時刻付き最大遅れ時間最小化問題の部分問題として捉えることができる．
-% しかし，$W_{\max}$ を目的関数としたスケジューリング問題は未だ研究されていない．
-
 \section{研究目的}
-SWT は JIT ジョブ荷重和最大化問題（SJIT）の拡張問題，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）の部分問題として捉えることができる．SJIT は無関連並列機械モデルにおいて機械数が入力の一部の場合，SRTD は単一機械モデルにおいて，それぞれ強 NP 困難であることが証明されている\cite{SJIT}\cite{SRTD}．
-%本研究では，SWT に対して，以下を目的とする．
+SWT は，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）の部分問題として捉えることができる．また，SRTD は単一機械モデルにおいて，強 NP 困難であることが証明されている\cite{SRTD}．
+本研究では，SWT に対して，以下を目的とする．
 \begin{description}
   \item[目的 1 :]
   \underline{SWT の計算複雑さを明らかにする．}
@@ -67,7 +57,7 @@ SWT を決定問題として定義し，機械モデルおよび機械数に着�
   \item[目的 2 :]
   \underline{SWT に対する効率的解法の提案．}
 \end{description}
-SWT の計算複雑さに基づいて，解法の提案を行う．また，計算サーバーにおける解法の実験的評価を行う．
+SWT の計算複雑さに基づいて，解法の提案を行う．また，計算機を用いて解法の実験的評価を行う．
 
 \section{研究成果}
 本研究では，SWT に関して，以下の成果を得た．
@@ -75,13 +65,13 @@ SWT の計算複雑さに基づいて，解法の提案を行う．また，計�
   \item[成果 1 : ]
   無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SWT の NP 完全性}を示した．
 \end{description}
-SJIT における\textsc{3-SAT} からの還元手法に基づき SWT の NP 完全性を証明した．
+JIT 荷重和最大化問題における\textsc{3-SAT} からの還元手法 \cite{SJIT} に基づき SWT の NP 完全性を証明した．
 
 \begin{description}
   \item[成果 2 : ]
   同一並列機械モデルにおける SWT に対する\underline{ヒューリスティックを開発}し，有効性を示した．
 \end{description}
-貪欲アルゴリズムに基づいたヒューリスティックを開発した．ヒューリスティックにより出力された解から得られた最大待ち時間を $W_h$，最適解から得られた最大待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = ???$} の結果が得られた．
+貪欲的解法に基づいたヒューリスティックを開発した．ヒューリスティックによる解から得られた最大待ち時間を $W_h$，最適解から得られた最大待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = ???$} の結果が得られた．
 
 \begin{description}
   \item[成果 3 : ]
@@ -89,7 +79,6 @@ SJIT における\textsc{3-SAT} からの還元手法に基づき SWT の NP 完
   \begin{itemize}
     \setlength{\leftskip}{-10mm}
     \item {\bf 分割の要素数 = 機械数}となる分割のみを生成するアルゴリズムに改良した．
-    % \vspace{-1mm}
     \item 分枝限定法に対して，SRTD の部分問題に対する多項式アルゴリズムの概念を導入した．
   \end{itemize}
 \end{description}
@@ -97,19 +86,14 @@ SJIT における\textsc{3-SAT} からの還元手法に基づき SWT の NP 完
 その結果，同じインスタンスに対して，計算時間を約 {\bf ??? 倍}にすることに成功した．
 
 \begin{thebibliography}{9} %参考文献{載せる参考文献の数の上限}
-  \bibitem{SJIT} % SJITの計算複雑さの証明
-  Sung, Vlach.
-  Maximizing Weighted Number of Just-In-Time Jobs on Unrelated Parallel Machines. J SCHED 8, pp. 453-460, 2005.
-  \vspace{-2mm}
   \bibitem{SRTD} % SRTDの計算複雑さの証明
   Garey, Johnson.
   Computers and Intractability A Guide to the Theory of NP-Completeness.
   W. H. Freeman And Co, pp. 13-244, 1990.
-  % \vspace{-2mm}
-  % \bibitem{BandB}
-  % Land, Doig.
-  % An automatic method of solving discrete programming problems.
-  % The Econometric Society, 28, pp. 497-520, 1960.
+  \bibitem{SJIT} % SJITの計算複雑さの証明
+  Sung, Vlach.
+  Maximizing Weighted Number of Just-In-Time Jobs on Unrelated Parallel Machines. J SCHED 8, pp. 453-460, 2005.
+  \vspace{-2mm}
 \end{thebibliography}
 
 \end{document}

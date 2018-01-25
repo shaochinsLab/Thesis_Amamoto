@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1516845030 "slide.dvi" "slide.pdf" "slide" 1516845033
-  "slide.dvi" 1516845030 540588 bcdbcb39e9612321a79c987382d2caa3 "latex"
+["dvipdf"] 1516864750 "slide.dvi" "slide.pdf" "slide" 1516864752
+  "slide.dvi" 1516864749 536660 8f0a74630c7939c8746085900b8796ac "latex"
   (generated)
   "slide.pdf"
-["latex"] 1516845015 "slide.tex" "slide.dvi" "slide" 1516845033
+["latex"] 1516864734 "slide.tex" "slide.dvi" "slide" 1516864752
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -227,16 +227,16 @@
   "figure/server2.pdf" 1516355240 128763 ac5115be84b3ff61f047276922631aba ""
   "figure/server3.pdf" 1516355250 128062 d9d0d369e759ba32b4b4f683c7f5fe5f ""
   "figure/server4.pdf" 1516355262 132134 f0334d7d2c7be276bc01509d530cc570 ""
-  "slide.aux" 1516845030 11312 776097229ad776d36cb7368a01f0c9aa ""
-  "slide.nav" 1516845030 6496 c1f7c060f7590d7c3a6153e6b6e29e67 ""
-  "slide.out" 1516845030 590 8cab23aaeab69ba7fb680c14c911342a ""
-  "slide.tex" 1516845014 47409 ae5823923193652735100ef3271926d4 ""
-  "slide.toc" 1516845030 581 09649d4b7a6a639826fa69324ac48680 ""
+  "slide.aux" 1516864749 11312 776097229ad776d36cb7368a01f0c9aa ""
+  "slide.nav" 1516864749 6496 c1f7c060f7590d7c3a6153e6b6e29e67 ""
+  "slide.out" 1516864749 590 8cab23aaeab69ba7fb680c14c911342a ""
+  "slide.tex" 1516864733 47591 fe952ac6baa926f8e2b6081d82edb5d3 ""
+  "slide.toc" 1516864749 581 09649d4b7a6a639826fa69324ac48680 ""
   (generated)
-  "slide.log"
-  "slide.out"
-  "slide.snm"
-  "slide.aux"
-  "slide.toc"
-  "slide.dvi"
   "slide.nav"
+  "slide.aux"
+  "slide.log"
+  "slide.dvi"
+  "slide.toc"
+  "slide.snm"
+  "slide.out"

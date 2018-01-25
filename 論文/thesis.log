@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  25 JAN 2018 10:17
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  25 JAN 2018 15:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -229,11 +229,11 @@ File: figure/reduction.pdf Graphic file (type pdf)
 ] [13]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 397.
+(Font)              using `JT1/mc/m/n' instead on input line 390.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 397.
+(Font)              using `JY1/mc/m/n' instead on input line 390.
 
 [14]
 File: figure/SJIT.pdf Graphic file (type pdf)
@@ -269,17 +269,17 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [24
 
 ] [25]
-Overfull \hbox (4.28331pt too wide) detected at line 847
+Overfull \hbox (4.28331pt too wide) detected at line 840
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; `\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; A\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 J[]\OT1/cmr/m/n/10.95 )) = []
  []
 
 
-Overfull \hbox (13.54997pt too wide) detected at line 856
+Overfull \hbox (13.54997pt too wide) detected at line 849
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 i; `\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; A\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 J[]\OT1/cmr/m/n/10.95 )) = []
  []
 
 
-Overfull \hbox (19.74467pt too wide) detected at line 906
+Overfull \hbox (19.74467pt too wide) detected at line 899
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
@@ -295,12 +295,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 第 5 章
 [33
 
-] [34]
-Overfull \hbox (61.81374pt too wide) in paragraph at lines 1139--1141
+]
+Overfull \hbox (61.81374pt too wide) in paragraph at lines 1120--1122
 []\JY1/mc/m/it/12 最小完了時刻を持つスケジ ュ ール集合の要素 $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 []$
  []
 
-[35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+[34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
 第 6 章
 [45
 
@@ -327,6 +327,6 @@ Here is how much of TeX's memory you used:
  5571 multiletter control sequences out of 15000+600000
  25121 words of font info for 101 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,690b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,772b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (51 pages, 183684 bytes).
+Output written on thesis.dvi (51 pages, 182364 bytes).
