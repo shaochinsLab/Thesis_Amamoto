@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  25 JAN 2018 18:23
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  26 JAN 2018 10:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -108,6 +108,6 @@ Here is how much of TeX's memory you used:
  4091 multiletter control sequences out of 15000+600000
  19300 words of font info for 76 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 22i,7n,24p,451b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 22i,7n,24p,441b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abstract.dvi (1 page, 7380 bytes).
+Output written on abstract.dvi (1 page, 7340 bytes).
