@@ -6,5 +6,5 @@
 \beamer@sectionintoc {4}{問題の分析}{18}{0}{4}
 \beamer@sectionintoc {5}{研究成果}{21}{0}{5}
 \beamer@subsectionintoc {5}{1}{計算理論的観点}{22}{0}{5}
-\beamer@subsectionintoc {5}{2}{計算機観点}{27}{0}{5}
-\beamer@sectionintoc {6}{まとめと今後の課題}{41}{0}{6}
+\beamer@subsectionintoc {5}{2}{計算機観点}{28}{0}{5}
+\beamer@sectionintoc {6}{まとめと今後の課題}{42}{0}{6}

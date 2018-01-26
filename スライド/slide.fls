@@ -285,14 +285,14 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT slide.toc
 INPUT slide.toc
-INPUT figure/server1.pdf
-INPUT extractbb -O figure/server1.pdf
-INPUT figure/server2.pdf
-INPUT extractbb -O figure/server2.pdf
-INPUT figure/server3.pdf
-INPUT extractbb -O figure/server3.pdf
-INPUT figure/server4.pdf
-INPUT extractbb -O figure/server4.pdf
+INPUT figure/car1.pdf
+INPUT extractbb -O figure/car1.pdf
+INPUT figure/car2.pdf
+INPUT extractbb -O figure/car2.pdf
+INPUT figure/car3.pdf
+INPUT extractbb -O figure/car3.pdf
+INPUT figure/car4.pdf
+INPUT extractbb -O figure/car4.pdf
 INPUT slide.toc
 INPUT slide.toc
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr12.tfm

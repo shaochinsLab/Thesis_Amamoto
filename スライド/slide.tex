@@ -71,30 +71,30 @@
     \tableofcontents
     \end{frame} %目次スライド
     \section{研究背景}
-    \begin{frame}{研究背景：Web サービスにおける処理の流れと問題}
+    \begin{frame}{研究背景：高級自動車メーカにおける注文から製造までの流れ}
       \begin{figure}[h]
         \centering
-        \includegraphics<1>[width=12cm]{figure/server1.pdf}
-        \includegraphics<2>[width=12cm]{figure/server2.pdf}
-        \includegraphics<3>[width=12cm]{figure/server3.pdf}
-        \includegraphics<4>[width=12cm]{figure/server4.pdf}
+        \includegraphics<1>[width=12cm]{figure/car1.pdf}
+        \includegraphics<2>[width=12cm]{figure/car2.pdf}
+        \includegraphics<3>[width=12cm]{figure/car3.pdf}
+        \includegraphics<4>[width=12cm]{figure/car4.pdf}
       \end{figure}
 
       \begin{block}{問題}
         \uncover<4->{
-        Web サービスを運用している会社では，運用しているサービスの応答が遅いと，顧客離れやクレームの被害を受けることがある．そのため，計算サーバーの応答の早さは重要である．
+        生産拠点の数が限られているため，高級自動車メーカーは，製造開始日までの待ち時間が長いというクレームを受けることがある．その上，顧客によっては注文をキャンセルする場合もある．
         }
       \end{block}
     \end{frame}
 
     \begin{frame}{研究背景：スケジューリング問題との対応}
       \begin{block}{研究背景：スケジューリング問題との対応}
-        Web サービスの問題を解決する方法の 1 つとして，\alert{タスクが到着してから，処理されるまでの時間を短くする}方法が挙げられる．計算サーバーにおける各時間は以下に対応する．つまり，計算サーバーへのタスク割り当ては，スケジューリング問題として捉えることができる．
+        先ほどのような問題を解決することは，\alert{タスク}をどの\alert{資源}で，\alert{いつ}処理を開始するかの決定を意味する．
         \begin{itemize}
-          \item タスクの到着時刻とは，\alert{処理開始可能時刻}に対応する．
-          \item タスクが到着してから，タスクの処理が開始されるまでの時間とは，\alert{待ち時間}に対応する．
+          \item 注文を受けた日を，\alert{処理開始可能時刻}，
+          \item 注文を受けてから製造開始日までの期間を，\alert{待ち時間}，
         \end{itemize}
-        \alert{最大待ち時間最小化問題（SWT）}は，処理開始可能時刻を制約とし，最大の待ち時間の最小化を目的とするスケジューリング問題として捉えることができる．
+        としたとき，この問題は \alert{最大待ち時間最小化問題（SWT）}として捉えることができる．SWT は，処理開始可能時刻を制約とし，最大待ち時間の最小化を目的とするスケジューリング問題である．
       \end{block}
 
       \begin{block}{研究目的}
@@ -324,7 +324,7 @@
           \{\textcolor{red}{s(J) + p(J)}\} - \{\textcolor{blue}{r(J) + p(J)}\}
           = s(J) - r(J)$
           \begin{itemize}
-            \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J - r(J))$ として捉えることができる．
+            \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J) - r(J)$ として捉えることができる．
           \end{itemize}
         \end{itemize}
       \end{block}
@@ -335,8 +335,6 @@
     \end{frame}
 
     \begin{frame}{問題の分析：既存のスケジューリング問題の計算複雑さ}
-      本研究では，JIT ジョブスケジューリング問題の 1 つである,
-      \alert{JIT ジョブ荷重和最大化問題（SJIT）}と 処理開始可能時刻，納期付きスケジューリング問題の 1 つである\alert{処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）}を SWT と対応付けた．
       \begin{block}{既存のスケジューリング問題の計算複雑さ}
         \begin{itemize}
           \item SJIT は，{\sc 3-SAT} からの還元により，無関連並列機械モデルにおいて，機械数が入力の一部の場合，\alert{強 NP 困難}である．
@@ -396,7 +394,11 @@
       \end{itemize}
     \end{frame}
 
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{block}{}
 
+      \end{block}
+    \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
 
@@ -496,10 +498,8 @@
 
     \begin{frame}{研究成果：厳密解法の提案}
       \begin{alertblock}{成果 3}
-        同一並列機械モデルにおける SWT に対して，厳密解法の開発と計算時間の分析を行った．
+        同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に基づいた厳密解法の開発と計算時間の分析を行った．
       \end{alertblock}
-      % 厳密解法に\alert{分割生成アルゴリズム}と\alert{分枝限定法アルゴリズム}を用いた．
-      % 以下の改良を加え，計算効率を向上させた．
       \begin{block}{分割生成アルゴリズムの改良}
         \begin{itemize}
           \item \alert{分割の要素数 = 機械数} となる分割のみ生成するように改良．
@@ -508,7 +508,7 @@
           \end{itemize}
         \end{itemize}
       \end{block}
-      \begin{block}{分枝限定法アルゴリズムの改良}
+      \begin{block}{分枝限定法の改良}
         \begin{itemize}
           \item \alert{部分問題に対する多項式アルゴリズム}の概念を導入した．
           \begin{itemize}
@@ -546,7 +546,7 @@
     \end{frame}
 
     \begin{frame}{研究成果：その他の改良}
-      分割生成アルゴリズムと分枝限定法アルゴリズムの改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
+      分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
       \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
         ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
         \begin{description}
@@ -573,7 +573,7 @@
       % \end{figure}
     \end{frame}
 
-    \begin{frame}{分枝限定法アルゴリズムの改良}
+    \begin{frame}{分枝限定法の改良}
       \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
         \begin{tabular}{cc}
           \begin{minipage}[]{0.6\hsize}
@@ -608,8 +608,8 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{分枝限定法アルゴリズムの改良による計算時間の評価}
-      分枝限定法アルゴリズムの改良前と，改良後の計算時間の比較を行った．
+    \begin{frame}{分枝限定法の改良による計算時間の評価}
+      分枝限定法の改良前と，改良後の計算時間の比較を行った．
       \begin{itemize}
         \item 実験回数：約 $3,000$ 回
         \item 縦軸：計算時間
@@ -840,8 +840,8 @@
       \end{exampleblock}
     \end{frame}
 
-    \begin{frame}{付録：分枝限定法アルゴリズムの改良部分}
-      \begin{block}{分枝限定法アルゴリズムの改良部分}
+    \begin{frame}{付録：分枝限定法の改良部分}
+      \begin{block}{分枝限定法の改良部分}
         \begin{description}
           \setlength{\leftskip}{-10mm}
           \item[入力 :] $I = (\mathcal{J'}, S)$
