@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  26 JAN 2018 17:37
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  27 JAN 2018 14:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -687,17 +687,17 @@ Overfull \vbox (9.02654pt too high) detected at line 88
 ] (./slide.toc) [9
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 168.
+LaTeX Font Info:    Try loading font information for U+msa on input line 170.
  (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 168.
+LaTeX Font Info:    Try loading font information for U+msb on input line 170.
  (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [10
 
 ]
-Overfull \vbox (3.70168pt too high) detected at line 199
+Overfull \vbox (3.70168pt too high) detected at line 201
  []
 
 [11
@@ -711,10 +711,10 @@ Overfull \vbox (3.70168pt too high) detected at line 199
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 257.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 259.
 
 
-Overfull \vbox (5.79298pt too high) detected at line 257
+Overfull \vbox (5.79298pt too high) detected at line 259
  []
 
 [15
@@ -724,7 +724,7 @@ Overfull \vbox (5.79298pt too high) detected at line 257
 ]
 File: figure/reduction.pdf Graphic file (type pdf)
  <figure/reduction.pdf>
-Overfull \hbox (130.71127pt too wide) in paragraph at lines 285--285
+Overfull \hbox (130.71127pt too wide) in paragraph at lines 287--287
  [][] 
  []
 
@@ -745,7 +745,7 @@ Overfull \hbox (130.71127pt too wide) in paragraph at lines 285--285
 ]
 File: figure/3SAT3.pdf Graphic file (type pdf)
  <figure/3SAT3.pdf>
-Overfull \vbox (10.84373pt too high) detected at line 383
+Overfull \vbox (10.84373pt too high) detected at line 385
  []
 
 [24
@@ -753,7 +753,7 @@ Overfull \vbox (10.84373pt too high) detected at line 383
 ]
 File: figure/3SAT4.pdf Graphic file (type pdf)
  <figure/3SAT4.pdf>
-Overfull \vbox (3.62946pt too high) detected at line 395
+Overfull \vbox (3.62946pt too high) detected at line 397
  []
 
 [25
@@ -767,7 +767,7 @@ Overfull \vbox (3.62946pt too high) detected at line 395
 ] [29
 
 ]
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 485--485
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 487--487
 [][][][] 
  []
 
@@ -924,4 +924,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  56i,23n,65p,825b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.dvi (56 pages, 541492 bytes).
+Output written on slide.dvi (56 pages, 541932 bytes).
