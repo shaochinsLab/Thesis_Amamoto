@@ -60,7 +60,7 @@
 本研究では，最大待ち時間最小化問題に関して以下の成果を得た．
 \begin{description}
   \item[成果 1 :]
-  最大待ち時間最小化問題を決定問題として捉えたとき，無関連並列機械モデルにおいて機械数が入力の一部の場合，最大待ち時間最小化問題 の NP 完全性を明らかにした．
+  最大待ち時間最小化問題を決定問題として定義したとき，無関連並列機械モデルにおいて機械数が入力の一部の場合，最大待ち時間最小化問題 の NP 完全性を明らかにした．
 
   最大待ち時間最小化問題 は，処理開始可能時刻付き最大遅れ時間最小化問題の部分問題として捉えることができる．また，最大待ち時間最小化問題を決定問題として定義したとき，$w = 0$ となるスケジュールが存在するとき，すべてのジョブが JIT ジョブである．つまり，JIT ジョブスケジューリング問題とも，ある一部のインスタンスに対して，共通点が見られた．
   JIT ジョブ荷重和最大化問題は無関連並列機械モデルにおいて機械数が入力の一部の場合， 処理開始可能時刻付き最大遅れ時間最小化問題は単一機械モデルにおいて強 NP 困難であることが証明されている．最大待ち時間最小化問題とこれらの問題の対応を取り，\textsc{3-SAT} からの還元により最大待ち時間最小化問題 の NP 完全性を証明した．
@@ -120,10 +120,12 @@
 題を定式化する．
 
 \begin{description}
-  \item[入力：] ジョブの集合を $\mathcal{J}$，無関連機械の集合 $\mathcal{M}$と表記する，
-  処理開始可能時刻関数 $r : \mathcal{J} \to \mathbb{N}$，処理
-  時間関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$
-  であり，それぞれの関数が返す値は自然数である．入力は 4 項組，$(\mathcal{J}, \mathcal{M}, r, p)$．
+  \item[入力：]
+  入力は 4 項組，$(\mathcal{J}, \mathcal{M}, r, p)$．
+  ジョブの集合を $\mathcal{J}$，無関連機械の集合を $\mathcal{M}$，
+  処理開始可能時刻を返す関数を $r : \mathcal{J} \to \mathbb{N}$，処理
+  時間を返す関数を $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$
+  とする．それぞれの関数が返す値は自然数である．
   \item[解：] 問題の前提に基づき，スケジュールを定式化する．スケジュールは以下の条
   件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to
   \mathbb{N}$ の対$(A,s)$ であり，スケジュールによって，各ジョブを，どの
@@ -162,10 +164,11 @@ r(J)\right\}}$$
 
 \begin{description}
 
-  \item[インスタンス : ] ジョブの集合 $\mathcal{J}$ を無関連機械の集合 $\mathcal{M}$と表記する．
-  処理開始可能時刻関数 $r : \mathcal{J} \to \mathbb{N}$，処理
-  時間関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$，実行開始
-  待ち時間 $w$ であり，それぞれの関数が返す値は自然数である．入力は 5 項組，$(\mathcal{J}, \mathcal{M}, r, p, w)$．
+  \item[インスタンス : ]
+  入力は 5 項組，$(\mathcal{J}, \mathcal{M}, r, p, w)$．
+  ジョブの集合を $\mathcal{J}$，無関連機械の集合を $\mathcal{M}$，
+  処理開始可能時刻を返す関数を $r : \mathcal{J} \to \mathbb{N}$，処理
+  時間を返す関数を $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$，待ち時間を $w$ とする．それぞれの関数が返す値は自然数である．
 
   \item[問題 : ] 以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の対$(A,s)$ が存在するかどうか．
 \end{description}
@@ -277,13 +280,17 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
   \item \textbf{JIT ジョブ荷重和最大化問題との共通部分}
 
   最大待ち時間最小化問題において，待ち時間 $w$ の制約が最も強い場合，つまり，$w = 0$ のとき，各ジョブは処理開始可能時刻ちょうどで処理を開始しなければならない．このとき，最大待ち時間最小化問題におけるすべてのジョブが JIT ジョブであるかという判定に等しい．
-  JIT ジョブ荷重和最大化問題を決定問題として定義する．つまり，荷重和が $W$ 以上となるスケジュールが存在するかという問題に置き換える．このとき，$W$ の制約が最も強い場合，つまり，$W = {\displaystyle \sum_{J \in \mathcal{J}}w_J}$ のとき，すべてのジョブが JIT  ジョブであるかという問題と等しい．
+  JIT ジョブ荷重和最大化問題を決定問題として定義する．つまり，荷重和が $W$ 以上となるスケジュールが存在するかという問題に置き換える．このとき，$W$ の制約が最も強い場合，つまり，$W = {\displaystyle \sum_{J \in \mathcal{J}}w_J}$ のとき，すべてのジョブが JIT  ジョブであるかという判定に等しい．
 
   つまり，最大待ち時間最小化問題に対して，$w = 0$ のスケジュールが存在するとき，そのインスタンスにおける JIT ジョブ荷重和最大化問題に対して，$W = {\displaystyle \sum_{J \in \mathcal{J}}w_J}$ となるスケジュールが存在する．
+  また，$W = {\displaystyle \sum_{J \in \mathcal{J}}w_J}$ となるスケジュールが存在するとき，そのインスタンスにおける最大待ち時間最小化問題に対して，$w = 0$ のスケジュールが存在する．
+
+  以上より，ある一部のインスタンスに対して，最大待ち時間最小化問題と JIT ジョブ荷重和最大化問題は，同じアルゴリズムで解け，同じ判定結果になる．
 
   \item \textbf{JIT ジョブ荷重和最大化問題との差分}
 
-  上記，共通部分では，$w = 0$ のとき，最大待ち時間最小化問題におけるすべてのジョブが JIT ジョブであるかという判定に等しい．しかし，JIT ジョブ荷重和最大化問題は，JIT ジョブとなるジョブの荷重和の最大化を目的とするスケジューリング問題である．つまり，JIT ジョブ荷重和最大化問題において，すべてのジョブが JIT ジョブである必要はない．この点が，JIT ジョブ荷重和最大化問題との差分である．
+  最大待ち時間最小化問題における待ち時間が $w \neq 0$ のとき，JIT ジョブ荷重和最大化問題との共通点はなくなる．JIT ジョブ荷重和最大化問題は，納期以前に処理を完了したジョブ，つまり JIT ジョブの荷重和を最大化する問題であり，すべてのジョブが JIT ジョブである必要はない．
+  対して，最大待ち時間最小化問題は，すべてのジョブの待ち時間が $w$ 以下となる必要がある．
 
   \item \textbf{処理開始可能時刻付き最大遅れ時間最小化問題との関係}
 
@@ -1092,8 +1099,6 @@ $$\mathcal{M}(x) \supseteq S(p_1) \supseteq S(p_1,p_2) \supseteq
 
 \begin{itemize}
   \item ジョブの集合 $\mathcal{J} = \{J_1,\ldots,J_n\}$．
-  \item 処理開始可能時刻と処理開始可能時刻 + 処理時間 で表される区間が重なっているジョブの集合 $\mathcal{J}'$．つまり，$\mathcal{J}'$ は以下を満たす．
-  $$\mathcal{J}' \subseteq \mathcal{J} \text{ s.t. }\forall J,J' \in \mathcal{J}'\big[[s(J),s(J) + p(J)) \cap [s(J'),s(J') + p(J')) \neq \emptyset\big]$$
   \item 機械の集合 $\mathcal{M} = \{M_1,\ldots,M_m\}$．
   \item ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$．
   \item ジョブの処理時間を返す関数 $p : \mathcal{J} \to \mathbb{N}$．
@@ -1143,13 +1148,9 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
 \end{lemma}
 
 \begin{proof}
-  本研究での提案解法では，すべてのジョブを処理開始可能時刻の昇順で，その時刻において処理を開始可能な機械へ割り当てる．
-
-  ここで，あるインスタンスに対する最適解から得られた最大待ち時間が 0 のとき，すべてのジョブは，それぞれの機械において，各ジョブの処理開始可能時刻と処理開始可能時刻 + 処理時間 の区間が重なることなくスケジュールされている．
-
-  このとき，処理開始可能時刻の昇順で処理可能な機械へ割り当てることで，各ジョブの処理開始可能時刻と処理開始可能時刻 + 処理時間 の区間が重なることなくスケジュールすることが可能である．
-
-  したがって，あるインスタンスに対する最適解から得られた最大待ち時間が 0 のとき，貪欲アルゴリズムに基づいた本研究での提案解法により出力された解から得られた最大待ち時間も 0 になる．
+  最大待ち時間最小化問題（決定問題）において，$w = 0$ のとき，すべてのジョブは JIT ジョブである．このとき JIT ジョブ荷重和最大化問題においても，$W = {\displaystyle \sum_{J \in \mathcal{J}}w(J)}$ となるスケジュールが存在する．
+  ここで，JIT ジョブ荷重和最大化問題におけるすべてのジョブが JIT ジョブのとき，貪欲アルゴリズムに基づいた解法により，最適解，つまり，$W = {\displaystyle \sum_{J \in \mathcal{J}}w(J)}$ となるスケジュールを作ることができると Cepek and Sung [2004] \cite{JIT}　により証明されている．
+  したがって，最大待ち時間最小化問題においても，すべてのジョブが JIT ジョブのとき，貪欲アルゴリズムに基づいた解法で，最適解を求めることができる．
 \end{proof}
 
 \section{厳密解法の提案}\label{5_s_2}
@@ -1222,26 +1223,25 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
 議論に先立ち表記の導入を行う．
 
 \begin{itemize}
-  \item ジョブの集合 $\mathcal{J} = \{J_1,\ldots,J_n\}$
-  \item 機械の集合 $\mathcal{M} = \{M_1,\ldots,M_m\}$
-  \item ジョブの処理開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$
-  \item ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$
-  \item ジョブの処理時間を返す関数 $p : \mathcal{J} \to \mathbb{N}$
-  \item スケジュールにおける最大待ち時間を返す関数 $w : S \to \mathbb{N}$
-  \item スケジュールにおけるジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$
-  \item 各 $j \in \{1,\ldots,m\}$ に対する機械 $M_j \in \mathcal{M}$ におけるスケジュール $S_{M_j}$ の集合 $\mathcal{S}$
-  \item それまでのスケジュールにおける最良の解 $W$
-  \item 要素数 $n$ の分割を表す配列 $b$
+  \item ジョブの集合 $\mathcal{J} = \{J_1,\ldots,J_n\}$．
+  \item 機械の集合 $\mathcal{M} = \{M_1,\ldots,M_m\}$．
+  \item ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$．
+  \item ジョブの処理時間を返す関数 $p : \mathcal{J} \to \mathbb{N}$．
+  \item スケジュールにおける最大待ち時間を返す関数 $w : S \to \mathbb{N}$．
+  \item スケジュールにおけるジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$．
+  \item 各 $j \in \{1,\ldots,m\}$ に対する機械 $M_j \in \mathcal{M}$ におけるスケジュール $S_{M_j}$ の集合 $\mathcal{S}$．
+  \item それまでのスケジュールにおける最良の解 $W$．
+  \item 要素数 $n$ の分割を表す配列 $b$．
   \item 要素数 $n$ の配列 $b_{\max}$ は 各 $1 \le i \le n$ に対して，$i$ 番目の要素は，それまでのジョブが割り当てられた機械の最大数を格納している．つまり，$b_{\max}[i] = \displaystyle \max_{1\le j \le i - 1}b[j]$．
 \end{itemize}
 
 \begin{quote}
   \begin{description}
     \item[{\sc StrictSolutionMethod}]
-    \item[入力：] $I = (\mathcal{J},\mathcal{M},s,r,p,w,C,W)$
+    \item[入力：] $I = (\mathcal{J},\mathcal{M},r,p,w,C,W)$
     \item[出力：] スケジュールの集合 $\mathcal{S}$
     \begin{description}
-      \item[Step 1.] $I$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．$W = 0$ のとき，スケジュール $\mathcal{S}$ を出力して処理を終了する．
+      \item[Step 1.] $(\mathcal{J},\mathcal{M},r,p,C)$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．$W = 0$ のとき，スケジュール $\mathcal{S}$ を出力して処理を終了する．
       \item[Step 2.] 組 $(b,b_{\max},n,m)$ を入力として，{\sc increment} を実行し，出力が {\sc false} となるまで，以下の処理を繰り返す．
       \begin{description}
         \item[Step 2.1.] $(b)$ を入力として，{\sc sort} を実行する．
@@ -1252,7 +1252,7 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
           \begin{description}
             \item[Step 2.2.2.1.] ${\mbox order}[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
           \end{description}
-          \item[Step 2.2.3.] 組 $(\mathcal{J}',s,r,p,w,C,0)$ を入力として，{\sc BranchAndBound} を実行する．
+          \item[Step 2.2.3.] 組 $(\mathcal{J}',r,p,w,C,0)$ を入力として，{\sc BranchAndBound} を実行する．
           \item[Step 2.2.4.] {\sc BranchAndBound} の出力を $S$ とする．このとき，$\mathcal{S} := \mathcal{S} \cup S$ とする．
         \end{description}
       \end{description}
@@ -1373,7 +1373,7 @@ Step 1.2. では，$i$ 番目のジョブを割り当てる機械を新たに追
       \item[] $i \neq |\mathcal{J}'|$ のとき，
       \begin{description}
         \item[Step 2.] $\mathcal{J}'$ を処理開始可能時刻の昇順でソートする．
-        \item[Step 3.] 各 $1 \le j \le |\mathcal{J}'|$ に対して，以下の処理を繰り返す．ただし，$\mathcal{J}'$ における $j$ 番目のジョブを $J'_j$ と表記する．
+        \item[Step 3.] 各 $1 \le j \le |\mathcal{J}'|$ における $J'_j$ に対して，以下の処理を繰り返す．
         \begin{description}
           \item[Step 3.1] $S := S \cup J'_j$ とし，$\mathcal{J}'$ から $J'_j$ を取り除く．
           \item[Step 3.2] $\mathcal{J}'$ に対して，$(\mathcal{J}',S)$ を入力
