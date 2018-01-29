@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1517207969 "abstract.dvi" "abstract.pdf" "abstract" 1517207970
-  "abstract.dvi" 1517207969 7484 5f4f479a4310bc06740ae63e7e8e64c6 "latex"
+["dvipdf"] 1517215493 "abstract.dvi" "abstract.pdf" "abstract" 1517215494
+  "abstract.dvi" 1517215493 7296 a7a00117c0d1589c98fd34213d080677 "latex"
   (generated)
   "abstract.pdf"
-["latex"] 1517207969 "abstract.tex" "abstract.dvi" "abstract" 1517207970
+["latex"] 1517215493 "abstract.tex" "abstract.dvi" "abstract" 1517215494
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -45,13 +45,12 @@
   "/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty" 1467165119 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd" 1467165119 961 6518c6525a34feb5e8250ffa91731cff ""
   "/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd" 1467165119 961 d02606146ba5601b5645f987c92e6193 ""
-  "/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd" 1467165122 2256 80ce1168fb4ce6a85583a9cf8972c013 ""
   "/opt/local/share/texmf-texlive/tex/latex/setspace/setspace.sty" 1467165160 22913 a27d7908fc6f0385466454a966a316eb ""
   "/opt/local/share/texmf-texlive/tex/platex/base/jarticle.cls" 1493155088 25374 38c515a78828ca4b5dc7796d937d522f ""
   "/opt/local/share/texmf-texlive/tex/platex/base/jsize10.clo" 1493155088 8424 c1f7c93149d9cf74243e61f2249bcdca ""
   "/opt/local/var/db/texmf/web2c/eptex/platex.fmt" 1507880415 4343701 b1e22c26f75794f9c14618ee614e0ec6 ""
-  "abstract.aux" 1517207969 298 ef1a41e3e2d56e84e2c8dc91b1552d02 ""
-  "abstract.tex" 1517207968 5794 7456b619956419c2806e46fd1ae41365 ""
+  "abstract.aux" 1517215493 298 ef1a41e3e2d56e84e2c8dc91b1552d02 ""
+  "abstract.tex" 1517215491 5757 669202550d20ab461304b40dc824dd53 ""
   (generated)
   "abstract.dvi"
   "abstract.log"
