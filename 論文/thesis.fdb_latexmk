@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex thesis"] 1517211318 "thesis.aux" "thesis.bbl" "thesis" 1517212285
+["bibtex thesis"] 1517221707 "thesis.aux" "thesis.bbl" "thesis" 1517221710
   "./splncs03.bst" 1244960222 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "thesis.aux" 1517212283 6463 27e90d2fd3dcb37404e8fd2a363647f6 ""
+  "thesis.aux" 1517221708 6386 3f8d9562c12c791024394fbb37d51515 ""
   "thesis.bib" 1516176098 2466 fa01dc413c9f5176c391441e8fdd3fad ""
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["dvipdf"] 1517212283 "thesis.dvi" "thesis.pdf" "thesis" 1517212285
-  "thesis.dvi" 1517212283 213472 c85921b9df121743e8bc6cf9cab75f8b "latex"
+["dvipdf"] 1517221709 "thesis.dvi" "thesis.pdf" "thesis" 1517221710
+  "thesis.dvi" 1517221708 208744 ce495f8394d5483180d791ed74a00851 "latex"
   (generated)
   "thesis.pdf"
-["latex"] 1517212278 "thesis.tex" "thesis.dvi" "thesis" 1517212285
+["latex"] 1517221707 "thesis.tex" "thesis.dvi" "thesis" 1517221710
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -24,10 +24,8 @@
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1467164711 1004 54797486969f23fa377b128694d548df ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1467164711 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1467164712 916 f87d7c45f9c908e672703b83b72241a3 ""
-  "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1467164712 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1467164712 928 2dc8d444221b7a635bb58038579b861a ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1467164712 908 2921f8a10601f252058503cc6570e581 ""
-  "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1467164712 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1467164712 940 228d6584342e91276bf566bcf9716b83 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm" 1467164723 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm" 1467164723 1300 63a6111ee6274895728663cf4b4e7e81 ""
@@ -82,12 +80,12 @@
   "figure/SJIT.pdf" 1516010062 88078 c93c34db20e5b43b3e14ccdd8553768a ""
   "figure/reduction.pdf" 1517112490 54770 5a00145cdcaeb5ced8b1fc6ddf3c238a ""
   "optlab-bachelor.cls" 1485728812 30240 c611650afaaf655e9026af53565b623c ""
-  "thesis.aux" 1517212283 6463 27e90d2fd3dcb37404e8fd2a363647f6 ""
-  "thesis.bbl" 1517211318 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
-  "thesis.tex" 1517212277 129801 56f498bd132f869bddca261dc8ed2b03 ""
-  "thesis.toc" 1517212283 2200 8e961b778987e2adc9553d03eef8ae19 ""
+  "thesis.aux" 1517221708 6386 3f8d9562c12c791024394fbb37d51515 ""
+  "thesis.bbl" 1517221707 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
+  "thesis.tex" 1517221702 128304 d2b1669b1c7f75945089542ebc127fad ""
+  "thesis.toc" 1517221708 2141 cd578d63a3a1cfb98589cb65fc17db56 ""
   (generated)
-  "thesis.log"
-  "thesis.aux"
-  "thesis.toc"
   "thesis.dvi"
+  "thesis.toc"
+  "thesis.aux"
+  "thesis.log"
