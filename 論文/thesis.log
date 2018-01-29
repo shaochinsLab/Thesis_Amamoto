@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  29 JAN 2018 19:28
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  29 JAN 2018 20:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -229,11 +229,11 @@ File: figure/reduction.pdf Graphic file (type pdf)
 ] [12] [13]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 389.
+(Font)              using `JT1/mc/m/n' instead on input line 392.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 389.
+(Font)              using `JY1/mc/m/n' instead on input line 392.
 
 File: figure/SJIT.pdf Graphic file (type pdf)
 <figure/SJIT.pdf>
@@ -305,12 +305,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [32
 
 ] [33] [34]
-Overfull \hbox (3.50879pt too wide) in paragraph at lines 1234--1235
+Overfull \hbox (3.50879pt too wide) in paragraph at lines 1233--1234
 []\JY1/mc/m/it/12 組 $\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12 ; r; p; w; C; \OT1/cmr/m/n/12 0)$ \JY1/mc/m/it/12 を入力として ， \OT1/cmr/m/sc/12 Bran-chAnd-Bound
  []
 
 [35] [36] [37] [38] [39] [40]
-Overfull \hbox (39.84152pt too wide) in paragraph at lines 1417--1419
+Overfull \hbox (39.84152pt too wide) in paragraph at lines 1416--1418
 []\JY1/mc/m/it/12 最小完了時刻を持つスケジ ュ ール集合の要素 $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 []$
  []
 
@@ -321,7 +321,7 @@ Overfull \hbox (39.84152pt too wide) in paragraph at lines 1417--1419
 ] [45]
 第 7 章
 
-Overfull \hbox (6.3239pt too wide) in paragraph at lines 1605--1628
+Overfull \hbox (6.3239pt too wide) in paragraph at lines 1604--1627
  [][][][] 
  []
 
@@ -346,6 +346,6 @@ Here is how much of TeX's memory you used:
  5565 multiletter control sequences out of 15000+600000
  23830 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,770b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,921b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (54 pages, 208744 bytes).
+Output written on thesis.dvi (54 pages, 208940 bytes).
