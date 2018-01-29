@@ -116,11 +116,6 @@ INPUT figure/3-PARTITION.pdf
 INPUT extractbb -O figure/3-PARTITION.pdf
 INPUT figure/reduction.pdf
 INPUT extractbb -O figure/reduction.pdf
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmex10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin6.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmti12.tfm
@@ -130,6 +125,11 @@ INPUT figure/Lmax.pdf
 INPUT extractbb -O figure/Lmax.pdf
 INPUT figure/EDDrule.pdf
 INPUT extractbb -O figure/EDDrule.pdf
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmex10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT figure/3SAT1.pdf
 INPUT extractbb -O figure/3SAT1.pdf
 INPUT figure/3SAT2.pdf

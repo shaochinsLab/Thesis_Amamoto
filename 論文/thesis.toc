@@ -5,7 +5,7 @@
 \contentsline {chapter}{\numberline {第2章}問題の定式化}{5}
 \contentsline {section}{\numberline {2.1}最大待ち時間最小化問題}{5}
 \contentsline {section}{\numberline {2.2}最大待ち時間最小化問題（決定問題）}{6}
-\contentsline {subsection}{\numberline {2.2.1}複雑性クラス}{7}
+\contentsline {subsection}{\numberline {2.2.1}複雑性クラス}{6}
 \contentsline {subsection}{\numberline {2.2.2}既存のスケジューリング問題との対応}{9}
 \contentsline {chapter}{\numberline {第3章}従来研究}{11}
 \contentsline {section}{\numberline {3.1}JITジョブ荷重和最大化問題}{11}
