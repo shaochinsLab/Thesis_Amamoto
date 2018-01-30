@@ -134,6 +134,16 @@ INPUT figure/3SAT1.pdf
 INPUT extractbb -O figure/3SAT1.pdf
 INPUT figure/3SAT2.pdf
 INPUT extractbb -O figure/3SAT2.pdf
+INPUT figure/rgfTimeId.pdf
+INPUT extractbb -O figure/rgfTimeId.pdf
+INPUT figure/BandBTimeId.pdf
+INPUT extractbb -O figure/BandBTimeId.pdf
+INPUT figure/compId1.pdf
+INPUT extractbb -O figure/compId1.pdf
+INPUT figure/ptTimeId1.pdf
+INPUT extractbb -O figure/ptTimeId1.pdf
+INPUT figure/ptTimeId2.pdf
+INPUT extractbb -O figure/ptTimeId2.pdf
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT thesis.aux

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  30 JAN 2018 15:18
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  30 JAN 2018 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -237,11 +237,7 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/sc' in size <12> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/sc' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 228.
 File: figure/3-PARTITION.pdf Graphic file (type pdf)
- <figure/3-PARTITION.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9]
+ <figure/3-PARTITION.pdf> [9]
 File: figure/reduction.pdf Graphic file (type pdf)
  <figure/reduction.pdf> [10]
 第 3 章
@@ -250,11 +246,11 @@ File: figure/reduction.pdf Graphic file (type pdf)
 ] [12]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 391.
+(Font)              using `JT1/mc/m/n' instead on input line 389.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 391.
+(Font)              using `JY1/mc/m/n' instead on input line 389.
 
 [13]
 File: figure/SJIT.pdf Graphic file (type pdf)
@@ -286,7 +282,7 @@ File: figure/EDDrule.pdf Graphic file (type pdf)
 [23
 
 ] [24] [25]
-Overfull \hbox (19.74467pt too wide) detected at line 932
+Overfull \hbox (19.74467pt too wide) detected at line 930
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
@@ -298,42 +294,70 @@ File: figure/3SAT2.pdf Graphic file (type pdf)
 [32
 
 ] [33] [34]
-Overfull \hbox (3.50879pt too wide) in paragraph at lines 1204--1205
+Overfull \hbox (3.50879pt too wide) in paragraph at lines 1206--1207
 []\JY1/mc/m/it/12 組 $\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12 ; r; p; w; C; \OT1/cmr/m/n/12 0)$ \JY1/mc/m/it/12 を入力として ， \OT1/cmr/m/sc/12 Bran-chAnd-Bound
  []
 
 [35] [36] [37] [38] [39]
-Overfull \hbox (39.84152pt too wide) in paragraph at lines 1390--1392
+Overfull \hbox (39.84152pt too wide) in paragraph at lines 1392--1394
 []\JY1/mc/m/it/12 最小完了時刻を持つスケジ ュ ール集合の要素 $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 []$
  []
 
-[40] [41] [42] [43]
-第 6 章
-[44
+[40] [41]
+File: figure/rgfTimeId.pdf Graphic file (type pdf)
+ <figure/rgfTimeId.pdf>
 
-] (./thesis.bbl [45]) [46
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42]
+File: figure/BandBTimeId.pdf Graphic file (type pdf)
+ <figure/BandBTimeId.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figure/compId1.pdf Graphic file (type pdf)
+<figure/compId1.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[43]
+File: figure/ptTimeId1.pdf Graphic file (type pdf)
+ <figure/ptTimeId1.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: figure/ptTimeId2.pdf Graphic file (type pdf)
+<figure/ptTimeId2.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44] [45] [46]
+第 6 章
+[47
+
+] (./thesis.bbl [48]) [49
 
 ]
 付 録 A  
-[47
+[50
 
-] [48] [49] [50] [51] [52] [53
+] [51] [52] [53] [54] [55] [56] [57] [58
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [54] (./thesis.aux)
+ [59] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2003 strings out of 493653
- 23278 string characters out of 6150337
- 177964 words of memory out of 5000000
- 5571 multiletter control sequences out of 15000+600000
+ 2031 strings out of 493653
+ 23690 string characters out of 6150337
+ 193964 words of memory out of 5000000
+ 5594 multiletter control sequences out of 15000+600000
  23830 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,19n,24p,925b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (55 pages, 213664 bytes).
+Output written on thesis.dvi (60 pages, 223736 bytes).
