@@ -1476,7 +1476,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
 
 % \begin{figure}[h]
 %   \centering
-%   \includegraphics[width = 13cm]{figure/rgfTimeUn.pdf}
+%   \includegraphics[width = 13cm]{figure/}
 %   \caption{尺度 3：無関連並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法に用いた割り当て生成アルゴリズムの改良前と改良後の計算時間の比較．表~\ref{A3} 参照．}
 %   \label{5.3}
 % \end{figure}
@@ -1510,15 +1510,9 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
 
 \begin{description}
   \item[尺度 6：] 無関連並列機械モデルにおける最大待ち時間最小化問題に対するヒューリスティックの競合比．
+
+  表~\ref{A6} より，無関連並列機械モデルにおける最大待ち時間最小化問題に対して，本研究で提案したヒューリスティックの競合比は多くの場合において $\infty$ となった．しかし，1 機械におけるジョブ数が多いとき，競合比が定数となることがわかった．そのような場合は，最適解における最大待ち時間が 0 にならない場合であると考えられる．この結果より，無関連並列機械モデルにおける最大待ち時間最小化問題に対して本研究でのヒューリスティックは有効的ではないことが明らかになった．
 \end{description}
-
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width = 16cm]{figure/}
-%   \caption{尺度 5：無関連並列機械モデルにおける最大待ち時間最小化問題に対するヒューリスティックの競合比．表~\ref{A6} 参照．}
-%   \label{5.6}
-% \end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{description}
@@ -1813,38 +1807,26 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|} \hline
       &  & \multicolumn{5}{c|}{処理時間の上限} \\ \hline
       ジョブ数 & 機械数& 10 & 20 & 30 & 40 & 50 \\ \hline \hline
-      & 2 &  &  &  &  &    \\ \cline{2-7}
-      10 & 3 &  &  &  &  &    \\ \cline{2-7}
-      & 4 &  &  &  &  &    \\ \cline{2-7}
-      & 5 &  &  &  &  &    \\ \hline \hline
-      & 2 &  &  &  &  &    \\ \cline{2-7}
-      11 & 3 &  &  &  &   &  \\ \cline{2-7}
-      & 4 &  &  &  &  &    \\ \cline{2-7}
-      & 5 &  &  &  &  &    \\ \hline \hline
-      & 2 &  &  &  &  &    \\ \cline{2-7}
-      12 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &    \\ \cline{2-7}
-      & 5 &  &  &  &  &   \\ \hline \hline
-      & 2 &  &  &  &  &  \\ \cline{2-7}
-      13 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &  \\ \cline{2-7}
-      & 5 &  &  &  &  &  \\ \hline \hline
-      & 2 &  &  &  &  &  \\ \cline{2-7}
-      14 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &  \\ \cline{2-7}
-      & 5 &  &  &  &  &  \\ \hline \hline
-      & 2 &  &  &  &  &  \\ \cline{2-7}
-      15 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &  \\ \cline{2-7}
-      & 5 &  &  &  &  &  \\ \hline \hline
-      & 2 &  &  &  &  &  \\ \cline{2-7}
-      16 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &  \\ \cline{2-7}
-      & 5 &  &  &  &  &  \\ \hline \hline
-      & 2 &  &  &  &  &  \\ \cline{2-7}
-      17 & 3 &  &  &  &  &  \\ \cline{2-7}
-      & 4 &  &  &  &  &  \\ \cline{2-7}
-      & 5 &  &  &  &  &  \\ \hline \hline
+
+      & 2 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & 31   \\ \cline{2-7}
+      10 & 3 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \cline{2-7}
+      & 4 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \cline{2-7}
+      & 5 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \hline \hline
+
+      & 2 & $\infty$ & $\infty$ & $\infty$ & 25 & 33.5 \\ \cline{2-7}
+      11 & 3 & $\infty$ & $\infty$ & $\infty$ & $\infty$  & $\infty$ \\ \cline{2-7}
+      & 4 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \cline{2-7}
+      & 5 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \hline \hline
+
+      & 2 & $\infty$ & $\infty$ & 23.5 & 17.334 & 29.667   \\ \cline{2-7}
+      12 & 3 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \cline{2-7}
+      & 4 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \hline \hline
+
+      15 & 2 & $\infty$ & $\infty$ & 13.875 & 14.2 & 8.534 \\ \cline{2-7}
+      & 3 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \hline \hline
+      16 & 2 & $\infty$ & 11.33 & 10.5 & 8.54 & 7.41 \\ \hline \hline
+      17 & 2 & $\infty$ & 18 & 7.714 & 8 & $\times$ \\ \cline{2-7}
+      & 3 & $\infty$ & $\infty$ & $\infty$ & $\infty$ & $\infty$ \\ \hline \hline
     \end{tabular}
     \caption{無関連並列機械モデルにおけるヒューリスティックの競合比}
     \label{A6}
