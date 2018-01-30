@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex thesis"] 1517303348 "thesis.aux" "thesis.bbl" "thesis" 1517304410
+["bibtex thesis"] 1517326089 "thesis.aux" "thesis.bbl" "thesis" 1517326151
   "./splncs03.bst" 1244960222 33098 4ef5df5462ae7c3cec476a39dec1b7bb ""
-  "thesis.aux" 1517304408 8196 1ed1e35d398b2e043981c4b6e4b1f39d ""
+  "thesis.aux" 1517326150 7118 2cab9c9b507377fffb696ec041cab578 ""
   "thesis.bib" 1516176098 2466 fa01dc413c9f5176c391441e8fdd3fad ""
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["dvipdf"] 1517304408 "thesis.dvi" "thesis.pdf" "thesis" 1517304410
-  "thesis.dvi" 1517304408 223736 8059dc30f6be26e9f4201ad5c3834b73 "latex"
+["dvipdf"] 1517326150 "thesis.dvi" "thesis.pdf" "thesis" 1517326151
+  "thesis.dvi" 1517326150 209156 82461060afeb0ecba421b93dc4abc6e3 "latex"
   (generated)
   "thesis.pdf"
-["latex"] 1517304401 "thesis.tex" "thesis.dvi" "thesis" 1517304410
+["latex"] 1517326148 "thesis.tex" "thesis.dvi" "thesis" 1517326151
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -72,30 +72,24 @@
   "extractbb -O figure/EDDrule.pdf" 0 -1 0 ""
   "extractbb -O figure/Lmax.pdf" 0 -1 0 ""
   "extractbb -O figure/SJIT.pdf" 0 -1 0 ""
-  "extractbb -O figure/compId1.pdf" 0 -1 0 ""
-  "extractbb -O figure/ptTimeId1.pdf" 0 -1 0 ""
-  "extractbb -O figure/ptTimeId2.pdf" 0 -1 0 ""
   "extractbb -O figure/reduction.pdf" 0 -1 0 ""
   "extractbb -O figure/rgfTimeId.pdf" 0 -1 0 ""
   "figure/3-PARTITION.pdf" 1517290844 30172 7d2b1dd364c948c9bd6730d4afeb0601 ""
   "figure/3SAT1.pdf" 1517291425 91604 0714c0bf89709fac82cbadbf399aa8d3 ""
   "figure/3SAT2.pdf" 1517291894 64799 c08dbf51f9bb734e0a68a918c104c3ef ""
-  "figure/BandBTimeId.pdf" 1517303520 25172 972f752a35aaae412fd97cdf70186f81 ""
+  "figure/BandBTimeId.pdf" 1517324706 140256 1b698c62e951e238f20f6411489487e7 ""
   "figure/EDDrule.pdf" 1517291322 22780 c77ac1b50462be8817b91033d377bebe ""
   "figure/Lmax.pdf" 1517292198 27914 c325b86fdf1915ecf08d4fbb101f1c8a ""
   "figure/SJIT.pdf" 1517291036 84371 ad01bb9ee3820e82d8bbe2163ad0ad0c ""
-  "figure/compId1.pdf" 1517302431 24386 14ec4cad789101922ac98c2ef38167d1 ""
-  "figure/ptTimeId1.pdf" 1517298540 21839 8bde7d5f9095d6e596aef70c2463dcb2 ""
-  "figure/ptTimeId2.pdf" 1517301414 21390 64f49236b13aa550868d0128961daafa ""
   "figure/reduction.pdf" 1517290919 52502 d6a918a5c6fcfd2d8a02a6ec68736e49 ""
-  "figure/rgfTimeId.pdf" 1517298588 24369 63c3aec36cd797fe6b1480061ba930a4 ""
+  "figure/rgfTimeId.pdf" 1517324796 113579 86d5ca1cc1ac978e5a1aafc0e277ec48 ""
   "optlab-bachelor.cls" 1485728812 30240 c611650afaaf655e9026af53565b623c ""
-  "thesis.aux" 1517304408 8196 1ed1e35d398b2e043981c4b6e4b1f39d ""
-  "thesis.bbl" 1517303348 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
-  "thesis.tex" 1517304399 141365 4e2752d44874fd7e7910590a67e3eb9b ""
-  "thesis.toc" 1517304408 1813 c2b5d8ecd5ba078005ec288749f0bcf0 ""
+  "thesis.aux" 1517326150 7118 2cab9c9b507377fffb696ec041cab578 ""
+  "thesis.bbl" 1517326089 1543 d0367c3d80017071fff4f7344bba6f04 "bibtex thesis"
+  "thesis.tex" 1517326144 146319 4215fb6ff2a450c421445c19273a5c2a ""
+  "thesis.toc" 1517326150 1813 0be47ce67b148286d5c84fdfe7be10da ""
   (generated)
+  "thesis.log"
   "thesis.toc"
   "thesis.aux"
-  "thesis.log"
   "thesis.dvi"
