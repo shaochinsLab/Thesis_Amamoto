@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  29 JAN 2018 23:03
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  30 JAN 2018 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -194,56 +194,55 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 第 1 章
 [3
 
-] [4]
-第 2 章
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
-(/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 61.
+ (/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
- [5
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
+ [4]
+第 2 章
+[5
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 155.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 154.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 155.
- [6]
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 154.
+ [6] [7]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 174.
+(Font)              using `JT1/mc/m/n' instead on input line 198.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 174.
+(Font)              using `JY1/mc/m/n' instead on input line 198.
 
-[7]
+[8]
 File: figure/3-PARTITION.pdf Graphic file (type pdf)
- <figure/3-PARTITION.pdf> [8]
+ <figure/3-PARTITION.pdf> [9]
 File: figure/reduction.pdf Graphic file (type pdf)
- <figure/reduction.pdf> [9] [10]
+ <figure/reduction.pdf> [10]
 第 3 章
 [11
 
-] [12] [13]
+] [12]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 385.
+(Font)              using `JT1/mc/m/n' instead on input line 383.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 385.
+(Font)              using `JY1/mc/m/n' instead on input line 383.
 
+[13]
 File: figure/SJIT.pdf Graphic file (type pdf)
-<figure/SJIT.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ <figure/SJIT.pdf>
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
-[14]
+ [14]
 Missing character: There is no ^^e3 in font cmr12!
 Missing character: There is no ^^82 in font cmr12!
 Missing character: There is no ^^99 in font cmr12!
@@ -262,33 +261,17 @@ Missing character: There is no ^^99 in font cmr12!
 File: figure/Lmax.pdf Graphic file (type pdf)
  <figure/Lmax.pdf> [19] [20]
 File: figure/EDDrule.pdf Graphic file (type pdf)
- <figure/EDDrule.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[21] [22]
+ <figure/EDDrule.pdf> [21] [22]
 第 4 章
 [23
 
 ] [24]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 863.
-
-
-Overfull \hbox (12.05652pt too wide) detected at line 872
-[]
+Overfull \hbox (1.33223pt too wide) detected at line 864
+\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 J[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i; `\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; A\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J[]\OT1/cmr/m/n/12 )) = []
  []
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 875.
-
-
-Overfull \hbox (21.32318pt too wide) detected at line 884
-[]
- []
-
-
-Overfull \hbox (19.74467pt too wide) detected at line 934
+Overfull \hbox (19.74467pt too wide) detected at line 924
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
@@ -305,31 +288,31 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [32
 
 ] [33] [34]
-Overfull \hbox (3.50879pt too wide) in paragraph at lines 1224--1225
+Overfull \hbox (3.50879pt too wide) in paragraph at lines 1208--1209
 []\JY1/mc/m/it/12 組 $\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 J[]\OML/cmm/m/it/12 ; r; p; w; C; \OT1/cmr/m/n/12 0)$ \JY1/mc/m/it/12 を入力として ， \OT1/cmr/m/sc/12 Bran-chAnd-Bound
  []
 
-[35] [36] [37] [38] [39] [40]
-Overfull \hbox (39.84152pt too wide) in paragraph at lines 1407--1409
+[35] [36] [37] [38] [39]
+Overfull \hbox (39.84152pt too wide) in paragraph at lines 1394--1396
 []\JY1/mc/m/it/12 最小完了時刻を持つスケジ ュ ール集合の要素 $\OML/cmm/m/it/12 S[] \OMS/cmsy/m/n/12 2 []$
  []
 
-[41] [42] [43]
+[40] [41] [42] [43]
 第 6 章
 [44
 
-] [45]
-第 7 章
+] (./thesis.bbl [45]) [46
 
-Overfull \hbox (6.3239pt too wide) in paragraph at lines 1595--1618
+]
+付 録 A  
+
+Overfull \hbox (6.3239pt too wide) in paragraph at lines 1590--1613
  [][][][] 
  []
 
-(./thesis.bbl [46
+[47
 
-] [47] [48] [49] [50]) [51
-
-] [52
+] [48] [49] [50] [51] [52
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
@@ -346,6 +329,6 @@ Here is how much of TeX's memory you used:
  5565 multiletter control sequences out of 15000+600000
  23830 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,921b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,925b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (54 pages, 207824 bytes).
+Output written on thesis.dvi (54 pages, 205764 bytes).
