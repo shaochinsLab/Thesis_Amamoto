@@ -57,16 +57,16 @@
 SWT の計算複雑さに基づいて，解法の提案を行う．また，計算機を用いて解法の実験的評価を行う．
 
 \section{研究成果}
-本研究では SWT に対して以下の成果を得た．
+%本研究では SWT に対して以下の成果を得た．
 \begin{description}
   \item[成果 1 : ]
-  無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SWT の NP 完全性}を示した．
+  無関連並列機械モデルにおいて機械数が入力の一部の場合，\underline{SWT が NP 困難}であることを明らかにした．
 \end{description}
-SJIT における\textsc{3-SAT} からの還元手法に着目し，SWT の NP 完全性を示した．
+SWT を決定問題として定義した問題の NP 完全性を示し，SWT が NP 困難であることを明らかにした．
 
 \begin{description}
   \item[成果 2 : ]
-  以下の改良を加え，同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に基づいて，\underline{厳密解法を提案}した．
+  同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に以下の改良を加え，\underline{厳密解法を提案}した．
   \begin{description}
     \setlength{\leftskip}{-7mm}
     \item[2.1]
@@ -83,7 +83,7 @@ SJIT における\textsc{3-SAT} からの還元手法に着目し，SWT の NP �
   \item[成果 3 : ]
   同一並列機械モデルにおける SWT に対し，\underline{ヒューリスティックを提案}した．
 \end{description}
-貪欲解法に基づいたヒューリスティックを開発した．ヒューリスティックによる解から得られた最大待ち時間を $W_h$，最適解から得られた最大待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = 24$} の結果が得られた．
+貪欲アルゴリズムに基づいたヒューリスティックを開発した．ヒューリスティックにより出力された解から得られた最大待ち時間を $W_h$，最適解から得られた最大待ち時間を $W_{opt}$ としたとき，\mbox{\boldmath $\max\big\{W_h/W_{opt}\big\} = 24$} の結果が得られた．
 
 \begin{thebibliography}{9} %参考文献{載せる参考文献の数の上限}
   \bibitem{SRTD} % SRTDの計算複雑さの証明

@@ -56,7 +56,6 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmib10.tfm

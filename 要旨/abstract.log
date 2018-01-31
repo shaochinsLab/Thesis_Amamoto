@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 11:00
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -78,30 +78,17 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 40.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 40.
+ [1
 
 
-LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 65.
-
-
-LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 65.
-
-[1
-
-
-] (./abstract.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+] (./abstract.aux) ) 
 Here is how much of TeX's memory you used:
- 449 strings out of 493653
- 5266 string characters out of 6150337
- 66169 words of memory out of 5000000
- 4077 multiletter control sequences out of 15000+600000
- 19300 words of font info for 76 fonts, out of 8000000 for 9000
+ 443 strings out of 493653
+ 5194 string characters out of 6150337
+ 65169 words of memory out of 5000000
+ 4072 multiletter control sequences out of 15000+600000
+ 18999 words of font info for 75 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  22i,7n,24p,527b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abstract.dvi (1 page, 7280 bytes).
+Output written on abstract.dvi (1 page, 7272 bytes).
