@@ -3,46 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
 The style file: splncs03.bst
 Database file #1: thesis.bib
-Warning--missing publisher in EDD2
 You've used 9 entries,
             2785 wiz_defined-function locations,
-            646 strings with 5672 characters,
-and the built_in function-call counts, 4299 in all, are:
-= -- 351
+            649 strings with 5711 characters,
+and the built_in function-call counts, 5030 in all, are:
+= -- 431
 > -- 98
-< -- 10
+< -- 14
 + -- 43
 - -- 32
-* -- 245
-:= -- 553
-add.period$ -- 8
+* -- 285
+:= -- 618
+add.period$ -- 9
 call.type$ -- 9
 change.case$ -- 39
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 394
-empty$ -- 411
+cite$ -- 9
+duplicate$ -- 445
+empty$ -- 481
 format.name$ -- 38
-if$ -- 961
+if$ -- 1162
 int.to.chr$ -- 0
 int.to.str$ -- 9
-missing$ -- 81
+missing$ -- 85
 newline$ -- 32
 num.names$ -- 18
-pop$ -- 137
+pop$ -- 145
 preamble$ -- 1
 purify$ -- 34
 quote$ -- 0
-skip$ -- 141
+skip$ -- 179
 stack$ -- 0
-substring$ -- 259
-swap$ -- 211
-text.length$ -- 10
+substring$ -- 371
+swap$ -- 252
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 28
-warning$ -- 1
-while$ -- 37
+warning$ -- 0
+while$ -- 45
 width$ -- 10
-write$ -- 88
-(There was 1 warning)
+write$ -- 94

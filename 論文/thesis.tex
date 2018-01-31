@@ -13,7 +13,6 @@
 
 \renewcommand{\bibname}{参考文献}
 \newcommand{\argmin}{\mathop{\rm arg~min}\limits}
-
 \begin{document}
 \frontmatter
 
@@ -60,7 +59,7 @@
 \begin{itemize}
   \item 第~\ref{c_2}~章では，最大待ち時間最小化問題の定式化を行なう．また，既存のスケジューリング問題との対応づけ，NP完全性の証明のために，最大待ち時間最小化問題を決定問題として定義し，定式化を行う．
   \item 第~\ref{c_3}~章では，最大待ち時間最小化問題に関連する，JITジョブ荷重和最大化問題と
-  処理開始可能時刻付き最大遅れ時間最小化問題に対する従来研究の成果を，計算複雑さの観点，解法の観点から，それぞれまとめる．
+  処理開始可能時刻付き最大遅れ時間最小化問題に対する従来研究の成果を，計算複雑さの観点，解法の観点からそれぞれまとめる．
   \item 第~\ref{c_4}~章から第~\ref{c_5}~章にかけて，本研究の成果を述べる．第~\ref{c_4}~章では，最大待ち時間最小化問題の計算複雑さについて述べる．
   \item 第~\ref{c_5}~章では，提案解法の紹介と，分析規模拡大のために改良した分枝限定法の紹介を行う．また，実験より得たデータから提案解法の評価を行う．
   \item 第~\ref{c_6}~章では，結論として，本研究の成果と今後の課題を述べる．
@@ -156,7 +155,7 @@
 このスケジュールにおける最大待ち時間 $W_h$ は，最適解における最大待ち時間以上の値となる．
 次に，$0$ と $W_h$ の中間の値 $W_h/2$ を制約付きスケジューリング問題のインスタンスとして，問題を解く．
 判定が Yes のとき，最大待ち時間の値を半分 $W_h/4$ にして，制約付きスケジューリング問題のインスタンスとして，問題を解く．
-判定が No のとき，$W_h/2$ と $W_h$ の中間の値 $W_h/2 + W_h/4$ を 制約付きスケジューリング問題のインスタンスとして，問題を解く．
+判定が No のとき，$W_h/2$ と $W_h$ の中間の値 $W_h/2$ と $W_h/4$ の和を制約付きスケジューリング問題のインスタンスとして，問題を解く．
 この操作を繰り返し行うことで，最適解における最大待ち時間を有限ステップで求めることができる．
 つまり，制約付きスケジューリング問題の待ち時間に対して，二分探索を有限ステップ行うことで，最大待ち時間最小化問題の最適解における最大待ち時間を求めることができる．
 
@@ -205,11 +204,11 @@ NP は問題のクラスの一つであり，NP は，問題のインスタン�
 NP に属する任意の問題と少なくとも同じくらい難しい問題を NP 困難 であるとい
 い、そのうち NP に属するものを NP 完全問題という．
 
-次に，決定問題の 1 つである \textsc{3-SATISFIABILITY} (\textsc{3-SAT}) と \textsc{3-PARTITION} を紹介する．
+次に，決定問題の 1 つである {\sc 3-SATISFIABILITY (3-SAT)} と {\sc 3-PARTITION} を紹介する．
 
 \begin{quote}
   \begin{description}
-    \item[] ${\mbox {\bf \textsc{3-SATISFIABILITY (3-SAT)}}}$
+    \item[] ${\mbox {\bf {\sc 3-SATISFIABILITY (3-SAT)}}}$
     \item[インスタンス : ] ブール型の変数集合 $X = \{x_1,\ldots,x_n\}$ と，$X$ 上の 3 つのリテラルの集合 $h$ の集合 $H$ からなる 2 項組 $(X,H)$．
     \item[問題 : ] $H$ を充足する真理値割り当て $f : X \to \{0,1\}$，
     つまり，
@@ -227,7 +226,7 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
 % したがって，第~\ref{c_4}~章で利用する{\sc 3-SAT} のインスタンスは，このような場合を除く．
 
 \begin{description}
-  \item[] ${\mbox {\bf \textsc{3-PARTITION}}}$
+  \item[] ${\mbox {\bf {\sc 3-PARTITION}}}$
   \item[インスタンス : ] 以下の条件を満たす，整数の集合 $S = \{a_1,\ldots,a_{3t}\}$ と 整数 $b$ からなる 2 項組 $(S,b)$．
   \begin{itemize}
     \item $b/4 < a_i < b/2$
@@ -249,7 +248,7 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
   \caption{{\sc 3-PARTITION} の問題の解のイメージ}
 \end{figure}
 
-\textsc{3-SAT} と \textsc{3-PARTITION} の計算複雑さは NP 完全であることが Garey and Johnson \cite{3SAT} により証明されている．
+{\sc 3-SAT} と {\sc 3-PARTITION} の計算複雑さは NP 完全であることが Garey and Johnson \cite{3SAT} により証明されている．
 ある決定問題が NP 完全であるとは，以下の二つが成立することを示す．
 \begin{itemize}
   \item その問題が NP に属す．
@@ -260,8 +259,8 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
 ただし全ての NP である問題は推移性が成り立つためどれか1つから還元する
 ことが出来れば良い．
 
-本研究では，\textsc{3-SAT} からの多項式時間還元により 無関連並列機械モデルにおいて機械数が入力の一部の場合，待ち時間制約付きスケジューリング問題が NP 完全であることを示す．
-つまり，\textsc{3-SAT} のインスタンスから待ち時間制約付きスケジューリング問題のインスタンスが多項式時間で構成可能であり，加えて， \textsc{3-SAT}  の判定結果が Yes ならば
+本研究では，{\sc 3-SAT} からの多項式時間還元により 無関連並列機械モデルにおいて機械数が入力の一部の場合，待ち時間制約付きスケジューリング問題が NP 完全であることを示す．
+つまり，{\sc 3-SAT} のインスタンスから待ち時間制約付きスケジューリング問題のインスタンスが多項式時間で構成可能であり，加えて， {\sc 3-SAT}  の判定結果が Yes ならば
 かつその場合に限り構成された 待ち時間制約付きスケジューリング問題のインスタンスに対し判定結果が Yes であることを示す．加えて，スケジュールを証拠とし，待ち時間制約付きスケジューリング問題のインスタンスとスケジュールが与えられたとき，そのスケジュールにおける最大待ち時間が $w$ 以下を満たすかの判定が多項式時間で行えることを示すことにより，待ち時間制約付きスケジューリング問題が NP 完全であることを示す．
 
 \begin{figure}[h]
@@ -280,7 +279,7 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
 第 \ref{3_s_2} 節では，処理開始可能時刻付き最大遅れ時間最小化問題について，計算複雑さと解法の観点から紹介する．
 
 \section{JITジョブ荷重和最大化問題}\label{3_s_1}
-この問題は　\textsc{3-SAT} からの還元により，強 NP 困難であることが Sung and Vlach \cite{SJIT} によって証明されている．以下では，JIT ジョブ荷重和最大化問題を定式化し，問題が NP 困難であることの証明を示す．
+この問題は　{\sc 3-SAT} からの還元により，強 NP 困難であることが Sung and Vlach \cite{SJIT} によって証明されている．以下では，JIT ジョブ荷重和最大化問題を定式化し，問題が NP 困難であることの証明を示す．
 以下で，JIT ジョブ荷重和最大化問題の定式化を紹介する．
 \begin{quote}
   \begin{description}
@@ -306,18 +305,18 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
     \begin{displaymath}
       \displaystyle \varphi(A,C) = \sum_{i \in \mathcal{Q}(A,C)}w_i
     \end{displaymath}
-    $i \in \mathcal{Q}(A,C)$ を最大とするスケジュールを求める．ただし，
+    を最大とするスケジュールを求める．ただし，
     $\mathcal{Q}(A, C)$ はスケジュール $(A, C)$ に
     おいて納期以前に処理を完了するジョブの集合である (
     $\mathcal{Q}(A, C) = \{i \in \{1,\ldots, n\} | C(i) \ge d_i \}$ )．
   \end{description}
 \end{quote}
 
-以下では，\textsc{3-SAT} からの還元により，JIT ジョブ荷重和最大化問題の計算複雑さの証明を紹介する．
+以下では，{\sc 3-SAT} からの還元により，JIT ジョブ荷重和最大化問題の計算複雑さの証明を紹介する．
 
 ブール型変数の集合 $X = \{x_1,\ldots,,x_β\}$ と， $X$ 上の 3 つのリテラル
 からなる集合 $H = {h_1,\ldots,h_{\lambda}}$ の 2 項組， $(X,H)$ を任意の
-\textsc{3-SAT} 問題の入力とする．
+{\sc 3-SAT} 問題の入力とする．
 議論に先立ち，いくつかの表記を導入する．各 $k \in \{1,\ldots,\beta\}$
 について， $\gamma_k$ を $H$ に おいて $x_k$ が現れる回数を表す自然
 数とし， $\gamma$ を $\gamma_k ( k \in \{1,\ldots,\beta\} )$の最大値に
@@ -337,7 +336,7 @@ $(X, H)$ に基づき，以下のように JIT ジョブ荷重和最大
   各グループ $k \in \{1,2,\ldots, \beta\}$ の $\gamma$ 番目のジョブの納
   期を $2\gamma - 1$，$\ell$ 番目のジョブ ( $\ell \neq \gamma$ ) の納期
   を $\ell$ とする．つまり，各 $k \in \{1,2,\ldots, \beta\}$ と $\ell \in \{1,2,\ldots,
-  \gamma\}$について，
+  \gamma\}$について，以下となる．
   \begin{displaymath}
     d_{(k - 1)\gamma + \ell} = \left\{ \begin{array}{ll} \ell & \text{if } \ell < \gamma \\ 2\gamma - 1 & \text{if } \ell = \gamma \end{array} \right.
   \end{displaymath}
@@ -345,14 +344,14 @@ $(X, H)$ に基づき，以下のように JIT ジョブ荷重和最大
   ブの納期についても，同様に対応させる．
   各グループ $k \in \{1,2,\ldots, \beta\}$ の $\gamma$ 番目のジョブの納期を $\gamma$，$\ell$ 番目のジョブ ( $\ell \neq \gamma$ ) の納期を $\gamma + \ell$ とする．
   つまり，各 $k \in \{1,2,\ldots, \beta\}$ と $\ell \in \{1,2,\ldots,
-  \gamma\}$について，
+  \gamma\}$について，以下となる．
   \begin{displaymath}
     d_{(\beta + k - 1)\gamma + \ell} = \left\{ \begin{array}{ll}\gamma +  \ell & \text{if } \ell < \gamma \\ \gamma & \text{if } \ell = \gamma \end{array} \right.
   \end{displaymath}
   \item[荷重和の設定：] 各ジョブを納期昇順に基づき $2\beta$ 個のグループに分ける．
   グループ $k \in \{1,2,\ldots,\beta\}$ と，グループ $k + \beta$ について，グループの $\gamma$ 番目のジョブの荷重を $\gamma$ とし，それ以外のジョブの荷重を 1 とする．
   つまり，各 $k \in \{1,2,\ldots, \beta\}$ と $\ell \in \{1,2,\ldots,
-  \gamma\}$について，
+  \gamma\}$について，以下となる．
   \begin{displaymath}
     w_{(k - 1)\gamma + \ell^v} = w_{(\beta + k - 1)\gamma + \ell} = \left\{ \begin{array}{ll} 1 & \text{if } \ell < \gamma \\ \gamma & \text{if } \ell = \gamma \end{array} \right.
   \end{displaymath}
@@ -362,7 +361,7 @@ $(X, H)$ に基づき，以下のように JIT ジョブ荷重和最大
   各グループの $\gamma$ 番目のジョブの，グループに対応する機械における処
   理時間を $\gamma$ とし，$\gamma$ 番目のジョブをのぞいた各ジョブの，グループに対応する機械における処理時間を 1 とする．
   つまり，各 $j \in \{1,2,\ldots, \beta\}$ と $k \in \{1,2,\ldots,
-  \beta\}$ と $\ell \in \{1,2,\ldots, \gamma\}$について，
+  \beta\}$ と $\ell \in \{1,2,\ldots, \gamma\}$について，以下となる．
   \begin{displaymath}
     p_{(k - 1)\gamma + \ell, j} = p_{(\beta + k - 1)\gamma + \ell, j} = \left\{ \begin{array}{ll} 1 & \text{if } \ell < \gamma \text{ and } j = k, \\ \gamma & \text{if } \ell = \gamma \text{ and } j = k, \\ 2\gamma & \text{otherwise}\end{array} \right.
   \end{displaymath}
@@ -373,7 +372,7 @@ $(X, H)$ に基づき，以下のように JIT ジョブ荷重和最大
   グループ $k + \beta$ について$\bar x_k$ を対応させる．
   $\ell \in \{1,2,\ldots, \gamma - 1\}$ 番目の各ジョブについて，$\bar x_k \in h_{j - \beta}$ であれば $d_{(\beta + k - 1)\gamma + \ell}$ とし， そうでない場合は $2\gamma$ とする.また，$\gamma$ 番目のジョブの処理時間は $2\gamma$ とする．
   つまり，各 $j \in \{\beta + 1,\ldots, \beta + \gamma\}$ と $k \in
-  \{1,2,\ldots, \beta\}$ と $\ell \in \{1,2,\ldots, \gamma\}$について，
+  \{1,2,\ldots, \beta\}$ と $\ell \in \{1,2,\ldots, \gamma\}$について，以下となる．
   \begin{displaymath}
     p_{(k - 1)\gamma + \ell, j} = \left\{ \begin{array}{ll} d_{(k - 1)\gamma + 1} & \text{if } \ell < \gamma \text{ and } x_k \in h_{j - \beta}, \\ 2\gamma & \text{otherwise} \end{array} \right.
   \end{displaymath}
@@ -415,7 +414,7 @@ $\varphi(A,C) \ge \beta(2\gamma - 1) + \lambda$ を満たす実行可能なス�
   $1,\ldots, \beta$ に割り当てたジョ ブの処理時間は重複せず (図 3.1)，完
   了時刻は納期であることから，$k \in \{1,\ldots,\beta\}$ に割り当てたジョ
   ブは JIT ジョブである.よって，ここまでのスケジュール $(A, C)$ における
-  JIT ジョブの荷重和は，
+  JIT ジョブの荷重和は，以下となる．
   \begin{displaymath}
     \displaystyle \varphi(A,C) = \sum_{k \in
     \{1,\ldots,\beta\}}\bigg(\sum_{i \in \mathcal{Q}(A,C):i \in
@@ -519,7 +518,7 @@ $k\gamma \in \mathcal{Q}(A,C)$ ならば $k\gamma \in A_k$ であり，
 $(\beta + k) \gamma \in \mathcal{Q}(A,C)$ ならば，$(\beta +
 k)\gamma \in A_k$ である．これらのジョブをのぞいた各ジョブの荷
 重は 1 であることから，各 $j \in \{ \beta + 1,\ldots,
-\lambda + \beta \}$ について，
+\lambda + \beta \}$ について，以下となる．
 \begin{equation}
   \displaystyle \sum_{i \in \mathcal{Q}:i \in A_j}w_i \le 1 ．\tag{A.4}
 \end{equation}
@@ -564,7 +563,7 @@ k)\gamma \in A_k$ である．これらのジョブをのぞいた�
 
 \section{処理開始可能時刻付き最大遅れ時間最小化問題}\label{3_s_2}
 
-この問題は \textsc{3-PARTITION} からの還元により，強 NP 困難であることが Garey and Johnson \cite{3SAT}によって，証明されている．
+この問題は {\sc 3-PARTITION} からの還元により，強 NP 困難であることが Garey and Johnson \cite{3SAT}によって，証明されている．
 以下では，処理開始可能時刻付き最大遅れ時間最小化問題を定式化し，問題が NP 困難であることの証明を示す．
 以下では，処理開始可能時刻付き最大遅れ時間最小化問題の定式化を紹介する．
 \begin{quote}
@@ -596,9 +595,9 @@ k)\gamma \in A_k$ である．これらのジョブをのぞいた�
   \end{description}
 \end{quote}
 
-以下では，\textsc{3-PARTITION} からの還元により，処理開始可能時刻つき最大遅れ時間最小化問題の計算複雑さを証明を紹介する．
+以下では，{\sc 3-PARTITION} からの還元により，処理開始可能時刻つき最大遅れ時間最小化問題の計算複雑さを証明を紹介する．
 
-整数の集合 $S = \{a_1,\ldots,a_{3t}\}$ と 整数 $b$ の 2 項組 $(S,b)$ を \textsc{3-PARTITION} の
+整数の集合 $S = \{a_1,\ldots,a_{3t}\}$ と 整数 $b$ の 2 項組 $(S,b)$ を {\sc 3-PARTITION} の
 任意の入力とする．$(S,a)$ に基づき，以下のように最大遅れ時間最小化問題
 の入力を設定する．$4t - 1$ 個のジョブを 1 台の機械で処理する．各゙ジョ
 ブの処理時間，納期ズレ幅，納期を以下のように設定する.
@@ -698,7 +697,8 @@ $\varphi(C) \le  0$
   \end{displaymath}
   \item \textbf{処理時間の制約に対する制限}：$\forall j \in \{1,\ldots,n\}\big[ p_j = p \big]$
 
-  % スケジュール可能なジョブの中で，納期が最も小さいジョブ順に処理する．このとき，スケジュールにおける各ジョブを順に $J_1,\ldots,J_n$，$C(0) = 0$ とすると，各ジョブは以下の条件を満たす．
+   スケジュール可能なジョブの中で，納期が最も小さいジョブ順に処理する．
+  %このとき，スケジュールにおける各ジョブを順に $J_1,\ldots,J_n$，$C(0) = 0$ とすると，各ジョブは以下の条件を満たす．
   % \begin{displaymath}
   %   \forall j, j' \in \bigg\{i \mid \forall i \in \{1,\ldots,n\}\big[r_i \le C(i - 1)\big]\bigg\}\bigg[j \le j' \Rightarrow d_j \le d_j'\bigg]
   % \end{displaymath}
@@ -742,7 +742,6 @@ $\varphi(C) \le  0$
     \max\bigg\{L(S),L_i(S),L_k(S)\bigg\} \\ L_{\max}(S') =
     \max\bigg\{L(S),L_i(S'),L_k(S')\bigg\}\end{array} \right.
   \end{displaymath}
-
   今までの議論より，$L_{\max}(S') \le L_{\max}(S)$ であることは明らかで
   ある．
 
@@ -768,7 +767,7 @@ $\varphi(C) \le  0$
 \section{無関連並列機械モデルにおける NP 完全性の証明}\label{4_s_1}
 以下は，最大待ち時間最小化問題を $w$ 以下となるスケジュールが存在するかという決定問題として定式化した待ち時間制約付きスケジューリング問題に対する証明である．
 
-ブール型変数の集合 $X =\{x_1, x_2,\ldots ,x_n\}$ と， $X$ 上の 3 つのリテラルからなる集合の集合 $H =\{h_1, h_2,\ldots ,h_{\lambda}\}$ の 2 項組，$(X,H)$ を任意の \textsc{3-SAT} 問題の入力とする．
+ブール型変数の集合 $X =\{x_1, x_2,\ldots ,x_n\}$ と， $X$ 上の 3 つのリテラルからなる集合の集合 $H =\{h_1, h_2,\ldots ,h_{\lambda}\}$ の 2 項組，$(X,H)$ を任意の {\sc 3-SAT} 問題の入力とする．
 各 $i \in \{1,2,\ldots, n\}$ について，$\alpha_i$ を $H$ に おいて $x_i$ が現れる回数を表す自然数とし，$\beta_i$ を $H$ において $\bar x_i$ が現れる回数を表す自然数とする．
 つまり，$\alpha_i = \big|\{h \in H \mid x_i \in h\}\big|$，$\beta_i = \big|\{h \in H \mid \bar x_i \in h\}\big|$．
 また，$\displaystyle \sum_{i \in \{1,\ldots,n\}} \alpha_i = \mathcal{A}$, $\displaystyle \sum_{i \in \{1,\ldots,n\}} \beta_i = \mathcal{B}$  とする．
@@ -845,7 +844,7 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
 \end{displaymath}
 \newpage
 \begin{description}
-  \item[処理時間関数の設定：] 各ジョブを処理開始可能時刻の昇順に基づき $2n$ 個のグループに分ける
+  \item[処理時間関数の設定：] 各ジョブを処理開始可能時刻の昇順に基づき $2n$ 個のグループに分ける．
   \begin{itemize}
     \item グループ $i \in \{1,2,\ldots,n\}$ に機械 $i$ に対応させ，グループ
     $n + i$ にも同様に機械 $i$ を対応させる．各 $i \in \{1,2,\ldots,
@@ -1074,7 +1073,7 @@ $H$ を充足する真理値割り当てが存在しない場合，待ち時間�
   \forall J,J' \in \mathcal{J}\bigg[\big[r(J),r(J) + p(J)\big) \cap \big[r(J'),r(J') + p(J')\big) = \emptyset\bigg]
 \end{displaymath}
 
-$w = 0$ となるスケジュールとは，すべてのジョブが処理開始可能時刻と 処理開始可能時刻 + 処理時間 の間で処理されなければならない．つまり，すべてのジョブに関して各ジョブの [処理開始可能時刻，処理開始可能時刻 + 処理時間] で表される範囲が被ってはいけない．この判定にかかる時間は高々 $\mathcal{O}(n^2)$ であることから，多項式時間で判定が可能である．
+$w = 0$ となるスケジュールとは，すべてのジョブが処理開始可能時刻と 処理開始可能時刻 + 処理時間 の間で処理されなければならない．つまり，すべてのジョブに関して各ジョブの処理開始可能時刻と，処理開始可能時刻と処理時間の和で表される区間が被ってはいけない．この判定にかかる時間は高々 $\mathcal{O}(n^2)$ であることから，多項式時間で判定が可能である．
 同様に，同一並列機械モデルにおける待ち時間制約付きスケジューリング問題についても多項式で判定可能である．
 
 以下の条件を満たす $\mathcal{J}$ の部分集合 $\mathcal{J}'$ が $|\mathcal{J}'| \le |\mathcal{M}|$ を満たすとき，決定問題の解は Yes，満たさないとき No である．
@@ -1186,26 +1185,27 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
     \item[出力：] スケジュールの集合 $\mathcal{S}$
   \end{description}
   \begin{description}
-    \item[Step 1.] $(\mathcal{J},\mathcal{M},r,p,C)$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．$W = 0$ のとき，スケジュール $\mathcal{S}$ を出力して処理を終了する．
-    \item[Step 2.] 組 $(b,b_{\max},n,m)$ を入力として，{\sc increment} を実行し，出力が {\sc false} となるまで，以下の処理を繰り返す．
+    \item[Step 1] $(\mathcal{J},\mathcal{M},r,p,C)$ を入力とし，{\sc Heuristic} を実行する．出力を $\mathcal{S}$ とする．このとき，$W = {\displaystyle \max_{S \in \mathcal{S}}w(S)}$ とする．$W = 0$ のとき，スケジュール $\mathcal{S}$ を出力して処理を終了する．
+    \item[Step 2] 組 $(b,b_{\max},n,m)$ を入力として，{\sc increment} を実行し，出力が {\sc false} となるまで，以下の処理を繰り返す．
     \begin{description}
-      \item[Step 2.1.] $(b)$ を入力として，{\sc sort} を実行する．
-      \item[Step 2.2.] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
+      \item[Step 2.1] $(b)$ を入力として，{\sc sort} を実行する．
+      \item[Step 2.2] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
       \begin{description}
         \item[Step 2.2.1] ジョブの集合 $\mathcal{J}'$ を定義する．ただし $\mathcal{J}' = \emptyset$．
-        \item[Step 2.2.2.] 各 $1 \le j \le m$ に対して，以下の処理を繰り返す．
+        \item[Step 2.2.2] 各 $1 \le j \le m$ に対して，以下の処理を繰り返す．
         \begin{description}
-          \item[Step 2.2.2.1.] ${\mbox order}[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
+          \item[Step 2.2.2.1] ${\mbox order}[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
         \end{description}
-        \item[Step 2.2.3.] 組 $(\mathcal{J}',r,p,w,C,0)$ を入力として，{\sc BranchAndBound} を実行する．
-        \item[Step 2.2.4.] {\sc BranchAndBound} の出力を $S$ とする．このとき，$\mathcal{S} := \mathcal{S} \cup S$ とする．
+        \item[Step 2.2.3] 組 $(\mathcal{J}',r,p,w,C,0)$ を入力として，
+        \\ {\sc BranchAndBound} を実行する．
+        \item[Step 2.2.4] {\sc BranchAndBound} の出力を $S$ とする．このとき，$\mathcal{S} := \mathcal{S} \cup S$ とする．
       \end{description}
     \end{description}
-    \item[Step 3.] スケジュール $\mathcal{S}$ を出力する．
+    \item[Step 3] スケジュール $\mathcal{S}$ を出力する．
   \end{description}
 \end{quote}
 
-上記 \textsc{StrictSolutionMethod} では，\textsc{normalize} と \textsc{increment} により，分割 $\Pi$ の要素数 が 機械数 $m$ と等しくなるように，分割を生成している．その後 \textsc{BranchAndBound} により，各 $\pi \in \Pi$ に対して，順列の生成を行っている．
+上記 {\sc StrictSolutionMethod} では，{\sc normalize} と {\sc increment} により，分割 $\Pi$ の要素数 が 機械数 $m$ と等しくなるように，分割を生成している．その後 {\sc BranchAndBound} により，各 $\pi \in \Pi$ に対して，順列の生成を行っている．
 
 \begin{quote}
   \begin{description}
@@ -1214,12 +1214,12 @@ $\mathcal{M}(x)$ を最適化問題の入力インスタンス $x$ に対する�
     \item[出力：] 分割 $b$
   \end{description}
   \begin{description}
-    \item[Step 1.] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
+    \item[Step 1] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
     \begin{description}
-      \item[Step 1.1.] $b_{\max}[n - i] \ge m - i$ のとき，処理を終了する．
-      \item[Step 1.2.] $b[n - i] := m - i$，$b_{\max}[n - i] := m - i$
+      \item[Step 1.1] $b_{\max}[n - i] \ge m - i$ のとき，処理を終了する．
+      \item[Step 1.2] $b[n - i] := m - i$，$b_{\max}[n - i] := m - i$ とする．
     \end{description}
-    \item[Step 2.] $b$ を出力する．
+    \item[Step 2] $b$ を出力する．
   \end{description}
 \end{quote}
 
@@ -1235,7 +1235,7 @@ Step 1.2. 割り当てられていない機械が存在するので，各 $0 \le
     \item[出力：] $b$ が更新されたとき{\sc true} を出力し，それ以外のとき {\sc false} を出力する．
   \end{description}
   \begin{description}
-    \item[Step 1.] 各 $n \ge i \ge 1$ に対して以下の処理を繰り返す．
+    \item[Step 1] 各 $n \ge i \ge 1$ に対して以下の処理を繰り返す．
     \begin{description}
       \item[Step 1.1] $b[i] = \min\{b_{\max}[i] + 1, m\}$ のとき，$b[i] := 1$ とする．
       \item[Step 1.2] $b[i] \neq \min\{b_{\max}[i], m\}$ のとき，$b[i] := b[i] + 1$ とする．
@@ -1245,7 +1245,7 @@ Step 1.2. 割り当てられていない機械が存在するので，各 $0 \le
         \item[Step 1.2.3] {\sc true} を出力する．
       \end{description}
     \end{description}
-    \item[Step 2.] {\sc false} を出力する．
+    \item[Step 2] {\sc false} を出力する．
   \end{description}
 \end{quote}
 
@@ -1264,19 +1264,19 @@ Step 1.2. では，$i$ 番目のジョブを割り当てる機械を新たに追
     \item[出力 :] 機械への割り当て順を表す配列 ${\mbox order}$
   \end{description}
   \begin{description}
-    \item[Step 1.] 要素数 $m$ の配列 ${\mbox cost}$ と ${\mbox order}$ を定義する．ただし，$1 \le j \le m $ に対して，${\mbox order}[j] = j$ とする．
-    \item[Step 2.] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
+    \item[Step 1] 要素数 $m$ の配列 ${\mbox cost}$ と ${\mbox order}$ を定義する．ただし，$1 \le j \le m $ に対して，${\mbox order}[j] = j$ とする．
+    \item[Step 2] 各 $1 \le i \le n$ に対して，以下の処理を繰り返す．
     \begin{description}
-      \item[Step 2.1.] ジョブの集合 $\mathcal{J}'$ を定義する．ただし $\mathcal{J}' = \emptyset$．
-      \item[Step 2.2.] $1 \le j \le m$ に対して以下の処理を繰り返す．
+      \item[Step 2.1] ジョブの集合 $\mathcal{J}'$ を定義する．ただし $\mathcal{J}' = \emptyset$．
+      \item[Step 2.2] $1 \le j \le m$ に対して以下の処理を繰り返す．
       \begin{description}
-        \item[Step 2.2.1.] $b[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
+        \item[Step 2.2.1] $b[i] = j$ のとき，$\mathcal{J}' :=\mathcal{J}' \cup J_i$ とする．
       \end{description}
-      \item[Step 2.3.] $I = (\mathcal{J}',S_{M_j})$ を入力として，{\sc evaluation} を実行する．
-      \item[Step 2.4.] {\sc evaluation} により出力されたスケジュールを $S'_{M_j}$ とし，\\${\mbox cost}[j] := w(S'_{M_j})$ とする．
+      \item[Step 2.3] $I = (\mathcal{J}',S_{M_j})$ を入力として，{\sc evaluation} を実行する．
+      \item[Step 2.4] {\sc evaluation} により出力されたスケジュールを $S'_{M_j}$ とし，\\${\mbox cost}[j] := w(S'_{M_j})$ とする．
     \end{description}
-    \item[Step 3.] ${\mbox cost}$ の降順となるように，${\mbox order}$ をソートする．
-    \item[Step 4.] ${\mbox order}$ を出力する．
+    \item[Step 3] ${\mbox cost}$ の降順となるように，${\mbox order}$ をソートする．
+    \item[Step 4] ${\mbox order}$ を出力する．
   \end{description}
 \end{quote}
 
@@ -1289,12 +1289,12 @@ Step 1.2. では，$i$ 番目のジョブを割り当てる機械を新たに追
     \item[出力 :] スケジュール $S$
   \end{description}
   \begin{description}
-    \item[Step 1.] 各 $1 \le i \le |\mathcal{J}'|$ における $J'_i$ に対して，以下の処理を繰り返す．
+    \item[Step 1] 各 $1 \le i \le |\mathcal{J}'|$ における $J'_i$ に対して，以下の処理を繰り返す．
     \begin{description}
-      \item[Step 1.1.] $p(J'_i) = \displaystyle \min_{j \in \{1,\ldots,|\mathcal{J}'|\}}p(J'_j)$ とする．
-      \item[Step 1.2.] $S := S \cup J'_i$ とする．
+      \item[Step 1.1] $p(J'_i) = \displaystyle \min_{j \in \{1,\ldots,|\mathcal{J}'|\}}p(J'_j)$ とする．
+      \item[Step 1.2] $S := S \cup J'_i$ とする．
     \end{description}
-    \item[Step 2.] $S$ を出力する．
+    \item[Step 2] $S$ を出力する．
   \end{description}
 \end{quote}
 
@@ -1315,12 +1315,12 @@ Step 1.2. では，$i$ 番目のジョブを割り当てる機械を新たに追
   \begin{description}
     \item[] $i = |\mathcal{J}'|$ のとき，
     \begin{description}
-      \item[Step 1.] $W = w(S)$ とし，スケジュール $S$ を出力する．
+      \item[Step 1] $W = w(S)$ とし，スケジュール $S$ を出力する．
     \end{description}
     \item[] $i \neq |\mathcal{J}'|$ のとき，
     \begin{description}
-      \item[Step 2.] $\mathcal{J}'$ を処理開始可能時刻の昇順でソートする．
-      \item[Step 3.] 各 $1 \le j \le |\mathcal{J}'|$ における $J'_j$ に対して，以下の処理を繰り返す．
+      \item[Step 2] $\mathcal{J}'$ を処理開始可能時刻の昇順でソートする．
+      \item[Step 3] 各 $1 \le j \le |\mathcal{J}'|$ における $J'_j$ に対して，以下の処理を繰り返す．
       \begin{description}
         \item[Step 3.1] $S := S \cup J'_j$ とし，$\mathcal{J}'$ から $J'_j$ を取り除く．
         \item[Step 3.2] $\mathcal{J}'$ に対して，$(\mathcal{J}',S)$ を入力
@@ -1374,19 +1374,20 @@ Step 3.2. では，機械に割り当てられていないジョブの集合 $\m
     \item[出力 :] スケジュールの集合 $\mathcal{S}$．
   \end{description}
   \begin{description}
-    \item[Step 1.]
+    \item[Step 1]
     $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
-    \item[Step 2.]
+    \item[Step 2]
     各機械 $M \in \mathcal{M}$ におけるスケジュールを $S_M \in \mathcal{S}$ と表記する．
-    ただし，$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow S_M \cap S_{M'} = \emptyset \big]$，$\displaystyle \bigcup_{S \in \mathcal{S}}S = \mathcal{S}$を満たす．つまり，$S_M$ は $\mathcal{S}$ の分割である．
-    \item[Step 3.]
+    ただし，$\forall M, M' \in \mathcal{M}\big[M \neq M' \Rightarrow S_M \cap S_{M'} = \emptyset \big]$，$\displaystyle \bigcup_{S \in \mathcal{S}}S = \mathcal{S}$を満たす．
+    \\ つまり，$S_M$ は $\mathcal{S}$ の分割である．
+    \item[Step 3]
     各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
     \begin{description}
-      \item[Step 3.1.]
-      最小完了時刻を持つスケジュール集合の要素 $S_{M_a} \in {\displaystyle \left\{\argmin_{M \in \mathcal{M}}C(S_M)\right\}}$ を 1 つ求める．
-      ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
+      \item[Step 3.1]
+      最小完了時刻を持つスケジュール集合の要素 \\ $S_{M_a} \in {\displaystyle \left\{\argmin_{M \in \mathcal{M}}C(S_M)\right\}}$ を 1 つ求める．
+      \\ ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
     \end{description}
-    \item[Step 4.]
+    \item[Step 4]
     $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
   \end{description}
 \end{quote}
@@ -1445,7 +1446,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   図~\ref{5.1} より，ジョブ数 14 のとき，改良前の計算時間は，3,121,089 ms，改良後の計算時間は，249,759 ms であった．つまり，分割生成アルゴリズムの改良により，約 92 ％ の計算時間の削減を可能にした．
   ジョブ数の増加に伴い，分割生成アルゴリズムの改良前と改良後の計算時間の差は拡大している．そのため，ジョブ数をさらに増やすことで削減率も上がると考えられる．また，機械数の増加に伴い，分割生成アルゴリズムの改良前と改良後の計算時間の差は拡大している．しかし，機械数とジョブ数が等しいとき，機械 1 台に対して，ジョブ 1 つ割り当てることができるため，分割生成アルゴリズムの改良に関係なく計算時間は 0 に近い値となる．本研究では，ジョブ数と機械数の関係が計算時間に与える影響については明らかにできなかった．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width = 16cm]{figure/rgfTimeId.pdf}
   \caption{尺度 1：同一並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法に用いた分割生成アルゴリズムの改良前と改良後の計算時間の比較．表~\ref{A1} 参照．}
@@ -1461,9 +1462,9 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   分枝限定法の改良は，各機械に割り当てられたジョブに対する評価であるため，機械数が増えることで，各機械に割り当てられたジョブ数が少なくなるためだと考えられる．
   そのため，ジョブ数 ÷ 機械数 の値の増加に伴い，計算時間の削減率は上がると考えられる．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
-  \includegraphics[width = 17cm]{figure/BandBTimeId.pdf}
+  \includegraphics[width = 16cm]{figure/BandBTimeId.pdf}
   \caption{尺度 2：同一並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法に用いた分枝限定法の改良前と改良後の計算時間の比較．．表~\ref{A2} 参照．}
   \label{5.2}
 \end{figure}
@@ -1474,7 +1475,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   図~\ref{5.3} より，ジョブ数 12 のとき，改良前の計算時間は，57,607 ms，改良後の計算時間は，13,042 ms であった．つまり，分割生成アルゴリズムの改良により，約 77 ％ の計算時間の削減を可能にした．
   ジョブ数の増加に伴い，割り当て生成アルゴリズムの改良前と改良後の計算時間の差は拡大している．そのため，ジョブ数をさらに増やすことで削減率も上がると考えられる．また，機械数の増加に伴い，割り当て生成アルゴリズムの改良前と改良後の計算時間の差は拡大している．しかし，機械数とジョブ数が等しいとき，機械 1 台に対して，ジョブ 1 つ割り当てることができるため，割り当て生成アルゴリズムの改良に関係なく計算時間は 0 に近い値となる．本研究では，ジョブ数と機械数の関係が計算時間に与える影響については明らかにできなかった．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width = 15cm]{figure/rgfTimeUn.pdf}
   \caption{尺度 3：無関連並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法に用いた割り当て生成アルゴリズムの改良前と改良後の計算時間の比較．表~\ref{A3} 参照．}
@@ -1489,7 +1490,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   同一並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法と同様の改良を加えたが，無関連並列機械モデルにおいては，改良による計算効率の向上はあまり見られなかった．
   原因としては，無関連並列機械モデルの場合，ジョブの処理時間は割り当てられた機械によって異なる．本研究で導入した多項式アルゴリズムの概念は，1 機械におけるジョブのコストを評価するものである．そのため，機械におけるジョブが同じであるときも，割り当てられた機械によって異なる．したがって，分枝限定法の改良に計算効率の向上は，同一並列機械モデルのときと同様の結果が得られなかったと考えられる．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width = 16cm]{figure/BandBTimeUn.pdf}
   \caption{尺度 4：無関連並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法に用いた分枝限定法の改良前と改良後の計算時間の比較．表~\ref{A4} 参照．}
@@ -1501,7 +1502,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
 
   図~\ref{5.5} より，ジョブ数 13 のとき，同一並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法の計算時間は 43,903 ms，同一並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法の計算時間は 89,119 ms であった．どちらの機械モデルにおいても，同様の改良を加えたが，計算時間に約 2 倍の差が見られた．同一並列機械モデルと無関連並列機械モデルにおける最大待ち時間最小化問題の入力サイズは，ジョブ数や機械数の増加に伴うが，無関連並列機械モデルの場合，ジョブの処理時間のサイズは，同一並列機械モデルに対して，機械数倍ある．そのため，ジョブ数，機械数が増加するについれて，本研究で開発した厳密解法の計算時間の差も拡大すると考えられる．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width = 14cm]{figure/modelTimeComparison.pdf}
   \caption{尺度 5：同一並列機械モデルと無関連並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法の計算時間の比較．表~\ref{A2}，\ref{A4} 参照．}
@@ -1519,7 +1520,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   図~\ref{5.6} より，ヒューリスティックによる解から得られた最大待ち時間と最適解における最大待ち時間の比率は 24 であった．また，ジョブ数が少ないときかつ機械数が少ないとき，もしくはジョブ数が多いときかつ機械数が多いときに競合比の値が小さくなる傾向があることがわかったが，その理由については示せていない．
   この実験結果より，本研究で提案したヒューリスティックは，最適解における最大待ち時間の定数倍に収まるが，最大待ち時間最小化問題に対する有効的な解法であるとは言えない．
 \end{description}
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \includegraphics[width = 13cm]{figure/compId1.pdf}
   \caption{尺度 6：同一並列機械モデルにおける最大待ち時間最小化問題に対するヒューリスティックの競合比．表~\ref{A5} 参照．}
@@ -1612,7 +1613,7 @@ Step 3. で，処理をしていない機械，または処理が一番早く終
   \item[成果 1：]
   無関連並列機械モデルにおいて機械数が入力の一部の場合，最大待ち時間最小化問題が NP 困難であることを明らかにした．
 
-  JIT ジョブ荷重和最大化問題における \textsc{3-SAT} からの還元手法に着目し，待ち時間制約付きスケジューリング問題 の NP 完全性を示し，最大待ち時間最小化問題が NP 困難であることを示した．
+  JIT ジョブ荷重和最大化問題における {\sc 3-SAT} からの還元手法に着目し，待ち時間制約付きスケジューリング問題 の NP 完全性を示し，最大待ち時間最小化問題が NP 困難であることを示した．
 
   \item[成果 2：]
   同一並列機械モデル，無関連並列機械モデルにおける最大待ち時間最小化問題に対する厳密解法を開発し，解法に対する計算時間の評価を行った．

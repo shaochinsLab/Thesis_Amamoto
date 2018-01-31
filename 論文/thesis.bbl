@@ -8,20 +8,22 @@ Cepek, O., Sung, S.C.: Just-in-time scheduling with periodic time slots.
 
 \bibitem{3SAT}
 Garey, M.R., Johnson, D.S.: Computers and Intractability; A Guide to the Theory
-  of NP-Completeness. W. H. Freeman And Co, New York, NY, USA (1990)
+  of NP-Completeness, pp. 13--18,236--244. W. H. Freeman And Co, New York, NY,
+  USA (1990)
 
 \bibitem{greedy}
-Hromkovic, J.: Algorithmics for Hard Problems Introduction to Combinatorial
-  Optimization, Randomization, Approximation, and Heuristics. Springer-Verlag
-  Berlin Heidelberg (2004)
+Hromkovic, J.: Algorithmics for Hard Problems; Introduction to Combinatorial
+  Optimization, Randomization, Approximation, and Heuristics, pp. 156--160.
+  Springer-Verlag Berlin Heidelberg (2001)
 
 \bibitem{rgf}
-L., K.D.: Combinatorial algorithms : generation, enumeration, and search. CRC
-  Press Boca Raton London New York Washington, D.C. (1998)
+L., K.D.: Combinatorial algorithms; generation, enumeration, and search, pp.
+  78--87. CRC Press Boca Raton London New York Washington, D.C. (1999)
 
 \bibitem{EDD2}
 Lageweg, B., Lenstra, J., Kan, A.: Minimizing maximum lateness on one machine:
-  Computational experience and some applications (1976)
+  Computational experience and some applications, pp. 25--41. Vereiniging voor
+  Statististiek (1976)
 
 \bibitem{BandB}
 Land, A.H., Doig, A.G.: An automatic method of solving discrete programming
@@ -29,7 +31,7 @@ Land, A.H., Doig, A.G.: An automatic method of solving discrete programming
 
 \bibitem{EDD1}
 Lawler, E.L.: Optimal sequencing of a single machine subject to precedence
-  constraints. Journal Management Science  19,  544--546 (1973)
+  constraints. Management Science  19,  544--546 (1973)
 
 \bibitem{BandB2}
 Little, Murty, S., Karel: An algorithm for the traveling salesman problem.

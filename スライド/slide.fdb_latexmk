@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1517187978 "slide.dvi" "slide.pdf" "slide" 1517187980
+["dvipdf"] 1517187978 "slide.dvi" "slide.pdf" "slide" 1517364840
   "slide.dvi" 1517187978 542084 9ba71f531aa39ca531a613870cb78d78 "latex"
   (generated)
   "slide.pdf"
-["latex"] 1517187971 "slide.tex" "slide.dvi" "slide" 1517187980
+["latex"] 1517187971 "slide.tex" "slide.dvi" "slide" 1517364840
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -230,13 +230,13 @@
   "slide.aux" 1517187978 11487 f9aaa5db1fe0473d5653587f4f0fee8a ""
   "slide.nav" 1517187978 6609 e101cb5802d6face9f3ea0a2685faeeb ""
   "slide.out" 1517187978 590 fd1181146209df7deeb7146c5be615d2 ""
-  "slide.tex" 1517187970 47094 cdc1964ad76a43ae5c45e1ce85d69442 ""
+  "slide.tex" 1517364839 47094 cdc1964ad76a43ae5c45e1ce85d69442 ""
   "slide.toc" 1517187978 581 955de863f3ede606cfd3faf22083d580 ""
   (generated)
+  "slide.out"
   "slide.log"
-  "slide.snm"
-  "slide.dvi"
   "slide.toc"
+  "slide.dvi"
+  "slide.snm"
   "slide.nav"
   "slide.aux"
-  "slide.out"
