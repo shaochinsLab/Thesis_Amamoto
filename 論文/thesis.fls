@@ -12,6 +12,11 @@ INPUT /opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr12.tfm
 INPUT /opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 INPUT /opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+INPUT /opt/local/share/texmf-texlive/tex/latex/base/fontenc.sty
+INPUT /opt/local/share/texmf-texlive/tex/latex/base/fontenc.sty
+INPUT /opt/local/share/texmf-texlive/tex/latex/base/t1enc.def
+INPUT /opt/local/share/texmf-texlive/tex/latex/base/t1enc.def
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT /opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 INPUT /opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 INPUT /opt/local/share/texmf-texlive/tex/latex/amsmath/amstext.sty
@@ -49,16 +54,17 @@ INPUT thesis.aux
 OUTPUT thesis.aux
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/min10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr17.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm2074.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/min10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr17.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm1728.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/min10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecbx2074.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr17.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
@@ -77,20 +83,20 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecbx1728.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/min10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm1095.tfm
 OUTPUT thesis.dvi
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/min10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr17.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm2488.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecbx2488.tfm
 INPUT thesis.toc
 INPUT thesis.toc
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr6.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi8.tfm
@@ -110,21 +116,24 @@ INPUT /opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 INPUT /opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecbx1440.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/eccc1200.tfm
 INPUT figure/3-PARTITION.pdf
 INPUT extractbb -O figure/3-PARTITION.pdf
 INPUT figure/reduction.pdf
 INPUT extractbb -O figure/reduction.pdf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin8.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tmin6.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmti12.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/jknappen/ec/ecti1200.tfm
 INPUT figure/SJIT.pdf
 INPUT extractbb -O figure/SJIT.pdf
 INPUT figure/Lmax.pdf
 INPUT extractbb -O figure/Lmax.pdf
 INPUT figure/EDDrule.pdf
 INPUT extractbb -O figure/EDDrule.pdf
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmex10.tfm

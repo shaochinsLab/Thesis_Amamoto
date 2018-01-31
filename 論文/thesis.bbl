@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
 
@@ -41,5 +41,10 @@ Little, Murty, S., Karel: An algorithm for the traveling salesman problem.
 \bibitem{SJIT}
 Sung, S.C., Vlach: Maximizing weighted number of just-in-time jobs on unrelated
   parallel machines. Jurnal of Scheduling  8,  453--460 (2005)
+
+\bibitem{kawamata}
+川俣友佳: 納期ズレ幅の導入による JIT
+  スケジューリング問題の緩和とその解法. 修士論文,
+  青山学院大学 (2012)
 
 \end{thebibliography}

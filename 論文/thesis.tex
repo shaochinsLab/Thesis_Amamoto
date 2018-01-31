@@ -1,5 +1,6 @@
 \documentclass[12pt]{optlab-bachelor}
 \usepackage{amsfonts}
+\usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb}
 \usepackage{algorithm}
 \usepackage{algorithmic}
@@ -307,8 +308,8 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
     \end{displaymath}
     を最大とするスケジュールを求める．ただし，
     $\mathcal{Q}(A, C)$ はスケジュール $(A, C)$ に
-    おいて納期以前に処理を完了するジョブの集合である (
-    $\mathcal{Q}(A, C) = \{i \in \{1,\ldots, n\} | C(i) \ge d_i \}$ )．
+    おいて納期以前に処理を完了するジョブの集合である\\
+     ( $\mathcal{Q}(A, C) = \{i \in \{1,\ldots, n\} | C(i) \ge d_i \}$ )．
   \end{description}
 \end{quote}
 
@@ -560,6 +561,8 @@ k)\gamma \in A_k$ である．これらのジョブをのぞいた�
 の長さに関する多項式で表すことができる．したがって，無関連並列
 機械モデルにおいて機械数が入力の一部の場合， JIT ジョブ荷重和
 最大化問題は強 NP 困難である．
+
+関連研究として，川俣 \cite{kawamata} は，JIT ジョブ荷重和最大化問題に納期ずれ幅を導入した擬似 JIT ジョブ荷重和最大化問題について，解法と計算複雑さの観点からまとめている．
 
 \section{処理開始可能時刻付き最大遅れ時間最小化問題}\label{3_s_2}
 

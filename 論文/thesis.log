@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 12:57
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 13:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -39,7 +39,12 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+) (/opt/local/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+ (/opt/local/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (/opt/local/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip43
 
@@ -139,46 +144,46 @@ File: dvipdfmx.def 2016/07/11 v4.12 LaTeX color/graphics driver for dvipdfmx (L3
 ) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 17.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 17.
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
  (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
  (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 17.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 17.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 18.
 
 [1
 
 ]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 17.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <24.88> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 17.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 18.
  (./thesis.toc
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 1.
@@ -195,29 +200,29 @@ LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 61.
  (/opt/local/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
  [4]
 第 2 章
 [5
 
 ] [6]
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 162.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 163.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 162.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 163.
  [7]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/sc' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 207.
+(Font)              using `JT1/mc/m/n' instead on input line 208.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/sc' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 207.
+(Font)              using `JY1/mc/m/n' instead on input line 208.
 
 [8]
 File: figure/3-PARTITION.pdf Graphic file (type pdf)
@@ -227,42 +232,22 @@ File: figure/reduction.pdf Graphic file (type pdf)
 第 3 章
 [11
 
-]
-Overfull \hbox (4.07518pt too wide) in paragraph at lines 307--312
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A; C\OT1/cmr/m/n/12 )$ \JY1/mc/m/sc/12 において納期以前に処理を完了するジ ョ ブの集合である \OT1/cmr/m/n/12 ( $\OMS/cmsy/m/n/12 Q\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A; C\OT1/cmr/m/n/12 ) =
- []
-
-[12]
+] [12]
 
 LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 390.
+(Font)              using `JT1/mc/m/n' instead on input line 391.
 
 
 LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 390.
+(Font)              using `JY1/mc/m/n' instead on input line 391.
 
 [13]
 File: figure/SJIT.pdf Graphic file (type pdf)
- <figure/SJIT.pdf>
-Missing character: There is no ^^e3 in font cmr12!
-Missing character: There is no ^^82 in font cmr12!
-Missing character: There is no ^^99 in font cmr12!
- [14]
-Missing character: There is no ^^e3 in font cmr12!
-Missing character: There is no ^^82 in font cmr12!
-Missing character: There is no ^^99 in font cmr12!
- [15]
-Missing character: There is no ^^e3 in font cmr12!
-Missing character: There is no ^^82 in font cmr12!
-Missing character: There is no ^^99 in font cmr12!
+ <figure/SJIT.pdf> [14] [15]
 Missing character: There is no ^^e2 in font cmr12!
 Missing character: There is no ^^89 in font cmr12!
 Missing character: There is no ^^a4 in font cmr12!
- [16] [17]
-Missing character: There is no ^^e3 in font cmr12!
-Missing character: There is no ^^82 in font cmr12!
-Missing character: There is no ^^99 in font cmr12!
- [18]
+ [16] [17] [18]
 File: figure/Lmax.pdf Graphic file (type pdf)
  <figure/Lmax.pdf> [19] [20]
 File: figure/EDDrule.pdf Graphic file (type pdf)
@@ -271,7 +256,7 @@ File: figure/EDDrule.pdf Graphic file (type pdf)
 [23
 
 ] [24] [25]
-Overfull \hbox (16.703pt too wide) detected at line 921
+Overfull \hbox (16.65045pt too wide) detected at line 924
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
@@ -298,29 +283,29 @@ File: figure/compId1.pdf Graphic file (type pdf)
 第 6 章
 [49
 
-] (./thesis.bbl [50]) [51
+] (./thesis.bbl [50] [51
 
-]
+]) [52]
 付 録 A  
-[52
+[53
 
-] [53] [54] [55] [56] [57] [58
+] [54] [55] [56] [57] [58] [59
 
 ]
-Overfull \vbox (49.31288pt too high) has occurred while \output is active []
+Overfull \vbox (49.30098pt too high) has occurred while \output is active []
 
- [59] (./thesis.aux)
+ [60] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2028 strings out of 493653
- 23716 string characters out of 6150337
- 138964 words of memory out of 5000000
- 5590 multiletter control sequences out of 15000+600000
- 23830 words of font info for 95 fonts, out of 8000000 for 9000
+ 2254 strings out of 493653
+ 25447 string characters out of 6150337
+ 139040 words of memory out of 5000000
+ 5799 multiletter control sequences out of 15000+600000
+ 32133 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,925b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,925b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (60 pages, 216752 bytes).
+Output written on thesis.dvi (61 pages, 217612 bytes).
