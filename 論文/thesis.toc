@@ -17,8 +17,8 @@
 \contentsline {section}{\numberline {5.1}厳密解法の提案}{32}
 \contentsline {section}{\numberline {5.2}ヒューリスティックの提案}{39}
 \contentsline {section}{\numberline {5.3}提案解法の評価と分析}{42}
-\contentsline {chapter}{\numberline {第6章}結論}{46}
-\contentsline {section}{\numberline {6.1}研究成果}{46}
-\contentsline {section}{\numberline {6.2}今後の課題}{47}
-\contentsline {chapter}{参考文献}{47}
-\contentsline {chapter}{\numberline {付 録A }付録}{49}
+\contentsline {chapter}{\numberline {第6章}結論}{49}
+\contentsline {section}{\numberline {6.1}研究成果}{49}
+\contentsline {section}{\numberline {6.2}今後の課題}{50}
+\contentsline {chapter}{参考文献}{50}
+\contentsline {chapter}{\numberline {付 録A }付録}{52}

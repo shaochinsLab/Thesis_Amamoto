@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 02:12
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 10:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -307,35 +307,57 @@ Overfull \hbox (39.84152pt too wide) in paragraph at lines 1386--1388
 File: figure/rgfTimeId.pdf Graphic file (type pdf)
  <figure/rgfTimeId.pdf> [43]
 File: figure/BandBTimeId.pdf Graphic file (type pdf)
- <figure/BandBTimeId.pdf> [44]
-File: figure/compId1.pdf Graphic file (type pdf)
- <figure/compId1.pdf> [45]
-第 6 章
-[46
+ <figure/BandBTimeId.pdf>
+Overfull \hbox (28.45276pt too wide) in paragraph at lines 1466--1467
+ [][] 
+ []
 
-] (./thesis.bbl [47]) [48
+File: figure/rgfTimeUn.pdf Graphic file (type pdf)
+<figure/rgfTimeUn.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44]
+File: figure/BandBTimeUn.pdf Graphic file (type pdf)
+ <figure/BandBTimeUn.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[45]
+File: figure/modelTimeComparison.pdf Graphic file (type pdf)
+ <figure/modelTimeComparison.pdf>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[46]
+File: figure/compId1.pdf Graphic file (type pdf)
+ <figure/compId1.pdf> [47] [48]
+第 6 章
+[49
+
+] (./thesis.bbl [50]) [51
 
 ]
 付 録 A  
-[49
+[52
 
-] [50] [51] [52] [53] [54] [55
+] [53] [54] [55] [56] [57] [58
 
 ]
 Overfull \vbox (49.31288pt too high) has occurred while \output is active []
 
- [56] (./thesis.aux)
+ [59] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 2022 strings out of 493653
- 23535 string characters out of 6150337
- 142964 words of memory out of 5000000
- 5587 multiletter control sequences out of 15000+600000
+ 2034 strings out of 493653
+ 23799 string characters out of 6150337
+ 138964 words of memory out of 5000000
+ 5596 multiletter control sequences out of 15000+600000
  23830 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,19n,24p,925b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (57 pages, 209860 bytes).
+Output written on thesis.dvi (60 pages, 216400 bytes).
