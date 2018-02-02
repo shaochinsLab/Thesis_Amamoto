@@ -309,7 +309,7 @@ NP に属する任意の問題と少なくとも同じくらい難しい問題�
     を最大とするスケジュールを求める．ただし，
     $\mathcal{Q}(A, C)$ はスケジュール $(A, C)$ に
     おいて納期以前に処理を完了するジョブの集合である\\
-     ( $\mathcal{Q}(A, C) = \{i \in \{1,\ldots, n\} | C(i) \ge d_i \}$ )．
+    ( $\mathcal{Q}(A, C) = \{i \in \{1,\ldots, n\} | C(i) \ge d_i \}$ )．
   \end{description}
 \end{quote}
 
@@ -700,7 +700,7 @@ $\varphi(C) \le  0$
   \end{displaymath}
   \item \textbf{処理時間の制約に対する制限}：$\forall j \in \{1,\ldots,n\}\big[ p_j = p \big]$
 
-   スケジュール可能なジョブの中で，納期が最も小さいジョブ順に処理する．
+  スケジュール可能なジョブの中で，納期が最も小さいジョブ順に処理する．
   %このとき，スケジュールにおける各ジョブを順に $J_1,\ldots,J_n$，$C(0) = 0$ とすると，各ジョブは以下の条件を満たす．
   % \begin{displaymath}
   %   \forall j, j' \in \bigg\{i \mid \forall i \in \{1,\ldots,n\}\big[r_i \le C(i - 1)\big]\bigg\}\bigg[j \le j' \Rightarrow d_j \le d_j'\bigg]
@@ -1035,8 +1035,8 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
 \end{proof}
 表~\ref{4.2} は，$H$ を充足する真理値割り当てが存在するときのスケジュール $S$ と，$H$ を充足する真理値割り当てが存在しないときのスケジュール $S'$ である．
 \begin{description}
-  \item[スケジュール $S$ ] $x_i = 0, x_j = 1, x_k = 0$ のとき，つまり，$H$ を充足する真理値割り当てが存在する場合．
-  \item[スケジュール $S'$ ] $x_i = 0, x_j = 0, x_k = 0$ のとき，つまり，$H$ を充足する真理値割り当てが存在しない場合．
+  \item[スケジュール $S$ ] $f(x_i) = 0, f(x_j) = 1, f(x_k) = 0$ のとき，つまり，$H$ を充足する真理値割り当てが存在する場合．
+  \item[スケジュール $S'$ ] $f(x_i) = 0, f(x_j) = 0, f(x_k) = 0$ のとき，つまり，$H$ を充足する真理値割り当てが存在しない場合．
 \end{description}
 
 \begin{figure}[h]

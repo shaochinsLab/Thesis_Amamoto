@@ -280,7 +280,6 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss8.tfm
 OUTPUT slide.dvi
 INPUT slide.toc
 INPUT slide.toc
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT slide.toc
@@ -326,8 +325,6 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT slide.toc
-INPUT slide.toc
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam7.tfm
@@ -335,6 +332,13 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT slide.toc
 INPUT slide.toc
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT slide.toc
+INPUT slide.toc
+INPUT slide.toc
+INPUT slide.toc
+INPUT figure/reduction.pdf
+INPUT extractbb -O figure/reduction.pdf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth9.tfm
@@ -345,33 +349,12 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT slide.toc
-INPUT slide.toc
-INPUT figure/reduction.pdf
-INPUT slide.toc
-INPUT slide.toc
-INPUT slide.toc
-INPUT slide.toc
-INPUT slide.toc
-INPUT slide.toc
-INPUT figure/3SAT3.pdf
-INPUT extractbb -O figure/3SAT3.pdf
 INPUT figure/3SAT4.pdf
 INPUT extractbb -O figure/3SAT4.pdf
+INPUT figure/3SAT5.pdf
+INPUT extractbb -O figure/3SAT5.pdf
 INPUT slide.toc
 INPUT slide.toc
-INPUT figure/rgf1.pdf
-INPUT extractbb -O figure/rgf1.pdf
-INPUT figure/rgf2.pdf
-INPUT extractbb -O figure/rgf2.pdf
-INPUT figure/rgf3.pdf
-INPUT extractbb -O figure/rgf3.pdf
-INPUT figure/rgf4.pdf
-INPUT extractbb -O figure/rgf4.pdf
-INPUT figure/BandB1.pdf
-INPUT extractbb -O figure/BandB1.pdf
-INPUT figure/BandB2.pdf
-INPUT extractbb -O figure/BandB2.pdf
 INPUT slide.toc
 INPUT slide.toc
 INPUT figure/reductionExample1.pdf
@@ -386,6 +369,18 @@ INPUT figure/reductionExample5.pdf
 INPUT extractbb -O figure/reductionExample5.pdf
 INPUT figure/reductionExample6.pdf
 INPUT extractbb -O figure/reductionExample6.pdf
+INPUT figure/rgf1.pdf
+INPUT extractbb -O figure/rgf1.pdf
+INPUT figure/rgf2.pdf
+INPUT extractbb -O figure/rgf2.pdf
+INPUT figure/rgf3.pdf
+INPUT extractbb -O figure/rgf3.pdf
+INPUT figure/rgf4.pdf
+INPUT extractbb -O figure/rgf4.pdf
+INPUT figure/BandB1.pdf
+INPUT extractbb -O figure/BandB1.pdf
+INPUT figure/BandB2.pdf
+INPUT extractbb -O figure/BandB2.pdf
 OUTPUT slide.nav
 OUTPUT slide.toc
 OUTPUT slide.snm

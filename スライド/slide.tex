@@ -23,12 +23,14 @@
 \setbeamercolor{block body alerted}{fg=blockAlertColor}
 
 \definecolor{headColor}{RGB}{52,38,89} %見出しカラー
+\definecolor{bodyColor}{RGB}{240,240,240} %block背景色
 \setbeamercolor{structure}{fg=headColor}
 \setbeamercolor{subsection in toc}{fg=headColor}
+\setbeamercolor{block body}{bg=bodyColor}
 
 \usepackage[absolute,overlay]{textpos}
 \setbeamercovered{dynamic}
-% \usepackage[colorgrid,gridunit=pt,texcoord]{eso-pic}
+%\usepackage[colorgrid,gridunit=pt,texcoord]{eso-pic}
 
 
 % \mathversion{bold}
@@ -71,7 +73,11 @@
     \tableofcontents
     \end{frame} %目次スライド
     \section{研究背景}
-    \begin{frame}{研究背景：高級自動車メーカにおける注文から製造までの流れ}
+    \begin{frame}{研究背景：受注生産方式における処理の流れと問題点}
+      \begin{block}{受注生産方式とは}
+        顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，どの生産拠点でいつ製造開始するかを決定する．（例えば，高級自動車メーカー，SIerなど受注生産方式を採用している．）
+      \end{block}
+
       \begin{figure}[h]
         \centering
         \includegraphics<1>[width=12cm]{figure/car1.pdf}
@@ -79,27 +85,23 @@
         \includegraphics<3>[width=12cm]{figure/car3.pdf}
         \includegraphics<4>[width=12cm]{figure/car4.pdf}
       \end{figure}
-
-      \begin{block}{問題}
-        \uncover<4->{
-        高級自動車メーカーは，生産拠点が少ないため，発注から製造を開始するまでに日数がかかる場合がある．製造開始までの待ち時間によっては，顧客からのクレームや注文のキャンセルを受けることがある．
-        }
-      \end{block}
     \end{frame}
 
     \begin{frame}{研究背景：スケジューリング問題との対応}
-      \begin{block}{研究背景：スケジューリング問題との対応}
-        先ほどのような問題を解決することは，\alert{タスク}（注文された製品）をどの\alert{資源}（工場）で，\alert{いつ}処理を開始するかの決定を意味する．
-        \begin{itemize}
-          \item 注文を受けた日を，\alert{処理開始可能時刻}，
-          \item 注文を受けてから製造開始日までの期間を，\alert{待ち時間}，
-        \end{itemize}
-        としたとき，この問題は \alert{最大待ち時間最小化問題（SWT）}として捉えることができる．SWT は，処理開始可能時刻を制約とし，最大待ち時間の最小化を目的とするスケジューリング問題である．
+      \begin{block}{受注生産方式における問題点}
+        生産拠点数と受注状況によっては，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
+      \end{block}
+
+      待ち時間を短縮させるための生産計画を立てることは重要な課題である．
+
+      \begin{block}{スケジューリング問題との対応}
+        各注文を\alert{ジョブ}，受注日時を\alert{処理開始可能時刻}，製造期間を\alert{処理時間}と対応させることで，受注生産方式における生産計画を\alert{待ち時間}を目的関数とするスケジューリング問題として捉えた．
       \end{block}
 
       \begin{block}{研究目的}
+        上記の問題を\alert{最大待ち時間最小化問題 (SWT)} として定式化し，
         \begin{itemize}
-          \item 機械モデルおよび機械数に着目することで，どのような特徴が問題の難しさに影響を与えるかを明らかにする．
+          \item SWT の計算複雑さを明らかにする．
           \item SWT の計算複雑さに基づいて，解法の提案を行う．
         \end{itemize}
       \end{block}
@@ -146,8 +148,8 @@
     %   \end{block}
     % \end{frame}
 
-    \section{定式化}
-    \begin{frame}{定式化：最大待ち時間最小化問題}
+    \section{諸定義}
+    \begin{frame}{諸定義：最大待ち時間最小化問題}
       \begin{block}{機械モデル}
         ジョブを処理する機械の台数について
         \begin{itemize}
@@ -169,7 +171,7 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{定式化：最大待ち時間最小化問題}
+    \begin{frame}{諸定義：最大待ち時間最小化問題}
       \begin{block}{解：スケジュール $\textcolor{white}{(A,s)}$}
         以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の 2 項組 $(A,s)$．
         \begin{itemize}
@@ -200,15 +202,14 @@
       \end{itemize}
     \end{frame}
 
-    \subsection{決定問題の導入}
     \setbeamertemplate{items}[ball]
-    \begin{frame}{定式化：最大待ち時間最小化問題（決定問題）}
-      ここで，SWT を\alert{決定問題}として定義する．
+    \begin{frame}{諸定義：待ち時間制約付きスケジューリング問題}
+      最大待ち時間最小化問題  (SWT) を\alert{決定問題}として定義し，\alert{待ち時間制約付きスケジューリング問題}と表す．
       \begin{block}{決定問題}
-        決定問題は，インスタンスと問題によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
+        決定問題は，\alert{インスタンス}と\alert{問題}によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
       \end{block}
 
-      \begin{block}{SWT の決定問題}
+      \begin{block}{待ち時間制約付きスケジューリング問題}
         \begin{description}
           \item[インスタンス：] SWT のインスタンス $\mathcal{I}$ と待ち時間 $w$ の 2項組 $(\mathcal{I}, w)$
         \end{description}
@@ -225,9 +226,163 @@
         \end{itemize}
       \end{block}
     \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % \section{多項式還元とは}
+    % \begin{frame}{多項式還元とは：還元の流れ}
+    %   \begin{tabular}{cc}
+    %     \begin{minipage}[c]{0.5\hsize}
+    %       \begin{block}{NP 完全}
+    %         ある問題が NP 完全であることを示すには，以下が成立することを示す．
+    %         \begin{itemize}
+    %           \item 問題がNPに属す．
+    %           \item 問題がNP困難である．
+    %         \end{itemize}
+    %       \end{block}
+    %     \end{minipage}
+    %     \begin{minipage}[c]{0.5\hsize}
+    %       \begin{textblock*}{0.4\linewidth}(215pt, -5pt)
+    %         \centering
+    %         \includegraphics[width=7cm,bb=0 0 350 260]{figure/reduction.pdf}
+    %       \end{textblock*}
+    %     \end{minipage}
+    %   \end{tabular}
+    %   \begin{block}{}
+    %     本研究では以下が成立することを示す．
+    %     \begin{enumerate}
+    %       \item スケジュールにおける最大待ち時間が $w$ 以下であるかの判定が\alert{多項式時間}で可能である．
+    %       \item \textsc{3-SAT} のインスタンスから SWT のインスタンスが\alert{多項式時間}で構成可能であり，\textsc{3-SAT} の判定結果と構成したインスタンスに対する $w$ 以下となるスケジュールの存在判定結果が\alert{一致}する．
+    %     \end{enumerate}
+    %   \end{block}
+    % \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % \section{問題の分析}
+    % \begin{frame}{問題の分析：既存のスケジューリング問題との対応}
+    %   単一機械モデルにおける SWT のインスタンスを $\mathcal{I} = (\mathcal{J},r,p)$，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）のインスタンスを $\mathcal{I}' = (\mathcal{J},r,p,d)$ とする．また，ジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$ を導入する．このとき各 $J \in \mathcal{J}$ に対して，$C(J) = s(J) + p(J)$ である．
+    %   \begin{block}{SWT と SRTD の関係}
+    %     SWT のインスタンスにおける各 $J \in \mathcal{J}$ に対して，$d(J) = r(J) + p(J)$ と設定したとき，
+    %     \begin{itemize}
+    %       \item $\mathcal{I} \subseteq \mathcal{I}'$
+    %       \begin{itemize}
+    %         \item $\mathcal{I}$ は，$\mathcal{I}'$ における関数 $d$ により制限を加えたインスタンスである．
+    %       \end{itemize}
+    %       \item   $\textcolor{red}{C(J)} - \textcolor{blue}{d(J)}  =
+    %       \{\textcolor{red}{s(J) + p(J)}\} - \{\textcolor{blue}{r(J) + p(J)}\}
+    %       = s(J) - r(J)$
+    %       \begin{itemize}
+    %         \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J) - r(J)$ として捉えることができる．
+    %       \end{itemize}
+    %     \end{itemize}
+    %   \end{block}
+    %   以上より，$\text{SWT } \subseteq \text{ SRTD}$ と表すことができる．
+    %   \begin{itemize}
+    %     \item SWT は SRTD の\alert{部分問題}である．
+    %   \end{itemize}
+    % \end{frame}
+    %
+    % \begin{frame}{問題の分析：既存のスケジューリング問題の計算複雑さ}
+    %   \begin{block}{既存のスケジューリング問題の計算複雑さ}
+    %     \begin{itemize}
+    %       \item SJIT は，{\sc 3-SAT} からの還元により，無関連並列機械モデルにおいて，機械数が入力の一部の場合，\alert{強 NP 困難}である．
+    %       \item SRTD は，{\sc 3-PARTITION} からの還元により，単一機械モデルにおいて，\alert{強 NP  困難}である．
+    %     \end{itemize}
+    %   \end{block}
+    % \end{frame}
 
-    \subsection{\textsc{3-SATISFIABILITY} の導入}
-    \begin{frame}{定式化：${\textcolor{white}{\mbox {\sc 3-SATISFIABILITY}}}$}
+    \section{問題の分析}
+    \begin{frame}{問題の分析：既存のスケジューリング問題との対応}
+
+      \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
+        SJIT において，すべてのジョブを JIT で処理することは，最大待ち時間が $0$ の場合に対応する．
+      \end{block}
+
+      \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
+        SRTD における納期を，
+        \begin{itemize}
+          \item $\text{納期} := \text{処理開始可能時刻} + \text{処理時間}$
+        \end{itemize}
+        としたとき，SRTD における最大遅れ時間は最大待ち時間に対応する．
+      \end{block}
+
+      \begin{block}{SRTD と SJIT の計算複雑さ}
+        \begin{itemize}
+          \item SJIT は，{\sc 3-SAT} からの還元により，無関連並列機械モデルにおいて，機械数が入力の一部の場合，\alert{強 NP 困難}である．
+          \item SRTD は，{\sc 3-PARTITION} からの還元により，単一機械モデルにおいて，\alert{強 NP  困難}である．
+        \end{itemize}
+      \end{block}
+    \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{研究成果}
+    \subsection{計算理論的観点}
+    % \begin{frame}{研究成果：問題の計算複雑さ}
+    %   \begin{alertblock}{成果 1}
+    %     無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
+    %     \begin{itemize}
+    %       \item NP 完全である {\sc 3-SAT} から無関連並列機械モデルにおける待ち時間制約付きスケジューリング問題が\alert{多項式還元}できることを示した．
+    %       \item 待ち時間制約付きスケジューリング問題の NP 完全性を明らかにすることで，SWT が \alert{NP 困難}であることを示した．
+    %     \end{itemize}
+    %   \end{alertblock}
+    % \end{frame}
+    %
+    % \begin{frame}{研究成果：多項式還元とは}
+    %
+    %   \begin{tabular}{cc}
+    %     \begin{minipage}[]{0.6\hsize}
+    %       \begin{block}{多項式還元}
+    %
+    %         問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で変換して，判定結果を同じにできるとき，
+    %         \begin{center}
+    %           「$A$ は $B$ に多項式還元可能」という．
+    %         \end{center}
+    %         $B$ を解くアルゴリズムを用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，より難しいことがわかる．
+    %       \end{block}
+    %     \end{minipage}
+    %     \begin{minipage}[]{0.4\hsize}
+    %       \begin{figure}[h]
+    %         \centering
+    %         \includegraphics[width=4.5cm]{figure/reduction.pdf}
+    %       \end{figure}
+    %     \end{minipage}
+    %     \vspace{5mm}
+    %   \end{tabular}
+    %   本研究では，$A$ と $B$ を以下の問題として多項式還元を行った．
+    %   \begin{description}
+    %     \item[問題 $A$ :] ${\textcolor{red}{\mbox {\sc 3-SAT}}}$
+    %     \item[問題 $B$ :] {\textcolor{red}{待ち時間制約付きスケジューリング問題}}
+    %   \end{description}
+    % \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{alertblock}{成果 1}
+        無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
+        \begin{itemize}
+          \item NP 完全である {\sc 3-SAT} から無関連並列機械モデルにおける待ち時間制約付きスケジューリング問題が\alert{多項式還元}できることを示した．
+        \end{itemize}
+      \end{alertblock}
+      \begin{tabular}{cc}
+        \begin{minipage}[]{0.6\hsize}
+          \begin{block}{多項式還元}
+            問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で変換して，判定結果を同じにできるとき，
+            \begin{center}
+              「$A$ は $B$ に多項式還元可能」という．
+            \end{center}
+            \begin{description}
+              \setlength{\leftskip}{-12mm}
+              \item[$A = $] ${\textcolor{red}{\mbox {\sc 3-SAT}}}$
+              \item[$B = $] {\textcolor{red}{待ち時間制約付きスケジューリング問題}}
+            \end{description}
+          \end{block}
+        \end{minipage}
+        \begin{minipage}[]{0.4\hsize}
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=4.5cm]{figure/reduction.pdf}
+          \end{figure}
+        \end{minipage}
+        \vspace{5mm}
+      \end{tabular}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
       \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題は NP 完全であることが知られている．
       \begin{block}{\textsc{3-SATISFIABILITY}}
         \begin{description}
@@ -251,107 +406,23 @@
           \setlength{\leftskip}{-8mm}
           \item[問題：] 以下を満たす真理値割り当て $f : X \to \{0,1\}$ が存在するか？
         \end{description}
+        \vspace{-1mm}
         $$\displaystyle \bigwedge_{h \in H} \bigg(\bigvee_{x \in h}f(x) \lor \bigvee_{\bar x \in h}\lnot f(x) \bigg) = 1$$
+        \vspace{-1mm}
       \end{block}
 
       例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{ \{x_1, x_2, \bar x_3\}, \{\bar x_1, \bar x_2,\bar x_3\}\big\}$ のとき，
       $f(x_1) = 1, f(x_2) = 0, f(x_3) = 0$ が存在するので，判定は Yes となる．
     \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{多項式還元とは}
-    \begin{frame}{多項式還元とは：還元の流れ}
-      \begin{tabular}{cc}
-        \begin{minipage}[c]{0.5\hsize}
-          \begin{block}{NP 完全}
-            ある問題が NP 完全であることを示すには，以下が成立することを示す．
-            \begin{itemize}
-              \item 問題がNPに属す．
-              \item 問題がNP困難である．
-            \end{itemize}
-          \end{block}
-        \end{minipage}
-        \begin{minipage}[c]{0.5\hsize}
-          \begin{textblock*}{0.4\linewidth}(215pt, -5pt)
-            \centering
-            \includegraphics[width=7cm,bb=0 0 350 260]{figure/reduction.pdf}
-          \end{textblock*}
-        \end{minipage}
-      \end{tabular}
-      \begin{block}{}
-        本研究では以下が成立することを示す．
-        \begin{enumerate}
-          \item スケジュールにおける最大待ち時間が $w$ 以下であるかの判定が\alert{多項式時間}で可能である．
-          \item \textsc{3-SAT} のインスタンスから SWT のインスタンスが\alert{多項式時間}で構成可能であり，\textsc{3-SAT} の判定結果と構成したインスタンスに対する $w$ 以下となるスケジュールの存在判定結果が\alert{一致}する．
-        \end{enumerate}
-      \end{block}
-    \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \section{多項式還元とは}
-    % \begin{frame}{多項式還元とは：還元の流れ}
-    %   \begin{block}{多項式還元}
-    %     問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で変換して，判定結果を同じにできるとき，
-    %     \begin{center}
-    %       「$A$ は $B$ に多項式還元可能」という．
-    %     \end{center}
-    %     \begin{itemize}
-    %       \item $B$ を解くアルゴリズムを用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，より難しいことがわかる．
-    %     \end{itemize}
-    %   \end{block}
-    %   \begin{tabular}{cc}
-    %     \begin{minipage}[]{0.5\hsize}
-    %       本研究では，
-    %       \begin{itemize}
-    %         \item $A = {\mbox {\sc 3-SAT}}$
-    %         \item $B = $ SWT の判定問題
-    %       \end{itemize}
-    %       として，SWT の NP 完全性を示した．
-    %     \end{minipage}
-    %     \begin{minipage}[]{0.5\hsize}
-    %
-    %     \end{minipage}
-    %   \end{tabular}
-    % \end{frame}
-    % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{問題の分析}
-    \begin{frame}{問題の分析：既存のスケジューリング問題との対応}
-      単一機械モデルにおける SWT のインスタンスを $\mathcal{I} = (\mathcal{J},r,p)$，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）のインスタンスを $\mathcal{I}' = (\mathcal{J},r,p,d)$ とする．また，ジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$ を導入する．このとき各 $J \in \mathcal{J}$ に対して，$C(J) = s(J) + p(J)$ である．
-      \begin{block}{SWT と SRTD の関係}
-        SWT のインスタンスにおける各 $J \in \mathcal{J}$ に対して，$d(J) = r(J) + p(J)$ と設定したとき，
-        \begin{itemize}
-          \item $\mathcal{I} \subseteq \mathcal{I}'$
-          \begin{itemize}
-            \item $\mathcal{I}$ は，$\mathcal{I}'$ における関数 $d$ により制限を加えたインスタンスである．
-          \end{itemize}
-          \item   $\textcolor{red}{C(J)} - \textcolor{blue}{d(J)}  =
-          \{\textcolor{red}{s(J) + p(J)}\} - \{\textcolor{blue}{r(J) + p(J)}\}
-          = s(J) - r(J)$
-          \begin{itemize}
-            \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J) - r(J)$ として捉えることができる．
-          \end{itemize}
-        \end{itemize}
-      \end{block}
-      以上より，$\text{SWT } \subseteq \text{ SRTD}$ と表すことができる．
-      \begin{itemize}
-        \item SWT は SRTD の\alert{部分問題}である．
-      \end{itemize}
-    \end{frame}
 
-    \begin{frame}{問題の分析：既存のスケジューリング問題の計算複雑さ}
-      \begin{block}{既存のスケジューリング問題の計算複雑さ}
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{block}{還元のポイント}
         \begin{itemize}
-          \item SJIT は，{\sc 3-SAT} からの還元により，無関連並列機械モデルにおいて，機械数が入力の一部の場合，\alert{強 NP 困難}である．
-          \item SRTD は，{\sc 3-PARTITION} からの還元により，単一機械モデルにおいて，\alert{強 NP  困難}である．
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{3 以上}になる ．
         \end{itemize}
       \end{block}
-    \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{研究成果}
-    \subsection{計算理論的観点}
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{alertblock}{成果 1}
-        無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 完全であることを明らかにした．
-      \end{alertblock}
-      \begin{block}{インスタンスの変換}
+      \begin{block}{表記の導入}
         {\sc 3-SAT} のインスタンス を $X = \{x_1,\ldots,x_n\}$ と $H = \{h_1,\ldots,h_{\lambda}\}$ からなる 2 項組 $(X,H)$ とする．
         $(X,H)$ に基づき表記を導入する．
         \begin{itemize}
@@ -366,50 +437,60 @@
           \item $\mathcal{A} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\alpha_i}$，$\mathcal{B} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\beta_i}$
         \end{itemize}
       \end{block}
-      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
-      ただし，$\mathcal{J} = \{\mathcal{J}^t,\mathcal{J}^f,\mathcal{J}^d\}$ s.t. $|\mathcal{J}^t| = |\mathcal{J}^f| = \mathcal{A} + \mathcal{B}$，$|\mathcal{J}^d| = \lambda$ とする．
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      各 $i \in \{ 1,\ldots,n\}$ において，$\alpha_i \ge 3$，$\beta_i \ge 3$ のとき，次のように SWT のインスタンスを設定する．
-      \begin{block}{各リテラルに対応するジョブの処理開始可能時刻の範囲}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 10 cm]{figure/3SAT3.pdf}
-        \end{figure}
-      \end{block}
-      \begin{itemize}
-        \item 各リテラルに対応するジョブの集合における各ジョブの処理開始可能時刻を，対応する機械ごとに範囲をずらして設定している．
-        \item 各リテラルに対応するジョブの集合の中で，処理開始可能時刻が一番遅いジョブの完了時間は，$3(\mathcal{A} + \mathcal{B}) + 3$ と設定している．
-      \end{itemize}
-    \end{frame}
+    % \begin{frame}{研究成果：問題の計算複雑さ}
+    %   各 $i \in \{ 1,\ldots,n\}$ において，$\alpha_i \ge 3$，$\beta_i \ge 3$ のとき，次のように待ち時間制約付きスケジューリング問題のインスタンスを設定する．
+    %   \begin{block}{各リテラルに対応するジョブの処理開始可能時刻の範囲}
+    %     \begin{figure}[h]
+    %       \centering
+    %       \includegraphics[width = 10 cm]{figure/3SAT3.pdf}
+    %     \end{figure}
+    %   \end{block}
+    %   \begin{itemize}
+    %     \item 各リテラルに対応するジョブの集合における各ジョブの処理開始可能時刻を，対応する機械ごとに範囲をずらして設定している．
+    %     \item 各リテラルに対応するジョブの集合の中で，処理開始可能時刻が一番遅いジョブの完了時間は，$3(\mathcal{A} + \mathcal{B}) + 3$ と設定している．
+    %   \end{itemize}
+    % \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{変数に対応する機械にジョブを割り当てたときのスケジュール}
+      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
+      \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
         \begin{figure}[h]
           \centering
           \includegraphics[width = 11cm]{figure/3SAT4.pdf}
         \end{figure}
       \end{block}
       \begin{itemize}
-        \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定している．
+        \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定する．
       \end{itemize}
     \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{}
-
+      \begin{block}{各機械 ${\textcolor{white}{\ell \in \{n + 1,\ldots,n + \lambda\}}}$ に対応するジョブのスケジュール}
+        $h_{\ell - n} = \{x_i, x_j, x_k\}$ のとき，$H$ を充足する真理値割り当てが存在する場合と存在しない場合の機械 $\ell$ におけるスケジュールは以下の通り．
+        \begin{description}
+          \item[スケジュール $S$：]
+          $H$ を充足する真理値割り当てが存在し，真理値割り当てが $f(x_i) = 0, f(x_j) = 1, f(x_k) = 0$ のとき．
+          \item[スケジュール $S'$：]
+          $H$ を充足する真理値割り当てが存在せず，真理値割り当てが $f(x_i) = 0, f(x_j) = 0, f(x_k) = 0$ のとき．
+          \vspace{-7mm}
+        \end{description}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=12cm]{figure/3SAT5.pdf}
+        \end{figure}
       \end{block}
     \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
 
-      {\sc 3-SAT} の判定結果と，SWT における最大待ち時間が \alert{2 以下}となるスケジュールの存在判定結果が一致することを示した．
+      {\sc 3-SAT} の判定結果と，待ち時間制約付きスケジューリング問題における最大待ち時間が \alert{2 以下}となるスケジュールの存判定結果が一致することを示した．
 
-      \begin{block}{還元のポイント}
+      \begin{block}{${\textcolor{white}{\mbox {\sc 3-SAT}}}$ と待ち時間制約付きスケジューリング問題の判定結果}
         \begin{itemize}
-          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，SWT における最大待ち時間は \alert{2 以下}になる ．
-          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，SWT における最大待ち時間は \alert{3 以上}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{3 以上}になる ．
         \end{itemize}
       \end{block}
       無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，$1.5$ 未満の定数近似アルゴリズムは存在しない．
@@ -423,8 +504,61 @@
     \end{frame}
 
     \subsection{計算機観点}
-    \begin{frame}{研究成果：ヒューリスティックの提案}
+    \begin{frame}{研究成果：厳密解法の提案}
       \begin{alertblock}{成果 2}
+        同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に基づいた厳密解法の開発と計算時間の分析を行った．
+      \end{alertblock}
+      \begin{block}{分割生成アルゴリズムの改良}
+        \begin{itemize}
+          \item \alert{分割の要素数 = 機械数} となる分割のみ生成するように改良．
+          \begin{itemize}
+            \item 考慮する分割の数を減らすことができる．
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+      \begin{block}{分枝限定法の改良}
+        \begin{itemize}
+          \item \alert{部分問題に対する多項式アルゴリズム}の概念を導入した．
+          \begin{itemize}
+            \item 列挙する実行可能解を減らすことができる．
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+      \begin{block}{上記以外の改良}
+        \begin{itemize}
+          \item 各機械におけるジョブ集合のコストの降順で，探索を始める．
+          \begin{itemize}
+            \item 各分割における探索初期段階で，探索の中断を判定できる．
+          \end{itemize}
+        \end{itemize}
+      \end{block}
+    \end{frame}
+
+    \begin{frame}{厳密解法の計算時間の評価}
+      機械数 5 における計算時間の比較．ただし，計算時間の単位はミリ秒．
+      \begin{itemize}
+        \item 分割生成アルゴリズムの改良前と，改良後の計算時間の比較
+        \begin{tabular}{|c|c|c|c|c|c|} \hline
+          ジョブ数 & 10 & 11 & 12 & 13 & 14 \\ \hline \hline
+          改良前 & 553 & 3,463 & 30,271 & 240,917 & 3,121,089 \\ \hline
+          改良後 & 146 & 943 & 7,576 & 40,748 & 249,759  \\ \hline
+          削減率 & 73％ & 72％ & 75％ & 83％ & \alert{92％} \\ \hline
+        \end{tabular}
+        \item 分枝限定法の改良前と，改良後の計算時間の比較
+        \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+          ジョブ数 & 10 & 11 & 12 & 13 & 14 & 15\\ \hline \hline
+          改良前 & 313 & 1,709 & 9,758 & 54,966 & 295,287 & 1,668,411 \\ \hline
+          改良後 & 168 & 971 & 6,887 & 43,903 & 225,043 & 1,301,890 \\ \hline
+          削減率 & 46％ & 43％ & 30％ & 20％ & 23％ & 22％\\ \hline
+        \end{tabular}
+      \end{itemize}
+      \begin{alertblock}{厳密解法の実験的評価のまとめ}
+        改良により，計算時間を大幅に減らすことを可能にしたが，全探索では，ジョブの増加に伴い計算時間が指数的に増大する．そのため，より大きいインスタンスに対しては，ヒューリスティックの開発が必要である．
+      \end{alertblock}
+    \end{frame}
+
+    \begin{frame}{研究成果：ヒューリスティックの提案}
+      \begin{alertblock}{成果 3}
         同一並列機械モデルにおける SWT に対して，ヒューリスティックの開発と解法に対する実験的評価を行った．
       \end{alertblock}
       \begin{block}{貪欲アルゴリズムに基づいた解法}
@@ -452,7 +586,6 @@
     \end{frame}
 
     \begin{frame}{研究成果：ヒューリスティックの精度について}
-      ヒューリスティックから得られた解の最大待ち時間と厳密解法から得られた解の最大待ち時間の比に着目して比較を行った．
       \begin{exampleblock}{例：2 台の同一機械と以下のインスタンスにおけるスケジュール}
         \begin{tabular}{cc}
           \begin{minipage}[]{0.6\hsize}
@@ -483,157 +616,21 @@
         \end{tabular}
         ${\displaystyle \frac{\text{ヒューリスティックから得られた解の最大待ち時間}}{\text{厳密解法から得られた解の最大待ち時間}} = \infty}$
       \end{exampleblock}
-      本研究で提案したヒューリスティックは，上記の比が定数となることが保証されている．
-    \end{frame}
-
-    \begin{frame}{研究成果：ヒューリスティックの実験的評価}
-      \begin{itemize}
-        \item 実験回数：約 $300$ 万回
-        \item 縦軸：$\frac{\text{ヒューリスティックから得られた解の最大待ち時間}}{\text{厳密解法から得られた解の最大待ち時間}}$
-        \item 横軸：
-      \end{itemize}
-      % \begin{figure}[h]
-      %   \centering
-      %   \includegraphics[width = 12cm]{figure/}
-      % \end{figure}
-    \end{frame}
-
-    \begin{frame}{研究成果：厳密解法の提案}
-      \begin{alertblock}{成果 3}
-        同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に基づいた厳密解法の開発と計算時間の分析を行った．
+      \begin{alertblock}{ヒューリスティックの実験的評価のまとめ}
+        本研究で提案したヒューリスティックは，上記の比が最大 $24$ となった．
+        また，どのようなインスタンスに対しても，上記の比が定数であることが保証されている．
       \end{alertblock}
-      \begin{block}{分割生成アルゴリズムの改良}
-        \begin{itemize}
-          \item \alert{分割の要素数 = 機械数} となる分割のみ生成するように改良．
-          \begin{itemize}
-            \item 考慮する分割の数を減らすことができる．
-          \end{itemize}
-        \end{itemize}
-      \end{block}
-      \begin{block}{分枝限定法の改良}
-        \begin{itemize}
-          \item \alert{部分問題に対する多項式アルゴリズム}の概念を導入した．
-          \begin{itemize}
-            \item 列挙する実行可能解を減らすことができる．
-          \end{itemize}
-        \end{itemize}
-      \end{block}
-      \begin{block}{上記以外の改良}
-        \begin{itemize}
-          \item 各機械におけるスケジュールのコストの降順で，探索を始める．
-          \begin{itemize}
-            \item 各分割における探索初期段階で，探索の中断を判定できる．
-          \end{itemize}
-        \end{itemize}
-      \end{block}
-    \end{frame}
-
-    \begin{frame}{研究成果：分割生成アルゴリズムの改良}
-      \begin{block}{}
-        \uncover<1->{
-        \alert{同一並列機械モデル}において，ジョブ $J_1$ を機械 $1$ に割り当てるのと，機械 $2$ に割り当てることは同じである．
-        したがって，ジョブをどの機械に割り当てるかではなく，\alert{どのジョブと同じ機械に割り当てるか}を考える必要がある．
-        つまり，同一並列機械モデルにおけるジョブの機械への割り当ては，\alert{ジョブの分割}として捉えることができる．
-        }
-      \end{block}
-      \begin{exampleblock}{例：ジョブ数 3，同一機械数 2 における分割}
-        \begin{figure}[h]
-          \centering
-          \includegraphics<1>[width = 12cm]{figure/rgf1.pdf}
-          \includegraphics<2>[width = 12cm]{figure/rgf2.pdf}
-          \includegraphics<3>[width = 12cm]{figure/rgf3.pdf}
-          \includegraphics<4>[width = 12cm]{figure/rgf4.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{研究成果：その他の改良}
-      分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
-      \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
-        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
-        \begin{description}
-          \setlength{\leftskip}{-8mm}
-          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
-          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$1 \to 0 \to 2$．
-        \end{description}
-      \end{exampleblock}
-      \begin{block}{上記改良の正当性}
-        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
-      \end{block}
-    \end{frame}
-
-    \begin{frame}{分割生成アルゴリズムの改良による計算時間の評価}
-      分割生成アルゴリズムの改良前と，改良後の計算時間の比較を行った．
-      \begin{itemize}
-        \item 実験回数：約 $3,000$ 回
-        \item 縦軸：計算時間
-        \item 横軸：
-      \end{itemize}
-      % \begin{figure}[h]
-      %   \centering
-      %   \includegraphics[]{}
-      % \end{figure}
-    \end{frame}
-
-    \begin{frame}{分枝限定法の改良}
-      \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
-        \begin{tabular}{cc}
-          \begin{minipage}[]{0.6\hsize}
-            \begin{figure}[h]
-              \centering
-              \includegraphics<1>[width = 8cm]{figure/BandB1.pdf}
-              \includegraphics<2>[width = 8cm]{figure/BandB2.pdf}
-            \end{figure}
-          \end{minipage}
-          \begin{minipage}[c]{0.4\hsize}
-            \begin{table}[htb]
-              \begin{tabular}{|l|c|r|} \hline
-                $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
-                $J_1$ & 2 & 4 \\ \hline
-                $J_2$ & 5 & 7 \\ \hline
-                $J_3$ & 10 & 15 \\ \hline
-              \end{tabular}
-            \end{table}
-          \end{minipage}
-        \end{tabular}
-      \end{exampleblock}
-      \begin{itemize}
-        \uncover<1>{
-        \item それまでに割り当てたジョブのスケジュールにおける最大待ち時間がそれまでの最良の解 $W$ より良い値か？
-        }
-        \uncover<2>{
-        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大待ち時間がそれまでの最良の解 $W$ より良い値か？
-        \begin{itemize}
-          \item SWT は，処理時間が一定のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
-        \end{itemize}
-        }
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{分枝限定法の改良による計算時間の評価}
-      分枝限定法の改良前と，改良後の計算時間の比較を行った．
-      \begin{itemize}
-        \item 実験回数：約 $3,000$ 回
-        \item 縦軸：計算時間
-        \item 横軸：
-      \end{itemize}
-      % \begin{figure}[h]
-      %   \centering
-      %   \includegraphics[]{}
-      % \end{figure}
-
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{まとめと今後の課題}
     \begin{frame}{まとめと今後の課題}
       \begin{block}{まとめ}
         \begin{itemize}
-          \item 無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT の NP 完全性を明らかにした．
+          \item 無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
           \begin{itemize}
             \item 1.5 未満の定数近似ができないことを明らかにした．
           \end{itemize}
-          \item SWT に対するヒューリスティックと厳密解法の開発した．
-          \item 実験的評価を行い，対象とする環境におけるヒューリスティックの有効性，厳密解法の有用性を示した．
+          \item SWT に対するヒューリスティックと厳密解法の開発し，実験的評価を行った．
         \end{itemize}
       \end{block}
       \begin{alertblock}{今後の課題}
@@ -791,6 +788,75 @@
 
         したがって，最適解から得られる最大待ち時間が $0$ となるインスタンスに対して，処理開始可能時刻の昇順で，すぐに処理開始可能な機械に割り当てることで最適なスケジュールを作ることができる．
 
+      \end{block}
+    \end{frame}
+
+    \begin{frame}{付録：分割生成アルゴリズムの改良}
+      \begin{block}{}
+        \uncover<1->{
+        \alert{同一並列機械モデル}において，ジョブ $J$ を機械 $1$ に割り当てるのと，機械 $2$ に割り当てることは同じである．
+        したがって，ジョブをどの機械に割り当てるかではなく，\alert{どのジョブと同じ機械に割り当てるか}を考える必要がある．
+        つまり，同一並列機械モデルにおけるジョブの機械への割り当ては，\alert{ジョブの分割}として捉えることができる．
+        }
+      \end{block}
+      \begin{exampleblock}{例：ジョブ数 3，同一機械数 2 における分割}
+        \begin{figure}[h]
+          \centering
+          \includegraphics<1>[width = 12cm]{figure/rgf1.pdf}
+          \includegraphics<2>[width = 12cm]{figure/rgf2.pdf}
+          \includegraphics<3>[width = 12cm]{figure/rgf3.pdf}
+          \includegraphics<4>[width = 12cm]{figure/rgf4.pdf}
+        \end{figure}
+      \end{exampleblock}
+    \end{frame}
+
+    \begin{frame}{付録：分枝限定法の改良}
+      \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
+        \begin{tabular}{cc}
+          \begin{minipage}[]{0.6\hsize}
+            \begin{figure}[h]
+              \centering
+              \includegraphics<1>[width = 8cm]{figure/BandB1.pdf}
+              \includegraphics<2>[width = 8cm]{figure/BandB2.pdf}
+            \end{figure}
+          \end{minipage}
+          \begin{minipage}[c]{0.4\hsize}
+            \begin{table}[htb]
+              \begin{tabular}{|l|c|r|} \hline
+                $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
+                $J_1$ & 2 & 4 \\ \hline
+                $J_2$ & 5 & 7 \\ \hline
+                $J_3$ & 10 & 15 \\ \hline
+              \end{tabular}
+            \end{table}
+          \end{minipage}
+        \end{tabular}
+      \end{exampleblock}
+      \begin{itemize}
+        \uncover<1>{
+        \item それまでに割り当てたジョブのスケジュールにおける最大待ち時間がそれまでの最良の解 $W$ より良い値か？
+        }
+        \uncover<2>{
+        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大待ち時間がそれまでの最良の解 $W$ より良い値か？
+        \begin{itemize}
+          \item SWT は，処理時間が一定のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
+        \end{itemize}
+        }
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{付録：その他の改良}
+      分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
+      \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
+        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
+        \begin{description}
+          \setlength{\leftskip}{-8mm}
+          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
+          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$1 \to 0 \to 2$．
+        \end{description}
+      \end{exampleblock}
+      \begin{block}{}
+        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
       \end{block}
     \end{frame}
 
