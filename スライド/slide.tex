@@ -50,7 +50,7 @@
 
 
 \title{並列機械モデルにおける\\最大待ち時間最小化問題の計算論的分析}
-\author{天本 祐希}
+\author{15713004 天本 祐希}
 \institute{宋研究室}
 \date{2018年2月6日}
 
@@ -92,8 +92,8 @@
         生産拠点数と受注状況によっては，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
       \end{block}
       \begin{itemize}
-        \setlength{\leftskip}{-7mm}
-        \item 待ち時間を短縮させるための生産計画を立てることは重要な課題である．
+        \setlength{\leftskip}{-5mm}
+        \item 待ち時間を短縮するための生産計画を立てることは重要な課題である．
       \end{itemize}
 
       \begin{block}{スケジューリング問題との対応}
@@ -164,7 +164,7 @@
       \end{block}
       \begin{block}{目的関数：最大待ち時間 $\textcolor{white}{W_{\max}}$}
         \begin{itemize}
-          \item ジョブの処理開始可能時刻と処理開始時刻の差が最大のもの．
+          \item ジョブの処理開始可能時刻と処理開始時刻の差が最大値．
           \begin{itemize}
             \item $W_{\max} = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \end{itemize}
@@ -176,44 +176,28 @@
     \end{frame}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{従来研究}
-    \begin{frame}{従来研究：既存のスケジューリング問題との対応}
-      \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
-        SRTD は，ジョブの納期から処理が完了するまでの遅れ時間が最大のものの最小化を目的とするスケジューリング問題である．
-        \vspace{-4mm}
-        \begin{figure}
-          \centering
-          \includegraphics[width=10cm]{figure/SRTD1.pdf}
-          \vspace{-2mm}
-        \end{figure}
-        納期を処理開始可能時刻と処理時間の和と設定したとき，
-        \vspace{-4mm}
-        \begin{figure}
-          \centering
-          \includegraphics[width=10cm]{figure/SRTD2.pdf}
-          \vspace{-3mm}
-        \end{figure}
-        SRTD における遅れ時間は\alert{待ち時間}として捉えることができる．
-      \end{block}
-    \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{研究成果}
-    \begin{frame}{諸定義：待ち時間制約付きスケジューリング問題}
-      待ち時間制約付きスケジューリング問題は，待ち時間 $w$ 以下となるスケジュールが存在するか，という決定問題である．つまり，判定結果は，
+    \subsection{最大待ち時間最小化問題の計算複雑さの証明}
+    \begin{frame}{既存のスケジューリング問題との対応}
+      処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) は，ジョブの納期から処理が完了するまでの遅れ時間が最大値の最小化を目的とするスケジューリング問題である．
+      \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
+        \begin{figure}
+          \centering
+          \includegraphics<1>[width=10cm]{figure/SRTD1.pdf}
+          \includegraphics<2->[width=10cm]{figure/SRTD2.pdf}
+        \end{figure}
+        \begin{itemize}
+          \item<2-> 納期を処理開始可能時刻と処理時間の和と設定したとき，SRTD における遅れ時間は\alert{待ち時間}として捉えることができる．
+        \end{itemize}
+      \end{block}
       \begin{itemize}
-        \item $w$ 以下となるスケジュールが存在する場合 Yes，
-        \item $w$ 以下となるスケジュールが存在しない場合 No，
+        \item<3->SWT は SRTD の\alert{部分問題}であり，
+        SRTD は，単一機械モデルにおいて\alert{強 NP 困難}であることが示されている[Garey \& Johnson(1990)]が，SWT の計算複雑さは明らかでない．
       \end{itemize}
-      となる．
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{alertblock}{成果 1}
-        無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
-        \begin{itemize}
-          \item NP 完全である {\sc 3-SAT} から無関連並列機械モデルにおける待ち時間制約付きスケジューリング問題が\alert{多項式還元}できることを示した．
-        \end{itemize}
-      \end{alertblock}
+    \begin{frame}{待ち時間制約付きスケジューリング問題}
+      SWT の計算複雑さを明らかにするために，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式還元}を行う．
       \begin{tabular}{cc}
         \begin{minipage}[]{0.6\hsize}
           \begin{block}{多項式還元}
@@ -221,11 +205,7 @@
             \begin{center}
               「$A$ は $B$ に多項式還元可能」という．
             \end{center}
-            \begin{description}
-              \setlength{\leftskip}{-12mm}
-              \item[$A = $] ${\textcolor{red}{\mbox {\sc 3-SAT}}}$
-              \item[$B = $] {\textcolor{red}{待ち時間制約付きスケジューリング問題}}
-            \end{description}
+            $B$ を解くアルゴリズムを用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，それ以上難しいと言える．
           \end{block}
         \end{minipage}
         \begin{minipage}[]{0.4\hsize}
@@ -236,55 +216,31 @@
         \end{minipage}
         \vspace{5mm}
       \end{tabular}
+      \vspace{-5mm}
+      \begin{block}{}
+        {\sc 3-SAT} は決定問題の 1 つで，判定として Yes または No のいずれかを持つ．
+        判定結果を同じにするために，問題$B$ を SWT のインスタンスに対して，待ち時間 $w$ 以下となるスケジュールが存在するか，という決定問題として定義し，\alert{待ち時間制約付きスケジューリング問題}と表す．
+      \end{block}
     \end{frame}
 
-    % \begin{frame}{研究成果：問題の計算複雑さ}
-    %   \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題は NP 完全であることが知られている．
-    %   \begin{block}{\textsc{3-SATISFIABILITY}}
-    %     \begin{description}
-    %       \item[インスタンス：] $(X,H)$
-    %       \vspace{-2mm}
-    %     \end{description}
-    %     \begin{itemize}
-    %       \item ブール型の変数集合 $X=\{x_1,x_2,\dots ,x_n\}$
-    %       \begin{itemize}
-    %         \item リテラルの集合 $L_X = X \cup \{\bar x \mid x \in X\}$
-    %         \begin{itemize}
-    %           \item $X$ と $X$ の各要素の論理否定をとった変数の集合
-    %         \end{itemize}
-    %       \end{itemize}
-    %       \item 3 つのリテラルからなる節 $h$ の集合 $H$
-    %       \begin{itemize}
-    %         \item $H \subseteq 2^{L_X}$ s.t. $\forall h \in H \big[|h| = 3\big]$
-    %       \end{itemize}
-    %     \end{itemize}
-    %     \begin{description}
-    %       \setlength{\leftskip}{-8mm}
-    %       \item[問題：] 以下を満たす真理値割り当て $f : X \to \{0,1\}$ が存在するか？
-    %     \end{description}
-    %     \vspace{-1mm}
-    %     $$\displaystyle \bigwedge_{h \in H} \bigg(\bigvee_{x \in h}f(x) \lor \bigvee_{\bar x \in h}\lnot f(x) \bigg) = 1$$
-    %     \vspace{-1mm}
-    %   \end{block}
-    % \end{frame}
-
     \begin{frame}{研究成果：問題の計算複雑さ}
-      多項式還元により，以下の結果が得られた．
-      \begin{block}{${\textcolor{white}{\mbox {\sc 3-SAT}}}$ と待ち時間制約付きスケジューリング問題の判定結果}
+      \begin{alertblock}{成果 1}
+        無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
+      \end{alertblock}
+      \begin{block}{還元のポイント}
+        待ち時間制約付きスケジューリング問題における最大待ち時間は，
         \begin{itemize}
-          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
-          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{3 以上}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき， \alert{2 以下}，
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，\alert{3 以上}となる ．
         \end{itemize}
       \end{block}
       無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，近似率 $1.5$ 未満の定数近似アルゴリズムは存在しない．
-      \begin{alertblock}{成果 1 のまとめ}
-        本研究では，SWT が NP 困難であることを明らかにした．
-        NP 困難な問題に対する効率的な解法は発見されていない．
-        そのため，最適解を求めるために，解の全列挙の基づいた解法が必要である．
+      \begin{alertblock}{}
+        NP 困難な問題に対する効率的な解法は発見されていないため，最適解を求めるために，解の全列挙に基づいた解法が必要である．
       \end{alertblock}
     \end{frame}
 
-    % \subsection{計算機観点}
+    \subsection{厳密解法の提案と実験的評価}
     \begin{frame}{研究成果：厳密解法の提案}
       \begin{alertblock}{成果 2}
         同一並列機械モデルにおける SWT に対し，分割生成アルゴリズムおよび分枝限定法に基づいた厳密解法の開発と計算時間の分析を行った．
@@ -315,7 +271,7 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{厳密解法の実験的評価}
+    \begin{frame}{研究成果：厳密解法の実験的評価}
       機械数 5 における計算時間の比較．ただし，計算時間の単位はミリ秒．
       \begin{itemize}
         \item 分割生成アルゴリズムの改良前と，改良後の計算時間の比較
@@ -338,41 +294,30 @@
       \end{alertblock}
     \end{frame}
 
+    \subsection{ヒューリスティックの提案と実験的評価}
+    \begin{frame}{既存のスケジューリング問題との対応}
+      JIT ジョブ荷重和最大化問題 (SJIT) は，納期以前に処理を完了したジョブの荷重和の最大化を目的とするスケジューリング問題である．
+      \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
+        SJIT において，各ジョブを JIT で処理可能なとき，各ジョブは納期ちょうどで処理が完了する．つまり，各ジョブの待ち時間は $0$ である．
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=10cm]{figure/SJIT1.pdf}
+        \end{figure}
+        SJIT において，各ジョブを JIT で処理できるとき，処理開始可能時刻の昇順で処理することで最適解が求まる．[Cepek \& Sung(2004)]
+      \end{block}
+      \begin{block}{}
+        SWT において，各ジョブの待ち時間が $0$ のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．したがって，貪欲アリゴリズムに基づいたヒューリスティックの開発を行う．
+      \end{block}
+    \end{frame}
+
     \begin{frame}{研究成果：ヒューリスティックの提案}
       \begin{alertblock}{成果 3}
-        同一並列機械モデルにおける SWT に対して，貪欲解法に基づいたヒューリスティックの開発と解法に対する実験的評価を行った．
+        同一並列機械モデルにおける SWT に対して，貪欲アルゴリズムに基づいたヒューリスティックの開発と解法に対する実験的評価を行った．
       \end{alertblock}
       \begin{block}{ヒューリスティックの評価}
         本研究では，ヒューリスティックから得られた解における最大待ち時間と最適解における最大待ち時間の比に基づき評価を行った．
         $${\displaystyle \text{競合比} = \frac{\text{ヒューリスティックから得られた解における最大待ち時間}\cdots A}{\text{最適解における最大待ち時間}\cdots B}}$$
       \end{block}
-      \begin{itemize}
-        \item ここで，$B = 0$，$A \neq 0$とき，競合比は $\infty$ となる．
-        \item $B = 0$ のとき，提案したヒューリスティックは，常に $A = 0$ となる．
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{研究成果：ヒューリスティックの精度について}
-      \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
-        SJIT において，すべてのジョブを JIT で処理可能なとき，各ジョブは処理開始可能時刻と納期の区間ちょうどで処理される．
-        \begin{figure}[h]
-          \vspace{-3mm}
-          \centering
-          \includegraphics[width=10cm]{figure/SJIT1.pdf}
-          \vspace{-3mm}
-        \end{figure}
-        すべてのジョブが JIT で処理可能なとき，待ち時間 $0$ で処理可能である．
-        \vspace{-5mm}
-        \begin{itemize}
-          \setlength{\leftskip}{-4mm}
-          \item SJIT において，すべてのジョブを JIT で処理できるとき，処理開始可能時刻の昇順で処理することで最適解が求まる．[Cepek \& Sung(2004)]
-        \end{itemize}
-      \end{block}
-      \vspace{-2mm}
-      \begin{itemize}
-        \item SWT  において，すべてのジョブの待ち時間が $0$ のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
-      \end{itemize}
-      \vspace{-2mm}
       \begin{alertblock}{成果 3 のまとめ}
         ヒューリスティックは，競合比が最大 $24$ となった．
         また，最適解における最大待ち時間が $0$ のとき，ヒューリスティックは常に最適解を返す．
@@ -406,6 +351,36 @@
 
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ の定式化}
+      \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題は NP 完全であることが知られている．
+      \begin{block}{\textsc{3-SATISFIABILITY}}
+        \begin{description}
+          \item[インスタンス：] $(X,H)$
+          \vspace{-2mm}
+        \end{description}
+        \begin{itemize}
+          \item ブール型の変数集合 $X=\{x_1,x_2,\dots ,x_n\}$
+          \begin{itemize}
+            \item リテラルの集合 $L_X = X \cup \{\bar x \mid x \in X\}$
+            \begin{itemize}
+              \item $X$ と $X$ の各要素の論理否定をとった変数の集合
+            \end{itemize}
+          \end{itemize}
+          \item 3 つのリテラルからなる節 $h$ の集合 $H$
+          \begin{itemize}
+            \item $H \subseteq 2^{L_X}$ s.t. $\forall h \in H \big[|h| = 3\big]$
+          \end{itemize}
+        \end{itemize}
+        \begin{description}
+          \setlength{\leftskip}{-8mm}
+          \item[問題：] 以下を満たす真理値割り当て $f : X \to \{0,1\}$ が存在するか？
+        \end{description}
+        \vspace{-1mm}
+        $$\displaystyle \bigwedge_{h \in H} \bigg(\bigvee_{x \in h}f(x) \lor \bigvee_{\bar x \in h}\lnot f(x) \bigg) = 1$$
+        \vspace{-1mm}
+      \end{block}
+    \end{frame}
+
     \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ の例}
       \begin{exampleblock}{${\textcolor{white}{\mbox {\sc 3-SAT}}}$ の例}
         \begin{description}
@@ -438,7 +413,7 @@
       \end{exampleblock}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
+    \begin{frame}{付録：問題の計算複雑さ}
       \begin{block}{還元のポイント}
         \begin{itemize}
           \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
@@ -462,7 +437,7 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
+    \begin{frame}{付録：問題の計算複雑さ}
       $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
       \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
         $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
@@ -486,7 +461,7 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
+    \begin{frame}{付録：問題の計算複雑さ}
       \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
         \begin{figure}[h]
           \centering
@@ -499,7 +474,7 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
+    \begin{frame}{付録：問題の計算複雑さ}
       \begin{block}{各機械 ${\textcolor{white}{\ell \in \{n + 1,\ldots,n + \lambda\}}}$ に対応するジョブのスケジュール}
         $h_{\ell - n} = \{x_i, x_j, x_k\}$ のとき，
         \begin{description}
