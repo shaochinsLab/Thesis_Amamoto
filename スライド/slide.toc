@@ -2,6 +2,4 @@
 \beamer@sectionintoc {2}{諸定義}{9}{0}{2}
 \beamer@sectionintoc {3}{問題の分析}{13}{0}{3}
 \beamer@sectionintoc {4}{研究成果}{15}{0}{4}
-\beamer@subsectionintoc {4}{1}{計算理論的観点}{16}{0}{4}
-\beamer@subsectionintoc {4}{2}{計算機観点}{23}{0}{4}
 \beamer@sectionintoc {5}{まとめと今後の課題}{28}{0}{5}
