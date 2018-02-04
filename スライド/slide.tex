@@ -72,8 +72,8 @@
   \begin{frame}{目次}
     \tableofcontents
     \end{frame} %目次スライド
-    \section{研究背景}
-    \begin{frame}{研究背景：受注生産方式における生産計画の流れ}
+    \section{研究背景と目的}
+    \begin{frame}{研究背景と目的：受注生産方式における生産計画の流れ}
       \begin{block}{受注生産方式とは}
         顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，どの生産拠点でいつ製造開始するかを決定する．（例えば，高級自動車メーカー，SIerなど受注生産方式を採用している．）
       \end{block}
@@ -87,12 +87,14 @@
       \end{figure}
     \end{frame}
 
-    \begin{frame}{研究背景：スケジューリング問題との対応}
+    \begin{frame}{研究背景と目的：スケジューリング問題との対応}
       \begin{block}{受注生産方式における問題}
         生産拠点数と受注状況によっては，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
       \end{block}
-
-      待ち時間を短縮させるための生産計画を立てることは重要な課題である．
+      \begin{itemize}
+        \setlength{\leftskip}{-7mm}
+        \item 待ち時間を短縮させるための生産計画を立てることは重要な課題である．
+      \end{itemize}
 
       \begin{block}{スケジューリング問題との対応}
         各注文を\alert{ジョブ}，受注日時を\alert{処理開始可能時刻}，製造期間を\alert{処理時間}と対応させることで，受注生産方式における生産計画を\alert{待ち時間}を目的関数とするスケジューリング問題として捉えた．
@@ -108,46 +110,6 @@
 
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \section{定式化}
-    % \subsection{最大待ち時間最小化問題の定式化}
-    % \begin{frame}{定式化：最大待ち時間最小化問題}
-    %   \begin{itemize}
-    %     \item {無関連並列機械モデルにおいて，SWT を\alert{決定問題}として定義する．}
-    %     \item {決定問題は，インスタンスと問題によって定義され，決定問題は判定とし
-    %     て Yes または No のいずれかを持つ．}
-    %   \end{itemize}
-    %   \begin{block}{入力}
-    %     \begin{itemize}
-    %       \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
-    %       \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
-    %       \item {ジョブの処理開始可能時刻を返す関数 $r : \mathcal{J} \to \mathbb{N}$}
-    %       \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
-    %       \item {待ち時間 $w$}
-    %     \end{itemize}
-    %   \end{block}
-    % \end{frame}
-    %
-    % \begin{frame}{定式化：最大待ち時間最小化問題}
-    %   \begin{block}{問題}
-    %     以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の対 $(A,s)$ が存在するか？
-    %     \begin{itemize}
-    %       \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
-    %       \begin{itemize}
-    %         \item {各ジョブは処理開始可能時刻以降に処理を開始する．}
-    %       \end{itemize}
-    %       \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow [s(J), s(J)+p(J,A(J))) \cap[s(J'), s(J')+p(J', A(J'))) = \emptyset \Big]$}
-    %       \begin{itemize}
-    %         \item {各機械は同時に複数のジョブを処理しない．}
-    %         \item {各ジョブの処理を開始すると，完了するまで中断しない．}
-    %       \end{itemize}
-    %       \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
-    %       \begin{itemize}
-    %         \item {ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．}
-    %       \end{itemize}
-    %     \end{itemize}
-    %   \end{block}
-    % \end{frame}
-
     \section{諸定義}
     \begin{frame}{諸定義：最大待ち時間最小化問題}
       \begin{block}{機械モデル}
@@ -157,11 +119,19 @@
           \item 複数の機械で処理を行う\alert{並列機械モデル}，
         \end{itemize}
         に分類される．
-        本研究では，並列機械モデルの中で，すべての機械の性能が等しい\alert{同一並列機械モデル}とジョブと機械の組み合わせによって処理時間が異なる\alert{無関連並列機械モデル}を扱う．
+        並列機械モデルはさらに，
+        \begin{itemize}
+          \item すべての機械の性能が等しい\alert{同一並列機械モデル}，
+          \item 機械ごとに処理速度が異なる\alert{一様並列機械モデル}，
+          \item ジョブと機械の組み合わせによって処理時間が異なる\alert{無関連並列機械モデル}，
+        \end{itemize}
+        に分類される．
       \end{block}
+    \end{frame}
 
-      以下，無関連並列機械モデルにおける SWT を定式化する．
-      \begin{block}{入力：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
+    \begin{frame}{諸定義：最大待ち時間最小化問題}
+      無関連並列機械モデルにおける最大待ち時間最小化問題 (SWT) を定式化する．
+      \begin{block}{インスタンス：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
           \item {無関連機械の集合 $\mathcal{M} = \{M_1,M_2,\ldots,M_m\}$}
@@ -169,42 +139,66 @@
           \item {ジョブの処理時間を返す関数 $p : \mathcal{J} \times \mathcal{M} \to \mathbb{N}$}
         \end{itemize}
       \end{block}
+      \begin{block}{解：スケジュール $\textcolor{white}{(A,s)}$}
+        \begin{itemize}
+          \item ジョブの機械への割り当てを返す関数 $A : \mathcal{J} \to \mathcal{M}$．
+          \item ジョブの処理開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$．
+        \end{itemize}
+      \end{block}
     \end{frame}
 
     \begin{frame}{諸定義：最大待ち時間最小化問題}
-      \begin{block}{解：スケジュール $\textcolor{white}{(A,s)}$}
-        以下の条件を満たす $A : \mathcal{J} \to \mathcal{M}$ と $s : \mathcal{J} \to \mathbb{N}$ の 2 項組 $(A,s)$．
+      \begin{block}{制約}
         \begin{itemize}
-          \item {$\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$}
+          \item 各ジョブは処理開始可能時刻以降に処理を開始する．
           \begin{itemize}
-            \item {各ジョブは処理開始可能時刻以降に処理を開始する．}
+            \item $\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$
           \end{itemize}
-          \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow [s(J), s(J)+p(J,A(J))) \cap[s(J'), s(J')+p(J', A(J'))) = \emptyset \Big]$}
+          \item 各機械は同時に複数のジョブを処理しない．
+          \item 各ジョブの処理を開始すると，完了するまで中断しない．
           \begin{itemize}
-            \item {各機械は同時に複数のジョブを処理しない．}
-            \item {各ジョブの処理を開始すると，完了するまで中断しない．}
+            \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow [s(J), s(J)+p(J,A(J))) \cap[s(J'), s(J')+p(J', A(J'))) = \emptyset \Big]$}
           \end{itemize}
         \end{itemize}
       \end{block}
-
       \begin{block}{目的関数：最大待ち時間 $\textcolor{white}{W_{\max}}$}
         \begin{itemize}
-          \item $\varphi(A,s) = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
+          \item ジョブの処理開始可能時刻と処理開始時刻の差が最大のもの．
           \begin{itemize}
-            \item すべてのジョブの中で，ジョブの処理開始可能時刻と処理開始時刻の差が最大のもの．
+            \item $W_{\max} = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \end{itemize}
         \end{itemize}
       \end{block}
-
-      \setbeamertemplate{items}[default]
       \begin{itemize}
         \item 最大待ち時間 $W_{\max}$ の最小化を目的とするスケジューリング問題
       \end{itemize}
     \end{frame}
 
-    \setbeamertemplate{items}[ball]
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{従来研究}
+    \begin{frame}{従来研究：既存のスケジューリング問題との対応}
+      \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
+        SRTD は，ジョブの納期から処理が完了するまでの遅れ時間が最大のものの最小化を目的とするスケジューリング問題である．
+        \vspace{-4mm}
+        \begin{figure}
+          \centering
+          \includegraphics[width=10cm]{figure/SRTD1.pdf}
+          \vspace{-2mm}
+        \end{figure}
+        納期を処理開始可能時刻と処理時間の和と設定したとき，
+        \vspace{-4mm}
+        \begin{figure}
+          \centering
+          \includegraphics[width=10cm]{figure/SRTD2.pdf}
+          \vspace{-3mm}
+        \end{figure}
+        SRTD における遅れ時間は\alert{待ち時間}として捉えることができる．
+      \end{block}
+    \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \section{研究成果}
     \begin{frame}{諸定義：待ち時間制約付きスケジューリング問題}
-      最大待ち時間最小化問題  (SWT) を\alert{決定問題}として定義し，\alert{待ち時間制約付きスケジューリング問題}と表す．
+      SWT における最大待ち時間 $W_{\max}$ を基準として，$W_{\max}$ 以下となるスケジュールが存在するかの決定問題を\alert{待ち時間制約付きスケジューリング問題} として定式化する．
       \begin{block}{決定問題}
         決定問題は，\alert{インスタンス}と\alert{問題}によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
       \end{block}
@@ -219,67 +213,14 @@
           \vspace{-2mm}
         \end{description}
         \begin{itemize}
-          \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
+          \item ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．
           \begin{itemize}
-            \item ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．
+            \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
           \end{itemize}
         \end{itemize}
       \end{block}
     \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % \section{多項式還元とは}
-    % \begin{frame}{多項式還元とは：還元の流れ}
-    %   \begin{tabular}{cc}
-    %     \begin{minipage}[c]{0.5\hsize}
-    %       \begin{block}{NP 完全}
-    %         ある問題が NP 完全であることを示すには，以下が成立することを示す．
-    %         \begin{itemize}
-    %           \item 問題がNPに属す．
-    %           \item 問題がNP困難である．
-    %         \end{itemize}
-    %       \end{block}
-    %     \end{minipage}
-    %     \begin{minipage}[c]{0.5\hsize}
-    %       \begin{textblock*}{0.4\linewidth}(215pt, -5pt)
-    %         \centering
-    %         \includegraphics[width=7cm,bb=0 0 350 260]{figure/reduction.pdf}
-    %       \end{textblock*}
-    %     \end{minipage}
-    %   \end{tabular}
-    %   \begin{block}{}
-    %     本研究では以下が成立することを示す．
-    %     \begin{enumerate}
-    %       \item スケジュールにおける最大待ち時間が $w$ 以下であるかの判定が\alert{多項式時間}で可能である．
-    %       \item \textsc{3-SAT} のインスタンスから SWT のインスタンスが\alert{多項式時間}で構成可能であり，\textsc{3-SAT} の判定結果と構成したインスタンスに対する $w$ 以下となるスケジュールの存在判定結果が\alert{一致}する．
-    %     \end{enumerate}
-    %   \end{block}
-    % \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    \section{問題の分析}
-    \begin{frame}{問題の分析：既存のスケジューリング問題との対応}
-
-      \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
-        SJIT において，すべてのジョブを JIT で処理することは，最大待ち時間が $0$ の場合に対応する．
-      \end{block}
-
-      \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
-        SRTD における納期を，
-        \begin{itemize}
-          \item $\text{納期} := \text{処理開始可能時刻} + \text{処理時間}$
-        \end{itemize}
-        としたとき，SRTD における最大遅れ時間は最大待ち時間に対応する．
-      \end{block}
-
-      \begin{block}{SRTD と SJIT の計算複雑さ}
-        \begin{itemize}
-          \item SJIT は，{\sc 3-SAT} からの還元により，無関連並列機械モデルにおいて機械数が入力の一部の場合，\alert{強 NP 困難}である．[Sung \& Vlach (2005)]
-          \item SRTD は，{\sc 3-PARTITION} からの還元により，単一機械モデルにおいて，\alert{強 NP  困難}である．[Garey \& Johnson (1990)]
-        \end{itemize}
-      \end{block}
-    \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \section{研究成果}
     \begin{frame}{研究成果：問題の計算複雑さ}
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
@@ -365,42 +306,42 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
-      \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
-        $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
-        \begin{itemize}
-          \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
-          \item $\lambda$ は，$H$ の要素数．節に対応する機械に割り当てる用のダミージョブ．
-        \end{itemize}
-        $n + \lambda$ 個の機械
-        \begin{itemize}
-          \item $n$ は $X$ の要素数．
-          各変数に対応する機械が 1 台ある．
-          \item $\lambda$ は $H$ の要素数．
-          各節に対応する機械が 1 台ずつある．
-        \end{itemize}
-      \end{block}
-      \begin{itemize}
-        \item $f(x_i) = 1$ のとき，
-        $\mathcal{J}^f(i)$ を機械 $i$ に割り当てる．
-        \item $f(x_i) = 0$ のとき，
-        $\mathcal{J}^t(i)$ を機械 $i$ に割り当てる．
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 10.5cm]{figure/3SAT4.pdf}
-        \end{figure}
-      \end{block}
-      \begin{itemize}
-        \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定する．
-        \item $\mathcal{J}^t(i)$ の要素 $J^t(i)$ と $\mathcal{J}^f(i)$ の要素 $J^f(i)$ が機械 $i$ に同時に割り当てられないように，上記の差を設けている．
-      \end{itemize}
-    \end{frame}
+    % \begin{frame}{研究成果：問題の計算複雑さ}
+    %   $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
+    %   \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
+    %     $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
+    %     \begin{itemize}
+    %       \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
+    %       \item $\lambda$ は，$H$ の要素数．節に対応する機械に割り当てる用のダミージョブ．
+    %     \end{itemize}
+    %     $n + \lambda$ 個の機械
+    %     \begin{itemize}
+    %       \item $n$ は $X$ の要素数．
+    %       各変数に対応する機械が 1 台ある．
+    %       \item $\lambda$ は $H$ の要素数．
+    %       各節に対応する機械が 1 台ずつある．
+    %     \end{itemize}
+    %   \end{block}
+    %   \begin{itemize}
+    %     \item $f(x_i) = 1$ のとき，
+    %     $\mathcal{J}^f(i)$ を機械 $i$ に割り当てる．
+    %     \item $f(x_i) = 0$ のとき，
+    %     $\mathcal{J}^t(i)$ を機械 $i$ に割り当てる．
+    %   \end{itemize}
+    % \end{frame}
+    %
+    % \begin{frame}{研究成果：問題の計算複雑さ}
+    %   \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
+    %     \begin{figure}[h]
+    %       \centering
+    %       \includegraphics[width = 10.5cm]{figure/3SAT4.pdf}
+    %     \end{figure}
+    %   \end{block}
+    %   \begin{itemize}
+    %     \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定する．
+    %     \item $\mathcal{J}^t(i)$ の要素 $J^t(i)$ と $\mathcal{J}^f(i)$ の要素 $J^f(i)$ が機械 $i$ に同時に割り当てられないように，上記の差を設けている．
+    %   \end{itemize}
+    % \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
       \begin{block}{各機械 ${\textcolor{white}{\ell \in \{n + 1,\ldots,n + \lambda\}}}$ に対応するジョブのスケジュール}
@@ -441,10 +382,10 @@
         \end{itemize}
       \end{block}
       無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，近似率 $1.5$ 未満の定数近似アルゴリズムは存在しない．
-      \begin{alertblock}{計算理論的成果のまとめ}
-        NP 困難な問題に対する効率的な解法は発見されていない．
+      \begin{alertblock}{成果 1 のまとめ}
         本研究では，SWT が NP 困難であることを明らかにした．
-        そのため，SWT に対する厳密解法の開発が必要である．
+        NP 困難な問題に対する効率的な解法は発見されていない．
+        そのため，最適解を求めるために，解の全列挙の基づいた解法が必要である．
       \end{alertblock}
     \end{frame}
 
@@ -497,7 +438,7 @@
           削減率 & 46\% & 43\% & 30\% & 20\% & 23\% & \alert{22\%} \\ \hline
         \end{tabular}
       \end{itemize}
-      \begin{alertblock}{厳密解法の実験的評価のまとめ}
+      \begin{alertblock}{成果 2 のまとめ}
         改良により，計算時間を大幅に減らすことを可能にしたが，全探索では，ジョブの増加に伴い計算時間が指数的に増大する．そのため，より大きいインスタンスに対しては，ヒューリスティックの開発が必要である．
       \end{alertblock}
     \end{frame}
@@ -539,7 +480,7 @@
         \item ここで，$B = 0$，$A \neq 0$とき，競合比は $\infty$ となる．
         \item $B = 0$ のとき，提案したヒューリスティックは，常に $A = 0$ となる．
       \end{itemize}
-      \begin{alertblock}{ヒューリスティックの実験的評価のまとめ}
+      \begin{alertblock}{成果 3 のまとめ}
         提案したヒューリスティックは，競合比が最大 $24$ となった．
         また，最適解における最大待ち時間が $0$ のとき，ヒューリスティックは常に最適解を返すことを示した．
       \end{alertblock}
@@ -572,29 +513,6 @@
 
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{frame}{付録：SRTD との対応}
-      単一機械モデルにおける SWT のインスタンスを $\mathcal{I} = (\mathcal{J},r,p)$，処理開始可能時刻付き最大遅れ時間最小化問題（SRTD）のインスタンスを $\mathcal{I}' = (\mathcal{J},r,p,d)$ とする．また，ジョブの完了時刻を返す関数 $C : \mathcal{J} \to \mathbb{N}$ を導入する．このとき各 $J \in \mathcal{J}$ に対して，$C(J) = s(J) + p(J)$ である．
-      \begin{block}{SWT と SRTD の関係}
-        SWT のインスタンスにおける各 $J \in \mathcal{J}$ に対して，$d(J) = r(J) + p(J)$ と設定したとき，
-        \begin{itemize}
-          \item $\mathcal{I} \subseteq \mathcal{I}'$
-          \begin{itemize}
-            \item $\mathcal{I}$ は，$\mathcal{I}'$ における関数 $d$ により制限を加えたインスタンスである．
-          \end{itemize}
-          \item   $\textcolor{red}{C(J)} - \textcolor{blue}{d(J)}  =
-          \{\textcolor{red}{s(J) + p(J)}\} - \{\textcolor{blue}{r(J) + p(J)}\}
-          = s(J) - r(J)$
-          \begin{itemize}
-            \item 納期遅れ時間 $L(J)$ は，$d(J) = r(J) + p(J)$ のとき，待ち時間 $s(J) - r(J)$ として捉えることができる．
-          \end{itemize}
-        \end{itemize}
-      \end{block}
-      以上より，$\text{SWT } \subseteq \text{ SRTD}$ と表すことができる．
-      \begin{itemize}
-        \item SWT は SRTD の\alert{部分問題}である．
-      \end{itemize}
-    \end{frame}
-
     \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ の例}
       \begin{exampleblock}{${\textcolor{white}{\mbox {\sc 3-SAT}}}$ の例}
         \begin{description}

@@ -1,5 +1,5 @@
-\beamer@sectionintoc {1}{研究背景}{3}{0}{1}
+\beamer@sectionintoc {1}{研究背景と目的}{3}{0}{1}
 \beamer@sectionintoc {2}{諸定義}{9}{0}{2}
-\beamer@sectionintoc {3}{問題の分析}{13}{0}{3}
+\beamer@sectionintoc {3}{従来研究}{13}{0}{3}
 \beamer@sectionintoc {4}{研究成果}{15}{0}{4}
-\beamer@sectionintoc {5}{まとめと今後の課題}{27}{0}{5}
+\beamer@sectionintoc {5}{まとめと今後の課題}{26}{0}{5}
