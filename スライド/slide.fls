@@ -294,6 +294,7 @@ INPUT figure/car4.pdf
 INPUT extractbb -O figure/car4.pdf
 INPUT slide.toc
 INPUT slide.toc
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr8.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr6.tfm
@@ -342,6 +343,10 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT figure/reduction.pdf
 INPUT extractbb -O figure/reduction.pdf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT figure/SJIT1.pdf
+INPUT extractbb -O figure/SJIT1.pdf
+INPUT slide.toc
+INPUT slide.toc
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss9.tfm
@@ -351,10 +356,10 @@ INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT figure/3SAT4.pdf
+INPUT extractbb -O figure/3SAT4.pdf
 INPUT figure/3SAT6.pdf
 INPUT extractbb -O figure/3SAT6.pdf
-INPUT slide.toc
-INPUT slide.toc
 INPUT figure/reductionExample1.pdf
 INPUT extractbb -O figure/reductionExample1.pdf
 INPUT figure/reductionExample2.pdf

@@ -52,7 +52,7 @@
 \title{並列機械モデルにおける\\最大待ち時間最小化問題の計算論的分析}
 \author{天本 祐希}
 \institute{宋研究室}
-\date{2月6日}
+\date{2018年2月6日}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AtBeginSection[]{
@@ -101,7 +101,7 @@
       \end{block}
 
       \begin{block}{研究目的}
-        上記の問題を\alert{最大待ち時間最小化問題 (SWT)} として定式化し，
+        上記の問題を\alert{最大待ち時間最小化問題}として定式化し，
         \begin{itemize}
           \item SWT の計算複雑さを明らかにする．
           \item SWT の計算複雑さに基づいて，解法の提案を行う．
@@ -130,7 +130,8 @@
     \end{frame}
 
     \begin{frame}{諸定義：最大待ち時間最小化問題}
-      無関連並列機械モデルにおける最大待ち時間最小化問題 (SWT) を定式化する．
+      以下，最大待ち時間最小化問題を {\it \alert{S}equencing to minimize maximum \alert{W}aiting \alert{T}ime} の頭文字をとって，\alert{SWT} と表記する．
+      無関連並列機械モデルにおける SWT を定式化する．
       \begin{block}{インスタンス：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
@@ -198,27 +199,12 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{研究成果}
     \begin{frame}{諸定義：待ち時間制約付きスケジューリング問題}
-      SWT における最大待ち時間 $W_{\max}$ を基準として，$W_{\max}$ 以下となるスケジュールが存在するかの決定問題を\alert{待ち時間制約付きスケジューリング問題} として定式化する．
-      \begin{block}{決定問題}
-        決定問題は，\alert{インスタンス}と\alert{問題}によって定義され，判定として \alert{Yes} または \alert{No} のいずれかを持つ．
-      \end{block}
-
-      \begin{block}{待ち時間制約付きスケジューリング問題}
-        \begin{description}
-          \item[インスタンス：] SWT のインスタンス $\mathcal{I}$ と待ち時間 $w$ の 2項組 $(\mathcal{I}, w)$
-        \end{description}
-        \begin{description}
-          \setlength{\leftskip}{-8mm}
-          \item[問題：] SWT の実行可能なスケジュール $(A,s)$ のうち以下の条件を満たすスケジュール $(A,s)$ が存在するか？
-          \vspace{-2mm}
-        \end{description}
-        \begin{itemize}
-          \item ジョブの処理開始可能時刻からその処理を開始するまでの待ち時間は $w$ 以下．
-          \begin{itemize}
-            \item {$\max\big\{s(J) - r(J) \mid J \in \mathcal{J}\big\} \le w$}
-          \end{itemize}
-        \end{itemize}
-      \end{block}
+      待ち時間制約付きスケジューリング問題は，待ち時間 $w$ 以下となるスケジュールが存在するか，という決定問題である．つまり，判定結果は，
+      \begin{itemize}
+        \item $w$ 以下となるスケジュールが存在する場合 Yes，
+        \item $w$ 以下となるスケジュールが存在しない場合 No，
+      \end{itemize}
+      となる．
     \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
@@ -252,129 +238,38 @@
       \end{tabular}
     \end{frame}
 
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題は NP 完全であることが知られている．
-      \begin{block}{\textsc{3-SATISFIABILITY}}
-        \begin{description}
-          \item[インスタンス：] $(X,H)$
-          \vspace{-2mm}
-        \end{description}
-        \begin{itemize}
-          \item ブール型の変数集合 $X=\{x_1,x_2,\dots ,x_n\}$
-          \begin{itemize}
-            \item リテラルの集合 $L_X = X \cup \{\bar x \mid x \in X\}$
-            \begin{itemize}
-              \item $X$ と $X$ の各要素の論理否定をとった変数の集合
-            \end{itemize}
-          \end{itemize}
-          \item 3 つのリテラルからなる節 $h$ の集合 $H$
-          \begin{itemize}
-            \item $H \subseteq 2^{L_X}$ s.t. $\forall h \in H \big[|h| = 3\big]$
-          \end{itemize}
-        \end{itemize}
-        \begin{description}
-          \setlength{\leftskip}{-8mm}
-          \item[問題：] 以下を満たす真理値割り当て $f : X \to \{0,1\}$ が存在するか？
-        \end{description}
-        \vspace{-1mm}
-        $$\displaystyle \bigwedge_{h \in H} \bigg(\bigvee_{x \in h}f(x) \lor \bigvee_{\bar x \in h}\lnot f(x) \bigg) = 1$$
-        \vspace{-1mm}
-      \end{block}
-    \end{frame}
-
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{還元のポイント}
-        \begin{itemize}
-          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
-          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{3 以上}になる ．
-        \end{itemize}
-      \end{block}
-      \begin{block}{表記の導入}
-        {\sc 3-SAT} のインスタンス を $X = \{x_1,\ldots,x_n\}$ と $H = \{h_1,\ldots,h_{\lambda}\}$ からなる 2 項組 $(X,H)$ とする．
-        $(X,H)$ に基づき表記を導入する．
-        \begin{itemize}
-          \item $\forall i \in \{1,\ldots,n\},~\alpha_i = |\{h \in H \mid x_i \in h\}|$
-          \begin{itemize}
-            \item $H$ において，$x_i$ が現れる回数を表す自然数を $\alpha_i$ とする．
-          \end{itemize}
-          \item $\forall i \in \{1,\ldots,n\},~\beta_i = |\{h \in H \mid \bar x_i \in h\}|$
-          \begin{itemize}
-            \item $H$ において，$\bar x_i$ が現れる回数を表す自然数を $\beta_i$ とする．
-          \end{itemize}
-          \item $\mathcal{A} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\alpha_i}$，$\mathcal{B} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\beta_i}$
-        \end{itemize}
-      \end{block}
-    \end{frame}
-
     % \begin{frame}{研究成果：問題の計算複雑さ}
-    %   $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
-    %   \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
-    %     $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
+    %   \textsc{3-SATISFIABILITY (3-SAT) } は決定問題の 1 つで，この問題は NP 完全であることが知られている．
+    %   \begin{block}{\textsc{3-SATISFIABILITY}}
+    %     \begin{description}
+    %       \item[インスタンス：] $(X,H)$
+    %       \vspace{-2mm}
+    %     \end{description}
     %     \begin{itemize}
-    %       \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
-    %       \item $\lambda$ は，$H$ の要素数．節に対応する機械に割り当てる用のダミージョブ．
+    %       \item ブール型の変数集合 $X=\{x_1,x_2,\dots ,x_n\}$
+    %       \begin{itemize}
+    %         \item リテラルの集合 $L_X = X \cup \{\bar x \mid x \in X\}$
+    %         \begin{itemize}
+    %           \item $X$ と $X$ の各要素の論理否定をとった変数の集合
+    %         \end{itemize}
+    %       \end{itemize}
+    %       \item 3 つのリテラルからなる節 $h$ の集合 $H$
+    %       \begin{itemize}
+    %         \item $H \subseteq 2^{L_X}$ s.t. $\forall h \in H \big[|h| = 3\big]$
+    %       \end{itemize}
     %     \end{itemize}
-    %     $n + \lambda$ 個の機械
-    %     \begin{itemize}
-    %       \item $n$ は $X$ の要素数．
-    %       各変数に対応する機械が 1 台ある．
-    %       \item $\lambda$ は $H$ の要素数．
-    %       各節に対応する機械が 1 台ずつある．
-    %     \end{itemize}
+    %     \begin{description}
+    %       \setlength{\leftskip}{-8mm}
+    %       \item[問題：] 以下を満たす真理値割り当て $f : X \to \{0,1\}$ が存在するか？
+    %     \end{description}
+    %     \vspace{-1mm}
+    %     $$\displaystyle \bigwedge_{h \in H} \bigg(\bigvee_{x \in h}f(x) \lor \bigvee_{\bar x \in h}\lnot f(x) \bigg) = 1$$
+    %     \vspace{-1mm}
     %   \end{block}
-    %   \begin{itemize}
-    %     \item $f(x_i) = 1$ のとき，
-    %     $\mathcal{J}^f(i)$ を機械 $i$ に割り当てる．
-    %     \item $f(x_i) = 0$ のとき，
-    %     $\mathcal{J}^t(i)$ を機械 $i$ に割り当てる．
-    %   \end{itemize}
-    % \end{frame}
-    %
-    % \begin{frame}{研究成果：問題の計算複雑さ}
-    %   \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
-    %     \begin{figure}[h]
-    %       \centering
-    %       \includegraphics[width = 10.5cm]{figure/3SAT4.pdf}
-    %     \end{figure}
-    %   \end{block}
-    %   \begin{itemize}
-    %     \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定する．
-    %     \item $\mathcal{J}^t(i)$ の要素 $J^t(i)$ と $\mathcal{J}^f(i)$ の要素 $J^f(i)$ が機械 $i$ に同時に割り当てられないように，上記の差を設けている．
-    %   \end{itemize}
     % \end{frame}
 
     \begin{frame}{研究成果：問題の計算複雑さ}
-      \begin{block}{各機械 ${\textcolor{white}{\ell \in \{n + 1,\ldots,n + \lambda\}}}$ に対応するジョブのスケジュール}
-        $h_{\ell - n} = \{x_i, x_j, x_k\}$ のとき，
-        \begin{description}
-          \setlength{\leftskip}{-12mm}
-          \item[$S$：]
-          $f(x_i) = 1, f(x_j) = 0, f(x_k) = 0$ のとき．
-          %機械 $\ell$ に割り当てるジョブは，$J_i \in \mathcal{J}^t(i)$，$J_j \in \mathcal{J}^f(j)$，$J_k \in \mathcal{J}^f(k)$ とダミージョブ $J_d$．
-          \item[$S'$：]
-          $f(x_i) = 0, f(x_j) = 0, f(x_k) = 0$ のとき．
-          %機械 $\ell$ に割り当てるジョブは，$J_i \in \mathcal{J}^f(i)$，$J_j \in \mathcal{J}^f(j)$，$J_k \in \mathcal{J}^f(k)$ とダミージョブ $J_d$．
-        \end{description}
-        \vspace{-5mm}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width=12cm]{figure/3SAT6.pdf}
-        \end{figure}
-      \end{block}
-      \begin{itemize}
-        \item $1$ に割り当てられたリテラルに対応するジョブは，
-        \begin{itemize}
-          \item 次のジョブの処理開始可能時刻 - 自身の処理開始可能時刻
-        \end{itemize}
-        \item $0$ に割り当てられたリテラルに対応するジョブは，
-        \begin{itemize}
-          \item 次のジョブの処理開始可能時刻 - 自身の処理開始可能時刻 + 1
-        \end{itemize}
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{研究成果：問題の計算複雑さ}
-      インスタンスの変換により，以下の結果が得られた．
+      多項式還元により，以下の結果が得られた．
       \begin{block}{${\textcolor{white}{\mbox {\sc 3-SAT}}}$ と待ち時間制約付きスケジューリング問題の判定結果}
         \begin{itemize}
           \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
@@ -445,33 +340,8 @@
 
     \begin{frame}{研究成果：ヒューリスティックの提案}
       \begin{alertblock}{成果 3}
-        同一並列機械モデルにおける SWT に対して，ヒューリスティックの開発と解法に対する実験的評価を行った．
+        同一並列機械モデルにおける SWT に対して，貪欲解法に基づいたヒューリスティックの開発と解法に対する実験的評価を行った．
       \end{alertblock}
-      \begin{block}{貪欲アルゴリズムに基づいた解法}
-        \begin{description}
-          \setlength{\leftskip}{-10mm}
-          \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,C)$
-          \item[出力 :] スケジュールの集合 $\mathcal{S}$．
-          \begin{description}
-            \setlength{\leftskip}{-25mm}
-            \item[Step 1.]
-            $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
-            \item[Step 2.]
-            各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
-            \begin{description}
-              \item[Step 2.1.]
-              \setlength{\leftskip}{-40mm}
-              最小完了時刻を持つスケジュール集合の要素 $S_{M_a} \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(S_M)\right\}$ を 1 つ求める．
-              ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
-            \end{description}
-            \item[Step 3.]
-            $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
-          \end{description}
-        \end{description}
-      \end{block}
-    \end{frame}
-
-    \begin{frame}{研究成果：ヒューリスティックの精度について}
       \begin{block}{ヒューリスティックの評価}
         本研究では，ヒューリスティックから得られた解における最大待ち時間と最適解における最大待ち時間の比に基づき評価を行った．
         $${\displaystyle \text{競合比} = \frac{\text{ヒューリスティックから得られた解における最大待ち時間}\cdots A}{\text{最適解における最大待ち時間}\cdots B}}$$
@@ -480,9 +350,32 @@
         \item ここで，$B = 0$，$A \neq 0$とき，競合比は $\infty$ となる．
         \item $B = 0$ のとき，提案したヒューリスティックは，常に $A = 0$ となる．
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：ヒューリスティックの精度について}
+      \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
+        SJIT において，すべてのジョブを JIT で処理可能なとき，各ジョブは処理開始可能時刻と納期の区間ちょうどで処理される．
+        \begin{figure}[h]
+          \vspace{-3mm}
+          \centering
+          \includegraphics[width=10cm]{figure/SJIT1.pdf}
+          \vspace{-3mm}
+        \end{figure}
+        すべてのジョブが JIT で処理可能なとき，待ち時間 $0$ で処理可能である．
+        \vspace{-5mm}
+        \begin{itemize}
+          \setlength{\leftskip}{-4mm}
+          \item SJIT において，すべてのジョブを JIT で処理できるとき，処理開始可能時刻の昇順で処理することで最適解が求まる．[Cepek \& Sung(2004)]
+        \end{itemize}
+      \end{block}
+      \vspace{-2mm}
+      \begin{itemize}
+        \item SWT  において，すべてのジョブの待ち時間が $0$ のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
+      \end{itemize}
+      \vspace{-2mm}
       \begin{alertblock}{成果 3 のまとめ}
-        提案したヒューリスティックは，競合比が最大 $24$ となった．
-        また，最適解における最大待ち時間が $0$ のとき，ヒューリスティックは常に最適解を返すことを示した．
+        ヒューリスティックは，競合比が最大 $24$ となった．
+        また，最適解における最大待ち時間が $0$ のとき，ヒューリスティックは常に最適解を返す．
       \end{alertblock}
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -544,6 +437,98 @@
         $f(x_1) = 1, f(x_2) = 0, f(x_3) = 0$ が存在するので，判定は Yes となる．
       \end{exampleblock}
     \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{block}{還元のポイント}
+        \begin{itemize}
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{2 以下}になる ．
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間は \alert{3 以上}になる ．
+        \end{itemize}
+      \end{block}
+      \begin{block}{表記の導入}
+        {\sc 3-SAT} のインスタンス を $X = \{x_1,\ldots,x_n\}$ と $H = \{h_1,\ldots,h_{\lambda}\}$ からなる 2 項組 $(X,H)$ とする．
+        $(X,H)$ に基づき表記を導入する．
+        \begin{itemize}
+          \item $\forall i \in \{1,\ldots,n\},~\alpha_i = |\{h \in H \mid x_i \in h\}|$
+          \begin{itemize}
+            \item $H$ において，$x_i$ が現れる回数を表す自然数を $\alpha_i$ とする．
+          \end{itemize}
+          \item $\forall i \in \{1,\ldots,n\},~\beta_i = |\{h \in H \mid \bar x_i \in h\}|$
+          \begin{itemize}
+            \item $H$ において，$\bar x_i$ が現れる回数を表す自然数を $\beta_i$ とする．
+          \end{itemize}
+          \item $\mathcal{A} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\alpha_i}$，$\mathcal{B} = {\displaystyle \sum_{i \in \{1,\ldots,n\}}\beta_i}$
+        \end{itemize}
+      \end{block}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
+      \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
+        $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
+        \begin{itemize}
+          \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
+          \item $\lambda$ は，$H$ の要素数．節に対応する機械に割り当てる用のダミージョブ．
+        \end{itemize}
+        $n + \lambda$ 個の機械
+        \begin{itemize}
+          \item $n$ は $X$ の要素数．
+          各変数に対応する機械が 1 台ある．
+          \item $\lambda$ は $H$ の要素数．
+          各節に対応する機械が 1 台ずつある．
+        \end{itemize}
+      \end{block}
+      \begin{itemize}
+        \item $f(x_i) = 1$ のとき，
+        $\mathcal{J}^f(i)$ を機械 $i$ に割り当てる．
+        \item $f(x_i) = 0$ のとき，
+        $\mathcal{J}^t(i)$ を機械 $i$ に割り当てる．
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{block}{各機械 ${\textcolor{white}{i \in \{1,\ldots,n\}}}$ に対応するジョブのスケジュール}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width = 10.5cm]{figure/3SAT4.pdf}
+        \end{figure}
+      \end{block}
+      \begin{itemize}
+        \item $x_i$ と $\bar x_i$ に対応するジョブの集合 $\mathcal{J}^t(i)$ と $\mathcal{J}^f(i)$ におけるジョブ間の処理開始可能時刻の差を $3$ に設定する．
+        \item $\mathcal{J}^t(i)$ の要素 $J^t(i)$ と $\mathcal{J}^f(i)$ の要素 $J^f(i)$ が機械 $i$ に同時に割り当てられないように，上記の差を設けている．
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題の計算複雑さ}
+      \begin{block}{各機械 ${\textcolor{white}{\ell \in \{n + 1,\ldots,n + \lambda\}}}$ に対応するジョブのスケジュール}
+        $h_{\ell - n} = \{x_i, x_j, x_k\}$ のとき，
+        \begin{description}
+          \setlength{\leftskip}{-12mm}
+          \item[$S$：]
+          $f(x_i) = 1, f(x_j) = 0, f(x_k) = 0$ のとき．
+          %機械 $\ell$ に割り当てるジョブは，$J_i \in \mathcal{J}^t(i)$，$J_j \in \mathcal{J}^f(j)$，$J_k \in \mathcal{J}^f(k)$ とダミージョブ $J_d$．
+          \item[$S'$：]
+          $f(x_i) = 0, f(x_j) = 0, f(x_k) = 0$ のとき．
+          %機械 $\ell$ に割り当てるジョブは，$J_i \in \mathcal{J}^f(i)$，$J_j \in \mathcal{J}^f(j)$，$J_k \in \mathcal{J}^f(k)$ とダミージョブ $J_d$．
+        \end{description}
+        \vspace{-5mm}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=12cm]{figure/3SAT6.pdf}
+        \end{figure}
+      \end{block}
+      \begin{itemize}
+        \item $1$ に割り当てられたリテラルに対応するジョブは，
+        \begin{itemize}
+          \item 次のジョブの処理開始可能時刻 - 自身の処理開始可能時刻
+        \end{itemize}
+        \item $0$ に割り当てられたリテラルに対応するジョブは，
+        \begin{itemize}
+          \item 次のジョブの処理開始可能時刻 - 自身の処理開始可能時刻 + 1
+        \end{itemize}
+      \end{itemize}
+    \end{frame}
+
 
     \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
       \begin{exampleblock}{例：各変数に対応する機械におけるスケジュール}
@@ -864,6 +849,31 @@
         \item 上記の操作により，$\mathcal{J'}$ におけるジョブの本来の処理時間は，設定した処理時間以上である．
         \item このとき，処理開始可能時刻順で処理して得られるスケジュールにおける最大待ち時間は，$\mathcal{J'}$ におけるコストの下限である．
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}{付録：ヒューリスティックのアルゴリズム}
+      \begin{block}{貪欲アルゴリズムに基づいた解法}
+        \begin{description}
+          \setlength{\leftskip}{-10mm}
+          \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,C)$
+          \item[出力 :] スケジュールの集合 $\mathcal{S}$．
+          \begin{description}
+            \setlength{\leftskip}{-25mm}
+            \item[Step 1.]
+            $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
+            \item[Step 2.]
+            各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
+            \begin{description}
+              \item[Step 2.1.]
+              \setlength{\leftskip}{-40mm}
+              最小完了時刻を持つスケジュール集合の要素 $S_{M_a} \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(S_M)\right\}$ を 1 つ求める．
+              ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
+            \end{description}
+            \item[Step 3.]
+            $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
+          \end{description}
+        \end{description}
+      \end{block}
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{document}
