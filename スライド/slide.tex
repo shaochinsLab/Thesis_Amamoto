@@ -103,15 +103,16 @@
       \begin{block}{研究目的}
         上記の問題を\alert{最大待ち時間最小化問題}として定式化し，
         \begin{itemize}
-          \item SWT の計算複雑さを明らかにする．
-          \item SWT の計算複雑さに基づいて，解法の提案を行う．
+          \setlength{\leftskip}{-2mm}
+          \item 最大待ち時間最小化問題の計算複雑さを明らかにする．
+          \item 最大待ち時間最小化問題の計算複雑さに基づき，解法の提案を行う．
         \end{itemize}
       \end{block}
 
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{諸定義}
-    \begin{frame}{諸定義：最大待ち時間最小化問題}
+    \begin{frame}{諸定義：機械モデル}
       \begin{block}{機械モデル}
         ジョブを処理する機械の台数について
         \begin{itemize}
@@ -130,7 +131,7 @@
     \end{frame}
 
     \begin{frame}{諸定義：最大待ち時間最小化問題}
-      以下，最大待ち時間最小化問題を {\it \alert{S}equencing to minimize maximum \alert{W}aiting \alert{T}ime} の頭文字をとって，\alert{SWT} と表記する．
+      最大待ち時間最小化問題を {\it \alert{S}equencing to minimize maximum \alert{W}aiting \alert{T}ime} の頭文字をとって，\alert{SWT} と表記する．
       無関連並列機械モデルにおける SWT を定式化する．
       \begin{block}{インスタンス：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
@@ -177,7 +178,7 @@
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \section{研究成果}
-    \subsection{最大待ち時間最小化問題の計算複雑さの証明}
+    \subsection{最大待ち時間最小化問題の計算複雑さ}
     \begin{frame}{既存のスケジューリング問題との対応}
       処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) は，ジョブの納期から処理が完了するまでの遅れ時間が最大値の最小化を目的とするスケジューリング問題である．
       \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
@@ -196,7 +197,7 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{待ち時間制約付きスケジューリング問題}
+    \begin{frame}{多項式還元の流れ}
       SWT の計算複雑さを明らかにするために，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式還元}を行う．
       \begin{tabular}{cc}
         \begin{minipage}[]{0.6\hsize}
@@ -228,11 +229,12 @@
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
       \end{alertblock}
       \begin{block}{還元のポイント}
-        待ち時間制約付きスケジューリング問題における最大待ち時間は，
+        待ち時間制約付きスケジューリング問題における最大待ち時間が，
         \begin{itemize}
-          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき， \alert{2 以下}，
-          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，\alert{3 以上}となる ．
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，\alert{2 以下}，
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，\alert{3 以上}，
         \end{itemize}
+        となるスケジュールが存在する．
       \end{block}
       無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，近似率 $1.5$ 未満の定数近似アルゴリズムは存在しない．
       \begin{alertblock}{}
@@ -299,10 +301,12 @@
       JIT ジョブ荷重和最大化問題 (SJIT) は，納期以前に処理を完了したジョブの荷重和の最大化を目的とするスケジューリング問題である．
       \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
         SJIT において，各ジョブを JIT で処理可能なとき，各ジョブは納期ちょうどで処理が完了する．つまり，各ジョブの待ち時間は $0$ である．
+        \vspace{-2mm}
         \begin{figure}[h]
           \centering
           \includegraphics[width=10cm]{figure/SJIT1.pdf}
         \end{figure}
+        \vspace{-2mm}
         SJIT において，各ジョブを JIT で処理できるとき，処理開始可能時刻の昇順で処理することで最適解が求まる．[Cepek \& Sung(2004)]
       \end{block}
       \begin{block}{}

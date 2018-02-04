@@ -1,7 +1,7 @@
 \beamer@sectionintoc {1}{研究背景と目的}{3}{0}{1}
 \beamer@sectionintoc {2}{諸定義}{9}{0}{2}
 \beamer@sectionintoc {3}{研究成果}{13}{0}{3}
-\beamer@subsectionintoc {3}{1}{最大待ち時間最小化問題の計算複雑さの証明}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{最大待ち時間最小化問題の計算複雑さ}{14}{0}{3}
 \beamer@subsectionintoc {3}{2}{厳密解法の提案と実験的評価}{20}{0}{3}
 \beamer@subsectionintoc {3}{3}{ヒューリスティックの提案と実験的評価}{23}{0}{3}
 \beamer@sectionintoc {4}{まとめと今後の課題}{26}{0}{4}
