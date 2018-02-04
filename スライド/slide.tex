@@ -75,7 +75,7 @@
     \section{研究背景と目的}
     \begin{frame}{研究背景と目的：受注生産方式における生産計画の流れ}
       \begin{block}{受注生産方式とは}
-        顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，どの生産拠点でいつ製造開始するかを決定する．（例えば，高級自動車メーカー，SIerなど受注生産方式を採用している．）
+        顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，どの\alert{製造工場}でで\alert{いつ製造開始する}かを決定する．（例えば，高級自動車メーカー，システムインテグレーターなどは受注生産方式．）
       \end{block}
 
       \begin{figure}[h]
@@ -88,7 +88,7 @@
     \end{frame}
 
     \begin{frame}{研究背景と目的：スケジューリング問題との対応}
-      \begin{block}{受注生産方式における問題}
+      \begin{block}{受注生産方式における問題点}
         生産拠点数と受注状況によっては，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
       \end{block}
       \begin{itemize}
@@ -105,7 +105,7 @@
         \begin{itemize}
           \setlength{\leftskip}{-2mm}
           \item 最大待ち時間最小化問題の計算複雑さを明らかにする．
-          \item 最大待ち時間最小化問題の計算複雑さに基づき，解法の提案を行う．
+          \item 最大待ち時間最小化問題の計算複雑さを踏まえて，解法の提案を行う．
         \end{itemize}
       \end{block}
 
@@ -144,7 +144,7 @@
       \begin{block}{解：スケジュール $\textcolor{white}{(A,s)}$}
         \begin{itemize}
           \item ジョブの機械への割り当てを返す関数 $A : \mathcal{J} \to \mathcal{M}$．
-          \item ジョブの処理開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$．
+          \item ジョブの開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$．
         \end{itemize}
       \end{block}
     \end{frame}
@@ -165,14 +165,14 @@
       \end{block}
       \begin{block}{目的関数：最大待ち時間 $\textcolor{white}{W_{\max}}$}
         \begin{itemize}
-          \item ジョブの処理開始可能時刻と処理開始時刻の差が最大値．
+          \item ジョブの処理開始可能時刻と開始時刻の差の最大値．
           \begin{itemize}
             \item $W_{\max} = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \end{itemize}
         \end{itemize}
       \end{block}
       \begin{itemize}
-        \item 最大待ち時間 $W_{\max}$ の最小化を目的とするスケジューリング問題
+        \item 最大待ち時間 $W_{\max}$ の最小化を目的とする．
       \end{itemize}
     \end{frame}
 
@@ -180,13 +180,14 @@
     \section{研究成果}
     \subsection{最大待ち時間最小化問題の計算複雑さ}
     \begin{frame}{既存のスケジューリング問題との対応}
-      処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) は，ジョブの納期から処理が完了するまでの遅れ時間が最大値の最小化を目的とするスケジューリング問題である．
+      処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) は，ジョブの納期から処理が完了するまでの遅れ時間の最大値の最小化を目的とするスケジューリング問題である．
       \begin{block}{処理開始可能時刻付き最大遅れ時間最小化問題 (SRTD) との対応}
         \begin{figure}
           \centering
           \includegraphics<1>[width=10cm]{figure/SRTD1.pdf}
           \includegraphics<2->[width=10cm]{figure/SRTD2.pdf}
         \end{figure}
+        \vspace{-3mm}
         \begin{itemize}
           \item<2-> 納期を処理開始可能時刻と処理時間の和と設定したとき，SRTD における遅れ時間は\alert{待ち時間}として捉えることができる．
         \end{itemize}
@@ -228,7 +229,7 @@
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
       \end{alertblock}
-      \begin{block}{還元のポイント}
+      \begin{block}{還元の結果}
         待ち時間制約付きスケジューリング問題における最大待ち時間が，
         \begin{itemize}
           \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，\alert{2 以下}，
@@ -240,6 +241,32 @@
       \begin{alertblock}{}
         NP 困難な問題に対する効率的な解法は発見されていないため，最適解を求めるために，解の全列挙に基づいた解法が必要である．
       \end{alertblock}
+    \end{frame}
+
+    \begin{frame}{研究成果：還元のポイント}
+      \begin{block}{{\sc 3-SAT} の判定結果が Yes のとき}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=12cm]{figure/reduction1.pdf}
+        \end{figure}
+      \end{block}
+      \begin{itemize}
+        \setlength{\leftskip}{-3mm}
+        \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，すべての機械において，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{2 以下}となる．
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：還元のポイント}
+      \begin{block}{{\sc 3-SAT} の判定結果が No のとき}
+        \begin{figure}[h]
+          \centering
+          \includegraphics[width=12cm]{figure/reduction2.pdf}
+        \end{figure}
+      \end{block}
+      \begin{itemize}
+        \setlength{\leftskip}{-3mm}
+        \item {\sc 3-SAT} の判定結果が \alert{No} のとき，ある機械において，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{3 以上}となる．
+      \end{itemize}
     \end{frame}
 
     \subsection{厳密解法の提案と実験的評価}
@@ -257,7 +284,7 @@
       \end{block}
       \begin{block}{分枝限定法の改良}
         \begin{itemize}
-          \item \alert{部分問題に対する多項式アルゴリズム}の概念を導入した．
+          \item SRTD の\alert{部分問題に対する多項式アルゴリズム}の概念を導入．
           \begin{itemize}
             \item 列挙する実行可能解を減らすことができる．
           \end{itemize}
@@ -296,7 +323,7 @@
       \end{alertblock}
     \end{frame}
 
-    \subsection{ヒューリスティックの提案と実験的評価}
+    \subsection{ヒューリスティックの提案とその精度評価}
     \begin{frame}{既存のスケジューリング問題との対応}
       JIT ジョブ荷重和最大化問題 (SJIT) は，納期以前に処理を完了したジョブの荷重和の最大化を目的とするスケジューリング問題である．
       \begin{block}{JIT ジョブ荷重和最大化問題 (SJIT) との対応}
@@ -640,47 +667,28 @@
       \end{exampleblock}
     \end{frame}
 
-    \begin{frame}{付録：ヒューリスティックの精度について}
-      \begin{exampleblock}{例：2 台の同一機械と以下のインスタンスにおけるスケジュール}
-        \begin{tabular}{cc}
-          \begin{minipage}[]{0.6\hsize}
-            最適なスケジュール $S_1, S_2 \in \mathcal{S}$ は，
-            \begin{itemize}
-              \item $S_1:(J_1,J_3,J_5)$，$S_2:(J_2,J_4,J_6)$．
-              \item $\mathcal{S}$ における最大待ち時間は $0$．
-            \end{itemize}
-            最適でないスケジュール $S'_1, S'_2 \in \mathcal{S'}$ は，
-            \begin{itemize}
-              \item $S'_1:(J_1,J_3,J_6)$，$S'_2:(J_2,J_4,J_5)$．
-              \item $\mathcal{S'}$ における最大待ち時間は $3$．
-            \end{itemize}
-          \end{minipage}
-          \begin{minipage}[c]{0.4\hsize}
-            \begin{table}[htb]
-              \begin{tabular}{|l|c|r|} \hline
-                $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
-                $J_1$ & 2 & 8 \\ \hline
-                $J_2$ & 3 & 7 \\ \hline
-                $J_3$ & 11 & 11 \\ \hline
-                $J_4$ & 16 & 10 \\ \hline
-                $J_5$ & 23 & 10 \\ \hline
-                $J_6$ & 26 & 11 \\ \hline
-              \end{tabular}
-            \end{table}
-          \end{minipage}
-        \end{tabular}
-        ${\displaystyle \frac{\text{最適でないスケジュールの最大待ち時間}}{\text{厳密解法から得られた解の最大待ち時間}} = \infty}$
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：ヒューリスティックの精度の保証の証明}
-      \begin{block}{精度の保証の証明}
-        あるインスタンスに対する，最適解から得られた最大待ち時間が $0$ のとき，各機械 $M \in \mathcal{M}$ におけるジョブは以下を満たす．
-        $$\forall J, J' \in \mathcal{J}_M  \Big[ J \ne J' \Rightarrow \big[r(J), r(J)+p(J) \big) \cap \big [r(J'), r(J')+p(J')\big) = \emptyset \Big]$$
-        つまり，各機械 $M \in \mathcal{M}$ におけるジョブは処理開始可能時刻の昇順でスケジュールされているかつ，各ジョブの処理時間の区間は重ならない．
-
-        したがって，最適解から得られる最大待ち時間が $0$ となるインスタンスに対して，処理開始可能時刻の昇順で，処理開始可能な機械に割り当てることで最適なスケジュールを作ることができる．
-
+    \begin{frame}{付録：ヒューリスティックのアルゴリズム}
+      \begin{block}{貪欲アルゴリズムに基づいた解法}
+        \begin{description}
+          \setlength{\leftskip}{-10mm}
+          \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,C)$
+          \item[出力 :] スケジュールの集合 $\mathcal{S}$．
+          \begin{description}
+            \setlength{\leftskip}{-25mm}
+            \item[Step 1.]
+            $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
+            \item[Step 2.]
+            各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
+            \begin{description}
+              \item[Step 2.1.]
+              \setlength{\leftskip}{-40mm}
+              最小完了時刻を持つスケジュール集合の要素 $S_{M_a} \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(S_M)\right\}$ を 1 つ求める．
+              ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
+            \end{description}
+            \item[Step 3.]
+            $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
+          \end{description}
+        \end{description}
       \end{block}
     \end{frame}
 
@@ -701,56 +709,6 @@
           \includegraphics<4>[width = 12cm]{figure/rgf4.pdf}
         \end{figure}
       \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：分枝限定法の改良}
-      \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
-        \begin{tabular}{cc}
-          \begin{minipage}[]{0.6\hsize}
-            \begin{figure}[h]
-              \centering
-              \includegraphics<1>[width = 8cm]{figure/BandB1.pdf}
-              \includegraphics<2>[width = 8cm]{figure/BandB2.pdf}
-            \end{figure}
-          \end{minipage}
-          \begin{minipage}[c]{0.4\hsize}
-            \begin{table}[htb]
-              \begin{tabular}{|l|c|r|} \hline
-                $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
-                $J_1$ & 2 & 4 \\ \hline
-                $J_2$ & 5 & 7 \\ \hline
-                $J_3$ & 10 & 15 \\ \hline
-              \end{tabular}
-            \end{table}
-          \end{minipage}
-        \end{tabular}
-      \end{exampleblock}
-      \begin{itemize}
-        \uncover<1>{
-        \item それまでに割り当てたジョブのスケジュールにおける最大待ち時間がそれまでの最良の解 $W$ より良い値か？
-        }
-        \uncover<2>{
-        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大待ち時間がそれまでの最良の解 $W$ より良い値か？
-        \begin{itemize}
-          \item SWT は，処理時間が一定のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
-        \end{itemize}
-        }
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{付録：その他の改良}
-      分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
-      \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
-        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
-        \begin{description}
-          \setlength{\leftskip}{-8mm}
-          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
-          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$1 \to 0 \to 2$．
-        \end{description}
-      \end{exampleblock}
-      \begin{block}{}
-        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
-      \end{block}
     \end{frame}
 
     \begin{frame}{付録：分割生成アルゴリズムの改良部分}
@@ -801,6 +759,41 @@
       \end{exampleblock}
     \end{frame}
 
+    \begin{frame}{付録：分枝限定法の改良}
+      \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
+        \begin{tabular}{cc}
+          \begin{minipage}[]{0.6\hsize}
+            \begin{figure}[h]
+              \centering
+              \includegraphics<1>[width = 8cm]{figure/BandB1.pdf}
+              \includegraphics<2>[width = 8cm]{figure/BandB2.pdf}
+            \end{figure}
+          \end{minipage}
+          \begin{minipage}[c]{0.4\hsize}
+            \begin{table}[htb]
+              \begin{tabular}{|l|c|r|} \hline
+                $\mathcal{J}$ & $r(J)$ & $p(J)$ \\ \hline \hline
+                $J_1$ & 2 & 4 \\ \hline
+                $J_2$ & 5 & 7 \\ \hline
+                $J_3$ & 10 & 15 \\ \hline
+              \end{tabular}
+            \end{table}
+          \end{minipage}
+        \end{tabular}
+      \end{exampleblock}
+      \begin{itemize}
+        \uncover<1>{
+        \item それまでに割り当てたジョブのスケジュールにおける最大待ち時間がそれまでの最良の解 $W$ より良い値か？
+        }
+        \uncover<2>{
+        \item 割り当てていない残りのジョブを最適にスケジュールしたときの最大待ち時間がそれまでの最良の解 $W$ より良い値か？
+        \begin{itemize}
+          \item SWT は，処理時間が一定のとき，処理開始可能時刻の昇順で処理することで最適解が求まる．
+        \end{itemize}
+        }
+      \end{itemize}
+    \end{frame}
+
     \begin{frame}{付録：分枝限定法の改良部分}
       \begin{block}{分枝限定法の改良部分}
         \begin{description}
@@ -830,28 +823,18 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{付録：ヒューリスティックのアルゴリズム}
-      \begin{block}{貪欲アルゴリズムに基づいた解法}
+    \begin{frame}{付録：その他の改良}
+      分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
+      \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
+        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
         \begin{description}
-          \setlength{\leftskip}{-10mm}
-          \item[入力 :] $I = (\mathcal{J}, \mathcal{M},r,p,C)$
-          \item[出力 :] スケジュールの集合 $\mathcal{S}$．
-          \begin{description}
-            \setlength{\leftskip}{-25mm}
-            \item[Step 1.]
-            $\mathcal{J}$ を処理開始可能時刻の昇順でソートする．
-            \item[Step 2.]
-            各 $1 \le i \le n$ における $J_i$ について以下の処理を繰り返す．
-            \begin{description}
-              \item[Step 2.1.]
-              \setlength{\leftskip}{-40mm}
-              最小完了時刻を持つスケジュール集合の要素 $S_{M_a} \in \left\{ \displaystyle \argmin_{M \in \mathcal{M}}C(S_M)\right\}$ を 1 つ求める．
-              ここで，$S_{M_a} := S_{M_a} \cup J_i$ とする．
-            \end{description}
-            \item[Step 3.]
-            $\mathcal{S} = \{ S_M \mid M \in \mathcal{M}\}$ として，$\mathcal{S}$ を出力する．
-          \end{description}
+          \setlength{\leftskip}{-8mm}
+          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
+          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$1 \to 0 \to 2$．
         \end{description}
+      \end{exampleblock}
+      \begin{block}{}
+        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
       \end{block}
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

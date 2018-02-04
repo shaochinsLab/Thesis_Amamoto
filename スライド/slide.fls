@@ -343,6 +343,11 @@ INPUT figure/SRTD2.pdf
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT figure/reduction.pdf
 INPUT extractbb -O figure/reduction.pdf
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
+INPUT figure/reduction1.pdf
+INPUT extractbb -O figure/reduction1.pdf
+INPUT figure/reduction2.pdf
+INPUT extractbb -O figure/reduction2.pdf
 INPUT slide.toc
 INPUT slide.toc
 INPUT slide.toc
@@ -351,7 +356,6 @@ INPUT figure/SJIT1.pdf
 INPUT extractbb -O figure/SJIT1.pdf
 INPUT slide.toc
 INPUT slide.toc
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss9.tfm
