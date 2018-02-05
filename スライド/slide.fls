@@ -295,9 +295,6 @@ INPUT extractbb -O figure/car4.pdf
 INPUT slide.toc
 INPUT slide.toc
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss10.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth9.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth9.tfm
-INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr12.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr8.tfm
@@ -359,6 +356,9 @@ INPUT figure/SJIT1.pdf
 INPUT extractbb -O figure/SJIT1.pdf
 INPUT slide.toc
 INPUT slide.toc
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/tgoth9.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth9.tfm
+INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmss9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmr9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /opt/local/share/texmf-texlive/fonts/tfm/public/cm/cmsy9.tfm

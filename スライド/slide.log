@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 16:42
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 17:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -674,7 +674,7 @@ Overfull \vbox (12.02654pt too high) detected at line 91
 ] (./slide.toc) [9
 
 ]
-Overfull \vbox (2.3748pt too high) detected at line 154
+Overfull \vbox (3.51366pt too high) detected at line 146
  []
 
 [10
@@ -682,17 +682,17 @@ Overfull \vbox (2.3748pt too high) detected at line 154
 ]
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 178.
+(Font)              using `JT1/gt/m/n' instead on input line 170.
 
 
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 178.
+(Font)              using `JY1/gt/m/n' instead on input line 170.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 178.
+LaTeX Font Info:    Try loading font information for U+msa on input line 170.
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 178.
+LaTeX Font Info:    Try loading font information for U+msb on input line 170.
  (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [11
@@ -706,7 +706,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 File: figure/SRTD1.pdf Graphic file (type pdf)
  <figure/SRTD1.pdf>
-Overfull \vbox (7.70473pt too high) detected at line 227
+Overfull \vbox (7.70473pt too high) detected at line 219
  []
 
 [15
@@ -714,7 +714,7 @@ Overfull \vbox (7.70473pt too high) detected at line 227
 ]
 File: figure/SRTD2.pdf Graphic file (type pdf)
  <figure/SRTD2.pdf>
-Overfull \vbox (7.70473pt too high) detected at line 227
+Overfull \vbox (7.70473pt too high) detected at line 219
  []
 
 [16
@@ -722,7 +722,7 @@ Overfull \vbox (7.70473pt too high) detected at line 227
 ]
 File: figure/SRTD2.pdf Graphic file (type pdf)
  <figure/SRTD2.pdf>
-Overfull \vbox (7.70473pt too high) detected at line 227
+Overfull \vbox (7.70473pt too high) detected at line 219
  []
 
 [17
@@ -730,19 +730,19 @@ Overfull \vbox (7.70473pt too high) detected at line 227
 ]
 
 LaTeX Font Warning: Font shape `JT1/gt/m/sc' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 254.
+(Font)              using `JT1/gt/m/n' instead on input line 246.
 
 
 LaTeX Font Warning: Font shape `JY1/gt/m/sc' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 254.
+(Font)              using `JY1/gt/m/n' instead on input line 246.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 254.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 246.
 
 File: figure/reduction.pdf Graphic file (type pdf)
 <figure/reduction.pdf>
-Overfull \hbox (19.29997pt too wide) in paragraph at lines 254--254
+Overfull \hbox (19.29997pt too wide) in paragraph at lines 246--246
 [][][] 
  []
 
@@ -753,11 +753,11 @@ Overfull \hbox (19.29997pt too wide) in paragraph at lines 254--254
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 284.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 276.
 
 File: figure/reduction1.pdf Graphic file (type pdf)
 <figure/reduction1.pdf>
-Overfull \vbox (5.27463pt too high) detected at line 284
+Overfull \vbox (5.27463pt too high) detected at line 276
  []
 
 [20
@@ -765,7 +765,7 @@ Overfull \vbox (5.27463pt too high) detected at line 284
 ]
 File: figure/reduction2.pdf Graphic file (type pdf)
  <figure/reduction2.pdf>
-Overfull \vbox (3.6027pt too high) detected at line 297
+Overfull \vbox (3.6027pt too high) detected at line 289
  []
 
 [21
@@ -783,13 +783,13 @@ Overfull \vbox (3.6027pt too high) detected at line 297
 ]
 File: figure/SJIT1.pdf Graphic file (type pdf)
  <figure/SJIT1.pdf>
-Overfull \vbox (1.1347pt too high) detected at line 384
+Overfull \vbox (1.1347pt too high) detected at line 376
  []
 
 [27
 
 ]
-Overfull \hbox (2.54152pt too wide) detected at line 398
+Overfull \hbox (2.54152pt too wide) detected at line 390
 [][]
  []
 
@@ -797,11 +797,7 @@ Overfull \hbox (2.54152pt too wide) detected at line 398
 
 ] (./slide.toc) [29
 
-]
-Overfull \vbox (3.38745pt too high) detected at line 421
- []
-
-[30
+] [30
 
 ] [31
 
@@ -816,7 +812,7 @@ Overfull \vbox (3.38745pt too high) detected at line 421
 ]
 File: figure/3SAT4.pdf Graphic file (type pdf)
  <figure/3SAT4.pdf>
-Overfull \vbox (12.27846pt too high) detected at line 548
+Overfull \vbox (12.27846pt too high) detected at line 537
  []
 
 [36
@@ -854,12 +850,12 @@ File: figure/rgf4.pdf Graphic file (type pdf)
 ]
 File: figure/BandB1.pdf Graphic file (type pdf)
  <figure/BandB1.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 775--775
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 764--764
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 775--775
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
 [][][][]  
  []
 
@@ -868,12 +864,12 @@ Overfull \hbox (15.64998pt too wide) in paragraph at lines 775--775
 ]
 File: figure/BandB2.pdf Graphic file (type pdf)
  <figure/BandB2.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 775--775
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 764--764
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 775--775
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
 [][][][]  
  []
 
@@ -893,11 +889,11 @@ Overfull \hbox (15.64998pt too wide) in paragraph at lines 775--775
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 799.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 799.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 788.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 788.
  (./slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 799.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 799.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 788.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 788.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: F6DA0C991720047ADA54938C32F39BB1;506.
 
@@ -910,12 +906,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 17085 strings out of 493653
- 329741 string characters out of 6150337
- 425334 words of memory out of 5000000
- 20229 multiletter control sequences out of 15000+600000
+ 17084 strings out of 493653
+ 329680 string characters out of 6150337
+ 425386 words of memory out of 5000000
+ 20228 multiletter control sequences out of 15000+600000
  23871 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  56i,23n,76p,825b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.dvi (50 pages, 490688 bytes).
+Output written on slide.dvi (50 pages, 489616 bytes).
