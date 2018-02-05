@@ -264,7 +264,8 @@
         \begin{itemize}
           \item {\sc 3-SAT} のインスタンスにおける\alert{変数に対応する機械}
           \item {\sc 3-SAT} のインスタンスにおける\alert{節に対応する機械}
-          \item $1$ に割り当てられたリテラルに対応するジョブは次のジョブを\alert{押し出さない}，$0$ に割り当てられたジョブは次のジョブを \alert{$1$ 押し出す}．
+          \item \alert{true} に割り当てられたリテラルに対応するジョブは次のジョブを\alert{押し出さない}．
+          \item \alert{false} に割り当てられたジョブは次のジョブを \alert{$1$ 押し出す}．
         \end{itemize}
       \end{block}
     \end{frame}
@@ -709,6 +710,35 @@
       \end{exampleblock}
     \end{frame}
 
+    \begin{frame}{付録：分枝限定法の改良部分}
+      \begin{block}{分枝限定法の改良部分}
+        \begin{description}
+          \setlength{\leftskip}{-10mm}
+          \item[入力 :] $I = (\mathcal{J'}, S)$
+          \item[出力 :] スケジュール $S$．
+          \begin{description}
+            \setlength{\leftskip}{-25mm}
+            \item[Step 1.]
+            各 $1 \le i \le |\mathcal{J'}|$ における $J'_i$ について，以下の処理を繰り返す．
+            \begin{description}
+              \setlength{\leftskip}{-40mm}
+              \item[Step 1.1.]
+              $p(J'_i) = {\displaystyle \min_{j \in \{1,\ldots,|\mathcal{J'}|\}}p(J'_j)}$ とする．
+              \item[Step 1.2.]
+              $S := S \cup J'_i$ とする．
+            \end{description}
+            \item[Step 2.]
+            $S$ を出力する．
+          \end{description}
+        \end{description}
+      \end{block}
+      \begin{itemize}
+        \item Step 1. で $\mathcal{J'}$ におけるすべてのジョブの処理時間を $\mathcal{J'}$ の中の最小の処理時間に設定している．
+        \item 上記の操作により，$\mathcal{J'}$ におけるジョブの本来の処理時間は，設定した処理時間以上である．
+        \item このとき，処理開始可能時刻順で処理して得られるスケジュールにおける最大待ち時間は，$\mathcal{J'}$ におけるコストの下限である．
+      \end{itemize}
+    \end{frame}
+
     \begin{frame}{付録：分枝限定法の改良}
       \begin{exampleblock}{例：以下のインスタンスにおけるスケジュール生成}
         \begin{tabular}{cc}
@@ -744,48 +774,26 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{付録：分枝限定法の改良部分}
-      \begin{block}{分枝限定法の改良部分}
-        \begin{description}
-          \setlength{\leftskip}{-10mm}
-          \item[入力 :] $I = (\mathcal{J'}, S)$
-          \item[出力 :] スケジュール $S$．
-          \begin{description}
-            \setlength{\leftskip}{-25mm}
-            \item[Step 1.]
-            各 $1 \le i \le |\mathcal{J'}|$ における $J'_i$ について，以下の処理を繰り返す．
-            \begin{description}
-              \setlength{\leftskip}{-40mm}
-              \item[Step 1.1.]
-              $p(J'_i) = {\displaystyle \min_{j \in \{1,\ldots,|\mathcal{J'}|\}}p(J'_j)}$ とする．
-              \item[Step 1.2.]
-              $S := S \cup J'_i$ とする．
-            \end{description}
-            \item[Step 2.]
-            $S$ を出力する．
-          \end{description}
-        \end{description}
-      \end{block}
-      \begin{itemize}
-        \item Step 1. で $\mathcal{J'}$ におけるすべてのジョブの処理時間を $\mathcal{J'}$ の中の最小の処理時間に設定している．
-        \item 上記の操作により，$\mathcal{J'}$ におけるジョブの本来の処理時間は，設定した処理時間以上である．
-        \item このとき，処理開始可能時刻順で処理して得られるスケジュールにおける最大待ち時間は，$\mathcal{J'}$ におけるコストの下限である．
-      \end{itemize}
-    \end{frame}
-
     \begin{frame}{付録：その他の改良}
       分割生成アルゴリズムと分枝限定法の改良下部分を用いて，さらに計算効率を向上させるために，以下の改良を加えた．
       \begin{exampleblock}{例：以下の分割のとき，順列を生成する機械順の違い}
-        ジョブ数 $5$，同一機械数 $3$ において，分割が $(0,1,2,1,1)$ のとき，通常版と改良版における順列を生成する機械順は以下の通り．
+        ジョブ数 $5$，同一機械数 $3$ において，分割が $(1,2,3,2,2)$ のとき，各機械に割り当てられたジョブは以下の通り．
         \begin{description}
-          \setlength{\leftskip}{-8mm}
-          \item[通常版 ] 機械 $0$ から順に処理を行う．$0 \to 1 \to 2$．
-          \item[改良版 ] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$1 \to 0 \to 2$．
+          \item[機械 1：] $J_1$
+          \item[機械 2：] $J_2$，$J_4$，$J_5$
+          \item[機械 3：] $J_3$
+        \end{description}
+        改良前と改良後における順列を生成する機械順は以下の通り．
+        \begin{description}
+          %\setlength{\leftskip}{-8mm}
+          \item[改良前：] 機械 $0$ から順に処理を行う．$1 \to 2 \to 3$．
+          \item[改良後：] 各機械に割り当てられたジョブ集合におけるコストの下限の降順で処理を行う．$2 \to 1 \to 3$．
         \end{description}
       \end{exampleblock}
-      \begin{block}{}
-        上記改良により，コストの下限が悪いスケジュールを生成した機械から順に，その機械におけるジョブ集合の順列を生成することで，目的関数に与える影響の大きいスケジュールを早い段階で生成できる．
-      \end{block}
+    \end{frame}
+
+    \begin{frame}{付録：厳密解法の実験的評価}
+
     \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \end{document}
