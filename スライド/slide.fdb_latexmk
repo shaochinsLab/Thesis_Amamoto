@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1517753422 "slide.dvi" "slide.pdf" "slide" 1517753425
-  "slide.dvi" 1517753422 537004 88aa54c19b646e6f400861fbd8f93d25 "latex"
+["dvipdf"] 1517793339 "slide.dvi" "slide.pdf" "slide" 1517793341
+  "slide.dvi" 1517793339 537004 fb08b60120347c967353ddba81ab04ea "latex"
   (generated)
   "slide.pdf"
-["latex"] 1517753403 "slide.tex" "slide.dvi" "slide" 1517753425
+["latex"] 1517793322 "slide.tex" "slide.dvi" "slide" 1517793341
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -226,7 +226,7 @@
   "figure/car2.pdf" 1517749020 117050 b49c48a79c14e3e550355f88e3daaad2 ""
   "figure/car3.pdf" 1517557772 114888 3cee53f8c19bcc492eb369805141de82 ""
   "figure/car4.pdf" 1517749029 117057 596c60cc1156cb91b8954b66c31395e7 ""
-  "figure/reduction.pdf" 1517563124 39726 f67157dc6ad5d6a37c0f8db57e452525 ""
+  "figure/reduction.pdf" 1517793310 41834 a44038866c6544d1096feb064bba2063 ""
   "figure/reduction1.pdf" 1517753136 135200 d42368bceda3c20a5c4eee3fb82f87f1 ""
   "figure/reduction2.pdf" 1517753311 148060 5b026c3ce84d6e2d1b57851e2528affc ""
   "figure/reductionExample1.pdf" 1516693981 34765 7472322720a45318ed1d4cdc08251466 ""
@@ -239,16 +239,16 @@
   "figure/rgf2.pdf" 1516597905 43751 bba787115e81a8e9a5d4010bf3ec801a ""
   "figure/rgf3.pdf" 1516597913 46294 30ef58f92413739319fbf1d2cd5842be ""
   "figure/rgf4.pdf" 1516597921 46589 10d4cd91749cc23b9fc8018618149171 ""
-  "slide.aux" 1517753422 10587 7cf286e680ad0e817e2a786431193dbb ""
-  "slide.nav" 1517753422 6169 3630772f28a6995245b82fed4a017152 ""
-  "slide.out" 1517753422 506 335508b7812f993984a81449db6cf36b ""
-  "slide.tex" 1517753398 46001 57327bf44710fca74c5437b5eb84dc79 ""
-  "slide.toc" 1517753422 491 e7144ffc7802fffd6e0d778df33cb1bc ""
+  "slide.aux" 1517793339 10587 7cf286e680ad0e817e2a786431193dbb ""
+  "slide.nav" 1517793339 6169 3630772f28a6995245b82fed4a017152 ""
+  "slide.out" 1517793339 506 335508b7812f993984a81449db6cf36b ""
+  "slide.tex" 1517793320 46001 5f8b674a876dd3e7a881f47f56c16ff8 ""
+  "slide.toc" 1517793339 491 e7144ffc7802fffd6e0d778df33cb1bc ""
   (generated)
-  "slide.toc"
-  "slide.out"
   "slide.dvi"
-  "slide.log"
-  "slide.nav"
   "slide.aux"
   "slide.snm"
+  "slide.out"
+  "slide.log"
+  "slide.toc"
+  "slide.nav"
