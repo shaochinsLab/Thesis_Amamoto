@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  31 JAN 2018 14:14
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -256,7 +256,7 @@ File: figure/EDDrule.pdf Graphic file (type pdf)
 [23
 
 ] [24] [25]
-Overfull \hbox (16.65045pt too wide) detected at line 924
+Overfull \hbox (16.65045pt too wide) detected at line 929
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
@@ -308,4 +308,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  27i,19n,24p,925b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (61 pages, 217760 bytes).
+Output written on thesis.dvi (61 pages, 218360 bytes).

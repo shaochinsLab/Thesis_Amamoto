@@ -780,7 +780,7 @@ $\varphi(C) \le  0$
 $\forall i \in \{1,\ldots,n\}\big[\beta_i \ge 3\big]$
 
 $(X.H)$ に基づき，以下のように待ち時間制約付きスケジューリング問題の入力を設定する．
-$2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を
+$2(\mathcal{A} + \mathcal{B}) + (n + \lambda)$ 個のジョブ $\mathcal{J}$ を
 $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
 ジョブの全体集合 $\mathcal{J}$ の部分集合を以下のように定義する．
 \begin{itemize}
@@ -789,7 +789,7 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
   \item $\mathcal{J}^f \subset \mathcal{J}$
   s.t.$|\mathcal{J}^f| = \mathcal{A}  + \mathcal{B}$．
   \item $\mathcal{J}^d \subset \mathcal{J}$ s.t.$|\mathcal{J}^d| =
-  \lambda$．
+  n + \lambda$．
 \end{itemize}
 ただし，$\mathcal{J} = \mathcal{J}^t \cup \mathcal{J}^f \cup
 \mathcal{J}^d$ ，$\mathcal{J}^t \cap \mathcal{J}^f = \emptyset$，$\mathcal{J}^f \cap \mathcal{J}^d = \emptyset$，$\mathcal{J}^d \cap \mathcal{J}^t = \emptyset$．
@@ -804,10 +804,15 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
 \end{displaymath}
 
 
-ジョブ $\mathcal{J}^d = \{J^d(1),\ldots,J^d({\lambda})\}$ について，処理開始可能時刻関数 $r$，処理時間関数 $p$ を以下のように設定する．
+ジョブ $\mathcal{J}^d = \{J^d(1),\ldots,J^d(n + \lambda)\}$ について，処理開始可能時刻関数 $r$，処理時間関数 $p$ を各 $i \in \{1,\ldots,n\}$ と 各 $k \in \{n + 1,\ldots,n + \lambda\}$ について以下のように設定する．
+
 \begin{displaymath}
-  \left\{ \begin{array}{ll} r(\mathcal{J}^d) = 3(\mathcal{A} + \mathcal{B}) \\
-  p(\mathcal{J}^d, A(\mathcal{J}^d)) = 3 \end{array} \right.
+\left\{ \begin{array}{ll}
+r(\mathcal{J}^d(i)) = 3(\mathcal{A} + \mathcal{B}) \\
+r(\mathcal{J}^d(k)) = 3(\mathcal{A} + \mathcal{B}) \end{array} \right.
+\end{displaymath}
+\begin{displaymath}
+  p(\mathcal{J}^d, A(\mathcal{J}^d)) = 3
 \end{displaymath}
 
 次に，$2(\mathcal{A} + \mathcal{B})$ 個のジョブ $\mathcal{J}^t$ と $\mathcal{J}^f$ の処理開始可能時刻関数，処理時間関数を以下のように設定する.
@@ -861,7 +866,7 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
   \alpha_i + 4 & \text{if } \ell = \beta_i \\ 1 & \text{if } \beta_i < \ell < A_i \\
   3(\mathcal{A} + \mathcal{B}) - \big\{ 3\!\!\!\!\!\displaystyle \sum_{j \in
   \{1,\ldots,i - 1\}}\!\!\!\!\!A_j + (2\alpha_i +
-  \beta_i - 2)\big \} + 3 & \text{if } \ell = A_i \end{array} \right.
+  \beta_i - 2)\big \} + 2 & \text{if } \ell = A_i \end{array} \right.
 \end{displaymath}
 
 \begin{displaymath}
@@ -870,7 +875,7 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
   1 & \text{if } 1 < \ell < \alpha_i \\ \alpha_i
   + 5 & \text{if } \ell = \alpha_i  \\ 1 & \text{if } \alpha_i < \ell < A_i \\ 3(\mathcal{A} + \mathcal{B}) -
   \big\{ 3\!\!\!\!\!\displaystyle \sum_{j \in \{1,\ldots,i - 1\}}\!\!\!\!\!A_j
-  + (2A_i + 4)\big \} + 3 & \text{if }
+  + (2A_i + 4)\big \} + 2 & \text{if }
   \ell = A_i \end{array} \right.
 \end{displaymath}
 
@@ -949,10 +954,12 @@ $n + \lambda$ 台の無関連機械 $\mathcal{M}$ で処理する．
   $\ell \in \{1,\ldots,\alpha_i + \beta_i\}$ について，
   $f(x_i) = 1$ ならば，$A_i := A_i \cup \mathcal{J}^f(i)$，
   $f(x_i) = 0$ ならば，$A_k := A_k \cup \mathcal{J}^t(i)$ となる．
+  また，各 $i \in \{1,\ldots, n\}$ について，$J^d(i)$ を機械 $i$ に割り当てる．
   $I_{(X,H)}$ の定義より，ここまでのスケジュールにおいて，機械
   $\{1,\ldots, n\}$ に割り当てたジョブは処理開始可能時刻と納期の間で重複せず処理される．
   よって，このとき，機械 $\{1,2,\ldots,n\}$ に割り当てられた
-  $\mathcal{A} + \mathcal{B}$ 個のジョブの待ち時間は $0$ である．(図 $4.1$)
+  $\mathcal{A} + \mathcal{B}$ 個のジョブの待ち時間は $0$ である．
+  また，各 $i \in \{1,\ldots, n\}$ について，$J^d(i)$ における待ち時間は 2 となる．(図 $4.1$)
 
   上述の割り当てにより，各 $i \in \{1,\ldots,n\}$ について，$x_i$ または
   $\bar x_i$ に対応するジョブ $\mathcal{J}^t(i)$ または
