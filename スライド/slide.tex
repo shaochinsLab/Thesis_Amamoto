@@ -129,21 +129,21 @@
           \begin{itemize}
             \item すべての機械の性能が等しい．
             \begin{itemize}
-              \item 複数の製造工場で製造し，各製造工場は同じ機械を使っている．
+              \item 複数の製造工場で製造し，各製造工場の設備は同じ．
             \end{itemize}
           \end{itemize}
           \item \alert{一様並列機械モデル}
           \begin{itemize}
             \item 機械ごとに処理速度が異なる．
             \begin{itemize}
-              \item 複数の製造工場で製造し，製造工場ごとに機械の性能が異なる．
+              \item 複数の製造工場で製造し，製造工場ごとに設備が異なる．
             \end{itemize}
           \end{itemize}
           \item \alert{無関連並列機械モデル}
           \begin{itemize}
             \item ジョブと機械の組み合わせによって処理時間が異なる．
             \begin{itemize}
-              \item 複数の製造工場で製造し，製造工場ごとに，異なるメーカーの機械を導入しており，製造する製品によって製造期間が異なる．
+              \item 複数の製造工場で製造し，製造工場ごとに異なるメーカーの設備を導入しており，製造する製品によって製造期間が異なる．
             \end{itemize}
           \end{itemize}
         \end{itemize}
@@ -262,9 +262,9 @@
       \end{alertblock}
       \begin{block}{多項式時間還元のポイント}
         \begin{itemize}
-          \item {\sc 3-SAT} のインスタンスにおける変数に対応する機械
-          \item {\sc 3-SAT} のインスタンスにおける節に対応する機械
-          \item $1$ に割り当てられたリテラルに対応するジョブは次のジョブを押し出さない，$0$ に割り当てられたジョブは次のジョブを押し出す．
+          \item {\sc 3-SAT} のインスタンスにおける\alert{変数に対応する機械}
+          \item {\sc 3-SAT} のインスタンスにおける\alert{節に対応する機械}
+          \item $1$ に割り当てられたリテラルに対応するジョブは次のジョブを\alert{押し出さない}，$0$ に割り当てられたジョブは次のジョブを \alert{$1$ 押し出す}．
         \end{itemize}
       \end{block}
     \end{frame}
@@ -510,12 +510,12 @@
     \end{frame}
 
     \begin{frame}{付録：問題の計算複雑さ}
-      $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
+      $2(\mathcal{A} + \mathcal{B}) + n + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
       \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
         $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
         \begin{itemize}
           \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
-          \item $\lambda$ は，$H$ の要素数．節に対応する機械に割り当てる用のダミージョブ．
+          \item $n + \lambda$ は，$X$ と $H$ の要素数．各変数と各節に対応する機械に割り当てる用のダミージョブ．
         \end{itemize}
         $n + \lambda$ 個の機械
         \begin{itemize}

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 13:12
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -746,10 +746,6 @@ Overfull \hbox (19.29997pt too wide) in paragraph at lines 254--254
 [][][] 
  []
 
-
-Overfull \vbox (9.69568pt too high) detected at line 254
- []
-
 [18
 
 ] [19
@@ -962,4 +958,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  56i,23n,76p,825b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.dvi (56 pages, 548200 bytes).
+Output written on slide.dvi (56 pages, 548568 bytes).
