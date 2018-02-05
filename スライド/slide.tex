@@ -227,7 +227,7 @@
     \end{frame}
 
     \begin{frame}{多項式時間還元の流れ}
-      SWT の NP 完全性を示すために，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式時間還元}を行う．
+      SWT の NP 完全性を示すため，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式時間還元}を行う．
       \begin{tabular}{cc}
         \begin{minipage}[]{0.6\hsize}
           \begin{block}{多項式時間還元}
@@ -576,97 +576,6 @@
       \end{itemize}
     \end{frame}
 
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
-      \begin{exampleblock}{例：各変数に対応する機械におけるスケジュール}
-        $X = \{x_1,x_2,x_3\}$，$H = \big\{
-        \{x_1,x_2,\bar x_3\},
-        \{x_1,x_2,x_3\},
-        \{x_1,\bar x_2,\bar x_3\},$
-        \\
-        $\{\bar x_1,x_2,x_3\},
-        \{\bar x_1,\bar x_2,x_3\},
-        \{\bar x_1,\bar x_2,\bar x_3\}
-        \big\}$ の 2 項組 $(X,H)$ が {\sc 3-SAT} のインスタンスとして与えられたとき，前のスライドで説明した方法により，SWT のインスタンス $I_{(X,H)}$ を作る．
-        \begin{itemize}
-          \item $(X,H)$ において，$H$ を充足する真理値割り当ての 1 つ $f(x_1) = 1$，$f(x_2) = 0$，$f(x_3) = 1$ が存在する．
-        \end{itemize}
-        各 $i \in \{0,1,2\}$ における機械 $i$ 上のスケジュールは以下の通り．
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 12cm]{figure/reductionExample1.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
-      \begin{exampleblock}{例：各節に対応する機械におけるスケジュール}
-        $H$ を充足する真理値割り当てが存在することから，各節におけるリテラルのなかで，少なくとも 1 つ 1 (true) に割り当てられたジョブが存在する．
-
-        したがって，各 $k \in \{3,\ldots,8\}$ における機械 $k$ に割り当てられた最後のジョブの待ち時間は高々 $2$ である．以下の通り．
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 12cm]{figure/reductionExample2.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が Yes のとき）}
-      \begin{exampleblock}{例：すべての機械におけるスケジュール}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 12cm]{figure/reductionExample3.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
-      \begin{exampleblock}{例：各変数に対応する機械におけるスケジュール}
-        $X = \{x_1,x_2,x_3\}$，$H = \big\{
-        \{x_1,x_2,x_3\},
-        \{\bar x_1,\bar x_2,\bar x_3\},
-        \{x_1,\bar x_2,\bar x_3\},$
-        \\
-        $\{\bar x_1,x_2,\bar x_3\},
-        \{\bar x_1,\bar x_2,x_3\},
-        \{\bar x_1,x_2,x_3\},
-        \{x_1,\bar x_2,x_3\},
-        \{x_1,x_2,\bar x_3\}
-        \big\}$ の 2 項組 $(X,H)$ が {\sc 3-SAT} のインスタンスとして与えられたとき，前のスライドで説明した方法により，SWT のインスタンス $I_{(X,H)}$ を作る．
-        \begin{itemize}
-          \item $(X,H)$ において，$H$ を充足する真理値割り当ては存在しない．
-          \item ここで，$f(x_1) = 1$，$f(x_2) = 1$，$f(x_3) = 1$ としたとき，
-        \end{itemize}
-        各 $i \in \{0,1,2\}$ における機械 $i$ 上のスケジュールは以下の通り．
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 12cm]{figure/reductionExample4.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
-      \begin{exampleblock}{例：各節に対応する機械におけるスケジュール}
-        $H$ を充足する真理値割り当てが存在しないことから，各節におけるリテラルのなかで，すベて 0 (false) に割り当てられたジョブが割り当てられた機械が少なくとも 1 つ存在する．
-
-        したがって，各 $k \in \{3,\ldots,10\}$ における機械 $k$ に割り当てられた最後のジョブの待ち時間が $3$ 以上となる機械が存在する．以下の通り．
-        \vspace{-4mm}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 11cm]{figure/reductionExample5.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
-    \begin{frame}{付録：多項式還元の例（{\sc 3-SAT} の判定結果が No のとき）}
-      \begin{exampleblock}{例：すべての機械におけるスケジュール}
-        \begin{figure}[h]
-          \centering
-          \includegraphics[width = 11cm]{figure/reductionExample6.pdf}
-        \end{figure}
-      \end{exampleblock}
-    \end{frame}
-
     \begin{frame}{付録：多項式還元の例（特殊なケース）}
       \begin{block}{特殊なケースにおけるインスタンスの作り方}
         例えば，$X = \{x_1,x_2,x_3\}$，$H = \big\{{\textcolor{red}{\{x_1,x_2,x_3\}}},{\textcolor{blue}{\{\bar x_1, \bar x_2, \bar x_3\}}}\big\}$ のとき，
@@ -696,17 +605,17 @@
       \end{block}
     \end{frame}
 
-    \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ のインスタンスにおける注意点}
-      \begin{block}{{\sc 3-SAT} のインスタンスにおいて除くケース}
-        $H$ に現れるリテラルが各変数，もしくは変数の論理否定をとったもののいずれかしか現れないかつ，そのリテラルがすべての節に現れる場合，$H$ を充足する真理値割り当ては常に存在するためこの場合を除く．
-      \end{block}
-
-      \begin{exampleblock}{例：{\sc 3-SAT} のインスタンスにおいて除くケース}
-        $X = \{x_1,x_2,x_3\}$，
-        $H = \big\{\{x_1,x_2,\bar x_3\}, \{\bar x_1, \bar x_2, \bar x_3\}\big\}$ のとき，変数 $x_3$ に対応するリテラルは，$\bar x_3$ しか $H$ に現れない．さらに，すべての節に $\bar x_3$ が現れる．
-        このとき，$f(x_3) = 0$ とすることで，$H$ を充足する真理値割り当てが常に存在する．
-      \end{exampleblock}
-    \end{frame}
+    % \begin{frame}{付録：${\textcolor{white}{\mbox {\sc 3-SAT}}}$ のインスタンスにおける注意点}
+    %   \begin{block}{{\sc 3-SAT} のインスタンスにおいて除くケース}
+    %     $H$ に現れるリテラルが各変数，もしくは変数の論理否定をとったもののいずれかしか現れないかつ，そのリテラルがすべての節に現れる場合，$H$ を充足する真理値割り当ては常に存在するためこの場合を除く．
+    %   \end{block}
+    %
+    %   \begin{exampleblock}{例：{\sc 3-SAT} のインスタンスにおいて除くケース}
+    %     $X = \{x_1,x_2,x_3\}$，
+    %     $H = \big\{\{x_1,x_2,\bar x_3\}, \{\bar x_1, \bar x_2, \bar x_3\}\big\}$ のとき，変数 $x_3$ に対応するリテラルは，$\bar x_3$ しか $H$ に現れない．さらに，すべての節に $\bar x_3$ が現れる．
+    %     このとき，$f(x_3) = 0$ とすることで，$H$ を充足する真理値割り当てが常に存在する．
+    %   \end{exampleblock}
+    % \end{frame}
 
     \begin{frame}{付録：ヒューリスティックのアルゴリズム}
       \begin{block}{貪欲アルゴリズムに基づいた解法}

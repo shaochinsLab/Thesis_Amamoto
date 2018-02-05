@@ -369,18 +369,6 @@ INPUT figure/3SAT4.pdf
 INPUT extractbb -O figure/3SAT4.pdf
 INPUT figure/3SAT6.pdf
 INPUT extractbb -O figure/3SAT6.pdf
-INPUT figure/reductionExample1.pdf
-INPUT extractbb -O figure/reductionExample1.pdf
-INPUT figure/reductionExample2.pdf
-INPUT extractbb -O figure/reductionExample2.pdf
-INPUT figure/reductionExample3.pdf
-INPUT extractbb -O figure/reductionExample3.pdf
-INPUT figure/reductionExample4.pdf
-INPUT extractbb -O figure/reductionExample4.pdf
-INPUT figure/reductionExample5.pdf
-INPUT extractbb -O figure/reductionExample5.pdf
-INPUT figure/reductionExample6.pdf
-INPUT extractbb -O figure/reductionExample6.pdf
 INPUT figure/rgf1.pdf
 INPUT extractbb -O figure/rgf1.pdf
 INPUT figure/rgf2.pdf

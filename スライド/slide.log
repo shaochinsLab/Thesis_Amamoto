@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 14:17
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 14:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -825,103 +825,61 @@ Overfull \vbox (12.27846pt too high) detected at line 547
 File: figure/3SAT6.pdf Graphic file (type pdf)
  <figure/3SAT6.pdf> [37
 
-]
-File: figure/reductionExample1.pdf Graphic file (type pdf)
- <figure/reductionExample1.pdf> [38
+] [38
+
+] [39
 
 ]
-File: figure/reductionExample2.pdf Graphic file (type pdf)
- <figure/reductionExample2.pdf>
-Overfull \vbox (10.75488pt too high) detected at line 612
- []
-
-[39
+File: figure/rgf1.pdf Graphic file (type pdf)
+ <figure/rgf1.pdf> [40
 
 ]
-File: figure/reductionExample3.pdf Graphic file (type pdf)
- <figure/reductionExample3.pdf>
-Overfull \vbox (9.91333pt too high) detected at line 621
- []
-
-[40
+File: figure/rgf2.pdf Graphic file (type pdf)
+ <figure/rgf2.pdf> [41
 
 ]
-File: figure/reductionExample4.pdf Graphic file (type pdf)
- <figure/reductionExample4.pdf> [41
+File: figure/rgf3.pdf Graphic file (type pdf)
+ <figure/rgf3.pdf> [42
 
 ]
-File: figure/reductionExample5.pdf Graphic file (type pdf)
- <figure/reductionExample5.pdf>
-Overfull \vbox (10.30681pt too high) detected at line 659
- []
-
-[42
-
-]
-File: figure/reductionExample6.pdf Graphic file (type pdf)
- <figure/reductionExample6.pdf>
-Overfull \vbox (4.45543pt too high) detected at line 668
- []
-
-[43
+File: figure/rgf4.pdf Graphic file (type pdf)
+ <figure/rgf4.pdf> [43
 
 ] [44
 
 ] [45
 
-] [46
-
-]
-File: figure/rgf1.pdf Graphic file (type pdf)
- <figure/rgf1.pdf> [47
-
-]
-File: figure/rgf2.pdf Graphic file (type pdf)
- <figure/rgf2.pdf> [48
-
-]
-File: figure/rgf3.pdf Graphic file (type pdf)
- <figure/rgf3.pdf> [49
-
-]
-File: figure/rgf4.pdf Graphic file (type pdf)
- <figure/rgf4.pdf> [50
-
-] [51
-
-] [52
-
 ]
 File: figure/BandB1.pdf Graphic file (type pdf)
  <figure/BandB1.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 836--836
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 745--745
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 836--836
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 745--745
 [][][][]  
  []
 
-[53
+[46
 
 ]
 File: figure/BandB2.pdf Graphic file (type pdf)
  <figure/BandB2.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 836--836
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 745--745
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 836--836
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 745--745
 [][][][]  
  []
 
-[54
+[47
 
-] [55
+] [48
 
-] [56
+] [49
 
 ]
 \tf@nav=\write6
@@ -933,11 +891,11 @@ Overfull \hbox (15.64998pt too wide) in paragraph at lines 836--836
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 882.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 882.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 791.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 791.
  (./slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 882.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 882.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 791.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 791.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: F6DA0C991720047ADA54938C32F39BB1;506.
 
@@ -950,12 +908,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 17115 strings out of 493653
- 330419 string characters out of 6150337
- 425622 words of memory out of 5000000
- 20253 multiletter control sequences out of 15000+600000
+ 17083 strings out of 493653
+ 329723 string characters out of 6150337
+ 425286 words of memory out of 5000000
+ 20227 multiletter control sequences out of 15000+600000
  23871 words of font info for 95 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  56i,23n,76p,825b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.dvi (56 pages, 548568 bytes).
+Output written on slide.dvi (49 pages, 492128 bytes).
