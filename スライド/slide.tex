@@ -75,7 +75,10 @@
     \section{研究背景と目的}
     \begin{frame}{研究背景と目的：受注生産方式における生産計画の流れ}
       \begin{block}{受注生産方式とは}
-        顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，どの\alert{製造工場}で\alert{いつ製造を開始する}かを決定する．（例えば，高級自動車メーカー，システムインテグレーターなどは受注生産方式．）
+        顧客注文を受けてから，その受注製品の生産を全体の生産計画に組み込むため，\alert{どの製造工場}で\alert{いつ製造}するかを決定する．
+        \begin{itemize}
+          \item 例えば，高級自動車メーカー，システムインテグレーターなど．
+        \end{itemize}
       \end{block}
 
       \begin{figure}[h]
@@ -89,7 +92,7 @@
 
     \begin{frame}{研究背景と目的：スケジューリング問題との対応}
       \begin{block}{受注生産方式における問題点}
-        製造工場の数と受注状況によっては，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
+        製造工場の数と受注状況によって，受注から製造開始までの\alert{待ち時間}が長くなり，顧客満足度の低下や注文のキャンセルなどに繋がる．
       \end{block}
       \begin{itemize}
         \setlength{\leftskip}{-5mm}
@@ -104,8 +107,8 @@
         上記の問題を\alert{最大待ち時間最小化問題}として定式化し，
         \begin{itemize}
           \setlength{\leftskip}{-2mm}
-          \item 最大待ち時間最小化問題の計算複雑さを明らかにする．
-          \item 最大待ち時間最小化問題の計算複雑さを踏まえて，解法の提案を行う．
+          \item 問題の計算複雑さを明らかにする．
+          \item 問題の計算複雑さを踏まえて，解法の提案を行う．
         \end{itemize}
       \end{block}
 
@@ -114,25 +117,47 @@
     \section{諸定義}
     \begin{frame}{諸定義：機械モデル}
       \begin{block}{機械モデル}
-        ジョブを処理する機械の台数について
         \begin{itemize}
-          \item 1 つの機械で処理を行う\alert{単一機械モデル}，
-          \item 複数の機械で処理を行う\alert{並列機械モデル}，
+          \item \alert{単一機械モデル}
+          \begin{itemize}
+            \item 1 つの機械で処理を行う．
+            \begin{itemize}
+              \item 1 つの製造工場で製造する．
+            \end{itemize}
+          \end{itemize}
+          \item \alert{同一並列機械モデル}
+          \begin{itemize}
+            \item すべての機械の性能が等しい．
+            \begin{itemize}
+              \item 複数の製造工場で製造し，各製造工場は同じ機械を使っている．
+            \end{itemize}
+          \end{itemize}
+          \item \alert{一様並列機械モデル}
+          \begin{itemize}
+            \item 機械ごとに処理速度が異なる．
+            \begin{itemize}
+              \item 複数の製造工場で製造し，製造工場ごとに機械の性能が異なる．
+            \end{itemize}
+          \end{itemize}
+          \item \alert{無関連並列機械モデル}
+          \begin{itemize}
+            \item ジョブと機械の組み合わせによって処理時間が異なる．
+            \begin{itemize}
+              \item 複数の製造工場で製造し，製造工場ごとに，異なるメーカーの機械を導入しており，製造する製品によって製造期間が異なる．
+            \end{itemize}
+          \end{itemize}
         \end{itemize}
-        に分類される．
-        並列機械モデルはさらに，
-        \begin{itemize}
-          \item すべての機械の性能が等しい\alert{同一並列機械モデル}，
-          \item 機械ごとに処理速度が異なる\alert{一様並列機械モデル}，
-          \item ジョブと機械の組み合わせによって処理時間が異なる\alert{無関連並列機械モデル}，
-        \end{itemize}
-        に分類される．
       \end{block}
+      \begin{itemize}
+        \item 無関連並列機械モデルは，すべての機械モデルを含んでいるため，最も一般的な機械モデルである．
+      \end{itemize}
     \end{frame}
 
     \begin{frame}{諸定義：最大待ち時間最小化問題}
       最大待ち時間最小化問題を {\it \alert{S}equencing to minimize maximum \alert{W}aiting \alert{T}ime} の頭文字をとって，\alert{SWT} と表記する．
-      無関連並列機械モデルにおける SWT を定式化する．
+      \begin{itemize}
+        \item 最も一般的な，無関連並列機械モデルにおける SWT を定式化する．
+      \end{itemize}
       \begin{block}{インスタンス：$\textcolor{white}{\mathcal{I} = (\mathcal{J}, \mathcal{M}, r, p)}$}
         \begin{itemize}
           \item {ジョブの集合 $\mathcal{J} = \{J_1,J_2,\ldots,J_n\}$}
@@ -145,6 +170,9 @@
         \begin{itemize}
           \item ジョブの機械への割り当てを返す関数 $A : \mathcal{J} \to \mathcal{M}$．
           \item ジョブの開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$．
+          \begin{itemize}
+            \item 待ち時間は $r(J) - s(J)$．
+          \end{itemize}
         \end{itemize}
       \end{block}
     \end{frame}
@@ -157,17 +185,17 @@
             \item $\forall J \in \mathcal{J}\big[s(J) \ge r(J) \big]$
           \end{itemize}
           \item 各機械は同時に複数のジョブを処理しない．
-          \item 各ジョブの処理を開始すると，完了するまで中断しない．
+          \item 各ジョブの処理を開始すると，\alert{完了する}まで中断しない．
           \begin{itemize}
-            \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow [s(J), s(J)+p(J,A(J))) \cap[s(J'), s(J')+p(J', A(J'))) = \emptyset \Big]$}
+            \item {$\forall J, J' \in \mathcal{J}\ \Big[ \big[J\ne J' \land A(J) = A(J')\big] \Rightarrow \textcolor{blue}{\big[}s(J), \textcolor{red}{s(J)+p(J,A(J))}\textcolor{blue}{\big)} \cap \textcolor{blue}{\big[}s(J'), \textcolor{red}{s(J')+p(J', A(J'))}\textcolor{blue}{\big)} = \emptyset \Big]$}
           \end{itemize}
         \end{itemize}
       \end{block}
       \begin{block}{目的関数：最大待ち時間 $\textcolor{white}{W_{\max}}$}
         \begin{itemize}
-          \item ジョブの処理開始可能時刻と開始時刻の差の最大値．
+          \item ジョブの処理開始可能時刻から処理開始までの待ち時間の最大値．
           \begin{itemize}
-            \item $W_{\max} = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
+            \item $\varphi(A,s) = W_{\max} = {\displaystyle \max_{J \in \mathcal{J}}\{s(J) - r(J)\}}$
           \end{itemize}
         \end{itemize}
       \end{block}
@@ -187,7 +215,7 @@
           \includegraphics<1>[width=10cm]{figure/SRTD1.pdf}
           \includegraphics<2->[width=10cm]{figure/SRTD2.pdf}
         \end{figure}
-        \vspace{-3mm}
+        \vspace{-2mm}
         \begin{itemize}
           \item<2-> 納期を処理開始可能時刻と処理時間の和と設定したとき，SRTD における遅れ時間は\alert{待ち時間}として捉えることができる．
         \end{itemize}
@@ -198,16 +226,16 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{多項式還元の流れ}
-      SWT の計算複雑さを明らかにするために，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式還元}を行う．
+    \begin{frame}{多項式時間還元の流れ}
+      SWT の NP 完全性を示すために，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式時間還元}を行う．
       \begin{tabular}{cc}
         \begin{minipage}[]{0.6\hsize}
-          \begin{block}{多項式還元}
-            問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で変換して，判定結果を同じにできるとき，
+          \begin{block}{多項式時間還元}
+            問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で判定結果が一致するように変換できるとき，
             \begin{center}
               「$A$ は $B$ に多項式還元可能」という．
             \end{center}
-            $B$ を解くアルゴリズムを用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，それ以上難しいと言える．
+            $B$ の解法を用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，それ以上難しい．
           \end{block}
         \end{minipage}
         \begin{minipage}[]{0.4\hsize}
@@ -228,22 +256,20 @@
     \begin{frame}{研究成果：問題の計算複雑さ}
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
-      \end{alertblock}
-      \begin{block}{還元の結果}
-        待ち時間制約付きスケジューリング問題における最大待ち時間が，
         \begin{itemize}
-          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，\alert{2 以下}，
-          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，\alert{3 以上}，
+          \item NP 完全であることが知られている {\sc 3-SAT} から待ち時間制約付きスケジューリング問題に多項式還元できることを示した．
         \end{itemize}
-        となるスケジュールが存在する．
-      \end{block}
-      無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，近似率 $1.5$ 未満の定数近似アルゴリズムは存在しない．
-      \begin{alertblock}{}
-        NP 困難な問題に対する効率的な解法は発見されていないため，最適解を求めるために，解の全列挙に基づいた解法が必要である．
       \end{alertblock}
+      \begin{block}{多項式時間還元のポイント}
+        \begin{itemize}
+          \item {\sc 3-SAT} のインスタンスにおける変数に対応する機械
+          \item {\sc 3-SAT} のインスタンスにおける節に対応する機械
+          \item $1$ に割り当てられたリテラルに対応するジョブは次のジョブを押し出さない，$0$ に割り当てられたジョブは次のジョブを押し出す．
+        \end{itemize}
+      \end{block}
     \end{frame}
 
-    \begin{frame}{研究成果：還元のポイント}
+    \begin{frame}{研究成果：多項式時間還元のポイント}
       \begin{block}{{\sc 3-SAT} の判定結果が Yes のとき}
         \begin{figure}[h]
           \centering
@@ -252,11 +278,11 @@
       \end{block}
       \begin{itemize}
         \setlength{\leftskip}{-3mm}
-        \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，すべての機械において，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{2 以下}となる．
+        \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{2 以下}となるスケジュールが\alert{存在する}．
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{研究成果：還元のポイント}
+    \begin{frame}{研究成果：多項式時間還元のポイント}
       \begin{block}{{\sc 3-SAT} の判定結果が No のとき}
         \begin{figure}[h]
           \centering
@@ -265,8 +291,23 @@
       \end{block}
       \begin{itemize}
         \setlength{\leftskip}{-3mm}
-        \item {\sc 3-SAT} の判定結果が \alert{No} のとき，ある機械において，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{3 以上}となる．
+        \item {\sc 3-SAT} の判定結果が \alert{No} のとき，待ち時間制約付きスケジューリング問題における最大待ち時間が\alert{2 以下}となるスケジュールが\alert{存在しない}．
       \end{itemize}
+    \end{frame}
+
+    \begin{frame}{研究成果：問題計算複雑さ}
+      \begin{block}{多項式時間還元の結果}
+        待ち時間制約付きスケジューリング問題における最大待ち時間が，
+        \begin{itemize}
+          \item {\sc 3-SAT} の判定結果が \alert{Yes} のとき，\alert{2 以下}，
+          \item {\sc 3-SAT} の判定結果が \alert{No} のとき，\alert{3 以上}，
+        \end{itemize}
+        となるスケジュールが存在する．
+      \end{block}
+      無関連並列機械モデルにおいて機械数が入力の一部の場合，SWT が NP 困難である限り，近似率 $1.5$ 未満の定数近似アルゴリズムは存在しない．
+      \begin{alertblock}{成果 1 のまとめ}
+        SWT が NP 困難であることを示した．NP 困難な問題に対する効率的な解法は発見されていないため，最適解を求めるために，解の全列挙に基づいた解法が必要である．
+      \end{alertblock}
     \end{frame}
 
     \subsection{厳密解法の提案と実験的評価}
@@ -428,9 +469,9 @@
           \end{itemize}
           \item 3 つのリテラルからなる節 $h$ の集合 $H$
           \begin{itemize}
-            \item $H = \big\{ \textcolor{red}{\{x_1, x_2, \bar x_3\}}, \textcolor{blue}{\{\bar x_1, \bar x_2,\bar x_3\}}\big\}$
+            \item $H = \big\{ \textcolor{red}{\{x_1, x_2, \bar x_3\}}, \textcolor{blue}{\{\bar x_1, \bar x_2,x_3\}}\big\}$
             \begin{itemize}
-              \item $h_1 = \textcolor{red}{\{x_1, x_2, \bar x_3\}}$， $h_2 = \textcolor{blue}{\{\bar x_1, \bar x_2,\bar x_3\}}$
+              \item $h_1 = \textcolor{red}{\{x_1, x_2, \bar x_3\}}$， $h_2 = \textcolor{blue}{\{\bar x_1, \bar x_2,x_3\}}$
             \end{itemize}
           \end{itemize}
         \end{itemize}
@@ -438,9 +479,9 @@
           \setlength{\leftskip}{-8mm}
           \item[問題：] 以下を満たすように $x_1$，$x_2$，$x_3$ を $0$，$1$ で決定できるか？
         \end{description}
-        $$(x_1 \lor x_2 \lor \bar x_3) \land (\bar x_1 \lor \bar x_2 \lor \bar x_3) = 1$$
+        $$(x_1 \lor x_2 \lor \bar x_3) \land (\bar x_1 \lor \bar x_2 \lor  x_3) = 1$$
 
-        $f(x_1) = 1, f(x_2) = 0, f(x_3) = 0$ が存在するので，判定は Yes となる．
+        $f(x_1) = 1, f(x_2) = 0, f(x_3) = 1$ が存在するので，判定は Yes となる．
       \end{exampleblock}
     \end{frame}
 
