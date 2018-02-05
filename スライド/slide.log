@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 17:38
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 19:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -783,7 +783,7 @@ Overfull \vbox (3.6027pt too high) detected at line 289
 ]
 File: figure/SJIT1.pdf Graphic file (type pdf)
  <figure/SJIT1.pdf>
-Overfull \vbox (1.1347pt too high) detected at line 376
+Overfull \vbox (1.1347pt too high) detected at line 377
  []
 
 [27
@@ -807,7 +807,7 @@ Overfull \vbox (1.1347pt too high) detected at line 376
 ]
 File: figure/3SAT4.pdf Graphic file (type pdf)
  <figure/3SAT4.pdf>
-Overfull \vbox (12.27846pt too high) detected at line 537
+Overfull \vbox (12.27846pt too high) detected at line 538
  []
 
 [36
@@ -845,12 +845,12 @@ File: figure/rgf4.pdf Graphic file (type pdf)
 ]
 File: figure/BandB1.pdf Graphic file (type pdf)
  <figure/BandB1.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 764--764
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 765--765
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 765--765
 [][][][]  
  []
 
@@ -859,12 +859,12 @@ Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
 ]
 File: figure/BandB2.pdf Graphic file (type pdf)
  <figure/BandB2.pdf>
-Overfull \hbox (22.24278pt too wide) in paragraph at lines 764--764
+Overfull \hbox (22.24278pt too wide) in paragraph at lines 765--765
  [] 
  []
 
 
-Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
+Overfull \hbox (15.64998pt too wide) in paragraph at lines 765--765
 [][][][]  
  []
 
@@ -884,11 +884,11 @@ Overfull \hbox (15.64998pt too wide) in paragraph at lines 764--764
 \tf@snm=\write8
 \openout8 = `slide.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 788.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 788.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 789.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 789.
  (./slide.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 788.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 788.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 789.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 789.
 Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: F6DA0C991720047ADA54938C32F39BB1;506.
 
@@ -909,4 +909,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  56i,23n,76p,825b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on slide.dvi (50 pages, 489568 bytes).
+Output written on slide.dvi (50 pages, 489596 bytes).

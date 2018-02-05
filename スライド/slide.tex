@@ -163,7 +163,7 @@
           \item ジョブの機械への割り当てを返す関数 $A : \mathcal{J} \to \mathcal{M}$．
           \item ジョブの開始時刻を返す関数 $s : \mathcal{J} \to \mathbb{N}$．
           \begin{itemize}
-            \item 待ち時間は $r(J) - s(J)$．
+            \item 待ち時間は $s(J) - r(J)$．
           \end{itemize}
         \end{itemize}
       \end{block}
@@ -219,13 +219,13 @@
     \end{frame}
 
     \begin{frame}{多項式時間還元の流れ}
-      SWT の NP 完全性を示すため，NP 完全であることが知られている {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式時間還元}を行う．
+      SWT の NP 完全性を示すため，NP 完全である {\sc 3-SATISFIABILITY (3-SAT)} から\alert{多項式時間還元}を行う．
       \begin{tabular}{cc}
         \begin{minipage}[]{0.6\hsize}
           \begin{block}{多項式時間還元}
             問題 $A$ の任意のインスタンスを，別の問題 $B$ のあるインスタンスに多項式時間で判定結果が一致するように変換できるとき，
             \begin{center}
-              「$A$ は $B$ に多項式還元可能」という．
+              「$A$ は $B$ に多項式時間還元可能」という．
             \end{center}
             $B$ の解法を用いて，$A$ も解くことができるため，$B$ は $A$ と同等か，それ以上難しい．
           \end{block}
@@ -249,7 +249,7 @@
       \begin{alertblock}{成果 1}
         無関連並列機械モデルにおいて，機械数が入力の一部の場合，SWT が NP 困難であることを明らかにした．
         \begin{itemize}
-          \item NP 完全であることが知られている {\sc 3-SAT} から待ち時間制約付きスケジューリング問題に多項式還元できることを示した．
+          \item NP 完全である {\sc 3-SAT} から待ち時間制約付きスケジューリング問題に多項式時間還元できることを示した．
         \end{itemize}
       \end{alertblock}
       \begin{block}{多項式時間還元のポイント}
@@ -301,6 +301,7 @@
       \begin{alertblock}{成果 1 のまとめ}
         SWT が NP 困難であることを示し，近似率 $1.5$ 未満の定数近似アルゴリズムが存在しないことを明らかにした．NP 困難な問題に対する効率的な解法は発見されていないため，最適解を求めるために，解の全列挙に基づいた解法が必要である．
       \end{alertblock}
+      ＊ P : 多項式時間で解ける判定問題の集合
     \end{frame}
 
     \subsection{厳密解法の提案と実験的評価}
@@ -403,7 +404,7 @@
       \begin{alertblock}{今後の課題}
         \begin{itemize}
           \item 無関連並列機械モデル以外の機械モデルにおける SWT の計算複雑さを明らかにし，問題の難しさに影響を与える特徴を分析する．
-          \item {\sc 3-SAT} からの還元手法を工夫して，{\sc 3-SAT} の存在判定が Yes のとき，No のときの待ち時間制約付きスケジューリング問題における最大待ち時間の比を調整する．
+          \item {\sc 3-SAT} からの還元手法を工夫して，{\sc 3-SAT} の判定結果が Yes のとき，No のときの待ち時間制約付きスケジューリング問題における最大待ち時間の比を調整する．
           \item 還元手法の工夫の結果を踏まえ近似アルゴリズムを開発する．
         \end{itemize}
       \end{alertblock}
@@ -502,7 +503,7 @@
     \begin{frame}{付録：問題の計算複雑さ}
       $2(\mathcal{A} + \mathcal{B}) + n + \lambda$ 個のジョブ $\mathcal{J}$ を $n + \lambda$ 個の無関連機械で処理する．
       \begin{block}{変換した待ち時間制約付きスケジューリング問題のインスタンス}
-        $2(\mathcal{A} + \mathcal{B}) + \lambda$ 個のジョブ
+        $2(\mathcal{A} + \mathcal{B}) + n + \lambda$ 個のジョブ
         \begin{itemize}
           \item 各 $i \in \{1,\ldots,n\}$ における変数 $x_i$ からなるリテラル $x_i$，$\bar x_i$ に対応するジョブの集合を $\mathcal{J}^t(i)$，$\mathcal{J}^f(i)$ とする．それぞれの要素数は，$x_i$ と $\bar x_i$ が $H$ に現れた回数，つまり，$|\mathcal{J}^t(i)| = |\mathcal{J}^f(i)| = \alpha_i + \beta_i$．
           \item $n + \lambda$ は，$X$ と $H$ の要素数．各変数と各節に対応する機械に割り当てる用のダミージョブ．
