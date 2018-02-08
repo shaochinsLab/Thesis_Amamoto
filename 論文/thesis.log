@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  8 FEB 2018 15:58
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  8 FEB 2018 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -282,8 +282,10 @@ File: figure/BandBTimeUn.pdf Graphic file (type pdf)
  <figure/BandBTimeUn.pdf> [46]
 File: figure/modelTimeComparison.pdf Graphic file (type pdf)
  <figure/modelTimeComparison.pdf> [47]
-File: figure/compId1.pdf Graphic file (type pdf)
- <figure/compId1.pdf> [48] [49]
+
+LaTeX Warning: Reference `5.6' on page 48 undefined on input line 1512.
+
+[48] [49]
 第 6 章
 [50
 
@@ -302,14 +304,17 @@ Overfull \vbox (49.30098pt too high) has occurred while \output is active []
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 2254 strings out of 493653
- 25447 string characters out of 6150337
- 139040 words of memory out of 5000000
- 5799 multiletter control sequences out of 15000+600000
+ 2251 strings out of 493653
+ 25382 string characters out of 6150337
+ 159040 words of memory out of 5000000
+ 5797 multiletter control sequences out of 15000+600000
  32133 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  27i,19n,24p,947b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (62 pages, 222152 bytes).
+Output written on thesis.dvi (62 pages, 228756 bytes).

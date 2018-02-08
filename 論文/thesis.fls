@@ -153,8 +153,6 @@ INPUT figure/BandBTimeUn.pdf
 INPUT extractbb -O figure/BandBTimeUn.pdf
 INPUT figure/modelTimeComparison.pdf
 INPUT extractbb -O figure/modelTimeComparison.pdf
-INPUT figure/compId1.pdf
-INPUT extractbb -O figure/compId1.pdf
 INPUT thesis.bbl
 INPUT thesis.bbl
 INPUT thesis.aux
