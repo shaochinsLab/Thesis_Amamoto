@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  5 FEB 2018 15:28
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017/MacPorts 2017_2) (preloaded format=platex 2017.10.13)  8 FEB 2018 15:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -256,45 +256,49 @@ File: figure/EDDrule.pdf Graphic file (type pdf)
 [23
 
 ] [24] [25]
-Overfull \hbox (16.65045pt too wide) detected at line 929
+Overfull \hbox (16.65045pt too wide) detected at line 908
 \OML/cmm/m/it/10.95 p\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J; A\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 )) = []
  []
 
 File: figure/3SAT1.pdf Graphic file (type pdf)
-<figure/3SAT1.pdf> [26] [27] [28]
+<figure/3SAT1.pdf> [26] [27] [28] [29]
 File: figure/3SAT2.pdf Graphic file (type pdf)
- <figure/3SAT2.pdf> [29] [30] [31]
-第 5 章
-[32
+ <figure/3SAT2.pdf>
 
-] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30] [31] [32]
+第 5 章
+[33
+
+] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
 File: figure/rgfTimeId.pdf Graphic file (type pdf)
- <figure/rgfTimeId.pdf> [43]
+ <figure/rgfTimeId.pdf> [44]
 File: figure/BandBTimeId.pdf Graphic file (type pdf)
  <figure/BandBTimeId.pdf>
 File: figure/rgfTimeUn.pdf Graphic file (type pdf)
- <figure/rgfTimeUn.pdf> [44]
+ <figure/rgfTimeUn.pdf> [45]
 File: figure/BandBTimeUn.pdf Graphic file (type pdf)
- <figure/BandBTimeUn.pdf> [45]
+ <figure/BandBTimeUn.pdf> [46]
 File: figure/modelTimeComparison.pdf Graphic file (type pdf)
- <figure/modelTimeComparison.pdf> [46]
+ <figure/modelTimeComparison.pdf> [47]
 File: figure/compId1.pdf Graphic file (type pdf)
- <figure/compId1.pdf> [47] [48]
+ <figure/compId1.pdf> [48] [49]
 第 6 章
-[49
+[50
 
-] (./thesis.bbl [50] [51
+] (./thesis.bbl [51] [52
 
-]) [52]
+]) [53]
 付 録 A  
-[53
+[54
 
-] [54] [55] [56] [57] [58] [59
+] [55] [56] [57] [58] [59] [60
 
 ]
 Overfull \vbox (49.30098pt too high) has occurred while \output is active []
 
- [60] (./thesis.aux)
+ [61] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -306,6 +310,6 @@ Here is how much of TeX's memory you used:
  5799 multiletter control sequences out of 15000+600000
  32133 words of font info for 100 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 27i,19n,24p,925b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,19n,24p,947b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.dvi (61 pages, 218368 bytes).
+Output written on thesis.dvi (62 pages, 222152 bytes).
