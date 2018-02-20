@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1517899507 "slide.dvi" "slide.pdf" "slide" 1517899508
+["dvipdf"] 1517899507 "slide.dvi" "slide.pdf" "slide" 1519026093
   "slide.dvi" 1517899506 500600 06f2b0bfc8661632ac05ac5bd8da6f9e "latex"
   (generated)
   "slide.pdf"
-["latex"] 1517899492 "slide.tex" "slide.dvi" "slide" 1517899508
+["latex"] 1517899492 "slide.tex" "slide.dvi" "slide" 1519026093
   "/opt/local/etc/texmf/texmf.cnf" 1507858707 30503 85b400dc8aee1e3cb0fe197c279baa2a ""
   "/opt/local/share/texmf-texlive/fonts/map/fontname/texfonts.map" 1467164581 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/opt/local/share/texmf-texlive/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1467164711 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
@@ -233,10 +233,10 @@
   "slide.tex" 1517899490 46713 904f6a212a71c60771c2b3b941d0c8da ""
   "slide.toc" 1517899506 491 a2b8c071a29178a5bbb734777563d02e ""
   (generated)
-  "slide.aux"
-  "slide.toc"
-  "slide.dvi"
   "slide.out"
   "slide.log"
-  "slide.nav"
   "slide.snm"
+  "slide.dvi"
+  "slide.nav"
+  "slide.aux"
+  "slide.toc"
